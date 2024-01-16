@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+   <properties>
+      <title><![CDATA[Metadata Example]]></title>
+      <author><![CDATA[]]></author>
+      <version><![CDATA[]]></version>
+      <date><![CDATA[]]></date>
+      <status><![CDATA[]]></status>
+      <prefix><![CDATA[]]></prefix>
+      <confidence><![CDATA[false]]></confidence>
+      <note><![CDATA[]]></note>
+   </properties>
+   <gsn>
+      <g id="__gsn__146689a71ec" name="Goal">
+    Top-level claim
+
+    <a id="__gsn__146689aeac2" name="Assumption">
+      An assumption
+
+    <metadataValue metadata-field-id="1"><![CDATA[Cool]]></metadataValue>
+         </a>
+         <s id="__gsn__146689abc8c" name="Strategy">
+      A strategy
+
+      <j id="__gsn__146689af542" name="Justification">
+        A justification
+
+      <metadataValue metadata-field-id="1"><![CDATA[Warm]]></metadataValue>
+            </j>
+            <c id="__gsn__146689afc83" name="Context">
+        A context
+
+      <metadataValue metadata-field-id="1"><![CDATA[Hot]]></metadataValue>
+            </c>
+            <g id="__gsn__146689acc72" name="Subgoal">
+        Subgoal 1
+
+        <e id="__gsn__146689b02db" name="Evidence">
+          Some evidence
+
+          <c id="__gsn__14669a19b7f" name="Context">
+            A context
+
+          <metadataValue metadata-field-id="1"><![CDATA[Cold]]></metadataValue>
+                  </c>
+                  <metadataValue metadata-field-id="1"><![CDATA[Cool]]></metadataValue>
+               </e>
+               <metadataValue metadata-field-id="1"><![CDATA[Neutral]]></metadataValue>
+            </g>
+            <g id="__gsn__146689ad501" name="Subgoal">
+        Subgoal 2
+
+        <m id="__gsn__146689b0a82" name="Module">
+          A module
+
+        <metadataValue metadata-field-id="1"><![CDATA[Cool]]></metadataValue>
+               </m>
+               <metadataValue metadata-field-id="1"><![CDATA[Neutral]]></metadataValue>
+            </g>
+            <metadataValue metadata-field-id="1"><![CDATA[Warm]]></metadataValue>
+         </s>
+         <metadataValue metadata-field-id="1"><![CDATA[Neutral]]></metadataValue>
+      </g>
+   </gsn>
+</argument>

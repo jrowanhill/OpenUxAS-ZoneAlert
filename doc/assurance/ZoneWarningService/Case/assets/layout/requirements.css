@@ -1,0 +1,24 @@
+section#content p.rationale,
+section#content p.trace,
+section#content p.v_and_v,
+section#content p.pvs-assumptions,
+section#content p.pvs-theorem,
+section#content p.pvs-container {
+  padding-left: 0.5in;
+}
+
+section#content pre.pvs {
+  padding-left: 1in;
+}
+
+section#content .hidden {
+  display: none;
+}
+
+section#content h3 {
+  text-decoration: underline;
+}
+
+section#content p span.criticality {
+  color: red;
+}

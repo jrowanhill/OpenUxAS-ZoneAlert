@@ -1,0 +1,24 @@
+  <script type="text/javascript" src="../libraries/jquery-3.5.1.min.js">
+  </script>
+  <script type="text/javascript">
+    window.beforePrintHandler = function() {
+      $('nav').hide();
+      window.printSetup();
+    }
+    
+    window.afterPrintHandler = function() {
+      $('nav').show();
+    }
+    
+    window.printQueryHandler = function(mql) {
+      if (mql.matches) {
+        window.beforePrintHandler();
+      } else {
+        window.afterPrintHandler();
+      }
+    }
+    
+    window.mediaQueryList = window.matchMedia('print');
+    window.mediaQueryList.addListener(printQueryHandler);
+  </script>
+  

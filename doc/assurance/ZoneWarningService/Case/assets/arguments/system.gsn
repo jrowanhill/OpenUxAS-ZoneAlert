@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<argument>
+<properties>
+  <title>System</title>
+  <author/>
+  <version/>
+  <date/>
+  <last-modified>07/30/2013</last-modified>
+  <status/>
+  <prefix/>
+  <confidence>false</confidence>
+  <note/>
+</properties>
+
+<gsn>
+  <g id="__gsn_root" name="System Acceptable">
+    The system is acceptable
+
+    <c id="__gsn__13fa4cc3aab" name="Definition">
+      [acceptable] means fit for use
+    </c>
+    <c id="__gsn__13fa4c3dd99" name="Definition">
+      [fitness for use] means that the (sub)system: conforms to all required
+      standards; satisfies its requirements; and mitigates all credible hazards
+    </c>
+    <s id="__gsn__13fa4c3dd98" name="Fit for Use">
+      Argue over the components of fitness for use
+
+      <g id="__gsn__13fa4c3dd9a" name="Standards Conformance">
+        System conforms to all required standards
+
+        <c id="__gsn__140314fbfd5" name="Reference" link="example.pdf">
+          Reference to an example PDF
+        </c>
+        <s id="__gsn__13fa4c3dd9b" name="Enumerated Standards">
+          Argue conformance over enumeration of required standards
+
+          <c id="__gsn__13fa4c3dd9c" name="Enumeration">
+            [required standards] are: […]
+          </c>
+          <g id="__gsn__13fa4c3dd9d" name="[Standard 1]">
+            […]
+
+            <c id="__gsn__13fa4c3dd9e" name="Standard Reference">
+              […]
+            </c>
+          </g>
+          <g id="__gsn__13fa4c3dd9f" name="[Standard n]" repeat="true">
+            […]
+
+            <c id="__gsn__13fa4c3dda0" name="Standard Reference">
+              [...]
+            </c>
+          </g>
+        </s>
+      </g>
+      <g id="__gsn__13fa4c3dda1" name="Requirements Satisfaction">
+        System satisfies its requirements
+
+        <c id="__gsn__13fa4c3dda2" name="Reference">
+          Requirements are contained in […]
+        </c>
+        <s id="__gsn__13fa4c3dda3" name="Enumerated Subsystems">
+          Argue satisfaction by each subsystem
+
+          <c id="__gsn__13fa4c3dda4" name="Enumeration">
+            [subsystems] are: […]
+          </c>
+          <g id="__gsn__13fa4ca5876" name="Subsystem Requirements Satisfaction">
+            Subsystem satisfies its requirements
+
+            <m id="__gsn__13fa4cabf03" name="Subsystem Acceptable" link="subsystem.gsn">
+              Subsystem is acceptable
+            </m>
+          </g>
+        </s>
+      </g>
+      <g id="__gsn__13fa4c3dda7" name="Hazards">
+        All credible hazards have been adequately mitigated
+
+        <c id="__gsn__13fa4c3dda8" name="Hazards">
+          List of all credible hazards
+        </c>
+        <s id="__gsn__13fa4c3dda9" name="Enumerated Hazards">
+          Argue mitigation of each hazard class
+
+          <g id="__gsn__13fa4c3ddaa" name="[Hazard Class 1]">
+            [Hazard class 1] is adequately mitigated
+          </g>
+          <g id="__gsn__13fa4c3ddab" name="[Hazard Class n]" repeat="true">
+            [Hazard class n] is adequately mitigated
+          </g>
+        </s>
+      </g>
+    </s>
+  </g>
+</gsn>
+</argument>

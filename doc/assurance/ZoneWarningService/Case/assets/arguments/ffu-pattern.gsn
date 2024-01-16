@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<argument>
+<properties>
+  <title>Pattern: Fit for Use</title>
+  <author>Kim</author>
+  <version>Version 0.5</version>
+  <date></date>
+  <last-modified>07/03/2013</last-modified>
+  <status>Draft</status>
+  <prefix></prefix>
+  <confidence>false</confidence>
+  <note>The fit-for-use pattern, with the optional TLS leg removed (since it tripped folks up).</note>
+</properties>
+
+<gsn>
+  <g id="__gsn__13ee712eadc"
+     name="X […]">
+    X (sub)system is [...]
+
+    <c id="__gsn__13ee712eac8"
+       name="Description">
+      X is […]
+    </c>
+    <c id="__gsn__13fa4b84c28"
+       name="Operating Context">
+      [...]
+    </c>
+    <comment id="__gsn__13fa4b6d9eb"
+       name="Pattern Comment">
+      The statement made at the top-level should be in natural language and
+      should describe the desired property. It should not merely say "fit for
+      use." Fitness for use is the strategy, not the expression of the property.
+    </comment>
+    <s id="__gsn__13fa4b2b5c9"
+       name="Fit for Use">
+      Argue over the components of fitness for use
+
+      <c id="__gsn__13fa4b2fdde"
+         name="Definition">
+        [fitness for use] means that the (sub)system: conforms to all required
+        standards; satisfies its requirements; and mitigates all credible
+        hazards
+      </c>
+      <g id="__gsn__13ee712ead4"
+         name="Standards Conformance">
+        X conforms to all required standards
+
+        <s id="__gsn__13fa4b46a7d"
+           name="Enumerated Standards">
+          Argue conformance over enumeration of required standards
+
+          <c id="__gsn__13fa4b4ccbd"
+             name="Enumeration">
+            [required standards] are: […]
+          </c>
+          <g id="__gsn__13fa4b534f4"
+             name="[Standard 1]">
+            […]
+
+            <c id="__gsn__13fa4b5866b"
+               name="Standard Reference">
+              […]
+            </c>
+          </g>
+          <g id="__gsn__13fa4b55c44"
+             name="[Standard n]"
+             repeat="true">
+            […]
+
+            <c id="__gsn__13fa4b5d2dc"
+               name="Standard Reference">
+              [...]
+            </c>
+          </g>
+        </s>
+      </g>
+      <g id="__gsn__13ee712ead1"
+         name="Requirements Satisfaction">
+        X satisfies its requirements
+
+        <c id="__gsn__13ee712eac9"
+           name="Reference">
+          Requirements are contained in […]
+        </c>
+        <s id="__gsn__13fa4bb695c"
+           name="Enumerated Subsystems">
+          Argue satisfaction by each subsystem
+
+          <c id="__gsn__13fa4bc395a"
+             name="Enumeration">
+            [subsystems] are: […]
+          </c>
+        </s>
+        <s id="__gsn__13fa4bc23c9"
+           name="Enumerated Types">
+          Argue satisfaction over enumerated types of requirements
+
+          <c id="__gsn__13fa4bcf76e"
+             name="Enumeration">
+            [types of requirements] are: functional and non-functional
+          </c>
+        </s>
+      </g>
+      <g id="__gsn__13ee712eada"
+         name="Hazards">
+        All credible hazards have been adequately mitigated
+
+        <c id="__gsn__13ee712ead6"
+           name="Hazards">
+          List of all credible hazards
+        </c>
+        <s id="__gsn__13ee712ead9"
+           name="Enumerated Hazards">
+          Argue mitigation of each hazard class
+
+          <g id="__gsn__13ee712ead7"
+             name="[Hazard Class 1]">
+            [Hazard class 1] is adequately mitigated
+          </g>
+          <g id="__gsn__13ee712ead8"
+             name="[Hazard Class n]"
+             repeat="true">
+            [Hazard class n] is adequately mitigated
+          </g>
+        </s>
+      </g>
+    </s>
+  </g>
+</gsn>
+</argument>

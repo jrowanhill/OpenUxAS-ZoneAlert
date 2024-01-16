@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189dbad8b8c"
+        color="#ffffff"
+        name="Safety">
+      The service does not produce unacceptable accidents and loss.
+
+      <s
+          id="__gsn__189dbadcb4a"
+          name="Strategy">
+        default text
+
+        <g
+            id="__gsn__189dbadd23b"
+            color="#ffffff"
+            name="Goal">
+          Unacceptable accidents and loss are understood
+        </g>
+
+        <g
+            id="__gsn__189dbadd42b"
+            name="Goal">
+          default text
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

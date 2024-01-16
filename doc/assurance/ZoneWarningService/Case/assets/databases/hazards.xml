@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+<hazard id="1">
+  <target>H-1</target>
+  <description>Hazard Description</description>
+  <indication>Hazard Identification/ Indication</indication>
+  <effect>Effect of Hazard</effect>
+  <subsystem>Subsystem</subsystem>
+  <modes>
+    <mode>
+      Subsystem Failure Mode(s)
+    </mode>
+  </modes>
+  <state>State</state>
+  <severity>Severity</severity>
+  <likelihood>Likelihood of Occurrence</likelihood>
+  <assessment>Hazard Risk Assessment</assessment>
+  <actions>
+    <action>
+      Action
+    </action>
+  </actions>
+  <recommendations>
+    <recommendation>
+      Recommended Action
+    </recommendation>
+  </recommendations>
+  <mitigations>
+    <mitigation>
+      How Source will Mitigate This Hazard
+    </mitigation>
+  </mitigations>
+  <remarks>
+    <remark>
+      Remarks
+    </remark>
+  </remarks>
+  <links>
+    <link target="../arguments/example.html">Hazard of Invalid Data</link>
+  </links>
+</hazard>
+ -->
+
+<hazards>
+  <hazard id="1">
+    <target>H-1</target>
+    <description>Hazard Description</description>
+    <indication>Hazard Identification/ Indication</indication>
+    <effect>Effect of Hazard</effect>
+    <subsystem>Subsystem</subsystem>
+    <modes>
+      <mode>
+        Subsystem Failure Mode(s)
+      </mode>
+    </modes>
+    <state>State</state>
+    <severity>Severity</severity>
+    <likelihood>Likelihood of Occurrence</likelihood>
+    <assessment>Hazard Risk Assessment</assessment>
+    <actions>
+      <action>
+        Action
+      </action>
+    </actions>
+    <recommendations>
+      <recommendation>
+        Recommended Action
+      </recommendation>
+    </recommendations>
+    <mitigations>
+      <mitigation>
+        How Source will Mitigate This Hazard
+      </mitigation>
+    </mitigations>
+    <remarks>
+      <remark>
+        Remarks
+      </remark>
+    </remarks>
+    <links>
+      <link target="../arguments/example.html">Hazard of Invalid Data</link>
+    </links>
+  </hazard>
+</hazards>

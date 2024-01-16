@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189dbd17273"
+        color="#ffffff"
+        name="Reliability">
+      The service is provided with acceptable probability.
+
+      <s
+          id="__gsn__189dbd487cc"
+          color="#ffffff"
+          name="Strategy">
+        By showing that rates of service failure have been adequately determined and are satisfied by the service.
+
+        <g
+            id="__gsn__189dbd48e37"
+            color="#ffffff"
+            name="Acceptable Rates Determined">
+          Rates of service failure per service-minute of operation are adequately defined.
+
+          <s
+              id="__gsn__189dbd66965"
+              color="#ffffff"
+              name="Strategy">
+            By having identified relevant modes of failure and set threshold rates for each acceptable to stakeholders.
+
+            <g
+                id="__gsn__189dbd48c40"
+                color="#ffffff"
+                name="Modes of Failure Identified">
+              Modes of  failure of the service have been identified.
+            </g>
+
+            <g
+                id="__gsn__189dbd679a0"
+                color="#ffffff"
+                name="Acceptable Rates Determined">
+              Rates of failure per service-minute of operation are defined with acceptable thresholds for all identified modes of failure.
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__189dbd56d8f"
+            color="#ffffff"
+            name="Rates Satisfied">
+          The implemented service satisfies the rate of failure limits set for the identified modes of failure.
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

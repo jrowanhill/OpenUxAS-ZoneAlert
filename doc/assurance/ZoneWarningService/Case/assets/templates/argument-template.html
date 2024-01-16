@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>__title__</title>
+  
+  <!-- $SCRIPTS -->
+
+  <link href="../layout/case-menu.css" rel="stylesheet" type="text/css" />
+  <link href="../layout/svg.css"    rel="stylesheet" type="text/css" />
+  <link href="../layout/viewer.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="unwrapArgument();">
+<!-- $NAV -->
+  <div class="argument-container" id="__arg__-container" style="display: none">
+    <img title="__title__" 
+         src="__arg__.png" 
+         id="__arg__" 
+         alt="__title__" 
+         usemap="#map" />
+    __map__
+    <div class="degraded">
+      <div class="placard">
+        __title__<br />
+        <span style="font-size:small">
+          Scroll right or zoom out if the top-level goal is not visible
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script id="argument" class="__arg__-xml" type="text/xml">__arg__xml__</script>
+  <script id="metadata" type="text/xml">__meta__xml__</script>
+  <script id="narration" type="text/xml">__narr__xml__</script>
+  <script id="overview_text" type="text/html">__over__html__</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18bab3963aa"
+        color="#ffffff"
+        name="Assured">
+      The prototype zone ZoneAlertService is assured for the desired behaviors and qualities.
+
+      <c
+          id="__gsn__18bab3b40ff"
+          color="#ffffff"
+          name="Qualities">
+        Safety
+      </c>
+
+      <c
+          id="__gsn__18bab3b4309"
+          color="#ffffff"
+          name="Behaviors">
+        Provides a ZoneWarningService as Mandated
+      </c>
+
+      <c
+          id="__gsn__18bcf62e9a6"
+          color="#ffffff"
+          name="Context">
+        See Figure 1 and write-up on Highly-Iterative Assured Development Process
+      </c>
+
+      <s
+          id="__gsn__18cd5becfe6"
+          color="#ffffff"
+          name="Strategy: V and V">
+        Through a classic V and V argument: A valid solution has been implemented and the implementation is also directly shown to be valid.
+
+        <g
+            id="__gsn__18cd5c6542e"
+            color="#ffffff"
+            name="Valid Solution">
+          The implemented service should be valid.
+
+          <s
+              id="__gsn__18cd5c69309"
+              color="#ffffff"
+              name="Strategy">
+            Transitively, we show that a valid specification has been produced, and that this specification has a verified implementation. Therefore, transitively, the implementation should be a valid solution.
+
+            <g
+                id="__gsn__18cd5bfc6b7"
+                color="#ffffff"
+                name="Valid Specification">
+              To the extent possible, the defined service captures the desired service.
+            </g>
+
+            <g
+                id="__gsn__18cd5bed515"
+                color="#ffffff"
+                name="Correct Implementation of Specification">
+              The defined service is implemented correctly.
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18cd5c2b17b"
+            color="#ffffff"
+            name="Valid Implementation">
+          The resulting implementing service is provides the desired service.
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

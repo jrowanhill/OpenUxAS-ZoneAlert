@@ -1,0 +1,128 @@
+Requirement notes for Keep Out Warning Service
+
+1. UxAS messages set up vehicle configurations and keep in and keep out zones
+2. Select from messages that are being sent to the bus and filter through and find 
+messages that are appropriate in order to provide warning in the future
+
+Relevant message examples include:
+1. Vehicle configuration
+2. Vehicle position reports
+3. Keep out zone declarations
+
+Output an alert that anyone could subscribe to it 
+
+A Two step process
+1. This is what DAIDALUS thinks 
+2. Another service that keeps track and warns everyone of what DAIDALUS is thinking
+
+What level of intent we use depends on 
+
+Simple Platting: Time / distance or a combination of the two
+OpenUxAS framework compatibility is a key requirement. Must fit into the concept
+
+Should be effective when the vehicle is on task and when a vehicle is off task.
+
+When a vehicle is performing a task such as a line search or area search, there is no 
+guarantee that a vehicle will stay out of a keep out zone.
+
+For example, an area search near a keep out zone could violate a keep out zone.
+
+They would like a configurable parameterized model that informs the system when it seems
+like a vehicle will violate a KO zone.
+
+Design Constraint: It would be valuable to make the message sending approach not be closely tied to a particular
+send/receive approach so that it could be modified and used outside of an open broadcast
+observer pattern in the future.
+
+OpenUxAS works with 
+1. Ground Vehicles
+2. Litoral Vehicles
+3. Air Vehicles
+
+It we want to we can limit our work to air vehicles.
+
+All planning uses a Dubin's model (velocity and turn radius). A given turn has a given
+velocity and turn rate.
+
+Steve Rasmusan, Laura papers
+
+It does support stopping. YOu can decrease the speed of a vehicle to zero.
+
+THey were picturing a configurable time limit for projection.
+
+
+Use an ownship-centric model of what is preferred for configuration.
+
+Can have different alert levels for a vehicle taht are configurable.
+
+A potential model of users
+1. Concerned party: Someone who wants to knwo when a particular vehicle would approach 
+ keep out zones.
+
+Assume that for a given instantiation of UxAS service there will be only one vehicle 
+
+
+OpenUXAS could be run on a ground station and then it would control the vehicles
+and send commands to vehicles.
+
+Can have different versions of the service.
+
+UxAS uses a MQ pattern with open bridges
+
+Therefore we want to be able to configure service to be useful in common patterns taht are 
+used with OpenUXAS
+
+Centralized Model  (UxAS doesn't extent to vehicles, dumb vehicles, ground station)
+zDistributed Vehicle Model (Each vehicle ahs an OpenUxAS)
+
+PointPlanManager is a really good example
+
+There is a template service that helps you set it up properly
+
+You can instantiate a service more than once on an OpenUxAS.
+
+When UxAS instantiates a service, it creates unique identifiers for each service. 
+This can be used to disambiguate service versions.
+
+There is documentation for UxAS that gets built when the system is built.
+
+Service should be runnable on multiple times in a configuration aiwth diffrent parameters.
+
+See WaypointManagerService 
+
+
+Use Case: 
+
+1. Priority: A vehicle is running OpenUxAS and it want so track when it, ownship, might be soon 
+in violation of keep out zones
+
+ A. Wing Leader: A basic mini-ground station in the air. Passive wwarning only to self
+ 
+2. A ground station service wants to track when vehicles might enter keep out zones
+
+Standard openuXas is 1. confgure (statically), then 2. execute
+
+Usually you want to statically configure the service.
+
+They do not have a preference on whether or not dynamic config is useful so we will skip
+it.
+
+We are concerned with all Keep Out and Keep In Zones.
+
+Circle model representing vehicle is sufficient.
+
+What properties do you want to assure:
+1. Correctness  <-- If we just do this we are good enough
+2. Safety <-- this would be an ok stretch goal
+3. Maintainability of Design
+
+For performance, there is no real standard, but in general in the public sim world of their current examples, a 2Hz rate of updates on information for vehicles/stations is the norm.
+
+-----------
+Jan 2, 2023
+-----------
+Discussion with Stakeholder
+
+Take a look at the typical mission instantiation and messsage flow presented in 
+
+Dynamic unsubscription is not usually applied as a pattern in OpenUxAS.

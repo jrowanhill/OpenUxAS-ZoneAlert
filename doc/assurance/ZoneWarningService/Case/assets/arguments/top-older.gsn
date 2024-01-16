@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189d60c6b68"
+        color="#ffffff"
+        name="Valid">
+      The Keep Out Warning Service provides the service desired by stakeholders.
+
+      <s
+          id="__gsn__189d63c891e"
+          color="#ffffff"
+          name="Strategy">
+        By showing that the service is provided as desired for each of a set of critical properties of quality systems.
+
+        <c
+            id="__gsn__189d67fe8a3"
+            color="#ffffff"
+            name="Quality System Attributes">
+          Functionality, Safety, Security, Reliability, Maintainable
+        </c>
+
+        <c
+            id="__gsn__189d6d42315"
+            color="#ffffff"
+            name="System and Environment">
+          All properties are considered in the context of the foreseeable states of the service system and its environment.
+        </c>
+
+        <m
+            id="__gsn__189d681aa1f"
+            color="#ffffff"
+            name="Functionality">
+          The service performs the desired functions.
+        </m>
+
+        <m
+            id="__gsn__189dbd8aad7"
+            color="#ffffff"
+            name="Usability">
+          The service is easily used by the stakeholders as they desire.
+        </m>
+
+        <m
+            id="__gsn__189d68221d3"
+            color="#ffffff"
+            name="Safety">
+          The service does not produce unacceptable accidents and loss.
+        </m>
+
+        <m
+            id="__gsn__189d682b3dd"
+            color="#ffffff"
+            name="Security">
+          The service performs its intended functions adequately in the presence of malicious activity and intended misuse.
+        </m>
+
+        <m
+            id="__gsn__189d683af0f"
+            color="#ffffff"
+            name="Reliability">
+          The service is predicted to not fail with acceptable probability.
+        </m>
+
+        <m
+            id="__gsn__189d685eb84"
+            color="#ffffff"
+            name="Maintainability">
+          The service is constructed in a manner that allows it to be repaired and/or modified in a sufficiently efficient and effective manner.
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>
