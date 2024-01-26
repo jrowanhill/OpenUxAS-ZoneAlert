@@ -26,8 +26,8 @@
 
 #include "pugixml.hpp"
 
-#include <sstream>  //stringstream
-#include <chrono>       // time functions
+#include <sstream>  // stringstream
+#include <chrono>   // time functions
 
 //TODO:: read in a open street map and calculate it's visibility graph
 
