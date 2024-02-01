@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2024-02-01T00:20:17.282Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="AbwK0L-5HvOmRgLj9nm0" version="23.0.2" type="device">
+  <diagram name="Page-1" id="5f0bae14-7c28-e335-631c-24af17079c00">
+    <mxGraphModel dx="841" dy="765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3W5gYO6pAXKULEPotOUU-14" value="Authoritative&lt;br&gt;Zone Polygon&lt;br&gt;Model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="320" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3W5gYO6pAXKULEPotOUU-18" value="ZoneAlert&lt;br&gt;Checker" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="170" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3W5gYO6pAXKULEPotOUU-23" value="ZoneAlertService (OpenUxAS)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="20" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ruYz8rCoN398NZCThAqV-1" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3W5gYO6pAXKULEPotOUU-18" target="3W5gYO6pAXKULEPotOUU-23">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="90" y="230" as="sourcePoint" />
+            <mxPoint x="190" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruYz8rCoN398NZCThAqV-2" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="3W5gYO6pAXKULEPotOUU-14">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="210" y="180" as="sourcePoint" />
+            <mxPoint x="200" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ruYz8rCoN398NZCThAqV-3" value="ZoneAlert Messages&lt;br&gt;CMASI" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="20" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ruYz8rCoN398NZCThAqV-5" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="3W5gYO6pAXKULEPotOUU-23" target="ruYz8rCoN398NZCThAqV-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="130" as="sourcePoint" />
+            <mxPoint x="430" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
