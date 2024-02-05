@@ -35,7 +35,7 @@ echo "Generating User Manual..."
 
 echo "Creating HTML Doxygen reference documentation..."
 # run this at: OpenUxAS/doc/doxygen
-( cd "${DOC_DIR}/doc/doxygen" && sh RunDoxygen.sh )
+( cd "${DOC_DIR}/doxygen" && sh RunDoxygen.sh )
 
 echo "...Congratulations! You're done with building the documentation!"
 echo " "
