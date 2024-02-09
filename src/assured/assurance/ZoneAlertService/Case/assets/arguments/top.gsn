@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18d8565ffca"
+        name="Acceptable Zone Alert Service">
+      The zone alert service is the desired software.
+
+      <s
+          id="__gsn__18d85670ffb"
+          name="Strategy">
+        By arguing via the classic model of verification and validation.
+
+        <g
+            id="__gsn__18d85673bd3"
+            name="Valid">
+          What the desired software is meant to do and the qualities with which it is desired to do it are well understood.
+
+          <s
+              id="__gsn__18d8a361c69"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__18d857120a4"
+                name="All Relevant Parties Are Known">
+              All of the parties that desire, create, operate, and regulate the software are known.
+
+              <a
+                  id="__gsn__18d8a4a87e4"
+                  name="Assumption">
+                For this work on a simulation-environment experimental algorithm platform, the concerned parties are the scientists and engineers who together develop and operate the algorithm.
+              </a>
+
+              <e
+                  id="__gsn__18d8a498373"
+                  name="Documentation">
+                Documentation identifying the scientists desiring the ZoneAlertService, as well as its engineers.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__18d8a84ddd9"
+                name="Understood by the Relevant Parties">
+              All relevant parties have a sufficiently mature and common understanding of the desired ZoneAlert Service.
+
+              <s
+                  id="__gsn__18d8a4cdf3d"
+                  name="Strategy">
+                default text
+
+                <c
+                    id="__gsn__18d8a7e1868"
+                    name="Definition: Stakeholder">
+                  default text
+                </c>
+
+                <c
+                    id="__gsn__18d8a7e3c35"
+                    name="Definition: Engineer">
+                  default text
+                </c>
+
+                <g
+                    id="__gsn__18d8a7c14ef"
+                    name="Stakeholders Understand ZoneAlert Service">
+                  The stakeholders in the system have a sufficiently mature understanding of the software they desire.
+
+                  <s
+                      id="__gsn__18d8a7d2f1e"
+                      name="Strategy">
+                    By class of identified stakeholder.
+
+                    <c
+                        id="__gsn__18d8a7e5663"
+                        name="Definition: Envisioner">
+                      default text
+                    </c>
+
+                    <c
+                        id="__gsn__18d8a7e7958"
+                        name="Definition: User">
+                      default text
+                    </c>
+
+                    <c
+                        id="__gsn__18d8a7e9fac"
+                        name="Definition: Operator">
+                    </c>
+
+                    <g
+                        id="__gsn__18d8a7d3343"
+                        name="Envisioners Understand ZoneAlert Service">
+                      default text
+                    </g>
+
+                    <g
+                        id="__gsn__18d8a7ee5cd"
+                        name="Users Understand ZoneAlert Service">
+                      Engineers that utilize the ZoneAlertService in OpenUxAS are provided a sufficiently complete and correct understanding of the software's functional and non-functional properties.
+                    </g>
+
+                    <g
+                        id="__gsn__18d8a7d3593"
+                        name="Operators Understand ZoneAlert Service">
+                      default text
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__18d8a88a5ec"
+                    name="Goal">
+                  The stakeholder's desired ZoneAlert Service
+                </g>
+
+                <g
+                    id="__gsn__18d8a7c1bc8"
+                    name="Engineers Understand ZoneAlert Service">
+                  The engineers that create, modify, and maintain the ZoneAlert service have a sufficiently complete and correct understanding of the desired ZoneAlert Service's functional and non-functional properties.
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18d85673d0e"
+            name="Verified">
+          The implemented software satisfies the understanding of what the software should be.
+
+          <s
+              id="__gsn__18d856a004f"
+              name="Strategy">
+            default text
+          </s>
+
+          <s
+              id="__gsn__18d856dd18e"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__18d856dd894"
+                name="Verified">
+              The implementation is verified.
+
+              <s
+                  id="__gsn__18d85a23d3c"
+                  name="Strategy">
+                default text
+
+                <g
+                    id="__gsn__18d8569a934"
+                    name="Verification Layers">
+
+                  <comment
+                      id="__gsn__18d85960dae"
+                      name="Comment">
+                    Does verification include showing that the behaviors of the system in demo, tests, and operations is what is defined? Yes
+                  </comment>
+                </g>
+
+                <g
+                    id="__gsn__18d8569aba2"
+                    name="Free From Identified Bugs">
+                  The software
+                </g>
+
+                <g
+                    id="__gsn__18d85a3fa4c"
+                    name="Constructive Implication">
+                  Construction implies that the implementation will have the desired characteristics.
+                </g>
+
+                <g
+                    id="__gsn__18d85a48886"
+                    name="Direct Verification">
+                  Ultimate testing analysis of the implementation implies that it has the define characteristics.
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__18d85959dde"
+                name="Operation is Accepted">
+              default text
+            </g>
+
+            <g
+                id="__gsn__18d856ddba9"
+                name="Goal">
+              Covering demonstration satisfy defined behavior.
+            </g>
+
+            <g
+                id="__gsn__18d8595ce00"
+                name="Issues Acceptable">
+              default text
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

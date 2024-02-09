@@ -22,6 +22,11 @@
 #include "CallbackTimer.h"
 #include "TypeDefs/UxAS_TypeDefs_Timer.h"
 
+#include "Geometry/BoundedZoneStore.h"
+#include "Geometry/CartesianVehicleState.h"
+
+
+
 namespace uxas
 {
 namespace service
@@ -31,14 +36,7 @@ namespace service
     \brief This is a service to alert subscribers when a vehicle for which they subscribe
     is predicted to be in existing or imminent violation of one or more keep-in and keep-out zones.
 
- * 
- *  @par To add a new service:
- * <ul style="padding-left:1em;margin-left:0">
- * <li>Make copies of the source and header files of this template.</li>
- * <li>Search for the string ZoneAlertService and Replace it with the new 
- * service name.</li>
- * <li>Change the unique include guard entries, in the header file, i.e. 
- * "UXAS_00_SERVICE_TEMPLATE_H" to match the new service name</li>
+ * TODO:
  * <li> include the new service header file in ServiceManager.cpp</li>
  * <li> add a dummy instance of the new service in ServiceManager.cpp, e.g.
  * {auto svc = uxas::stduxas::make_unique<uxas::service::MyNewService>();} 
@@ -125,11 +123,27 @@ private:
     bool
     processReceivedLmcpMessage(std::unique_ptr<uxas::communications::data::LmcpMessage> receivedLmcpMessage) override;
 
+protected:
+    // specialized service functions
+
+    // convert vehicle-oriented vector to world-frame vector (e.g. position, velocity, accelretation)
+
+    // convert 
+
 
 private:
     // storage for the option entries
     std::string m_option01 = std::string("No Option 1");
     int32_t m_option02{0};
+
+
+    // data
+    // the vehicles that the service has seen announced
+    std::map<int, CartesianVehicleState> & vehicles;
+
+    // the zones that the service has seen announced
+    BoundedZoneStore &zones;
+
 };
 
 }; //namespace service

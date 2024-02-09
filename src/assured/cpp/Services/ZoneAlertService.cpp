@@ -8,17 +8,17 @@
 // ===============================================================================
 
 /* 
- * File:   ServiceTemplate.cpp
+ * File:   ZoneAlertService.cpp
  * Author: steve
  *
  * Created on March 17, 2017, 5:55 PM
  *
- * <Service Type="ServiceTemplate" OptionString="Option_01" OptionInt="36" />
+ * <Service Type="ZoneAlertService" OptionString="Option_01" OptionInt="36" />
  * 
  */
 
 // include header for this service
-#include "00_ServiceTemplate.h"
+#include "ZoneAlertService.h"
 
 //include for KeyValuePair LMCP Message
 #include "afrl/cmasi/KeyValuePair.h"
@@ -36,18 +36,18 @@ namespace service   // uxas::service::
 {
 
 // this entry registers the service in the service creation registry
-ServiceTemplate::ServiceBase::CreationRegistrar<ServiceTemplate>
-ServiceTemplate::s_registrar(ServiceTemplate::s_registryServiceTypeNames());
+ZoneAlertService::ServiceBase::CreationRegistrar<ZoneAlertService>
+ZoneAlertService::s_registrar(ZoneAlertService::s_registryServiceTypeNames());
 
 // service constructor
-ServiceTemplate::ServiceTemplate()
-: ServiceBase(ServiceTemplate::s_typeName(), ServiceTemplate::s_directoryName()) { };
+ZoneAlertService::ZoneAlertService()
+: ServiceBase(ZoneAlertService::s_typeName(), ZoneAlertService::s_directoryName()) { };
 
 // service destructor
-ServiceTemplate::~ServiceTemplate() { };
+ZoneAlertService::~ZoneAlertService() { };
 
 
-bool ServiceTemplate::configure(const pugi::xml_node& ndComponent)
+bool ZoneAlertService::configure(const pugi::xml_node& ndComponent)
 {
     bool isSuccess(true);
 
@@ -67,15 +67,19 @@ bool ServiceTemplate::configure(const pugi::xml_node& ndComponent)
     return (isSuccess);
 }
 
-bool ServiceTemplate::initialize()
+bool ZoneAlertService::initialize()
 {
     // perform any required initialization before the service is started
     std::cout << "*** INITIALIZING:: Service[" << s_typeName() << "] Service Id[" << m_serviceId << "] with working directory [" << m_workDirectoryName << "] *** " << std::endl;
     
+    // setup core data models
+
+
+
     return (true);
 }
 
-bool ServiceTemplate::start()
+bool ZoneAlertService::start()
 {
     // perform any actions required at the time the service starts
     std::cout << "*** STARTING:: Service[" << s_typeName() << "] Service Id[" << m_serviceId << "] with working directory [" << m_workDirectoryName << "] *** " << std::endl;
@@ -83,15 +87,17 @@ bool ServiceTemplate::start()
     return (true);
 };
 
-bool ServiceTemplate::terminate()
+bool ZoneAlertService::terminate()
 {
     // perform any action required during service termination, before destructor is called.
     std::cout << "*** TERMINATING:: Service[" << s_typeName() << "] Service Id[" << m_serviceId << "] with working directory [" << m_workDirectoryName << "] *** " << std::endl;
     
+    // deconstruct core data models
+
     return (true);
 }
 
-bool ServiceTemplate::processReceivedLmcpMessage(std::unique_ptr<uxas::communications::data::LmcpMessage> receivedLmcpMessage)
+bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communications::data::LmcpMessage> receivedLmcpMessage)
 {
     if (afrl::cmasi::isKeyValuePair(receivedLmcpMessage->m_object))
     {
@@ -99,6 +105,22 @@ bool ServiceTemplate::processReceivedLmcpMessage(std::unique_ptr<uxas::communica
         auto keyValuePairIn = std::static_pointer_cast<afrl::cmasi::KeyValuePair> (receivedLmcpMessage->m_object);
         std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a KeyValuePair with the Key[" << keyValuePairIn->getKey() << "] and Value[" << keyValuePairIn->getValue() << "] *** " << std::endl;
         
+        // process received messages by type
+
+        // Declarations
+
+        //      Zone Declarations
+
+        //      Operating Region Declarations
+
+        //      Vehicle Configurations (Declarations)
+
+        // State
+
+        //      Vehicle States
+
+        // if the message is a 
+
         // send out response
         auto keyValuePairOut = std::make_shared<afrl::cmasi::KeyValuePair>();
         keyValuePairOut->setKey(s_typeName());
@@ -106,6 +128,25 @@ bool ServiceTemplate::processReceivedLmcpMessage(std::unique_ptr<uxas::communica
         sendSharedLmcpObjectBroadcastMessage(keyValuePairOut);
         
     }
+    return false;
+}
+
+// If we are going to iterate on a timer, this is the callback we will use
+// Sub-problems:
+//  1. How do we set up a timer compatible with OpenUXAS architecture? It appears OpenUxAS provides a callback timer. Use it?
+//  2. How can we know real clock time that is compatible with OpenUxAS message timestamps from OpenAmaze
+//  3. Multi-threaded operation (asynchronous) or synchronous callbacks in OpenUxAS?
+bool ZoneAlertService::processTimer(hmm) {
+
+    // Problem: Make a list of messages to send out all at once or 
+    // Send them as we compute? What is preferred in OpenUxAS scheme?
+
+    // For each Vehicle, For Each Zone Relevant to the vehicle, Determine if the Zone is currently or imminently violated
+    // and report if so
+    alerts = zoneAlertDetection(vehicleStates);
+
+    // send alerts
+
     return false;
 }
 
