@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18dadee70d6"
+        color="#ffffff"
+        name="Valid by Engineering">
+      {The system} is engineered to acceptably solve {the problem}.
+
+      <c
+          id="__gsn__18dadef849c"
+          color="#ffffff"
+          name="{The Problem}">
+        {-The definition and or reference to the problem-}
+      </c>
+
+      <s
+          id="__gsn__18dadf01273"
+          color="#ffffff"
+          name="Strategy">
+        By showing that a valid solution has been defined for the problem, that the engineered system is verified to provide the solution, and that the resulting implementation is directly shown to solve the problem.
+
+        <m
+            id="__gsn__18dadf017ca"
+            color="#ffffff"
+            name="Valid Solution">
+          {The solution} is a {valid solution} to {the problem}.
+        </m>
+
+        <m
+            id="__gsn__18dadf019b6"
+            color="#ffffff"
+            name="Verified Implementation">
+          {The implementation} is verified against {the solution}.
+        </m>
+
+        <m
+            id="__gsn__18dadf07a55"
+            color="#ffffff"
+            name="Valid Implementation">
+          {The implementation} is a {valid solution} to {the problem}.
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>

@@ -1,0 +1,153 @@
+<mxfile host="Electron" modified="2024-02-27T20:12:15.849Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="fLPbIE2lMG-JF1_fVGw4" version="23.0.2" type="device">
+  <diagram name="Page-1" id="S6qodzWcR235S5HdwQ7s">
+    <mxGraphModel dx="1175" dy="848" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="240" width="500" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-30" target="HQJh28wRU9YX6V6UqWqC-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-29" target="HQJh28wRU9YX6V6UqWqC-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-26" target="HQJh28wRU9YX6V6UqWqC-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-31" target="HQJh28wRU9YX6V6UqWqC-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-25" target="HQJh28wRU9YX6V6UqWqC-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-27" target="HQJh28wRU9YX6V6UqWqC-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="220" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-28" target="HQJh28wRU9YX6V6UqWqC-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="180" as="targetPoint" />
+            <mxPoint x="510" y="220" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-32" target="HQJh28wRU9YX6V6UqWqC-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-24" value="Zone Violation" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="260" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-25" value="Route-Flight&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Zone Violation" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-26" value="Free-Flight&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Zone Violation" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-27" value="Computing Route Fails to Account for Zones" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-28" value="Lack of Zone Knowledge by Route Planning" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-29" value="Tactical Zone Violation Awareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-30" value="Impending&lt;br&gt;Zone Violation&lt;br&gt;Awareness" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="10" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-31" value="Nearby Zone Boundary&lt;br&gt;Unwareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-32" target="HQJh28wRU9YX6V6UqWqC-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-32" value="Overlapping&lt;br&gt;Keep-In Zone&lt;br&gt;Awareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-33" value="Zone &lt;br&gt;Polygon&lt;br&gt;Merging" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=15;dy=0;" parent="1" vertex="1">
+          <mxGeometry x="457.5" y="330" width="105" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-2" target="H7EjSrxgupJgMw0YifO5-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-2" value="OpenUxAS&lt;br&gt;Vehicles" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-3" value="OpenUxAS&lt;br&gt;Zones" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-6" target="H7EjSrxgupJgMw0YifO5-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-6" target="H7EjSrxgupJgMw0YifO5-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-6" value="Vehicles&lt;br&gt;Shall Not Violate Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-26" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-10" target="H7EjSrxgupJgMw0YifO5-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-10" value="Routes Planner&lt;br&gt;with Zone&lt;br&gt;Observance" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="660" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-27" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-11" target="H7EjSrxgupJgMw0YifO5-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-11" value="Tactical Zone Observance" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="830" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-14" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1170" y="-40" as="sourcePoint" />
+            <mxPoint x="1220" y="-90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-15" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1170" y="-40" as="sourcePoint" />
+            <mxPoint x="1220" y="-90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-17" value="Route Planner Must&lt;br&gt;Observe Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="370" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-18" value="Tactical Free Flight&lt;br&gt;Must Not Violate&lt;br&gt;Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="370" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-19" value="Zone-Observing&lt;br&gt;Flight Control" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="730" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-23" value="Three-Tiered&lt;br&gt;Flight Control" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-30" value="Tactical Zone Awareness" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-31" value="Tactical Zone&lt;br&gt;Response" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-32" value="Tactical Zone Awareness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-33" value="Tactical Zone Response" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-34" value="Impending Zone Violation Awareness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-35" value="Nearby Zone Boundary Awareness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

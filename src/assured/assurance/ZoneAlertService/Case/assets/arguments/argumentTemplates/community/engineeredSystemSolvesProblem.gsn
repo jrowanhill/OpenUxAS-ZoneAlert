@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18db88917fe"
+        color="#ffffff"
+        name="The System Solves the Problem">
+      The system solves the understood problem.
+
+      <s
+          id="__gsn__18db889dd75"
+          color="#ffffff"
+          name="Strategy">
+        By showing the fundamental properties of having soled an engineering challenge.
+
+        <c
+            id="__gsn__18db88f895e"
+            color="#ffffff"
+            name="Definition: Engineering Challenge">
+          To develop and or re-use systems that solve problems
+        </c>
+
+        <g
+            id="__gsn__18db889f323"
+            color="#ffffff"
+            name="There is a Plausible Solution to the Problem">
+          .
+        </g>
+
+        <g
+            id="__gsn__18db88a0545"
+            color="#ffffff"
+            name="The System Correctly Implements the Plausible Solution">
+          .
+        </g>
+
+        <g
+            id="__gsn__18db88a1cbb"
+            color="#ffffff"
+            name="The Implemented Solution Solves the Problem Well">
+          .
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

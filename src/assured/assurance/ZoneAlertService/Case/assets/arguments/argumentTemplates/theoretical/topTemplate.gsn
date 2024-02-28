@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18da8571096"
+        color="#ffffff"
+        name="Effective Product">
+      The engineered product is {effective} for {the target problem}.
+
+      <c
+          id="__gsn__18da925ac23"
+          color="#ffffff"
+          name="Definition: effective">
+        An engineered product is effective if it solves a {target problem}.
+      </c>
+
+      <c
+          id="__gsn__18da924efe6"
+          color="#ffffff"
+          name="Definition: {target problem}">
+        The engineered product is aimed at solving a {target problem} in the real world. This problem is generally vaguely and intuitively understood.
+      </c>
+
+      <s
+          id="__gsn__18da8b5dd77"
+          color="#ffffff"
+          name="Strategy">
+        By arguing that the product is engineered to be {effective}, and is effective in use in the real world.
+
+        <j
+            id="__gsn__18da927d0cb"
+            color="#ffffff"
+            name="Justification">
+          Ultimately an engineered product will tend to be successful (under ABD) when it is engineered to be effective and, as it so happens, demonstrates that effectiveness over its lifetime of use in the real world. Although happy accidents happen, serendipity is not considered primary in this argument, and thus the claim of engineering to be effective is important early in te operational life of the product and effectiveness in use relied on more heavily over time.
+        </j>
+
+        <j
+            id="__gsn__18da95e5789"
+            color="#ffffff"
+            name="Justification">
+          A general theory of engineering. Dependable Computing LLC.
+        </j>
+
+        <g
+            id="__gsn__18da90acdaf"
+            color="#ffffff"
+            name="Engineered to Be Effective">
+          The {product} is engineered to be {effective} for {the target problem}.
+
+          <s
+              id="__gsn__18da90ad37c"
+              color="#ffffff"
+              name="Strategy">
+            By showing that {the product} acceptably solves {the target problem} through adequate defined understanding, definition of a {solution}, and valid implementation of that {solution}.
+
+            <c
+                id="__gsn__18da931e5e9"
+                color="#ffffff"
+                name="Definition: defined understanding">
+              The target problem is identified and defined, and this problem definition is the {defined understanding} of {the target problem}. It will necessarily be be incorrect with respect to the real world target problem. It is defined more exactly so as to enable determination of solutions.
+            </c>
+
+            <j
+                id="__gsn__18da95e0b11"
+                color="#ffffff"
+                name="Justification">
+              A general theory of engineering. Dependable Computing LLC.
+            </j>
+
+            <m
+                id="__gsn__18da8b5e3ba"
+                color="#ffffff"
+                name="Understood Problem">
+              The {defined understanding} of {the target problem] is sufficient for engineering valid solutions.
+            </m>
+
+            <g
+                id="__gsn__18da909d89e"
+                color="#ffffff"
+                name="Engineered to Be a Valid Solution">
+              {The product} is engineered as an {acceptable}, {valid} solution to the {defined understanding} of {the target problem}.
+
+              <s
+                  id="__gsn__18da909f160"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing that an acceptable solution to the {understood problem} has been defined and that the product is a verified implementation of the defined solution.
+
+                <m
+                    id="__gsn__18da8b5e64c"
+                    color="#ffffff"
+                    name="Acceptable Solution">
+                  An acceptable, valid {solution} to the {understood problem} has been identified and defined.
+                </m>
+
+                <m
+                    id="__gsn__18da8b5e9d5"
+                    color="#ffffff"
+                    name="Verified Product">
+                  The product is a {verified implementation} of the defined solution.
+                </m>
+              </s>
+            </g>
+
+            <m
+                id="__gsn__18da92ec60a"
+                color="#ffffff"
+                name="Valid in Use">
+              {The product} is a valid solution to the {defined understanding} of {the target problem} in {real world use}.
+            </m>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18da90bc748"
+            color="#ffffff"
+            name="Effective in Use">
+          The {product} is {effective} in {real world use} for {the target problem}.
+
+          <e
+              id="__gsn__18da92474db"
+              color="#ffffff"
+              name="Real World Analysis and Study">
+            Study of the product in the real world showing that it is effective for the target problem.
+          </e>
+        </g>
+      </s>
+
+      <comment
+          id="__gsn__18daae24f99"
+          name="Comment">
+        default text
+      </comment>
+
+      <comment
+          id="__gsn__18daae251e0"
+          color="#ffffff"
+          name="Distinct Sub-Questions">
+        (1) Does a solution satisfy a a problem? (Can be resolved to, does a solution satisfy a defined understanding of a problem? Keep in mind that a solution can contain sub-problems (in my model, not in problem frames). (2)
+      </comment>
+    </g>
+  </gsn>
+</argument>

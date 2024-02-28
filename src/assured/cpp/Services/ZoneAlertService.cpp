@@ -111,15 +111,12 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
 
         //      Zone Declarations
 
-        //      Operating Region Declarations
-
         //      Vehicle Configurations (Declarations)
 
         // State
 
         //      Vehicle States
-
-        // if the message is a 
+    
 
         // send out response
         auto keyValuePairOut = std::make_shared<afrl::cmasi::KeyValuePair>();
@@ -131,24 +128,6 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
     return false;
 }
 
-// If we are going to iterate on a timer, this is the callback we will use
-// Sub-problems:
-//  1. How do we set up a timer compatible with OpenUXAS architecture? It appears OpenUxAS provides a callback timer. Use it?
-//  2. How can we know real clock time that is compatible with OpenUxAS message timestamps from OpenAmaze
-//  3. Multi-threaded operation (asynchronous) or synchronous callbacks in OpenUxAS?
-bool ZoneAlertService::processTimer(hmm) {
-
-    // Problem: Make a list of messages to send out all at once or 
-    // Send them as we compute? What is preferred in OpenUxAS scheme?
-
-    // For each Vehicle, For Each Zone Relevant to the vehicle, Determine if the Zone is currently or imminently violated
-    // and report if so
-    alerts = zoneAlertDetection(vehicleStates);
-
-    // send alerts
-
-    return false;
-}
 
 }; //namespace service
 }; //namespace uxas

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18dadf71834"
+        color="#ffffff"
+        name="Valid Solution">
+      {The solution} is a {valid solution} to {the problem}.
+
+      <s
+          id="__gsn__18dadf7c88c"
+          color="#ffffff"
+          name="Strategy">
+        Through specification of a solution and verification that it is a solution to {the problem}.
+
+        <g
+            id="__gsn__18dadf7d520"
+            color="#ffffff"
+            name="Solution is Specified">
+          {The solution} is specified.
+
+          <e
+              id="__gsn__18dadfd0a3f"
+              color="#ffffff"
+              name="Solution Specification">
+            .
+          </e>
+        </g>
+
+        <g
+            id="__gsn__18dae201d22"
+            color="#ffffff"
+            name="Verified Solution">
+          {The solution} is verified to solve {the problem}.
+
+          <s
+              id="__gsn__18dae21577f"
+              color="#ffffff"
+              name="Strategy">
+            By choosing a way to show that {the solution} works for {the problem}.
+
+            <g
+                id="__gsn__18dae215e60"
+                color="#ffffff"
+                optional="true"
+                name="Contract Analysis">
+              We show that {the solution} is applicable to the problem using a strict contract logic model of each.
+
+              <g
+                  id="__gsn__18dae221089"
+                  color="#ffffff"
+                  name="Problem is Applicable to The Solution">
+                The {pre-conditions} and {invariants} of {the problem} together satisfy each of the {required pre-conditions} and {required invariants} of {the solution}.
+              </g>
+
+              <g
+                  id="__gsn__18dae3ebfa9"
+                  color="#ffffff"
+                  name="Solution is Applicable to the Problem">
+                {The solution} is applicable to {the problem}.
+
+                <g
+                    id="__gsn__18dae235f4a"
+                    color="#ffffff"
+                    name="Solution is Invariantly Acceptable">
+                  {The invariants} of {the solution} satisfy {the required invariants} of {the problem}.
+                </g>
+
+                <g
+                    id="__gsn__18dae221297"
+                    color="#ffffff"
+                    name="Solution is Applicable to the Problem">
+                  The {invariants} and {resulting post-conditions} of {the solution} together satisfy each of the {required post-conditions} of {the problem}.
+                </g>
+              </g>
+            </g>
+
+            <g
+                id="__gsn__18dae21600e"
+                color="#ffffff"
+                optional="true"
+                name="Direct Argument">
+              It is argued that the the solution is applicable to the problem.
+
+              <s
+                  id="__gsn__18dae4c77b2"
+                  color="#ffffff"
+                  name="Strategy">
+                We must show that {the solution} can be applied to {the problem} and {the problem} is solved by {the solution}.
+
+                <g
+                    id="__gsn__18dae4c7d23"
+                    color="#ffffff"
+                    name="Applicable Solution">
+                  {The solution} can be applied to {the problem}
+                </g>
+
+                <g
+                    id="__gsn__18dae4c8103"
+                    color="#ffffff"
+                    name="Effective Solution">
+                  {The solution} solves {the problem}.
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__18dae4ad605"
+                color="#ffffff"
+                optional="true"
+                name="Other">
+              ..
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18dadfd9f0a"
+            color="#ffffff"
+            optional="true"
+            name="Sub-Problems Resolved">
+          Sub-problems are identified and solved.
+
+          <s
+              id="__gsn__18dadfe1556"
+              color="#ffffff"
+              name="Strategy">
+            By defining all sub-problems of the solution specification, and for each sub-problem defining an interface with the sufficient constraints that define valid solutions to that sub-problem that will work with the intended overall solution, then showing that each such sub-problem has a valid solution satisfying its problem interface.
+
+            <g
+                id="__gsn__18dadf7d7a7"
+                color="#ffffff"
+                name="Sub-Problems Defined">
+              Identified sub-problems of the solution have sufficiently defined interfaces for potential solutions.
+            </g>
+
+            <g
+                id="__gsn__18dadfe4434"
+                color="#ffffff"
+                name="Sub-Problems Solved">
+              Each identified sub-problem is solved to the satisfaction of its defined sub-problem interface.
+            </g>
+
+            <comment
+                id="__gsn__18dadfbe215"
+                color="#ffffff"
+                name="Comment">
+              This is where things get interesting with problem framing. Problem-framing defines interfaces bottom-up. Traditional solution design imposes interfaces top-down and involves significant interface iteration if that can't work.
+            </comment>
+
+            <comment
+                id="__gsn__18dae033703"
+                color="#ffffff"
+                name="JCR">
+              This isn't really problem decomposition, where one identifies the sub-problems first and then works bottom up to solve them
+            </comment>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>
