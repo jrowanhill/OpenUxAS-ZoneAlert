@@ -2,12 +2,17 @@
  * Operates in Cartesian coordinates
  */
 
+#ifndef UXAS_BOUND_ZONE_H
+#define UXAS_BOUND_ZONE_H
+
 #include "Polygon.h"
 
 using namespace n_FrameworkLib;
 
-class BoundedZone {
+namespace n_FrameworkLib
+{
 
+class BoundedZone {
 
 public:
     /**
@@ -26,15 +31,16 @@ public:
 
     //--------- Convenience Basic Getter/Setters ------------//
 
-    const bool isKeepIn(); 
+    const bool isValid() { return isValid; }
 
-    const int64_t getID();
+    const bool isKeepIn() { return keepIn; }
 
-    const uint getMinAltitude();
+    const int64_t getID() { return abstractZone->getZoneID(); }
 
-    const uint getMaxAltitude();
+    const uint getMinAltitude() { return abstractZone->getMinAltitude(); }
 
-    const getXYPolygonalBoundary();
+    const uint getMaxAltitude() { return abstractZone->getMaxAltitude(); }
+
 
     //--------- Key Calculations ----------------------------//
 
@@ -82,19 +88,41 @@ private:
 
     BoundedZone(const std::shared_ptr<afrl::cmasi::AbstractZone>& abstractZone, bool keepIn);
 
-    // The zone's id
-    // Type Invariant: Must match CMASI zone ID data type
-    const int64_t id;
+    /**
+     * @brief expands or shrinks zones based on their padding distance
+     * 
+     * @details Note, this function copies the functionality currently found in the VisibilityGraph class used by
+     * RoutePlannerVisibilityService. This is *not* generally a good idea. One should refactor code to live in 
+     * geometry so that all such polygons apply the same grow/shrink semantics. However, we did not do that here
+     * because we are not touching anything that might change/break behavior of RoutePlannerVisibilityService as 
+     * might occur on other services. Preferably, this function would exist on CPolygon as a static public member 
+     * function that would return a grown shrunk CPolygon for any input CPolygon. One could then add an alternate
+     * modifiying grow/shrink for individual polygons that calls the base function and copies data. 
+     */
+    void BoundedZone::pad();
 
-    // Minimum and Maximum altitude of the zone.
-    // Type Invariant: Must match data type of equivalent values in CMASI zone declarations
-    const float minAltitude, maxAltitude;
 
-    // Polygonal boundary of the zone
-    const n_FrameworkLib::CPolygon cPolygon;
-    const CPolygon xyBoundary;
 
     /** Whether a zone is keep-in, or if false, keep out*/
     const bool keepIn;
 
+    // Polygonal boundary of the zone
+    const shared_ptr<AbstractZone> abstractZonePtr; 
+    const CBoundary * xyBoundary;
+    const CPolygon * xyPolygonPtr;
+
+    // wonky externalized boundary points of the CBoundary and CPolygon classes
+    V_POSITION_t boundaryPoints;
+
+    // set to true when a zone is valid (has all the necessary data)
+    bool isValid;
+
+
+
+
 };
+
+
+};
+
+#endif

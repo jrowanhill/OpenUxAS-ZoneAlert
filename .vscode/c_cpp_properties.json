@@ -4,6 +4,7 @@
             "name": "OpenUxAS",
             "includePath": [
                 "${workspaceFolder}/src/cpp/**",
+                "${workspaceFolder}/src/assured/cpp/**",
                 "${workspaceFolder}/infrastructure/sbx/x86_64-linux/czmq/install/include",
                 "${workspaceFolder}/infrastructure/sbx/x86_64-linux/boost/install/include",
                 "${workspaceFolder}/infrastructure/sbx/x86_64-linux/sqlitecpp/install/include",
@@ -20,7 +21,8 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu11",
             "cppStandard": "gnu++11",
-            "intelliSenseMode": "gcc-x64"
+            "intelliSenseMode": "gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools "
         }
     ],
     "version": 4

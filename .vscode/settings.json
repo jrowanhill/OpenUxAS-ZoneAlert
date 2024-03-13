@@ -105,6 +105,13 @@
         "utility": "cpp",
         "format": "cpp",
         "stop_token": "cpp",
-        "cinttypes": "cpp"
-    }
+        "cinttypes": "cpp",
+        "map": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled",
+    "cSpell.words": [
+        "afrl",
+        "cmasi",
+        "UXAS"
+    ]
 }

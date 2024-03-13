@@ -19,9 +19,9 @@
 
 // include header for this service
 #include "ZoneAlertService.h"
+#include "SimpleZoneAlertComputer.h"
 
-//include for KeyValuePair LMCP Message
-#include "afrl/cmasi/KeyValuePair.h"
+//include LMCP Messages
 
 #include <iostream>     // std::cout, cerr, etc
 
@@ -62,7 +62,9 @@ bool ZoneAlertService::configure(const pugi::xml_node& ndComponent)
     }
 
     // subscribe to messages::
-    addSubscriptionAddress(afrl::cmasi::KeyValuePair::Subscription);
+    addSubscriptionAddress(afrl::cmasi::AbstractZone::Subscription);
+    addSubscriptionAddress(afrl::cmasi::AirVehicleConfiguration::Subscription);
+    addSubscriptionAddress(afrl::cmasi::AirVehicleState::Subscription);
 
     return (isSuccess);
 }
@@ -73,8 +75,7 @@ bool ZoneAlertService::initialize()
     std::cout << "*** INITIALIZING:: Service[" << s_typeName() << "] Service Id[" << m_serviceId << "] with working directory [" << m_workDirectoryName << "] *** " << std::endl;
     
     // setup core data models
-
-
+    zoneAlertComputerPtr = new SimpleZoneAlertComputer();
 
     return (true);
 }
@@ -99,6 +100,58 @@ bool ZoneAlertService::terminate()
 
 bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communications::data::LmcpMessage> receivedLmcpMessage)
 {
+    if (afrl::cmasi::isAbstractZone(receivedLmcpMessage->m_object)) {
+
+        // Is it a keep in or keep out zone? 
+        bool isKeepIn = afrl::cmasi::isKeepInZone(receivedLmcpMessage->m_object);
+
+        // Take message type and build bound zone
+        auto abstractZone = std::static_pointer_cast<afrl::cmasi::AbstractZone> (receivedLmcpMessage->m_object);
+        std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a Zone with the id " 
+            << abstractZone->getZoneID()
+            << " *** " << std::endl;
+
+        // Store the zone in the alert computer
+        // @TODO Check memory safety of casting from unique_ptr to static pointer above and then to shared pointer in the method call
+        auto success = zoneAlertComputerPtr->addZone(abstractZone, isKeepIn);
+
+        if (!success) {
+        std::cout << "*** Service[" << s_typeName() << "] Failed to apply abstract zone with id " 
+            << abstractZone->getZoneID()
+            << " *** " << std::endl;
+        }
+    }
+    else if (afrl::cmasi::isAirVehicleConfiguration(receivedLmcpMessage->m_object)) {
+        auto airVehicleConfiguration = std::static_pointer_cast<afrl::cmasi::AirVehicleConfiguration> (receivedLmcpMessage->m_object);
+        std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a Vehicle Configuration with the id " 
+            << airVehicleConfiguration->getVehicleID()
+            << " *** " << std::endl;
+
+        // Store the aircraft configuration in the alert computer
+        // @TODO Check memory safety of casting from unique_ptr to static pointer above and then to shared pointer in the method call
+        zoneAlertComputerPtr->addVehicle(airVehicleConfiguration);
+         
+    }
+
+    if (afrl::cmasi::isAirVehicleState(receivedLmcpMessage->m_object)) {
+        auto airVehicleState = std::static_pointer_cast<afrl::cmasi::AirVehicleState> (receivedLmcpMessage->m_object);
+        std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a Vehicle State with the id "  
+            << airVehicleState->getVehicleID()
+            << "for time "
+            << " *** " << std::endl;
+
+        // Process the aircraft state to identify impending zone violations
+        // @TODO Check memory safety of casting from unique_ptr to static pointer above and then to shared pointer in the method call
+        zoneAlertComputerPtr->processVehicleStateReport(airVehicleState);
+
+        RECORD AND HANDLE OUTPUT HERE
+        SOME CODE LIKE THIS BELOW
+        auto keyValuePairOut = std::make_shared<afrl::cmasi::KeyValuePair>();
+        keyValuePairOut->setKey(s_typeName());
+        keyValuePairOut->setValue(std::to_string(m_serviceId));
+        sendSharedLmcpObjectBroadcastMessage(keyValuePairOut);
+    }
+
     if (afrl::cmasi::isKeyValuePair(receivedLmcpMessage->m_object))
     {
         //receive message
@@ -118,15 +171,19 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
         //      Vehicle States
     
 
-        // send out response
-        auto keyValuePairOut = std::make_shared<afrl::cmasi::KeyValuePair>();
-        keyValuePairOut->setKey(s_typeName());
-        keyValuePairOut->setValue(std::to_string(m_serviceId));
-        sendSharedLmcpObjectBroadcastMessage(keyValuePairOut);
+
         
     }
     return false;
 }
+
+//-------------- Internal Logic Functions -------------//
+
+bool ZoneAlertService::registerZone(std::shared_ptr<AbstractZone> zone, bool keepIn) {
+
+}
+
+
 
 
 }; //namespace service

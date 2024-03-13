@@ -111,6 +111,7 @@
 #include "RoutePlannerVisibilityService.h"
 #include "SteeringService.h"
 #include "DAIDALUS_Processing.h"
+#include "ZoneAlertService.h"
 
 // DO NOT REMOVE - USED TO AUTOMATICALLY ADD NEW SERVICE HEADERS
 #include "StatusReportService.h"
@@ -188,6 +189,8 @@
 {auto svc = uxas::stduxas::make_unique<uxas::service::RoutePlannerVisibilityService>();}
 {auto svc = uxas::stduxas::make_unique<uxas::service::SteeringService>();}
 {auto svc = uxas::stduxas::make_unique<uxas::service::DAIDALUS_Processing>();}
+{auto svc = uxas::stduxas::make_unique<uxas::service::ZoneAlertService>();}
+
 
 // DO NOT REMOVE - USED TO AUTOMATICALLY ADD NEW SERVICE DUMMY INSTANCES
 {auto svc = uxas::stduxas::make_unique<uxas::service::StatusReportService>();}
