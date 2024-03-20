@@ -24,7 +24,7 @@
             <!-- ID of the vehicle with imminent zone violation -->
             <Field Name="VehicleID" Type="int64" Optional="false" />
             <!-- Type of Zone that will be violated  -->
-            <Field Name="keepIn" Type="boolean" Optional="false" />
+            <Field Name="KeepIn" Type="bool" Optional="false" />
             <!-- ID of the zone that will be imminently violated --> 
             <Field Name="ZoneIDs" Type="int64[]" Optional="false" />
             <!-- Time (absolute) of expected violation -->

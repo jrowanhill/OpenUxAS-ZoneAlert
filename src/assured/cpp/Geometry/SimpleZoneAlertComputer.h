@@ -9,6 +9,9 @@
 #include <map>
 
 #include "afrl/cmasi/AirVehicleConfiguration.h"
+#include "afrl/alerts/ImminentZoneViolation.h"
+
+
 #include "Polygon.h"
 #include "VisibilityGraph.h"
 
@@ -42,15 +45,34 @@ public:
      * 
      * @param lookahead the amount of time (in seconds) that computer will look for impending zone violations
      */
-    SimpleZoneAlertComputer(double lookahead) {
-        lookaheadTime = lookahead; 
-    }
+    SimpleZoneAlertComputer(double lookahead);
 
     ~SimpleZoneAlertComputer();
 
-    double getLookaheadTime() { return lookAheadTime; }
+    double getLookaheadTime() { return lookaheadTime; }
+
+
+    //---- Inherited Methods -----//
+
+    bool addZone(shared_ptr<afrl::cmasi::AbstractZone> zonePtr, bool keepIn);
+
+    void addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig);
+
+    bool prepareForActiveState();
+
+    vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> processVehicleStateReport(
+                shared_ptr<afrl::cmasi::AirVehicleState> vehicleState);
+
+    //---- End Inherited Methods ----//
 
 protected:
+
+    /** A code function borrowed from RoutePlannerVisibilityService class
+     * TODO: It is bad that this code is copied from router planner visibility service. 
+     * Refactor so that the code is a single source static function somwwhere.     * 
+    */
+    bool bFindPointsForAbstractGeometry(afrl::cmasi::AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints);
+
 
     bool isInPolygon(CPosition & position, CPolygon & polygon) {
         // check if position is within the min and max altitudes of the CPolygon's abstract zone altitudes
@@ -64,10 +86,10 @@ private:
     // ---- start with a very simple and inefficient implementation ----
 
     // the vehicles that the service has received announcements for
-    map<long int, std::shared_ptr<afrl::cmasi::AirVehicleConfiguration>> airVehicleConfigs;
+    map<long int, shared_ptr<afrl::cmasi::AirVehicleConfiguration>> airVehicleConfigs;
 
     // the vertices of the zones
-    map<long int, std::shared_ptr<CBoundary>> boundaries;
+    map<long int, shared_ptr<CBoundary>> boundaries;
 
     // a visibility graph used to duplicate the form zones take when shrunk/expanded by RoutePlannerVisibilityService
     CVisibilityGraph visibilityGraph;
@@ -75,7 +97,7 @@ private:
     // the final set of zones as CPolygons
     // Each zone is a CPolygon that refers to the vertex points of its CBoundary (stored in boundaries)    
     // Asumption: assuming CMASI int64 can be a simple int is based on other OpenUxAS code that does so
-    map<int, std::shared_ptr<CPolygon>> polygons;
+    map<int, shared_ptr<CPolygon>> polygons;
 
     // ----- member variables ------//
 
@@ -83,5 +105,6 @@ private:
 
 };
 
+};
 
 #endif

@@ -5,8 +5,18 @@
 #define UXAS_ZONE_ALERT_COMPUTER_H
 
 #include <memory>
+#include <vector>
+
+#include "Position.h"
+
+#include "afrl/cmasi/AirVehicleConfiguration.h"
+#include "afrl/cmasi/AirVehicleState.h"
+#include "afrl/cmasi/AbstractZone.h"
+#include "afrl/alerts/ImminentZoneViolation.h"
+
 
 using namespace n_FrameworkLib;
+using namespace std;
 
 namespace zoneAlert {
 
@@ -21,6 +31,8 @@ class ZoneAlertComputer {
 
 public:
 
+    virtual ~ZoneAlertComputer() = 0;
+
     /**
      * @brief Add a declared zone to the analyzer
      * 
@@ -31,14 +43,14 @@ public:
      * @post Always replaces any previously declared zone with same id, whether successful or not.
      * @post Always deletes a previously declared zone if it returns false
      */
-    virtual bool addZone(std::shared_ptr<afrl::cmasi::AbstractZone> zonePtr, bool keepIn) = 0;
+    virtual bool addZone(shared_ptr<afrl::cmasi::AbstractZone> zonePtr, bool keepIn) = 0;
 
     /**
      * @brief Add a declared vehicle to the analyzer
      * 
      * @param vehicleConfigPtr A pointer to the vehicle configuration to report
      */
-    virtual void addVehicle(std::shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig) = 0;
+    virtual void addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig) = 0;
 
     /**
      * @brief Prepare data further for active alerting of imminent zone violations
@@ -46,7 +58,7 @@ public:
      * @pre All zones and vehicles have been declared
      * @post The zone alert computer is ready to detect imminent zone collisions from reported vehicle states.
      */
-    virtual void prepareForActiveState() = 0;
+    virtual bool prepareForActiveState() = 0;
 
     /**
      * @brief Process a vehicle state and report any predicted zone violations
@@ -54,8 +66,8 @@ public:
      * @param vehicleState 
      * @return std::vector<PredictedViolation> a vector predicted zone violations for the vehicle
      */
-    virtual std::vector<std::shared_ptr<PredictedViolation>> processVehicleStateReport()
-            std::shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) = 0;
+    virtual vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> processVehicleStateReport(
+                shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) = 0;
 
 protected:
 
@@ -67,7 +79,7 @@ protected:
      * @param vehicleState the vehicle state from which current linear trajectory is derived
      * @return as a standard array with linear velocity in x, y, and z world components
      */
-    std::array<float,3> worldFrameVelocity(std::shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) {
+    array<float,3> worldFrameVelocity(shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) {
 
         // compute x and y components of velocity from ground track and ground speed in m/s
         // note sin and cos are computed as doubles for accuracy and implicit precision reduction conversion occurs in the multiplication
@@ -92,7 +104,7 @@ protected:
      * 
      * @return the predicted position of the vehicle at time lookahead
      */
-    CPosition futurePosition(CPosition & currentPosition, std::array<float, 3> & velocity, double futureTime) {
+    CPosition futurePosition(CPosition & currentPosition, array<float, 3> & velocity, double futureTime) {
 
         double nx = currentPosition.m_east_m * futureTime * velocity[0];
         double ny = currentPosition.m_north_m * futureTime * velocity[1];
