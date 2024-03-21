@@ -15,9 +15,9 @@ libzmq:
   url: https://github.com/zeromq/libzmq.git
   vcs: git
 lmcpgen:
-  revision: None
-  url: /home/vboxuser/Code/OpenUxAS-ZoneAlert/develop/LmcpGen
-  vcs: external
+  revision: develop
+  url: https://github.com/afrl-rq/LmcpGen.git
+  vcs: git
 openuxas:
   revision: None
   url: .
