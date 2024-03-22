@@ -3,6 +3,11 @@
 #include <array>
 #include <vector>
 #include <memory>
+#include <afrl/cmasi/Circle.h>
+#include <afrl/cmasi/Polygon.h>
+#include <afrl/cmasi/Rectangle.h>
+
+#define CIRCLE_BOUNDARY_INCREMENT (n_Const::c_Convert::dPiO10())
 
 using namespace std;
 using namespace n_FrameworkLib;
@@ -252,34 +257,33 @@ shared_ptr<CPosition> SimpleZoneAlertComputer::findClosestIntersection(CPosition
 inline double SimpleZoneAlertComputer::computeTimeToPosition(CPosition startPos, CPosition endPos, 
                     array<float, 3> velocity, CPosition futurePosition) {
 
-
-    CPosition vec = endPos - startPos;
-
-    WHAT IF TRAJECTORY IS PURE Z (helicopter) (then we never have zone collision in 2D but still...)
-
     // compute relative slope to choose whether we compute using x or y for accuracy
+
     // if the trajetory is mostly horizontal
-    if (vec.m_east_m != 0 && (vec.m_north_m / vec.m_east_m) < 0.5 ) {
+    CPosition trajVec = endPos - startPos;
+    CPosition diffVec = futurePosition - startPos;
 
-        double diff = futurePosition
+    // if the future position is the start position, return the time to arrive as 0
+    if (diffVec.m_east_m == 0 && diffVec.m_north_m == 0) {
+        return 0;
+    }
 
+    // otherwise, compute the time to arrive based on relationship to x or y value, whichever can 
+    // provide greater accuracy and precision
+    if (trajVec.m_east_m != 0 && (trajVec.m_north_m / trajVec.m_east_m) < 0.5 ) {
+        return diffVec.m_east_m/ velocity[0];
     }
     // if line is very vertical compute from north difference
-    if (vec.m_east_m != 0) {
-
+    else {
+        return diffVec.m_north_m / velocity[1];
     }
-
-    // otherwise compute from vertical difference    
-    vec 
-
 
 }
 
 
-
-
 bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(afrl::cmasi::AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints) {
-            bool isSuccess(true);
+    
+    bool isSuccess(true);
     uxas::common::utilities::CUnitConversions unitConversions;
 
     // convert uav position and waypoint positions from lat,long
@@ -303,8 +307,10 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(afrl::cmasi::Abstra
                 vposBoundaryPoints.push_back(n_FrameworkLib::CPosition(dPositionNorth_m, dPositionEast_m));
 
             } //for(double dAngle_rad=0.0;dAngle_rad<n_Const::c_Convert::dTwoPi();dAngle_rad+=_PI_O_10)
-        }
+            
+            isSuccess = true;
             break;
+        }
         case afrl::cmasi::CMASIEnum::POLYGON:
         {
             afrl::cmasi::Polygon* pplyBoundaryPolygon = static_cast<afrl::cmasi::Polygon*> (pAbstractGeometry);
@@ -317,8 +323,10 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(afrl::cmasi::Abstra
                 unitConversions.ConvertLatLong_degToNorthEast_m((*itPoint)->getLatitude(), (*itPoint)->getLongitude(), dNorth_m, dEast_m);
                 vposBoundaryPoints.push_back(n_FrameworkLib::CPosition(dNorth_m, dEast_m));
             }
-        }
+
+            isSuccess = true;
             break;
+        }
         case afrl::cmasi::CMASIEnum::RECTANGLE:
         {
             afrl::cmasi::Rectangle* pRectangle = static_cast<afrl::cmasi::Rectangle*> (pAbstractGeometry);
@@ -353,15 +361,13 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(afrl::cmasi::Abstra
             wayRotated.m_east_m = pRectangle->getWidth() / 2.0;
             wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
             vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
+
+            isSuccess = true;
+            break;
         }
-            break;
-        default:
-            CERR_FILE_LINE_MSG("ERROR::errFindPointsForAbstractGeometry:: unknown geometry type [" << pAbstractGeometry->getLmcpType() << "] encountered.")
-            isSuccess = false;
-            break;
     }
     return (isSuccess);
-    }
+}
 
 
 };

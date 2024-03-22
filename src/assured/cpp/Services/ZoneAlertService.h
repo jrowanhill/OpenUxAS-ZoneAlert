@@ -20,13 +20,17 @@
 #include "afrl/cmasi/AbstractZone.h"
 #include "afrl/cmasi/AirVehicleConfiguration.h"
 #include "afrl/cmasi/AirVehicleState.h"
+#include "afrl/alert/ImminentZoneViolation.h"
 
 #include "ServiceBase.h"
 #include "TypeDefs/UxAS_TypeDefs_Timer.h"
 
-#include "Geometry/BoundedZoneStore.h"
-#include "Geometry/CartesianVehicleState.h"
+#include "ZoneAlertComputer.h"
 
+using namespace std;
+
+using namespace afrl;
+using namespace cmasi;
 
 
 namespace uxas
@@ -98,9 +102,6 @@ private:
 
     //---- Standard OpenUxAS Service Interface ---//
 
-    static ServiceBase::CreationRegistrar<ZoneAlertService> s_registrar;
-
-    /** brief Copy construction not permitted */
     ZoneAlertService(ZoneAlertService const&) = delete;
 
     /** brief Copy assignment operation not permitted */
@@ -147,17 +148,18 @@ protected:
      * 
      * @return std::vector<PredictedViolation> 
      */
-    std::vector<PredictedViolation> processVehicleStateReport(std::shared_ptr(AirVehicleState) vehicleState);
-
+    vector<alerts::ImminentZoneViolation> processVehicleStateReport(shared_ptr<AirVehicleState> vehicleState);
 
 private:
     // storage for the option entries
     std::string m_option01 = std::string("No Option 1");
     int32_t m_option02{0};
 
+    // the lookahead time to apply for zone warnings, as passed in by config param
+    double lookaheadTime;
 
-    // the zones that the service has seen announced
-    ZoneAlertComputer *zoneAlertComputerPtr;
+    // the computer of zone alerts. Can be different designs
+    zoneAlert::ZoneAlertComputer *zoneAlertComputerPtr;
 
 };
 

@@ -1,8 +1,7 @@
 /** A pure virtual defining the interface for zone alert computation.
 */
 
-#ifndef UXAS_ZONE_ALERT_COMPUTER_H
-#define UXAS_ZONE_ALERT_COMPUTER_H
+#pragma once
 
 #include <memory>
 #include <vector>
@@ -67,7 +66,8 @@ public:
      * @return std::vector<PredictedViolation> a vector predicted zone violations for the vehicle
      */
     virtual vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> processVehicleStateReport(
-                shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) = 0;
+        shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
+        std::stringstream &sstrErrorMessage) = 0;
 
 protected:
 
@@ -106,9 +106,9 @@ protected:
      */
     CPosition futurePosition(CPosition & currentPosition, array<float, 3> & velocity, double futureTime) {
 
-        double nx = currentPosition.m_east_m * futureTime * velocity[0];
-        double ny = currentPosition.m_north_m * futureTime * velocity[1];
-        double nz = currentPosition.m_altitude_m * futureTime * velocity[2];
+        double nx = currentPosition.m_east_m + (futureTime * velocity[0]);
+        double ny = currentPosition.m_north_m + (futureTime * velocity[1]);
+        double nz = currentPosition.m_altitude_m + (futureTime * velocity[2]);
 
         return CPosition(nx, ny, nz);
     }
@@ -171,6 +171,3 @@ private:
 };
 
 };
-
-
-#endif

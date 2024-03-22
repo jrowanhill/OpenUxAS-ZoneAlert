@@ -24,6 +24,7 @@
 //include LMCP Messages
 
 #include <iostream>     // std::cout, cerr, etc
+#include <afrl/cmasi/KeepInZone.h>
 
 // convenience definitions for the option strings
 #define STRING_XML_OPTION_STRING "OptionString"
@@ -75,7 +76,7 @@ bool ZoneAlertService::initialize()
     std::cout << "*** INITIALIZING:: Service[" << s_typeName() << "] Service Id[" << m_serviceId << "] with working directory [" << m_workDirectoryName << "] *** " << std::endl;
     
     // setup core data models
-    zoneAlertComputerPtr = new SimpleZoneAlertComputer();
+    zoneAlertComputerPtr = new zoneAlert::SimpleZoneAlertComputer(lookaheadTime);
 
     return (true);
 }
@@ -124,7 +125,7 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
     else if (afrl::cmasi::isAirVehicleConfiguration(receivedLmcpMessage->m_object)) {
         auto airVehicleConfiguration = std::static_pointer_cast<afrl::cmasi::AirVehicleConfiguration> (receivedLmcpMessage->m_object);
         std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a Vehicle Configuration with the id " 
-            << airVehicleConfiguration->getVehicleID()
+            << airVehicleConfiguration->getID()
             << " *** " << std::endl;
 
         // Store the aircraft configuration in the alert computer
@@ -136,7 +137,7 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
     if (afrl::cmasi::isAirVehicleState(receivedLmcpMessage->m_object)) {
         auto airVehicleState = std::static_pointer_cast<afrl::cmasi::AirVehicleState> (receivedLmcpMessage->m_object);
         std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a Vehicle State with the id "  
-            << airVehicleState->getVehicleID()
+            << airVehicleState->getID()
             << "for time "
             << " *** " << std::endl;
 
@@ -152,28 +153,6 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
         sendSharedLmcpObjectBroadcastMessage(keyValuePairOut);
     }
 
-    if (afrl::cmasi::isKeyValuePair(receivedLmcpMessage->m_object))
-    {
-        //receive message
-        auto keyValuePairIn = std::static_pointer_cast<afrl::cmasi::KeyValuePair> (receivedLmcpMessage->m_object);
-        std::cout << "*** RECEIVED:: Service[" << s_typeName() << "] Received a KeyValuePair with the Key[" << keyValuePairIn->getKey() << "] and Value[" << keyValuePairIn->getValue() << "] *** " << std::endl;
-        
-        // process received messages by type
-
-        // Declarations
-
-        //      Zone Declarations
-
-        //      Vehicle Configurations (Declarations)
-
-        // State
-
-        //      Vehicle States
-    
-
-
-        
-    }
     return false;
 }
 
