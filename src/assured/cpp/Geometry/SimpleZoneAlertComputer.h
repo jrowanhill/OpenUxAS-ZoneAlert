@@ -1,8 +1,7 @@
 /** A class that keeps declared Zones as BoundedZones to test aircraft for violation
 */
 
-#ifndef UXAS_SIMPLE_ZONE_ALERT_COMPUTER_H
-#define UXAS_SIMPLE_ZONE_ALERT_COMPUTER_H
+#pragma once
 
 #include "ZoneAlertComputer.h";
 
@@ -10,7 +9,8 @@
 
 #include "afrl/cmasi/AirVehicleConfiguration.h"
 #include "afrl/alerts/ImminentZoneViolation.h"
-
+#include "afrl/alerts/Position2D.h"
+#include "afrl/alerts/ProcessedZone.h"
 
 #include "Polygon.h"
 #include "VisibilityGraph.h"
@@ -58,28 +58,62 @@ public:
 
     void addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig);
 
-    bool prepareForActiveState();
+    vector<shared_ptr<afrl::alerts::ProcessedZone>> prepareForActiveState();
 
     vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> processVehicleStateReport(
-                shared_ptr<afrl::cmasi::AirVehicleState> vehicleState);
+                shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
+                std::stringstream &sstrErrorMessage);
 
     //---- End Inherited Methods ----//
 
 protected:
 
-    /** A code function borrowed from RoutePlannerVisibilityService class
+    /** @brief A code function borrowed from RoutePlannerVisibilityService class to convert
+     * received lat,long, alt coordinates into local planar x,y,z coords
+     * 
      * TODO: It is bad that this code is copied from router planner visibility service. 
      * Refactor so that the code is a single source static function somwwhere.     * 
     */
     bool bFindPointsForAbstractGeometry(afrl::cmasi::AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints);
 
 
-    bool isInPolygon(CPosition & position, CPolygon & polygon) {
-        // check if position is within the min and max altitudes of the CPolygon's abstract zone altitudes
 
-        // If so, check if position is within the polygon
-        // Use winding number or ray cast algorithm
-    }
+    /**
+     * @brief Compute the closest interection of the given 2D polygon's edges with a 3D vector
+     * 
+     * @details Given a vector from startPos to endPos in 3D space, and polygon in 2D space xy space,
+     * computes the closest interection betwween the vector and the polygon's boundary. Computation is
+     * with simple double precision.
+     * 
+     * @param startPos the start of the vector
+     * @param endPos the end of the vector
+     * @param polygonPtr pointer to the polygon to check for boundary intersections with the vector
+     * @param polygonBoundaryPtr pointer to the boundary of the polygon
+     * 
+     * @return the closest intersection from startPos of the vector with the polygon boundary, 
+     * or NULL if no such intersection
+    */
+    inline shared_ptr<CPosition> findClosestIntersection(CPosition startPos, 
+                    CPosition endPos, shared_ptr<CPolygon> polygonPtr, 
+                    shared_ptr<CBoundary> polygonBoundaryPtr);
+
+
+    /** @brief Given a future motion vector, the velocity on that vector, and a position 
+     * on that vector, compute the time in the future at which that position is achieved
+     *
+     * @param startPos the start of the vector
+     * @param endPos the end of the vector
+     * @param velocity the velocity on that vector
+     * @param futurePosition a future position on that vector
+     * 
+     * @pre The futurePosition is on the vector from startPos to endPos
+     * @pre the velocity is the velocity on the vector from startPos to endPos
+     * 
+     * @return the number of seconds in the future in which the future position is achieved
+     */
+    inline double computeTimeToPosition(CPosition startPos, CPosition endPos, 
+                    array<float, 3> velocity, CPosition futurePosition);
+
 
 private:
 
@@ -106,5 +140,3 @@ private:
 };
 
 };
-
-#endif

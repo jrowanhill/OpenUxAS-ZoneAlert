@@ -58,7 +58,7 @@ public:
      * @pre All zones and vehicles have been declared
      * @post The zone alert computer is ready to detect imminent zone collisions from reported vehicle states.
      */
-    virtual bool prepareForActiveState() = 0;
+    virtual vector<shared_ptr<afrl::alerts::ProcessedZone>> prepareForActiveState() = 0;
 
     /**
      * @brief Process a vehicle state and report any predicted zone violations
@@ -112,6 +112,7 @@ protected:
 
         return CPosition(nx, ny, nz);
     }
+
 
 private:
 

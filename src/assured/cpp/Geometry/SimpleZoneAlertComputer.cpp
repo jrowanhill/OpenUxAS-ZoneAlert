@@ -1,15 +1,13 @@
 #include "SimpleZoneAlertComputer.h"
 
-#include "BoundedZone.h"
-
-#include "afrl/alerts/ImminentZoneViolation.h"
-
 #include <array>
 #include <vector>
 #include <memory>
 
 using namespace std;
 using namespace n_FrameworkLib;
+using namespace afrl;
+using namespace alerts;
 
 namespace zoneAlert {
 
@@ -33,61 +31,59 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<afrl::cmasi::AbstractZone> zone
 
     // Make a variable to build boundary points
     // And call function on RoutePlannerVisibility Service to convert zone geometry to flat earch x-y-z coordinates
-    V_POSITION_t boundaryPoints; //used to store the boundary points     
+    V_POSITION_t boundaryPoints; //used to store the boundary points  while we convert the,   
     bool isSuccess = bFindPointsForAbstractGeometry(zonePtr->getBoundary(), boundaryPoints);
     
     if (isSuccess) {
-        // store the XY-plane polygonal boundary of the zone
-        // CBoundary(const uint32_t& uiLocalID,const bool& bKeepInZone,const V_POSITION_t& vposBoundaryPoints_m,const afrl::cmasi::AbstractZone& cmasiAbstractZone)
-        auto xyBoundaryPtr = make_shared<CBoundary>(
+        // store the XY-plane polygonal boundary of the zone (this copies the boundaryPoints in an internal record)
+        auto boundaryPtr = make_shared<CBoundary>(
             new CBoundary(zonePtr->getZoneID(), keepIn, boundaryPoints, *zonePtr));
 
         // Create a Polygon
-        auto xyPolygonPtr = make_shared<CPolygon>(new CPolygon(zonePtr->getZoneID()));
+        auto polygonPtr = make_shared<CPolygon>(new CPolygon(zonePtr->getZoneID()));
 
         // And update its values using this convoluted non-object oriented approach of other code
-        xyPolygonPtr->plytypGetPolygonType().bGetKeepIn() = keepIn;
-        xyPolygonPtr->dGetPolygonExpansionDistance() = zonePtr->getPadding();
+        polygonPtr->plytypGetPolygonType().bGetKeepIn() = keepIn;
+        polygonPtr->dGetPolygonExpansionDistance() = zonePtr->getPadding();
         
-        // polygons store indeces to  external boundary points!
-        for (int index = 0; index < xyBoundaryPtr->vposGetBoundaryPoints_m().size(); index++) {
-            xyPolygonPtr->viGetVerticies().push_back(index);
+        // polygons store indeces to  external boundary points (they are in order in the xyBoundary)
+        for (int index = 0; index < boundaryPtr->vposGetBoundaryPoints_m().size(); index++) {
+            polygonPtr->viGetVerticies().push_back(index);
         }
 
         // attempt to 'finalize' the polygon 
         // and blank it out if failure
-        isSuccess = (xyPolygonPtr->errFinalizePolygon(xyBoundaryPtr->vposGetBoundaryPoints_m()) == CPolygon::errNoError);
+        isSuccess = (polygonPtr->errFinalizePolygon(boundaryPtr->vposGetBoundaryPoints_m()) == CPolygon::errNoError);
 
         // make sure the zone isn't empty
-        isSuccess &= !(xyBoundaryPtr->vposGetBoundaryPoints_m().empty());
+        isSuccess &= !(boundaryPtr->vposGetBoundaryPoints_m().empty());
 
         // if all is well, store the zone, otherwise, make sure no zone is stored (in case this is replacing an earlier declaration)
         if (isSuccess) {
-            boundaries[xyBoundaryPtr->getZoneID()] = xyBoundaryPtr;
-            polygons[xyPolygonPtr->iGetID()] = xyPolygonPtr;
+            boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
+            polygons[polygonPtr->iGetID()] = polygonPtr;
         }
         else {
             isSuccess = false;
-            boundaries[xyBoundaryPtr->getZoneID()] = NULL;
-            polygons[xyPolygonPtr->iGetID()] = NULL;
+            boundaries[boundaryPtr->getZoneID()] = NULL;
+            polygons[polygonPtr->iGetID()] = NULL;
         }  
     }
 
     return isSuccess;
-};
+}
 
 
 void SimpleZoneAlertComputer::addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig) {
 
 }
 
-bool SimpleZoneAlertComputer::prepareForActiveState() {
-
-    // walk all polygons and add them to the visibility graph
-    // adding them to the visibility graph
+vector<shared_ptr<ProcessedZone>> SimpleZoneAlertComputer::prepareForActiveState() {
 
     bool isSuccess = true;
 
+    // walk all polygons and add them to the visibility graph
+    // adding them to the visibility graph
     for (auto iter = boundaries.begin(); iter != boundaries.end(); iter++) {
             auto errPolygon = visibilityGraph.errAddPolygon(iter->second->getZoneID(),
                         iter->second->vposGetBoundaryPoints_m().begin(),
@@ -105,30 +101,63 @@ bool SimpleZoneAlertComputer::prepareForActiveState() {
     // this makes sure they are sound and grows/shrinks them by their padding
     visibilityGraph.errFinalizePolygons();
 
-    // WE NEED TO AVOID CLEARING ANY BOUNDARIES BELOW WHERE A 
-    // CPOLYGON HAS THE ZONE ID. ONLY REMOVE DROPPED ZONES
-    // AND THEN WE CAN EITHER USE THE ORIGINAL BOUNDARY FOR MIN AND MAX
-    // ALTITUDE and the new position points OR UPDATE BOUNDARY CPOSITIONS
-    
-
-    // first clear our intermediate data stores
+    // Clear out old data
     // TODO: Check reference count logistics for any lost data
     boundaries.clear();
     polygons.clear();
 
+    vector<shared_ptr<afrl::alerts::ProcessedZone>> processedZones;
+
     // now re-extract boundaries and polygons from the visibility graph
     // for easy intersection testing
     for (auto iter = visibilityGraph.vplygnGetPolygons().begin(); iter != visibilityGraph.vplygnGetPolygons().end(); iter++) {
-        polygons[iter->iGetID()] = iter;
+        
+        // steal reference to polygon from our visibility graph
+        polygons[iter->iGetID()] = make_shared<CPolygon>(iter);
+        
+        // recreate boundary, pulling the CPositions out of visibiity graph
+        // and copying them into our boundary points vector for the polygon
+        V_POSITION_t boundaryPoints;   
+        for (auto vit = iter->viGetVerticies().begin(); vit!=iter->viGetVerticies().end(); vit++) {
+            boundaryPoints.push_back(visibilityGraph.vposGetVerticiesBase()[*vit]);
+        }
+
+        // now fix the bouundary of the polygon to point to the CBoundary
+        iter->viGetVerticies().clear();
+        for (int i = 0; i< boundaryPoints.size(); i++) {
+            iter->viGetVerticies().push_back(i);
+        }
+        // note we do build the boundaries with blank abstract zones. That info was lost in use of visibilitygraph
+        afrl::cmasi::AbstractZone blankAbstract;
+        auto boundaryPtr = make_shared<CBoundary>(
+            new CBoundary(iter->iGetID(), iter->plytypGetPolygonType().bGetKeepIn(), boundaryPoints, 
+                            blankAbstract));
+        boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
+
+        // store an announcement of the zone
+        shared_ptr<ProcessedZone> procZonePtr = 
+            make_shared<ProcessedZone>(new ProcessedZone());
+        for (auto vit = boundaryPtr->vposGetBoundaryPoints_m().begin(); 
+                    vit != boundaryPtr->vposGetBoundaryPoints_m().end(); vit++) {
+            afrl::alerts::Position2D * vertexPosPtr = new afrl::alerts::Position2D();
+            vertexPosPtr->setEast(vit->m_east_m);
+            vertexPosPtr->setNorth(vit->m_north_m);
+            procZonePtr->getVertices().push_back(vertexPosPtr);            
+        }
+
+        // store the processed zone in vector to return to caller
+        processedZones.push_back(procZonePtr);
     }
 
-    // TODO: Assure that these polygons in this form are 'finalized'
+    // Postcondition: assert(polygons.size() == boundaries.size());
+    // Postcondition: assert(polygons.size() == visibilityGraph.vplygnGetPolygons().size())
 
-    return isSuccess;
+    return processedZones;
 }
 
-vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> SimpleZoneAlertComputer::processVehicleStateReport(
-        shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) {
+vector<shared_ptr<ImminentZoneViolation>> SimpleZoneAlertComputer::processVehicleStateReport(
+        shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
+        std::stringstream &sstrErrorMessage) {
 
     // extract the current position of the vehicle as a CPosition structure
     // TODO: Confirm that MSL is being sent by vehicles
@@ -142,62 +171,112 @@ vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> SimpleZoneAlertComputer:
     // compute the final predicted position at lookahead time based on the above
     CPosition endPos = futurePosition(startPos, velocity,  lookaheadTime);
 
-    // now startPos and endPos are the endpoints of the linear trajectory to lookaheadTime
+    // cycle through all of the zones to find potential violations
+    // This is primitive and can be improved, but is the approach of "SimpleZoneAlertComputer"
+    for (int zoneIndex = 0; zoneIndex < polygons.size(); zoneIndex++) {
 
-    // cycle through all zones to find potential violations on the defined trajectory
-    for (auto zoneIter = polygons.begin(); zoneIter != polygons.end(); zoneIter++) {
+        shared_ptr<CBoundary> boundaryPtr = boundaries[zoneIndex];
+        shared_ptr<CPolygon> polyPtr = polygons[zoneIndex];
 
-        // if it is a keep out zone, check for violations as intersection points between the trajectory and zone boundary
-        vector<CPosition> intersectionPoints;
-        if (! zoneIter->second->plytypGetPolygonType().bGetKeepIn()) {
+        // check if the vehicle is currently in the zone
+            // @TODO: Note that this calculates only on the x-y plane even through 
+            //  the function takes altitude as a parameter. That is good as 
+            //  polygons are on the x-y plane only and altitude info was lost in polygon merge
+            //  but suggets potential failures in the mathematical paradigm if we are not careful
+        bool vehicleInZone = polyPtr->InPolygon(startPos.m_east_m, startPos.m_north_m, 
+                            startPos.m_altitude_m,
+                            boundaryPtr->vposGetBoundaryPoints_m(), 
+                            sstrErrorMessage);
 
-            // check if we are in the zone. If we are, we don't care about it (too late to warn)
-            // NOTE THIS IS A SPECIFIC BEHAVIOR ASKED FOR BY STAKEHOLDERS
-            zoneIter->second->
-            // TODO: PROBLEM: The CPolygon check inside function is bad bad bad It is grid base and anything else throws an error 
+        // Intended behavior is to only alert on keep-out zones that the vehicle is currently outside, 
+        // and keep-in zones the vehicle is currently inside
+        if ( vehicleInZone == boundaryPtr->bGetKeepInZone()) {
 
-            // find intersection points
-            intersectionPoints.clear();
-            zoneIter->second->findIntersections(visibilityGraph.vposGetVerticiesBase(), 
-                                    startPos, endPos, intersectionPoints);
+            // Report the 'soonest' intersection
+            shared_ptr<CPosition> closestIntersection = findClosestIntersection(
+                    startPos, endPos, polyPtr, boundaryPtr);
 
-            // check if there are any boundary intersections
-            // if there are none, we don't care about this keep out zone, even if we are in it
-            if (intersectionPoints.size()>0) {
+            if (closestIntersection != NULL) {
 
-                // the earliest intersection leaves the polygon
+                Position2D* positionPtr = new Position2D();
+                positionPtr->setEast(closestIntersection->m_east_m);
+                positionPtr->setNorth(closestIntersection->m_north_m);
 
+                double timeToIntersection = computeTimeToPosition(startPos, endPos,
+                    velocity, *closestIntersection); or should we pass Position2D?
+
+                auto violation = make_shared<ImminentZoneViolation> (
+                    new ImminentZoneViolation());
+                violation->setZoneID(polyPtr->iGetID());
+                violation->setKeepIn(boundaryPtr->bGetKeepInZone());
+                violation->setVehicleID(vehicleState->getID());
+                violation->setInterceptPosition(positionPtr);
+                violation->setTimeToIntercept(timeToIntersection);
             }
-        
-
 
         }
-        // for keep in zones, we do something complicated to detect if 
-        // the trajectory has points that are not in ANY keep in zones
-        else {
 
-        } 
-        // if keep out zone
-
-                // if the vehicle present location is 2 times as far as max velocity would take it to zone bounding box, ignore the zone
-    
-            // determine if the vehicle is inside the zone
-
-                // if it is currently outside, see if trajectory intersects a boundary
-
-                    // if the trajectory intersects the boundary add a predicted violation for earliest intersect
-
-        // if keep in zone
-
-            // if the start loc of vector is in the zone, store in sorted multimap (time-> list of zones) 
-            
-            // find all intersections of the zone with the trajectory vector at time t>report, and store in the sorted map
-
-
-    // walk the sorted multimap to determine if at any point one is not in any keep in zone
-    // that time becomes the earliest time of failure of keep in and that is reported
+    }
 
 }
+
+
+shared_ptr<CPosition> SimpleZoneAlertComputer::findClosestIntersection(CPosition startPos, 
+            CPosition endPos, shared_ptr<CPolygon> polygonPtr, 
+            shared_ptr<CBoundary> polygonBoundaryPtr) {
+
+    V_POSITION_t intersections;
+    polygonPtr->findIntersections(polygonBoundaryPtr->vposGetBoundaryPoints_m(),startPos, endPos,
+                    intersections);
+
+    CPosition *closestPtr = NULL;
+
+    if (intersections.size()>0) {
+
+        double farthest = std::numeric_limits<double>::max();
+
+        for (auto intersection = (intersections.begin()); intersection != intersections.end(); 
+            intersection++) {
+            double dist = startPos.relativeDistance2D_m(*intersection);
+
+            if (dist<farthest) {
+                closestPtr = &(*intersection);
+            }
+        }
+    }    
+
+    return make_shared<CPosition>(closestPtr);
+}
+
+
+inline double SimpleZoneAlertComputer::computeTimeToPosition(CPosition startPos, CPosition endPos, 
+                    array<float, 3> velocity, CPosition futurePosition) {
+
+
+    CPosition vec = endPos - startPos;
+
+    WHAT IF TRAJECTORY IS PURE Z (helicopter) (then we never have zone collision in 2D but still...)
+
+    // compute relative slope to choose whether we compute using x or y for accuracy
+    // if the trajetory is mostly horizontal
+    if (vec.m_east_m != 0 && (vec.m_north_m / vec.m_east_m) < 0.5 ) {
+
+        double diff = futurePosition
+
+    }
+    // if line is very vertical compute from north difference
+    if (vec.m_east_m != 0) {
+
+    }
+
+    // otherwise compute from vertical difference    
+    vec 
+
+
+}
+
+
+
 
 bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(afrl::cmasi::AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints) {
             bool isSuccess(true);

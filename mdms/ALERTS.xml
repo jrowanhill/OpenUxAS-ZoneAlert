@@ -18,21 +18,41 @@
     </EnumList>
 
     <StructList>
-    
+
+        <!-- A position reporting data structure in xy plane of flat earth local coords-->
+        <Struct Name="Position2D">
+            <Field Name="east" Type="real64" Optional="false" />
+            <Field Name="north" Type="real64" Optional="false" />
+        </Struct>
+
         <!-- Indicates that a zone will be violated if vehicle remains on last reported trajectory -->
         <Struct Name="ImminentZoneViolation">
             <!-- ID of the vehicle with imminent zone violation -->
             <Field Name="VehicleID" Type="int64" Optional="false" />
+            <!-- ID of the zone that will be imminently violated --> 
+            <Field Name="ZoneID" Type="int64" Optional="false" />
             <!-- Type of Zone that will be violated  -->
             <Field Name="KeepIn" Type="bool" Optional="false" />
-            <!-- ID of the zone that will be imminently violated --> 
-            <Field Name="ZoneIDs" Type="int64[]" Optional="false" />
-            <!-- Time (absolute) of expected violation -->
+            <!-- Time (absolute) of expected violation -->            
             <Field Name="TimeToIntercept" Type="real32" Optional="false" />
-            <!-- Position (absolute) of expected vioation -->
-            <Field Name="InterceptPosition" Type="Location3D" Series="CMASI" Optional="false" />
+            <!-- Position (absolute) of expected viola -->
+            <Field Name="InterceptPosition" Type="Position2D" Series="ALERTS" Optional="false" />
         </Struct>
 
-		
+
+        <!-- Indicates a zone that has been processed to detect zone violations. Such zones
+             do not refer to thedeclared zones as this zone is the result of padding zones
+             and merging them where they overlap in 2D space --> 
+        <Struct Name="ProcessedZone">
+            <!-- The ID given to the processed zone-->
+            <Field Name="ZoneID" Type="int64" Optional="false" />
+            <!-- If the processed zone is keep in or keep out-->
+            <Field Name="KeepIn" Type="bool" Optional="false" />
+            <!-- The vertices of the processed zone in flat x,y space-->
+            <Field Name="Vertices" Type="Position2D[]" Optional="false" />
+        </Struct> 
+
+
+
  </StructList>
 </MDM>
