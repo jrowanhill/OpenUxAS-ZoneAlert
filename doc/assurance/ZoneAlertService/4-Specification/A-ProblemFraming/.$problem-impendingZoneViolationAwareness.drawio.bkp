@@ -1,0 +1,724 @@
+<mxfile host="Electron" modified="2024-03-21T15:28:26.857Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="2fH_TyFt8u520H4MsSqV" version="24.0.4" type="device">
+  <diagram name="Page-1" id="bUUqg679XfmgL5BK57HB">
+    <mxGraphModel dx="1201" dy="1093" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="DVeMuobm-aGxhQHQA0kC-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="DVeMuobm-aGxhQHQA0kC-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="DVeMuobm-aGxhQHQA0kC-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-1" value="Impending&lt;br&gt;Zone Violation&lt;br&gt;Unawareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-2" target="DVeMuobm-aGxhQHQA0kC-108" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-2" target="DVeMuobm-aGxhQHQA0kC-112" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-121" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-2" target="DVeMuobm-aGxhQHQA0kC-114" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-2" value="Inefficiency: Always Checks&lt;br&gt;Each Zone" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="830" y="688.13" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-4" value="Zone and&amp;nbsp;&lt;br&gt;Vehicle Unwareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-7" target="DVeMuobm-aGxhQHQA0kC-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-7" value="When&lt;br&gt;To&lt;br&gt;Check?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="770" y="571.88" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="DVeMuobm-aGxhQHQA0kC-31" target="DVeMuobm-aGxhQHQA0kC-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-8" target="DVeMuobm-aGxhQHQA0kC-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="383" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-8" target="DVeMuobm-aGxhQHQA0kC-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-8" value="Determining&lt;br&gt;Impending&lt;br&gt;Zone Violation?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="645" y="281.25" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-9" target="DVeMuobm-aGxhQHQA0kC-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-9" value="No Agreed Model of Impending" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-12" target="DVeMuobm-aGxhQHQA0kC-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1080" y="670" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-12" target="DVeMuobm-aGxhQHQA0kC-44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-12" target="DVeMuobm-aGxhQHQA0kC-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-12" value="Naive&lt;br&gt;Zone Check&amp;nbsp;&lt;br&gt;Algorithm: Check Each Zone Polygon" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="570" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.033;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="DVeMuobm-aGxhQHQA0kC-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-23" value="Impending&lt;br&gt;As &quot;Current&quot;&lt;br&gt;Linear&lt;br&gt;Trajectory to Lookahead Time Window" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="50" y="264.06" width="120" height="91.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-31" value="How to&lt;br&gt;Check?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="910" y="571.88" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-34" target="DVeMuobm-aGxhQHQA0kC-122" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-34" value="Check&lt;br&gt;on Received&lt;br&gt;Vehicle State&lt;br&gt;Messages" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="630" y="570" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-36" target="DVeMuobm-aGxhQHQA0kC-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-36" value="How to Inform &lt;br&gt;Interested Entities" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="870" y="281.25" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-39" target="DVeMuobm-aGxhQHQA0kC-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-39" value="Context: OpenUxAS&lt;br&gt;with AMAZE Sim" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-41" value="Send Messages&lt;br&gt;to&amp;nbsp; Subscribers&lt;br&gt;via OpenUxAS&amp;nbsp;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1040" y="283.12" width="120" height="68.13" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-44" target="DVeMuobm-aGxhQHQA0kC-56" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-44" value="How to Check Zone Against&lt;br&gt;Vehicle Trajectory?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-47" target="DVeMuobm-aGxhQHQA0kC-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-47" value="Keep-In and Keep-Out Zones defined by simple, irregular polygons" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="160" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-49" target="DVeMuobm-aGxhQHQA0kC-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-49" value="How to Generate Impending Zone Trajectory?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-50" value="Compute Parametric PositionVector &lt;br&gt;from Reported Position on current vel. to &lt;br&gt;time ReportTime + TimeWindow.&lt;br&gt;Note current Comp. Time!" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1460" y="688.13" width="250" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-54" value="1. Note and integrate issues and problems&lt;br&gt;2. Note how Hazards are a type of problem and can be integrated&lt;br&gt;3. Note and integrate software bugs and problems&lt;br&gt;4. Faults and faults trees have similar concepts" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="830" y="110" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-56" target="DVeMuobm-aGxhQHQA0kC-57" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="900" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1180" y="920" />
+              <mxPoint x="1100" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-56" target="DVeMuobm-aGxhQHQA0kC-59" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="900" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1180" y="920" />
+              <mxPoint x="1300" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-56" value="Compute if Trajectory Window Goes into or out of Polygon and know if current in or out of polygon, and logic by zone type" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="798.12" width="240" height="91.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-57" target="DVeMuobm-aGxhQHQA0kC-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-57" target="DVeMuobm-aGxhQHQA0kC-67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-57" value="How to Compute Trajectory Window Intersections Polygon Boundary?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="950" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-343" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-59" target="DVeMuobm-aGxhQHQA0kC-341" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-59" value="How to Efficiently Compute&lt;br&gt;Position Currently&lt;br&gt;Inside or Outside&amp;nbsp;Polygon" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="945" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-62" target="DVeMuobm-aGxhQHQA0kC-133" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-62" value="Check if the trajectory intersects any polygon edges" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1030" y="1110" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-67" target="DVeMuobm-aGxhQHQA0kC-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-67" target="DVeMuobm-aGxhQHQA0kC-72" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-67" value="What if Trajectory Passes&lt;br&gt;All the Way through&lt;br&gt;A Polygon?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="810" y="1105.94" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-72" value="Don&#39;t Care need to know&amp;nbsp;&lt;br&gt;about any future zone relationship change" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="820" y="1250" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="1180.0000000000005" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-62" target="DVeMuobm-aGxhQHQA0kC-82" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-90" target="DVeMuobm-aGxhQHQA0kC-86" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-82" target="DVeMuobm-aGxhQHQA0kC-90" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-82" target="DVeMuobm-aGxhQHQA0kC-92" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-82" value="How to compute for 3D zone and 3D trajectory where 3D zone is polygon in xy and flat on top and bottom?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="1250" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-86" value="Calculate &lt;br&gt;sub-vector of trajectory vector that lies in zone altitude range" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="740" y="1611.09" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-88" target="DVeMuobm-aGxhQHQA0kC-104" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-88" value="Check if either &lt;br&gt;endpoint of &lt;br&gt;subvector is inside polygon 2D" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="980" y="1614.06" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-90" target="DVeMuobm-aGxhQHQA0kC-88" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-90" value="How to Know if 3D Trajectory Crosses Top or Bottom Plane" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="1460" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-92" target="DVeMuobm-aGxhQHQA0kC-95" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-92" target="DVeMuobm-aGxhQHQA0kC-96" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-92" value="How to Know if 3D Trajectory Crosses sides of polygon in XY?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1170" y="1460" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-95" target="DVeMuobm-aGxhQHQA0kC-106" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-95" value="Calculate &lt;br&gt;sub-vextor of trajectory vector that lies in zone altitude range" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1210" y="1614.06" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-96" target="DVeMuobm-aGxhQHQA0kC-97" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-96" value="Check for 2D Polygon Intersection" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="1614.06" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-97" target="DVeMuobm-aGxhQHQA0kC-98" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-97" value="How?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1380" y="1741.88" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-98" target="DVeMuobm-aGxhQHQA0kC-129" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-98" target="DVeMuobm-aGxhQHQA0kC-131" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-98" target="rxoH3m6sTBeBhxrcS38y-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-98" value="CPolygon::&lt;br&gt;findIntersections" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="1900" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-103" target="rxoH3m6sTBeBhxrcS38y-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-103" value="CPolygon::InPolygon" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1530" y="1100" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-104" value="CPolygon::InPolygon" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="980" y="1750" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-352" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-106" target="DVeMuobm-aGxhQHQA0kC-351" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-106" value="How?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="1756" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-108" target="DVeMuobm-aGxhQHQA0kC-110" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-108" target="rxoH3m6sTBeBhxrcS38y-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-108" value="Check Only when Trajectory Vector&amp;nbsp;has at least one&lt;br&gt;point in or on bounding box" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="420" y="686.26" width="170" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-110" value="How to compute&lt;br&gt;efficiently?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="445" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-112" target="DVeMuobm-aGxhQHQA0kC-115" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-112" value="Only check polygons&lt;br&gt;where the current position is within 2*max speed horizontal and vertical of the zone&#39;s bounding cube" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="850" y="798.12" width="170" height="91.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-114" value="Store Polygons for Lookup Using First-Rank partial ordering of Bounding Boxes in X and Y and Z Coordinates, with Sub-rank ordering by lower-left corner (low x, low y, low alt)" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="610" y="800" width="210" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-115" target="DVeMuobm-aGxhQHQA0kC-117" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-115" target="DVeMuobm-aGxhQHQA0kC-118" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-115" value="How do we compute bounding Cube?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-117" value="CPolygon::&lt;br&gt;BoundingBox" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="545" y="1050" width="110" height="51.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-118" value="MinAltitude and MaxAltitude&lt;br&gt;as Top and Bottom" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1050" width="110" height="51.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-122" target="DVeMuobm-aGxhQHQA0kC-124" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-122" value="Stale State leads to&amp;nbsp;&lt;br&gt;Failed Warnings&lt;br&gt;on Lack Of Knowledge" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="571.88" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-124" value="Don&#39;t&lt;br&gt;Care" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="310" y="571.88" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-129" value="Avoid Boost Dependencies" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1600" y="1895.94" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-131" value="See Example of&lt;br&gt;Use in &quot;CMASIAreaSearch&lt;br&gt;TaskService.cpp&quot;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1530" y="2070" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-133" target="DVeMuobm-aGxhQHQA0kC-138" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-133" value="Do Overlapping Zones Impact Just Checking&lt;br&gt;Edge Crossings?&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1855" y="1255.94" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-138" target="DVeMuobm-aGxhQHQA0kC-243" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1815" y="1505.94" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-138" value="What are the&lt;br&gt;Behaviors for Simple&lt;br&gt;Edge-Cross Detection&lt;br&gt;with Overlapping Zones?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1850" y="1375.94" width="170" height="108.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-245" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-243" target="DVeMuobm-aGxhQHQA0kC-244" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-313" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=80;exitDy=62;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-243" target="DVeMuobm-aGxhQHQA0kC-312" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-243" value="Zone&lt;br&gt;Overlapping&lt;br&gt;Behavior&lt;br&gt;Analysis" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=24;" parent="1" vertex="1">
+          <mxGeometry x="1895" y="1525.94" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-244" target="DVeMuobm-aGxhQHQA0kC-247" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-244" value="Requirement: Keep-In Zones must at like a union with one boundary when overlapping" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1850" y="1665.94" width="170" height="108.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-250" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-247" target="DVeMuobm-aGxhQHQA0kC-249" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-252" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-247" target="DVeMuobm-aGxhQHQA0kC-253" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-247" value="How does Route Planning Merge Zones? Can it be copied?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1850" y="1847.8200000000002" width="170" height="108.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-257" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-249" target="DVeMuobm-aGxhQHQA0kC-254" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-274" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-249" target="DVeMuobm-aGxhQHQA0kC-272" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-309" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-312" target="DVeMuobm-aGxhQHQA0kC-311" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2970" y="2000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-249" value="&lt;b&gt;Design&lt;/b&gt;&lt;br&gt;Apply same data structure concepts as VisibilityRoutePlanningService" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2125" y="1860.9399999999998" width="190" height="81.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-253" value="&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Finding&lt;/b&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;VisibilityRoutePlanningService&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;Records all zones as CPolygons, and then when an operating region is defined, it builds&amp;nbsp; a CVisiblityGraph. &lt;br&gt;&lt;br&gt;This class ignores all shrink/grow on keep in zones and keeps them the same size. It allows keep out zones to grow if that is specified but if they specify shrink, it is ignored.&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="2025" width="230" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-259" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-254" target="DVeMuobm-aGxhQHQA0kC-258" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-254" value="&lt;b&gt;CONOPS Requirement&lt;br&gt;&lt;/b&gt;Announce on all zones, not just those in an operating region." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="2000" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-261" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-258" target="DVeMuobm-aGxhQHQA0kC-260" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-258" value="&lt;b&gt;Modify Design&lt;/b&gt;&lt;br&gt;Wait until all zones have&amp;nbsp;been announced to do polygon merging" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2125" y="2140" width="190" height="81.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-260" value="&lt;b&gt;Question?&lt;/b&gt;&lt;br&gt;What Signal Reliably and&amp;nbsp;&lt;br&gt;Intentionally Indicates that&lt;br&gt;All Zones and Operating&lt;br&gt;Regions have been announced?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="2280" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-268" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-264" target="DVeMuobm-aGxhQHQA0kC-267" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-264" value="How Can we apply CVisibilityGraph&lt;br&gt;directly or indirectly to the zone alerts?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2370" y="2000" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-265" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-249" target="DVeMuobm-aGxhQHQA0kC-264" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-270" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-267" target="DVeMuobm-aGxhQHQA0kC-269" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-267" value="Investigate&lt;br&gt;CVisibilityGraph merged edge&lt;br&gt;data structure" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="2360" y="2160" width="220" height="64.06" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-269" value="&lt;b&gt;Finding:&lt;br&gt;&lt;/b&gt;&lt;br&gt;We can&#39;t use CVisibilityGraph for polygon merging, nor can we copy its semantics&lt;br&gt;&lt;br&gt;1. It does not appear to be doing polygon merging correctly when there are concave keep-in and keep-out zones.&lt;br&gt;&lt;br&gt;2. It does not do a merge that restores polygons, merely creating a graph of visible edges and path rays between them for routing" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="2357.5" y="2290" width="225" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-276" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-272" target="DVeMuobm-aGxhQHQA0kC-275" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-272" value="What is our PolygonMerge&lt;br&gt;Semantic as defined in&amp;nbsp;&lt;br&gt;PVS. We need to implement&lt;br&gt;it to do this service." style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2620" y="2000" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-273" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0.195;exitY=0.093;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-264" target="DVeMuobm-aGxhQHQA0kC-264" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2310" y="2050" as="sourcePoint" />
+            <mxPoint x="2360" y="2000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-278" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-275" target="DVeMuobm-aGxhQHQA0kC-277" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-275" value="&lt;b&gt;Finding:&lt;br&gt;&lt;/b&gt;&lt;br&gt;Review of the PVS spec shows that it is clockwise outside edge discovery.&lt;br&gt;&lt;br&gt;No semantics for keep-in or keep out.&lt;br&gt;&lt;br&gt;We have separate Espilon Snapping for vertices, and this could potentially lead to &lt;font color=&quot;#ff1424&quot;&gt;&lt;b&gt;unsafe&lt;/b&gt; &lt;b&gt;zones&lt;/b&gt;&lt;/font&gt;." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="2602.5" y="2160" width="225" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-277" value="Potential Unsafe Epsilon&lt;br&gt;Snapping for Keep-In and&lt;br&gt;Keep-Out Zones" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2900" y="2215" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-285" value="Make a remote&lt;br&gt;Reference type to move stuff around" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="440" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-293" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-286" target="DVeMuobm-aGxhQHQA0kC-287" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-301" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-286" target="DVeMuobm-aGxhQHQA0kC-300" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-286" value="Zone and&amp;nbsp;&lt;br&gt;Vehicle Unwareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2480" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-294" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-287" target="DVeMuobm-aGxhQHQA0kC-288" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-295" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-287" target="DVeMuobm-aGxhQHQA0kC-290" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-287" value="Subscribe to&lt;br&gt;OpenUxAS&lt;br&gt;AMAZE, Control Messages" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2490" y="157.19" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-296" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-288" target="DVeMuobm-aGxhQHQA0kC-289" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-288" value="Zone Boundaries Differ from Route Planning World" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2350" y="264.06" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-319" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-289" target="DVeMuobm-aGxhQHQA0kC-318" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-289" value="Use Same Polygon Model as Route Planning" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2350" y="355.94" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-297" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-290" target="DVeMuobm-aGxhQHQA0kC-291" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-290" value="What Kind of&amp;nbsp;&lt;br&gt;Vehicles&lt;br&gt;Should We Support" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2570" y="259.06" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-298" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-291" target="DVeMuobm-aGxhQHQA0kC-292" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-291" value="Support&lt;br&gt;Air Vehicles&lt;br&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2570" y="359.06" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-292" value="Q: Should we support other vehicle types?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="2570" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-299" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="445" y="292.5" width="30" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-303" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-300" target="DVeMuobm-aGxhQHQA0kC-304" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-300" value="Store Zones and&lt;br&gt;Vehicle Configs by their UIDs" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2710" y="158.13" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-302" value="Use&lt;br&gt;std::map" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2735" y="360" width="90" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-305" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-304" target="DVeMuobm-aGxhQHQA0kC-302" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-304" value="What Storage&lt;br&gt;ADT" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2720" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-306" value="standard ADTs should&lt;br&gt;have a symbol" style="shape=tape;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2855" y="337.82" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-308" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-272" target="DVeMuobm-aGxhQHQA0kC-272" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2480" y="2130" as="sourcePoint" />
+            <mxPoint x="2530" y="2080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-311" value="&lt;b&gt;Use Counting Algorithm&lt;/b&gt;&lt;br&gt;An algorithm in which we keep track of KeepIn zones entered and left. We report as violation if this ever reaches &quot;no keep in&quot; status on the trajectory to look ahead window," style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2340" y="1665.94" width="290" height="111.88" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-312" value="Requirement: Must know if vehicle trajectory leaves all keep-in zones if it is currently in any, and if enters any new keep-out zones." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2060" y="1665.94" width="200" height="108.12" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-314" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-249" target="DVeMuobm-aGxhQHQA0kC-249" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2340" y="1930" as="sourcePoint" />
+            <mxPoint x="2390" y="1880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-316" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-247" target="DVeMuobm-aGxhQHQA0kC-247" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2140" y="1980" as="sourcePoint" />
+            <mxPoint x="2190" y="1930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-317" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-244" target="DVeMuobm-aGxhQHQA0kC-244" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2140" y="1980" as="sourcePoint" />
+            <mxPoint x="2190" y="1930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-321" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-318" target="DVeMuobm-aGxhQHQA0kC-320" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-318" value="How to Reapply Existing&lt;br&gt;Code Base?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2330" y="479.9999999999999" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-323" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="DVeMuobm-aGxhQHQA0kC-322" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="rxoH3m6sTBeBhxrcS38y-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="rxoH3m6sTBeBhxrcS38y-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-320" value="Copy the Visilibity method of expanding zones, by simply copying code used by visilibity library" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2305" y="618.12" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-325" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-322" target="DVeMuobm-aGxhQHQA0kC-324" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-327" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-322" target="DVeMuobm-aGxhQHQA0kC-326" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-322" value="What about code duplication&lt;br&gt;creating independent maintenance needs?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2330" y="986.8799999999999" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-324" value="The existing polygon grow/shrink code should be replaced with code that does not use visilibity in a future refactor. THAT solution should be a public function referencable by all users from geomtery library" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+          <mxGeometry x="2570" y="971.88" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-329" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-326" target="DVeMuobm-aGxhQHQA0kC-328" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-326" value="Refactor the visibility graph and this code to use the same grow shrink code refactored into a geometry library as a function of CPolygon!" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2570" y="1136.88" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-332" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-328" target="DVeMuobm-aGxhQHQA0kC-331" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-328" value="How will we test RoutePlanner?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2820" y="1151.88" width="190" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-331" value="On this project, we do not want to test RoutePlanner or Change it" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="3060" y="1164.38" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-333" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-326" target="DVeMuobm-aGxhQHQA0kC-326" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2570" y="1106.88" as="sourcePoint" />
+            <mxPoint x="2620" y="1056.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-335" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-328" target="DVeMuobm-aGxhQHQA0kC-328" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2865" y="1131.88" as="sourcePoint" />
+            <mxPoint x="2915" y="1081.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-345" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-341" target="DVeMuobm-aGxhQHQA0kC-342" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-347" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-341" target="DVeMuobm-aGxhQHQA0kC-346" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-349" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-341" target="DVeMuobm-aGxhQHQA0kC-103" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-341" value="Options" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1400" y="950" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-342" value="Fast Winding Direction&lt;br&gt;Algorithm" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1530" y="995" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-346" value="Ray Casting Algorithm" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1530" y="900" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-351" value="Check Intersection of Line Segment with Two Infinite X-Y Planes" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1210" y="1904.06" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-1" value="Re-Use&lt;div&gt;CPolygon Bounding Box&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" vertex="1" parent="1">
+          <mxGeometry x="190" y="908.13" width="170" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-2" target="rxoH3m6sTBeBhxrcS38y-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-2" value="Compute&lt;div&gt;Bounding Box&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-6" value="Issue: There is a macro to&amp;nbsp;&lt;div&gt;turn off detection of intersection&lt;/div&gt;&lt;div&gt;at vertices. Is it off?&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="2093.44" width="160" height="88.12" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-8" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1611.0900000000001" width="30" height="77.82" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-11" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="1614.0600000000002" width="30" height="77.82" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-13" target="rxoH3m6sTBeBhxrcS38y-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-13" value="Make sure&lt;div&gt;Grid is Generated&lt;/div&gt;&lt;div&gt;for Polygons before&lt;/div&gt;&lt;div&gt;Use&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1730" y="1100" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-15" value="By Code Inspection: Grid Should Generated&lt;div&gt;on First Use of InPolygon&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1910" y="1105" width="175" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-17" target="rxoH3m6sTBeBhxrcS38y-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-17" value="Generting CPOsitions from Lat Longs and Alts in AbstractZone is private code&lt;div&gt;of ReouePlanningVisibilityService&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2590" y="617.18" width="210" height="81.88" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-19" target="rxoH3m6sTBeBhxrcS38y-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-19" value="Copy the code as a public&lt;div&gt;function in our ZoneAlertComputer&lt;/div&gt;&lt;div&gt;Class&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" vertex="1" parent="1">
+          <mxGeometry x="2880" y="603.12" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-21" target="rxoH3m6sTBeBhxrcS38y-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-21" value="Tech&lt;div&gt;Debt:&lt;/div&gt;&lt;div&gt;Multiple Copies&lt;/div&gt;&lt;div&gt;of Intended Same&lt;/div&gt;&lt;div&gt;Function&lt;br&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="3160" y="617.18" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-23" target="rxoH3m6sTBeBhxrcS38y-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-23" value="The VisibilityGraph that does grow/shrink loses the ids of its&lt;div&gt;polygons. So we can&#39;t tie them&lt;/div&gt;&lt;div&gt;back to boundaries and do inside/outside checks using CBoundary, unless we recreate CBoundaries, but then we lose min Altitude and MaxAltitude as well as original Zone IDS!&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="2537.5" y="730" width="317.5" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-25" target="rxoH3m6sTBeBhxrcS38y-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-25" value="Reconstitute Each Zone CBoundary&amp;nbsp;&lt;div&gt;from VisibilityGraph&lt;div&gt;Polygon Vertex Data&lt;/div&gt;&lt;div&gt;in Visibility Graph&lt;/div&gt;&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3540" y="765" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-27" value="&lt;div&gt;&lt;b&gt;Behavior&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Requirement&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Change:&lt;/b&gt;&lt;/div&gt;Eliminate&lt;div&gt;Knowing&lt;/div&gt;&lt;div&gt;Zone IDs&lt;/div&gt;&lt;div&gt;Encountered&lt;/div&gt;&lt;div&gt;From Behavior&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3310" y="760" width="135" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-30" value="Tech&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Debt&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Continued Reinforcement of Poor Object Interface Design&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3810" y="762.5" width="160" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-32" target="rxoH3m6sTBeBhxrcS38y-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-32" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Consequence:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Subscribers Unaware of Which Zones are Being Violated,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3530" y="935" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-34" value="How will service be useful to reactors/responders without knowing what zones are impending violation?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3770" y="920" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-36" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3040" y="780" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-39" value="Send out the new processed zones with their new ids and type and geometry, then send those IDs when we alert, so everyone subscribing&amp;nbsp; is clear on the geometry and has pre-time to process" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="3330" y="1090" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-41" value="" style="endArrow=none;html=1;rounded=0;entryX=0.151;entryY=0.014;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3130" y="1000" as="sourcePoint" />
+            <mxPoint x="3180" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-42" value="What about code duplication&lt;br&gt;creating independent maintenance needs?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3330" y="617.1799999999998" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-44" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3490" y="619.06" width="30" height="70.94" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-45" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="1026.88" width="40" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-47" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2480" y="80" width="30" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
