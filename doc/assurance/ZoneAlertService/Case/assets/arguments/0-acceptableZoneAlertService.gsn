@@ -98,15 +98,43 @@
                 id="__gsn__18db9043dd7"
                 color="#ffffff"
                 name="Understood Problem">
-              The Zone Violation Unawareness probem is understood.
+              The problem is understood.
             </m>
 
-            <m
+            <g
                 id="__gsn__18db9044d68"
                 color="#ffffff"
                 name="The System Solves the Problem">
-              The Zone Alert System solves the defined Zone Violation Unawareness problem.
-            </m>
+              The system solves the understood problem.
+
+              <s
+                  id="__gsn__18fc0625209"
+                  color="#ffffff"
+                  name="Strategy">
+                By having a plausible solution defined, correctly implemented as an OpenUXAS service, and this service works to solve the problem.
+
+                <m
+                    id="__gsn__18fc062567b"
+                    color="#ffffff"
+                    name="A Plausible Solution">
+                  A plausible solution to the problem has been specified.
+                </m>
+
+                <m
+                    id="__gsn__18fc06259c1"
+                    color="#ffffff"
+                    name="Correct Implementation of the Solution">
+                  The OpenUxAS Zone Alert Service is a correct implementation of the specified solution.
+                </m>
+
+                <m
+                    id="__gsn__18fc0627746"
+                    color="#ffffff"
+                    name="The Solution Works">
+                  The implementation demonstrably solves the problem.
+                </m>
+              </s>
+            </g>
           </s>
         </g>
 

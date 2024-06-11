@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18db882c3f2"
+        color="#ffffff"
+        name="Understood Problem">
+      The Zone Violation Unawareness probem is understood.
+
+      <c
+          id="__gsn__18db8c70679"
+          color="#ffffff"
+          name="Problem: Impending Zone Violation Unawareness Problem">
+        Awareness that the current linear trajectory of a vehicle will violate one or more zone boundaries within a tactical time window.
+      </c>
+
+      <s
+          id="__gsn__18db9094d43"
+          color="#ffffff"
+          name="Strategy: Means of Understanding">
+        Through gathering of sufficient parties and expertise to define the problem, along with direct evidence that the problem has been well defined.
+
+        <c
+            id="__gsn__18f9cac02a0"
+            color="#ffffff"
+            name="Why Define the Problem">
+          It is easy to get the problem wrong and waste many iterations solving the wrong problem.
+        </c>
+
+        <g
+            id="__gsn__18db9094d44"
+            color="#ffffff"
+            name="Stakeholders Identified">
+          The people/entities who have the problem and those that can help describe it are identified as stakeholders.
+
+          <e
+              id="__gsn__18db9094d45"
+              color="#ffffff"
+              name="Stakeholder List">
+            Identified stakeholders.
+
+            <c
+                id="__gsn__18f783e0f5e"
+                color="#ffffff"
+                name="Includes">
+              Owners of the problem and experts who understand the class of problem.
+            </c>
+          </e>
+        </g>
+
+        <g
+            id="__gsn__18fc037cedb"
+            color="#ffffff"
+            name="Sufficient Expertise">
+          Stakeholders have sufficient information to define the problem.
+
+          <s
+              id="__gsn__18fc03c197f"
+              color="#ffffff"
+              name="Strategy">
+            Through available expert stakeholders, reference information, and performed research, sufficient expertise is demonstrated.
+
+            <g
+                id="__gsn__18fc03c2438"
+                color="#ffffff"
+                optional="true"
+                name="Expert Stakeholders">
+              Stakeholders with expertise in flight zones are identified.
+
+              <e
+                  id="__gsn__18fc04974d4"
+                  color="#ffcccc"
+                  name="Expert Stakeholders">
+                A list of stakeholders with required expertise, and those areas of expertise.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__18fc03c2757"
+                color="#ffffff"
+                optional="true"
+                name="Reference Information">
+              Reference information on zones and zone awareness are available.
+
+              <e
+                  id="__gsn__18fc0494485"
+                  color="#ffcccc"
+                  name="Reference Information">
+                Reference sources for keep-in and keep-out zones and awareness.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__18fc03c29c2"
+                color="#ffffff"
+                optional="true"
+                name="Research">
+              Research is performed as necessary to further understand zone unawareness.
+
+              <e
+                  id="__gsn__18fc047f913"
+                  color="#ffcccc"
+                  name="Research">
+                Performed research to understand zone unawareness.
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18db9094d46"
+            color="#ffffff"
+            name="Problem Well Defined">
+          The problem is well defined by the stakeholders and the engineers.
+
+          <s
+              id="__gsn__18fbb248ba3"
+              color="#ffffff"
+              name="Strategy">
+            Through problem definition with optional rigor of top-level requirements.
+
+            <g
+                id="__gsn__18fbb24d554"
+                color="#ffffff"
+                name="Problem Definition">
+              A problem definition document clearly defines the stakeholder's problem.
+
+              <s
+                  id="__gsn__18db9f21551"
+                  color="#ffffff"
+                  name="Strategy">
+                The problem statement is available for review, and in addition it contains the necessary components of a complete problem statement.
+
+                <g
+                    id="__gsn__18fc0e0136d"
+                    name="Goal">
+                  default text
+
+                  <s
+                      id="__gsn__18fc0e02b9c"
+                      name="Strategy">
+                    default text
+
+                    <g
+                        id="__gsn__18db9f21553"
+                        color="#ffffff"
+                        name="Inputs Assembled">
+                      Input information from stakeholders and domain experts is collected for use in problem analysis.
+
+                      <e
+                          id="__gsn__18db9f21554"
+                          color="#ffffff"
+                          name="CONOPS Capture">
+                        CONOPs discussion.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__18db9f21555"
+                        color="#ffffff"
+                        name="Reasonable Problem Analysis Performed">
+                      A reasonable analysis of the problem was performed by stakeholders and engineers.
+
+                      <e
+                          id="__gsn__18db9f21556"
+                          color="#ffcccc"
+                          name="Problem Analysis Documentation">
+                        .
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__18f78654d03"
+                        color="#ffffff"
+                        name="Acceptable Resulting Definition">
+                      The problem definition that results from analysis is acceptable.
+
+                      <s
+                          id="__gsn__18db9f2155f"
+                          color="#ffffff"
+                          name="Strategy">
+                        By showing that the current problem is reviewed and agreed to by relevant parties.
+
+                        <g
+                            id="__gsn__18fbb217c33"
+                            color="#ffffff"
+                            name="Presented Problem Definition">
+                          A complete and correct problem definition is presented.
+
+                          <e
+                              id="__gsn__18fbb21c33f"
+                              color="#ffffff"
+                              name="Problem Definition">
+                            The problem definition document
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__18db9f21562"
+                            color="#ffffff"
+                            name="Problem Definition Review">
+                          The stakeholders, engineers, and domain experts agree that the problem statement is correct and complete.
+
+                          <e
+                              id="__gsn__18db9f21563"
+                              color="#ffcccc"
+                              name="Problem Definition Review">
+                            Minutes from problem definition review.
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__18db9f21564"
+                            color="#ffffff"
+                            name="Sign-Off">
+                          Sign-off by stakeholder, engineer, and domain expert representatives that the current problem statement is correct and complete
+
+                          <e
+                              id="__gsn__18db9f21565"
+                              color="#ffcccc"
+                              name="Problem Definition: Sign-Off">
+                            Sign-off by stakeholders that they agree that the current problem definition is correct.
+                          </e>
+                        </g>
+                      </s>
+
+                      <comment
+                          id="__gsn__18fc0baad0d"
+                          color="#ffffff"
+                          name="Comment">
+                        So we could leave this trail here, and just say
+                      </comment>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__18fc0e01b29"
+                    name="Goal">
+                  default text
+
+                  <comment
+                      id="__gsn__18fc0e0c8ff"
+                      color="#ffffff"
+                      name="Comment">
+                    Somehow we want to point into the problem graph and show what it means . That the problem is a sub-problem in a web of important problems to solve.
+                  </comment>
+
+                  <comment
+                      id="__gsn__18fc102634e"
+                      color="#ffffff"
+                      name="Comment">
+                    A radical solution would be to abandon GSN and think about the proprietary language i wanted to build.
+                  </comment>
+                </g>
+
+                <comment
+                    id="__gsn__18db9f21552"
+                    color="#ffffff"
+                    name="Comment">
+                  Sean notes that example 4 in OpenUxAS violates a zone.
+                </comment>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__18fbb24dbbb"
+                color="#ffcccc"
+                optional="true"
+                name="Top-Level Requirements">
+              The problem document is composed into requirements.
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>
