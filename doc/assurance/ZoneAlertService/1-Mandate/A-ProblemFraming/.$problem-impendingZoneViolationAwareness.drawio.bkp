@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-21T15:28:26.857Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="2fH_TyFt8u520H4MsSqV" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-03-21T21:50:13.803Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="JeceRMCyTBjhuHCrSfu0" version="24.0.4" type="device">
   <diagram name="Page-1" id="bUUqg679XfmgL5BK57HB">
-    <mxGraphModel dx="1201" dy="1093" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1294" dy="1177" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,6 +11,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="DVeMuobm-aGxhQHQA0kC-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="rxoH3m6sTBeBhxrcS38y-51">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-1" value="Impending&lt;br&gt;Zone Violation&lt;br&gt;Unawareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -566,27 +569,27 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-326" value="Refactor the visibility graph and this code to use the same grow shrink code refactored into a geometry library as a function of CPolygon!" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="2570" y="1136.88" width="190" height="110" as="geometry" />
+          <mxGeometry x="2570" y="1180" width="190" height="110" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-332" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-328" target="DVeMuobm-aGxhQHQA0kC-331" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-328" value="How will we test RoutePlanner?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="2820" y="1151.88" width="190" height="85" as="geometry" />
+          <mxGeometry x="2820" y="1195" width="190" height="85" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-331" value="On this project, we do not want to test RoutePlanner or Change it" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="3060" y="1164.38" width="120" height="60" as="geometry" />
+          <mxGeometry x="3060" y="1207.5" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-333" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-326" target="DVeMuobm-aGxhQHQA0kC-326" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2570" y="1106.88" as="sourcePoint" />
-            <mxPoint x="2620" y="1056.88" as="targetPoint" />
+            <mxPoint x="2570" y="1150" as="sourcePoint" />
+            <mxPoint x="2620" y="1100" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-335" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-328" target="DVeMuobm-aGxhQHQA0kC-328" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2865" y="1131.88" as="sourcePoint" />
-            <mxPoint x="2915" y="1081.88" as="targetPoint" />
+            <mxPoint x="2865" y="1175" as="sourcePoint" />
+            <mxPoint x="2915" y="1125" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-345" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-341" target="DVeMuobm-aGxhQHQA0kC-342" edge="1">
@@ -692,10 +695,17 @@
           <mxGeometry x="3770" y="920" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="rxoH3m6sTBeBhxrcS38y-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-39">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3080" y="1145" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="rxoH3m6sTBeBhxrcS38y-36" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="3040" y="780" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-39" target="rxoH3m6sTBeBhxrcS38y-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rxoH3m6sTBeBhxrcS38y-39" value="Send out the new processed zones with their new ids and type and geometry, then send those IDs when we alert, so everyone subscribing&amp;nbsp; is clear on the geometry and has pre-time to process" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="3330" y="1090" width="190" height="110" as="geometry" />
@@ -717,6 +727,15 @@
         </mxCell>
         <mxCell id="rxoH3m6sTBeBhxrcS38y-47" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="2480" y="80" width="30" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-48" value="What coordinate system for information sent to consumers? xy,z of route planner or Location3D (lat,long,altitude)?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3630" y="1090" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-50" value="How do we assure that the x,y,z coordinate frame has a commonly understood reference frame origin and orientation?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3990" y="1085" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-51" value="C++&lt;br&gt;Memory Safety" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="275" width="140" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

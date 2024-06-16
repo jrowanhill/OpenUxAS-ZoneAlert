@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-21T21:50:13.803Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="JeceRMCyTBjhuHCrSfu0" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-06-11T17:51:46.804Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.13 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="oIsdOp-Gj4S24qUwfVL6" version="24.4.13" type="device">
   <diagram name="Page-1" id="bUUqg679XfmgL5BK57HB">
-    <mxGraphModel dx="1294" dy="1177" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="819" dy="669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="DVeMuobm-aGxhQHQA0kC-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="DVeMuobm-aGxhQHQA0kC-36" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="rxoH3m6sTBeBhxrcS38y-51">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-1" target="rxoH3m6sTBeBhxrcS38y-51" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-1" value="Impending&lt;br&gt;Zone Violation&lt;br&gt;Unawareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -48,7 +48,7 @@
             <mxPoint x="840" y="383" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-8" target="DVeMuobm-aGxhQHQA0kC-7">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-8" target="DVeMuobm-aGxhQHQA0kC-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-8" value="Determining&lt;br&gt;Impending&lt;br&gt;Zone Violation?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -146,7 +146,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="DVeMuobm-aGxhQHQA0kC-56" value="Compute if Trajectory Window Goes into or out of Polygon and know if current in or out of polygon, and logic by zone type" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
+        <mxCell id="DVeMuobm-aGxhQHQA0kC-56" value="Compute if Trajectory Window Goes into or out of Polygon and know if currently in or out of polygon, and logic by zone type" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
           <mxGeometry x="1060" y="798.12" width="240" height="91.88" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-57" target="DVeMuobm-aGxhQHQA0kC-62" edge="1">
@@ -255,13 +255,13 @@
         <mxCell id="DVeMuobm-aGxhQHQA0kC-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-98" target="DVeMuobm-aGxhQHQA0kC-131" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-98" target="rxoH3m6sTBeBhxrcS38y-6">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-98" target="rxoH3m6sTBeBhxrcS38y-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-98" value="CPolygon::&lt;br&gt;findIntersections" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="1390" y="1900" width="140" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-103" target="rxoH3m6sTBeBhxrcS38y-13">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-103" target="rxoH3m6sTBeBhxrcS38y-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-103" value="CPolygon::InPolygon" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
@@ -279,7 +279,7 @@
         <mxCell id="DVeMuobm-aGxhQHQA0kC-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-108" target="DVeMuobm-aGxhQHQA0kC-110" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-108" target="rxoH3m6sTBeBhxrcS38y-2">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-108" target="rxoH3m6sTBeBhxrcS38y-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-108" value="Check Only when Trajectory Vector&amp;nbsp;has at least one&lt;br&gt;point in or on bounding box" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
@@ -544,10 +544,10 @@
         <mxCell id="DVeMuobm-aGxhQHQA0kC-323" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="DVeMuobm-aGxhQHQA0kC-322" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="rxoH3m6sTBeBhxrcS38y-17">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="rxoH3m6sTBeBhxrcS38y-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="rxoH3m6sTBeBhxrcS38y-23">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-320" target="rxoH3m6sTBeBhxrcS38y-23" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-320" value="Copy the Visilibity method of expanding zones, by simply copying code used by visilibity library" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
@@ -613,129 +613,141 @@
         <mxCell id="DVeMuobm-aGxhQHQA0kC-351" value="Check Intersection of Line Segment with Two Infinite X-Y Planes" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="1210" y="1904.06" width="140" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-1" value="Re-Use&lt;div&gt;CPolygon Bounding Box&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-1" value="Re-Use&lt;div&gt;CPolygon Bounding Box&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
           <mxGeometry x="190" y="908.13" width="170" height="63.75" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-2" target="rxoH3m6sTBeBhxrcS38y-1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-2" target="rxoH3m6sTBeBhxrcS38y-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-2" value="Compute&lt;div&gt;Bounding Box&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-2" value="Compute&lt;div&gt;Bounding Box&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="250" y="800" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-6" value="Issue: There is a macro to&amp;nbsp;&lt;div&gt;turn off detection of intersection&lt;/div&gt;&lt;div&gt;at vertices. Is it off?&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-6" value="Issue: There is a macro to&amp;nbsp;&lt;div&gt;turn off detection of intersection&lt;/div&gt;&lt;div&gt;at vertices. Is it off?&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="1280" y="2093.44" width="160" height="88.12" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-8" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-8" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="880" y="1611.0900000000001" width="30" height="77.82" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-11" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-11" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1180" y="1614.0600000000002" width="30" height="77.82" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-13" target="rxoH3m6sTBeBhxrcS38y-15">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-13" target="rxoH3m6sTBeBhxrcS38y-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-13" value="Make sure&lt;div&gt;Grid is Generated&lt;/div&gt;&lt;div&gt;for Polygons before&lt;/div&gt;&lt;div&gt;Use&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-13" value="Make sure&lt;div&gt;Grid is Generated&lt;/div&gt;&lt;div&gt;for Polygons before&lt;/div&gt;&lt;div&gt;Use&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="1730" y="1100" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-15" value="By Code Inspection: Grid Should Generated&lt;div&gt;on First Use of InPolygon&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-15" value="By Code Inspection: Grid Should Generated&lt;div&gt;on First Use of InPolygon&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1910" y="1105" width="175" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-17" target="rxoH3m6sTBeBhxrcS38y-19">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-17" target="rxoH3m6sTBeBhxrcS38y-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-17" value="Generting CPOsitions from Lat Longs and Alts in AbstractZone is private code&lt;div&gt;of ReouePlanningVisibilityService&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-17" value="Generting CPOsitions from Lat Longs and Alts in AbstractZone is private code&lt;div&gt;of ReouePlanningVisibilityService&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2590" y="617.18" width="210" height="81.88" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-19" target="rxoH3m6sTBeBhxrcS38y-21">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-19" target="rxoH3m6sTBeBhxrcS38y-21" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-19" value="Copy the code as a public&lt;div&gt;function in our ZoneAlertComputer&lt;/div&gt;&lt;div&gt;Class&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-19" value="Copy the code as a public&lt;div&gt;function in our ZoneAlertComputer&lt;/div&gt;&lt;div&gt;Class&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
           <mxGeometry x="2880" y="603.12" width="190" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-21" target="rxoH3m6sTBeBhxrcS38y-42">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-21" target="rxoH3m6sTBeBhxrcS38y-42" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-21" value="Tech&lt;div&gt;Debt:&lt;/div&gt;&lt;div&gt;Multiple Copies&lt;/div&gt;&lt;div&gt;of Intended Same&lt;/div&gt;&lt;div&gt;Function&lt;br&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-21" value="Tech&lt;div&gt;Debt:&lt;/div&gt;&lt;div&gt;Multiple Copies&lt;/div&gt;&lt;div&gt;of Intended Same&lt;/div&gt;&lt;div&gt;Function&lt;br&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="3160" y="617.18" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-27">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-23" target="rxoH3m6sTBeBhxrcS38y-36">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-23" target="rxoH3m6sTBeBhxrcS38y-36" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-23" value="The VisibilityGraph that does grow/shrink loses the ids of its&lt;div&gt;polygons. So we can&#39;t tie them&lt;/div&gt;&lt;div&gt;back to boundaries and do inside/outside checks using CBoundary, unless we recreate CBoundaries, but then we lose min Altitude and MaxAltitude as well as original Zone IDS!&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-23" value="The VisibilityGraph that does grow/shrink loses the ids of its&lt;div&gt;polygons. So we can&#39;t tie them&lt;/div&gt;&lt;div&gt;back to boundaries and do inside/outside checks using CBoundary, unless we recreate CBoundaries, but then we lose min Altitude and MaxAltitude as well as original Zone IDS!&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="2537.5" y="730" width="317.5" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-25" target="rxoH3m6sTBeBhxrcS38y-30">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-25" target="rxoH3m6sTBeBhxrcS38y-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-25" value="Reconstitute Each Zone CBoundary&amp;nbsp;&lt;div&gt;from VisibilityGraph&lt;div&gt;Polygon Vertex Data&lt;/div&gt;&lt;div&gt;in Visibility Graph&lt;/div&gt;&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-25" value="Reconstitute Each Zone CBoundary&amp;nbsp;&lt;div&gt;from VisibilityGraph&lt;div&gt;Polygon Vertex Data&lt;/div&gt;&lt;div&gt;in Visibility Graph&lt;/div&gt;&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="3540" y="765" width="170" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-25">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-25" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-32">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-27" value="&lt;div&gt;&lt;b&gt;Behavior&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Requirement&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Change:&lt;/b&gt;&lt;/div&gt;Eliminate&lt;div&gt;Knowing&lt;/div&gt;&lt;div&gt;Zone IDs&lt;/div&gt;&lt;div&gt;Encountered&lt;/div&gt;&lt;div&gt;From Behavior&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-27" value="&lt;div&gt;&lt;b&gt;Behavior&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Requirement&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Change:&lt;/b&gt;&lt;/div&gt;Eliminate&lt;div&gt;Knowing&lt;/div&gt;&lt;div&gt;Zone IDs&lt;/div&gt;&lt;div&gt;Encountered&lt;/div&gt;&lt;div&gt;From Behavior&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="3310" y="760" width="135" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-30" value="Tech&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Debt&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Continued Reinforcement of Poor Object Interface Design&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-30" value="Tech&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Debt&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Continued Reinforcement of Poor Object Interface Design&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="3810" y="762.5" width="160" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-32" target="rxoH3m6sTBeBhxrcS38y-34">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-32" target="rxoH3m6sTBeBhxrcS38y-34" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-32" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Consequence:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Subscribers Unaware of Which Zones are Being Violated,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-32" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Consequence:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Subscribers Unaware of Which Zones are Being Violated,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="3530" y="935" width="160" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-34" value="How will service be useful to reactors/responders without knowing what zones are impending violation?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-34" value="How will service be useful to reactors/responders without knowing what zones are impending violation?" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="3770" y="920" width="180" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-39">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-36" target="rxoH3m6sTBeBhxrcS38y-39" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="3080" y="1145" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-36" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-36" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3040" y="780" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-39" target="rxoH3m6sTBeBhxrcS38y-48">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-39" target="rxoH3m6sTBeBhxrcS38y-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-39" value="Send out the new processed zones with their new ids and type and geometry, then send those IDs when we alert, so everyone subscribing&amp;nbsp; is clear on the geometry and has pre-time to process" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-39" value="Send out the new processed zones with their new ids and type and geometry, then send those IDs when we alert, so everyone subscribing&amp;nbsp; is clear on the geometry and has pre-time to process" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="3330" y="1090" width="190" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-41" value="" style="endArrow=none;html=1;rounded=0;entryX=0.151;entryY=0.014;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-27">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-41" value="" style="endArrow=none;html=1;rounded=0;entryX=0.151;entryY=0.014;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="rxoH3m6sTBeBhxrcS38y-27" target="rxoH3m6sTBeBhxrcS38y-27" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="3130" y="1000" as="sourcePoint" />
             <mxPoint x="3180" y="950" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-42" value="What about code duplication&lt;br&gt;creating independent maintenance needs?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-42" value="What about code duplication&lt;br&gt;creating independent maintenance needs?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3330" y="617.1799999999998" width="160" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-44" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-44" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3490" y="619.06" width="30" height="70.94" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-45" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-45" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2320" y="1026.88" width="40" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-47" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-47" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2480" y="80" width="30" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-48" value="What coordinate system for information sent to consumers? xy,z of route planner or Location3D (lat,long,altitude)?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-48" value="What coordinate system for information sent to consumers? xy,z of route planner or Location3D (lat,long,altitude)?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3630" y="1090" width="260" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-50" value="How do we assure that the x,y,z coordinate frame has a commonly understood reference frame origin and orientation?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-50" value="How do we assure that the x,y,z coordinate frame has a commonly understood reference frame origin and orientation?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3990" y="1085" width="260" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="rxoH3m6sTBeBhxrcS38y-51" value="C++&lt;br&gt;Memory Safety" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="rxoH3m6sTBeBhxrcS38y-51" value="C++&lt;br&gt;Memory Safety" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="1230" y="275" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BFiVu8qNV9dyJUHpQB_7-1" value="Record Rationale" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="2610" y="327.5" width="120" height="63.75" as="geometry" />
+        </mxCell>
+        <mxCell id="BFiVu8qNV9dyJUHpQB_7-2" value="Have service return DAIDALUS-like bands&lt;div&gt;so zone info not needed by responders&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="3320" y="1220" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="BFiVu8qNV9dyJUHpQB_7-3" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.009;exitY=0.086;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="BFiVu8qNV9dyJUHpQB_7-2" target="BFiVu8qNV9dyJUHpQB_7-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3430" y="1250" as="sourcePoint" />
+            <mxPoint x="3480" y="1200" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

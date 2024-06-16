@@ -123,6 +123,6 @@ Jan 2, 2023
 -----------
 Discussion with Stakeholder
 
-Take a look at the typical mission instantiation and messsage flow presented in 
+Take a look at the typical mission instantiation and messsage flow presented is repo. 
 
 Dynamic unsubscription is not usually applied as a pattern in OpenUxAS.
