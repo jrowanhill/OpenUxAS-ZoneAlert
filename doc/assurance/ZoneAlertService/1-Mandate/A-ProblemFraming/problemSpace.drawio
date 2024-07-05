@@ -1,11 +1,11 @@
-<mxfile host="Electron" modified="2024-02-27T20:12:15.849Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="fLPbIE2lMG-JF1_fVGw4" version="23.0.2" type="device">
+<mxfile host="Electron" modified="2024-07-05T21:09:47.213Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="UuR_UughDxKBz5pJJJ8m" version="24.6.4" type="device">
   <diagram name="Page-1" id="S6qodzWcR235S5HdwQ7s">
-    <mxGraphModel dx="1175" dy="848" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" math="0" shadow="0">
+    <mxGraphModel dx="819" dy="669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="H7EjSrxgupJgMw0YifO5-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="240" width="500" height="210" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="620" y="220" width="920" height="210" as="geometry" />
         </mxCell>
         <mxCell id="HQJh28wRU9YX6V6UqWqC-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-30" target="HQJh28wRU9YX6V6UqWqC-29" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -24,128 +24,225 @@
         </mxCell>
         <mxCell id="HQJh28wRU9YX6V6UqWqC-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-27" target="HQJh28wRU9YX6V6UqWqC-25" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="360" y="220" as="sourcePoint" />
+            <mxPoint x="360" y="240" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HQJh28wRU9YX6V6UqWqC-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-28" target="HQJh28wRU9YX6V6UqWqC-25" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="430" y="180" as="targetPoint" />
-            <mxPoint x="510" y="220" as="sourcePoint" />
+            <mxPoint x="430" y="200" as="targetPoint" />
+            <mxPoint x="510" y="240" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-32" target="HQJh28wRU9YX6V6UqWqC-29" edge="1">
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-24" value="&lt;b&gt;Zone Violation&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;∃&lt;/font&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt; time T, aircraft A, zone Z : violates(A, Z, T)&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="10" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-25" value="&lt;b&gt;Flight-Route Zone Violation&lt;/b&gt;&lt;div&gt;∃&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;time T, aircraft A with route R, zone Z :&amp;nbsp; violates(R, Z, T)&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="130" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HQJh28wRU9YX6V6UqWqC-26" target="HQJh28wRU9YX6V6UqWqC-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-24" value="Zone Violation" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="260" y="10" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-25" value="Route-Flight&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Zone Violation" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="120" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-26" value="Free-Flight&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Zone Violation" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="150" y="120" width="120" height="60" as="geometry" />
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-26" value="&lt;b&gt;Flight Zone Violation&lt;/b&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;∃&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;aircraft A with route R, zone Z : ~Flight Route Zone Violation &amp;amp;&amp;amp;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;∃ &lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;time T : violates(A,Z,T)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="130" width="180" height="80" as="geometry" />
         </mxCell>
         <mxCell id="HQJh28wRU9YX6V6UqWqC-27" value="Computing Route Fails to Account for Zones" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="300" y="220" width="120" height="60" as="geometry" />
+          <mxGeometry x="300" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HQJh28wRU9YX6V6UqWqC-28" value="Lack of Zone Knowledge by Route Planning" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="450" y="220" width="120" height="60" as="geometry" />
+          <mxGeometry x="450" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-29" value="Tactical Zone Violation Awareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="150" y="210" width="120" height="60" as="geometry" />
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-29" value="Trajectory&lt;div&gt;Zone Violation Unawareness&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="230" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-30" value="Impending&lt;br&gt;Zone Violation&lt;br&gt;Awareness" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="10" y="330" width="120" height="60" as="geometry" />
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-30" value="Impending&lt;br&gt;Zone Violation&lt;br&gt;Unawareness" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="70" y="330" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-31" value="Nearby Zone Boundary&lt;br&gt;Unwareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="150" y="330" width="120" height="60" as="geometry" />
+        <mxCell id="HQJh28wRU9YX6V6UqWqC-31" value="Ineffective&lt;div&gt;Recovery&lt;/div&gt;&lt;div&gt;Trajectory&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="330" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="HQJh28wRU9YX6V6UqWqC-32" target="HQJh28wRU9YX6V6UqWqC-33" edge="1">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-2" value="OpenUxAS&lt;br&gt;Vehicles" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-3" value="OpenUxAS&lt;br&gt;Zones" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-6" target="H7EjSrxgupJgMw0YifO5-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-32" value="Overlapping&lt;br&gt;Keep-In Zone&lt;br&gt;Awareness" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="290" y="330" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="HQJh28wRU9YX6V6UqWqC-33" value="Zone &lt;br&gt;Polygon&lt;br&gt;Merging" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=15;dy=0;" parent="1" vertex="1">
-          <mxGeometry x="457.5" y="330" width="105" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-2" target="H7EjSrxgupJgMw0YifO5-23">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="H7EjSrxgupJgMw0YifO5-6" target="H7EjSrxgupJgMw0YifO5-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-2" value="OpenUxAS&lt;br&gt;Vehicles" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="150" width="120" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-6" value="Vehicles&lt;br&gt;Shall Not Violate Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1360" y="80" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-3" value="OpenUxAS&lt;br&gt;Zones" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="50" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-6" target="H7EjSrxgupJgMw0YifO5-3">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-26" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-10" target="H7EjSrxgupJgMw0YifO5-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-6" target="H7EjSrxgupJgMw0YifO5-2">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-10" value="Routes Planner" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="640" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H7EjSrxgupJgMw0YifO5-27" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="H7EjSrxgupJgMw0YifO5-11" target="H7EjSrxgupJgMw0YifO5-18" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-6" value="Vehicles&lt;br&gt;Shall Not Violate Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="1150" y="100" width="160" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-11" value="Trajectory&lt;div&gt;Planner&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="950" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-26" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-10" target="H7EjSrxgupJgMw0YifO5-17">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-10" value="Routes Planner&lt;br&gt;with Zone&lt;br&gt;Observance" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
-          <mxGeometry x="660" y="270" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-27" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-11" target="H7EjSrxgupJgMw0YifO5-18">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-11" value="Tactical Zone Observance" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
-          <mxGeometry x="830" y="270" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-14" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-3">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-14" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1170" y="-40" as="sourcePoint" />
-            <mxPoint x="1220" y="-90" as="targetPoint" />
+            <mxPoint x="1255" y="-60" as="sourcePoint" />
+            <mxPoint x="1305" y="-110" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-15" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-2">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-15" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1170" y="-40" as="sourcePoint" />
-            <mxPoint x="1220" y="-90" as="targetPoint" />
+            <mxPoint x="1255" y="-60" as="sourcePoint" />
+            <mxPoint x="1305" y="-110" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-17" value="Route Planner Must&lt;br&gt;Observe Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="640" y="370" width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-18" value="Tactical Free Flight&lt;br&gt;Must Not Violate&lt;br&gt;Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="850" y="370" width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-10">
+        <mxCell id="Fja21LClgE4fEWD5Y99B-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-17" target="Fja21LClgE4fEWD5Y99B-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-11">
+        <mxCell id="H7EjSrxgupJgMw0YifO5-17" value="Route Planner Shall&lt;br&gt;Obey Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="790" y="250" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-18" target="Fja21LClgE4fEWD5Y99B-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-19" value="Zone-Observing&lt;br&gt;Flight Control" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
-          <mxGeometry x="730" y="90" width="120" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-18" value="Intended Trajectory Shall Obey Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1095" y="250" width="130" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-23" value="Three-Tiered&lt;br&gt;Flight Control" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="270" width="120" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-30" value="Tactical Zone Awareness" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="570" width="120" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="H7EjSrxgupJgMw0YifO5-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-31" value="Tactical Zone&lt;br&gt;Response" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="640" width="120" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-19" value="Three-Tiered&lt;div&gt;Flight Control&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="815" y="70" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-32" value="Tactical Zone Awareness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="750" y="490" width="120" height="60" as="geometry" />
+        <mxCell id="H7EjSrxgupJgMw0YifO5-31" value="Free-Flight&lt;div&gt;Trajectory Planner&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="470" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-33" value="Tactical Zone Response" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="940" y="490" width="120" height="60" as="geometry" />
+        <mxCell id="Fja21LClgE4fEWD5Y99B-5" value="Trajectory&lt;div&gt;Executor&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-34" value="Impending Zone Violation Awareness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="670" y="600" width="120" height="60" as="geometry" />
+        <mxCell id="Fja21LClgE4fEWD5Y99B-6" value="Inner Loop Accuracy for Trajectory Control" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1380" y="245" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="H7EjSrxgupJgMw0YifO5-35" value="Nearby Zone Boundary Awareness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="820" y="600" width="120" height="60" as="geometry" />
+        <mxCell id="Fja21LClgE4fEWD5Y99B-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="Fja21LClgE4fEWD5Y99B-5" target="Fja21LClgE4fEWD5Y99B-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="985" y="320" as="sourcePoint" />
+            <mxPoint x="985" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-19" target="Fja21LClgE4fEWD5Y99B-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="885" y="140" as="sourcePoint" />
+            <mxPoint x="965" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-9" value="&lt;b&gt;Flight Zone Violation&lt;/b&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;∃&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;aircraft A with route R, zone Z : ~Flight Route Zone Violation &amp;amp;&amp;amp;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;∃ &lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;time T : violates(R,Z,T)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1070" y="330" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-10" value="&lt;b&gt;Flight-Route Zone Violation&lt;/b&gt;&lt;div&gt;∃&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;time T, aircraft A with route R, zone Z :&amp;nbsp; violates(R, Z, T)&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="760" y="335" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-11" target="H7EjSrxgupJgMw0YifO5-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="140" as="sourcePoint" />
+            <mxPoint x="1090" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-20" value="Route Following Trajectory Planner" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="870" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-11" target="Fja21LClgE4fEWD5Y99B-20" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="545" as="sourcePoint" />
+            <mxPoint x="1180" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-53" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=none;startFill=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-28" target="Fja21LClgE4fEWD5Y99B-52" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1257.5" y="805" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-39" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-23" target="Fja21LClgE4fEWD5Y99B-38" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1810" y="865" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-23" value="Impending Zone Violation Recovery" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;spacingLeft=10;spacingRight=10;" parent="1" vertex="1">
+          <mxGeometry x="1360" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-25" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-31" target="Fja21LClgE4fEWD5Y99B-28" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1155" y="670" as="sourcePoint" />
+            <mxPoint x="1155" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-28" target="Fja21LClgE4fEWD5Y99B-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-28" value="Impending Zone Violation&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Detection&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;and Recovery&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="1130" y="635" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-30" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-28" target="Fja21LClgE4fEWD5Y99B-23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1455" y="640" as="sourcePoint" />
+            <mxPoint x="1385" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-31" value="&lt;b&gt;Trajectory Zone Violation Unawareness&lt;/b&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;∃&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;aircraft A, zone Z, current time TC, time window TW, future time TV where TC &amp;lt;= TV &amp;lt;= TC+TW, intended trajectory P of A : ~Flight Route Zone Violation &amp;amp;&amp;amp;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;violates(P,Z,TV) &amp;amp;&amp;amp; unaware(A, violates(P,Z,TV))&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingRight=10;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1360" y="740" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-36" value="Intended Vehicle Trajectory" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-37" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-36" target="H7EjSrxgupJgMw0YifO5-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1235" y="615" as="sourcePoint" />
+            <mxPoint x="1235" y="655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-38" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;Ineffective Recovery&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;Trajectory&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;∃&lt;/span&gt;&lt;font style=&quot;background-color: initial; font-size: 10px;&quot;&gt;&amp;nbsp;aircraft A, zone Z, current time TC, time window TW, future time TV where TC &amp;lt;= TV &amp;lt;= TC+TW, current linear trajectory L of A, corrected trajectory P&#39; of A : ~Flight Route Zone Violation &amp;amp;&amp;amp; &lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;violates(L,Z,TV) &amp;amp;&amp;amp; aware(A, violates(L,Z,TV)) &amp;amp;&amp;amp; &lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;∃&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;TV&#39; WHERE TC &amp;lt;= TV&#39; &amp;lt;=TC+TW : violates(P&#39;,Z,TV&#39;)&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingRight=10;" parent="1" vertex="1">
+          <mxGeometry x="1530" y="905" width="355" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-40" value="Lookahead Time Window" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="920" y="745" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-41" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-28" target="Fja21LClgE4fEWD5Y99B-40" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1545" y="675" as="sourcePoint" />
+            <mxPoint x="1505" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-42" value="&lt;div&gt;Zone Unaware Tactical Flight&lt;/div&gt;&lt;div&gt;Trajectory&lt;/div&gt;&lt;div&gt;Generation&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="960" y="635" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-43" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="H7EjSrxgupJgMw0YifO5-31" target="Fja21LClgE4fEWD5Y99B-42" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1155" y="570" as="sourcePoint" />
+            <mxPoint x="1235" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-50" target="Fja21LClgE4fEWD5Y99B-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-50" value="detect and avoid trajectories that will violate&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;zones&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1300" y="630" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-56" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Fja21LClgE4fEWD5Y99B-52" target="Fja21LClgE4fEWD5Y99B-55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-52" value="Current Linear Trajectory Zone&lt;div&gt;Violation Detection&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;spacingLeft=10;spacingRight=10;" parent="1" vertex="1">
+          <mxGeometry x="990" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-55" value="&lt;b&gt;Impending Zone Violation Unawareness&lt;/b&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;∃&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;aircraft A, zone Z, current time TC, time window TW, future time TV where TC &amp;lt;= TV &amp;lt;= TC+TW, current at TC linear trajectory L of A : ~Flight Route Zone Violation &amp;amp;&amp;amp;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;violates(L,Z,TV) &amp;amp;&amp;amp; unaware(A, violates(L,Z,TV))&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingRight=10;spacingLeft=10;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="600" y="905" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Fja21LClgE4fEWD5Y99B-61" value="Note, this is an imperfect solution. Zone-aware trajectory generation would be better" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1500" y="600" width="205" height="95" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

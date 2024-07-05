@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__19008174d9f"
+        color="#ffffff"
+        name="Confidence in Construction">
+      There is significant reason to believe the produced problem diagram would be valid.
+
+      <s
+          id="__gsn__190081f9782"
+          color="#ffffff"
+          name="Strategy: Means of Understanding">
+        Through gathering of sufficient parties and expertise to define the problem, along with direct evidence that the problem has been well defined.
+
+        <c
+            id="__gsn__190081f9783"
+            color="#ffffff"
+            name="Why Define the Problem">
+          It is easy to get the problem wrong and waste many iterations solving the wrong problem.
+        </c>
+
+        <a
+            id="__gsn__19084ba8f91"
+            color="#ffffff"
+            name="Reasonable Problem Analysis Performed">
+          A reasonable analysis of the problem was performed by stakeholders and engineers.
+        </a>
+
+        <g
+            id="__gsn__190081f9784"
+            color="#ffffff"
+            name="Stakeholders Identified">
+          The people/entities who have the problem and those that can help describe it are identified as stakeholders.
+
+          <e
+              id="__gsn__190081f9785"
+              color="#ffffff"
+              name="Problem Owner: S. Regisford">
+            Regisford is the person who wants to solve the problem of not knowing when tactical flight might violate zone.
+          </e>
+        </g>
+
+        <g
+            id="__gsn__190081f9786"
+            color="#ffffff"
+            name="Sufficient Expertise">
+          Stakeholders have sufficient information to define the problem.
+
+          <s
+              id="__gsn__190081f9787"
+              color="#ffffff"
+              name="Strategy">
+            Through available expert stakeholders and reference information sufficient expertise is demonstrated.
+
+            <g
+                id="__gsn__190081f9788"
+                color="#ffffff"
+                name="Expert Stakeholders">
+              Stakeholders with expertise in flight zones are identified.
+
+              <e
+                  id="__gsn__190081f9789"
+                  color="#ffffff"
+                  name="Expert Stakeholders">
+                Sean Regisford is identified as a resource who understands the semantics of zones in OpenUxAS.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__190081f978a"
+                color="#ffffff"
+                name="Reference Information">
+              Reference information on zones and zone awareness are available.
+
+              <e
+                  id="__gsn__190081f978b"
+                  color="#ffffff"
+                  name="Reference Information">
+                The OpenUxAS codebase and data structures define zones. Existing polygon code for zone routing partially explains zones semantics when reverse engineered.
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__190081f9795"
+            color="#ffffff"
+            name="Inputs Assembled">
+          Input information from stakeholders and domain experts is collected for use in problem analysis.
+
+          <e
+              id="__gsn__190081f9796"
+              color="#ffffff"
+              name="CONOPS Capture">
+            CONOPs discussion notes.
+          </e>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>
