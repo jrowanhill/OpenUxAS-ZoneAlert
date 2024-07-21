@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__19093bb1e2f"
+        color="#ffffff"
+        name="A Plausible Solution">
+      A plausible solution to the problem of Impending Zone Violation Unawareness has been specified.
+
+      <s
+          id="__gsn__19093ee714d"
+          name="Strategy">
+        default text
+
+        <c
+            id="__gsn__19093ef1be8"
+            color="#ffffff"
+            name="Recall The Problem Definition">
+          The the problem of Impending Zone Violation Unawareness is that within a given fixed time window, on the planned tactical trajectory of an aircraft, the aircraft is unaware that the trajectory will violate one or more zones.
+        </c>
+
+        <c
+            id="__gsn__190983ad7c3"
+            color="#ffffff"
+            name="Assume">
+          Flight Route-Level Planning does not violate zones (~Flight Route Zone Violation).
+        </c>
+
+        <g
+            id="__gsn__19093ee8e7c"
+            color="#ffffff"
+            name="Problem as State Definition">
+          Trajectory Zone Violation Unawareness is as follows.
+∃ aircraft A, zone Z, current time TC, time window TW, future time TV where TC &lt;= TV &lt;= TC+TW, intended trajectory P of A : ~Flight Route Zone Violation &amp;&amp; violates(P,Z,TV) &amp;&amp; unaware(A, violates(P,Z,TV))
+
+          <e
+              id="__gsn__190983b6bf7"
+              color="#ffffff"
+              name="See">
+            problemSpace.png
+          </e>
+        </g>
+
+        <g
+            id="__gsn__190942f745c"
+            color="#ffffff"
+            name="Goal">
+          The proposed solution alerts an aircraft whenever its proposed tactical trajectory will violate a zone.
+
+          <c
+              id="__gsn__19098489e17"
+              color="#ffffff"
+              name="See">
+            "Impending Zone Violation Detection
+and Recovery" solution in problemSpace.png
+          </c>
+
+          <s
+              id="__gsn__190942ff7ff"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__1909431212e"
+                color="#ffffff"
+                name="Sufficiency of Linear Projection">
+              By using a sufficiently accurate linear trajectory calculation.
+
+              <s
+                  id="__gsn__19094315e6b"
+                  name="Strategy">
+                default text
+
+                <a
+                    id="__gsn__190944bfcb8"
+                    color="#ffffff"
+                    name="Sufficiency of Linear Trajectory Approximation">
+                  For sufficiently slow curvature of a trajectory and/or small enough of a lookahead time window, the current linear trajectory of the aircraft adequately approximates the planned future trajectory of their aircraft.
+                </a>
+
+                <g
+                    id="__gsn__19093ee93e3"
+                    color="#ffffff"
+                    name="Goal">
+                  The proposed solution alerts the aircraft when the linear trajectory approximation of the aircraft will violate a zone.
+                </g>
+
+                <g
+                    id="__gsn__19094306588"
+                    color="#ffffff"
+                    name="Goal">
+                  The proposed solution time window versus potential flight curvature renders linear approximation a sufficient solution.
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__19094317f7d"
+                color="#ffffff"
+                name="Sufficient Discrete Frequency">
+              Operated at a sufficiently high frequency.
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__190983b2693"
+            color="#ffffff"
+            name="Goal">
+          By alerting the aircraft whenever the aircraft's proposed tactical trajectory will violate a zone, the problem defined as a state definition will not occur.
+
+          <s
+              id="__gsn__19098465033"
+              name="Strategy">
+            default text
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

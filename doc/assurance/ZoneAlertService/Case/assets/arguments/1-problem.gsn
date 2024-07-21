@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1907ef577a1"
+        color="#ffffff"
+        name="Understood Problem">
+      The Impending Zone Violation Unawareness problem is understood.
+
+      <s
+          id="__gsn__1907ef68a43"
+          color="#ffffff"
+          name="Strategy">
+        By discussing how the problem has been adequately defined and validated by the stakeholders under quality work and care.
+
+        <c
+            id="__gsn__190d69819ca"
+            color="#ffffff"
+            name="Problem Validity">
+          Whether a problem is truly the one that stakeholders desire to be solved.
+        </c>
+
+        <c
+            id="__gsn__190d6981f43"
+            color="#ffffff"
+            name="Problem Definition">
+          A definition of a problem as a change from an existing world state to a desired world state [cite JCK] and surrounded by informing context.
+        </c>
+
+        <g
+            id="__gsn__1907ef69218"
+            color="#ffffff"
+            name="Correct Problem">
+          The problem of detecting imminent and occurring violations has been adequately identified and validated.
+
+          <s
+              id="__gsn__190d6a1e39e"
+              color="#ffffff"
+              name="Strategy">
+            By arguing each attribute of a correct problem
+
+            <g
+                id="__gsn__190d6a1f085"
+                color="#ffffff"
+                name="Valid">
+              The problem of knowing about imminent and existing zone violations by vehicles is the problem intended to be solved by stakeholders.
+
+              <s
+                  id="__gsn__190d6aa1ebe"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing that the problem is well-situated in a carefully vested problem diagram.
+
+                <c
+                    id="__gsn__190849b5480"
+                    color="#ffffff"
+                    name="Problem Diagram">
+                  This argument discusses the problem diagram presented in problemView.png.
+                </c>
+
+                <j
+                    id="__gsn__190c6c6eeb7"
+                    color="#ffffff"
+                    name="Vehicles Should Obey Zones">
+                  OpenUxAS is designed so that vehicles should obey zones to the extent practicable.
+                </j>
+
+                <g
+                    id="__gsn__190d6aae093"
+                    color="#ffffff"
+                    name="Zone Violations Will Occur">
+                  Sometimes, a vehicle will not be able to avoid violating a zone.
+
+                  <s
+                      id="__gsn__190d6b132a5"
+                      color="#ffffff"
+                      name="Strategy">
+                    Show by examples
+
+                    <g
+                        id="__gsn__190d6b13d02"
+                        color="#ffffff"
+                        name="Competing Constraints">
+                      In some cases, violating a zone will be a desired outcome for competing constraints.
+
+                      <e
+                          id="__gsn__190d6ab1c4e"
+                          color="#ffffff"
+                          name="Priority Tactical Conflicting Actions">
+                        In some cases, tactical actions should be taken that will violate zones of some types (soft zones).
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__190d6b13adc"
+                        color="#ffffff"
+                        name="Technical Limitations of OpenUxAS">
+                      Tactical vehicle trajectory planners are not all zone-aware.
+
+                      <e
+                          id="__gsn__190d6b271a0"
+                          color="#ffffff"
+                          name="Existing Mission Goal Controllers">
+                        Existing goal
+                      </e>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__190d6abfcda"
+                    color="#ffffff"
+                    name="Useful to Know About Violations">
+                  In cases where a vehicle will not avoid a zone, it is useful to know about the impending and occurring zone violation.
+
+                  <s
+                      id="__gsn__190d6b5ed63"
+                      color="#ffffff"
+                      name="Strategy">
+                    Show by identified applications
+
+                    <g
+                        id="__gsn__190d6b5f579"
+                        color="#ffffff"
+                        name="Monitoring">
+                      It will be useful to log, alert, and display when and where vehicles will or have violated a zone.
+
+                      <e
+                          id="__gsn__190d6bc4fcf"
+                          color="#ffffff"
+                          name="Monitoring Application">
+                        See the monitoring application of problemView.png.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__190d6b5f905"
+                        color="#ffffff"
+                        name="Compensation">
+                      It might be useful for OpenUxAS to react to imminent or impending zone violations.
+
+                      <e
+                          id="__gsn__190d6bfb369"
+                          color="#ffffff"
+                          name="Reactive Trajectory Planner">
+                        See the zone violation detection and reaction planner for vehicles in problemView.png.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__190d6b73e4b"
+                        color="#ffffff"
+                        name="Recovery Through Avoidance">
+                      It might be useful for vehicles (such as wingman) to know about impending zone violations so that a reactive planner could attempt to override the planned trajectory with one that does not violate zones.
+
+                      <e
+                          id="__gsn__190d6bcc02c"
+                          color="#ffffff"
+                          name="Reactive Trajectory Planner">
+                        See the zone violation detection and reaction planner for vehicles in problemView.png.
+                      </e>
+                    </g>
+                  </s>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__190d6a1f694"
+                color="#ffffff"
+                name="Well-Defined">
+              The problem of knowing about imminent and existing zone violations by vehicles is sufficiently defined as existing versus desired world state with appropriate surrounding context.
+
+              <g
+                  id="__gsn__190d6c73225"
+                  color="#ffffff"
+                  name="Formally Defined">
+                The problem is specified in first-order predicate logic derived from the problem diagram.
+
+                <e
+                    id="__gsn__190d6c78196"
+                    color="#ffffff"
+                    name="Predicate Logic Definition">
+                  Definition of the binary world state that is not desired, such that a monitoring solution would provide it's negation.
+                </e>
+              </g>
+            </g>
+          </s>
+        </g>
+
+        <m
+            id="__gsn__1907f0017c6"
+            color="#ffffff"
+            name="Confidence in Construction">
+          There is significant reason to believe the produced problem diagram would be valid.
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>
