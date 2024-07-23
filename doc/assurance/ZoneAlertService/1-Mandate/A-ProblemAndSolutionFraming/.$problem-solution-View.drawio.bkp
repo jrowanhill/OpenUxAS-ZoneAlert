@@ -1,0 +1,487 @@
+<mxfile host="Electron" modified="2024-07-23T16:35:11.886Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="buWUTCt5WkStU-BHRgO7" version="24.6.4" type="device">
+  <diagram name="Page-1" id="yXuvJgtH6QPZDnH7URkE">
+    <mxGraphModel dx="3667" dy="3587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-71" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=default;align=center;verticalAlign=middle;spacing=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
+          <mxGeometry x="1452.5" y="1410" width="1407.5" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-45" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-19" target="JSQSmUIgRKh7VZr8fQnd-59" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2500" y="1768.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-19" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="2290" y="1518.75" width="405" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="565" width="250" height="285" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-54" value="" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;strokeWidth=3;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1705" y="580" width="650" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-16" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="290" width="440" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-48" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-45" target="KBQtOnZJJO23YoY9Fe5M-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-45" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="82.5" y="30" width="437.5" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-28" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1371.25" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="175" y="1386.25" width="480" height="203.75" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-16" target="KBQtOnZJJO23YoY9Fe5M-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="274" y="480" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-1" value="Group Mission Performer" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="110" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-2" value="Perform Missions with Groups of Vehicles" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="280" y="40" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-8" value="Zones Vehicles *Should* Stay Inside and Outside" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="280" y="130" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;dashed=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-9" target="KBQtOnZJJO23YoY9Fe5M-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-9" value="The Group Mission Performer Shall Control Groups of vehicles to work together to accomplish missions." style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="300" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-11" value="Vehicles shall stay inside at least one keep-in zone and outside all keep-out zone to the extent&lt;div&gt;reasonably practicable.&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="390" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-11" target="KBQtOnZJJO23YoY9Fe5M-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="380" as="sourcePoint" />
+            <mxPoint x="120" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-17" value="&lt;b&gt;OpenUXAS&lt;/b&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;strokeColor=default;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;dx=20;dy=0;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="225" y="540" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-18" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="75" y="670" width="575" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-19" value="OpenUxAS Service&lt;div&gt;Host&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="85" y="880" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-26" value="Mission&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Planner&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Service&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="240" y="950" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-94" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-27" target="zZAwamqaLNWORr6iWZXO-92" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-95" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-27" target="zZAwamqaLNWORr6iWZXO-93" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-27" value="Imminent and Occurring Zone Violation Monitor Service" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#000000;spacingLeft=10;spacingRight=10;spacingBottom=10;spacingTop=10;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="240" y="690" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.385;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=none;endFill=0;shadow=0;flowAnimation=0;strokeWidth=10.999999999999998;entryPerimeter=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-17" target="KBQtOnZJJO23YoY9Fe5M-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="770" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-31" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="75" y="1200" width="765" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-33" value="Zone-Aware&lt;div&gt;Routes Planner&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="95" y="1220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-34" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-35" target="KBQtOnZJJO23YoY9Fe5M-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-35" value="Activity-Based Trajectory&lt;div&gt;Planners&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="245" y="1220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-39" value="Intended Trajectory Shall Obey Zones" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1220" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-71" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-45" target="zZAwamqaLNWORr6iWZXO-69" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-45" value="Zone-Unaware&amp;nbsp;&lt;div&gt;Trajectory Planners&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="340" y="1421.25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-46" value="Trajectory&lt;div&gt;Executor&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="535" y="1220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-47" value="Inner Loop Accuracy for Trajectory Control" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="675" y="1215" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-48" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-46" target="KBQtOnZJJO23YoY9Fe5M-47" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="1290" as="sourcePoint" />
+            <mxPoint x="280" y="1330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-53" value="Route-Following Trajectory Planner" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="200" y="1421.25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-60" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.556;exitY=0.958;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitPerimeter=0;dashed=1;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-65" target="zZAwamqaLNWORr6iWZXO-75" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="835" y="1680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-61" value="Imminent Zone Violation Reactive Trajectory Planner" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;fillColor=#ffe6cc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1461.25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-65" value="Impending Zone&lt;div&gt;Violation Reactive&lt;/div&gt;&lt;div&gt;Trajectory Planner&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="480" y="1421.25" width="135" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-71" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;entryX=0.3;entryY=-0.028;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-74" target="KBQtOnZJJO23YoY9Fe5M-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="305" y="1210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBQtOnZJJO23YoY9Fe5M-74" value="Flight&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Control&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Service&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="240" y="1040" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-2" value="Do Something about&amp;nbsp;&lt;div&gt;Imminent Zones Violations&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="420" y="863.75" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-3" value="Do Something About occurred Zone Violations" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="420" y="776.25" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-6" target="KBQtOnZJJO23YoY9Fe5M-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;spacing=10;endArrow=none;endFill=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-6" target="JSQSmUIgRKh7VZr8fQnd-53" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="618.2640256752243" y="556.5956364565966" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.001;entryY=0.21;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3HOIWTGmucpw2cb6dpyh-7" target="zZAwamqaLNWORr6iWZXO-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1710" y="637" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-27" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-6" target="JSQSmUIgRKh7VZr8fQnd-50" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="717.8700000000001" y="390.03999999999996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-6" value="Know About Impending and Occurring Zone Violations" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;fillColor=#dae8fc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="415" y="685" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-11" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;OpenUxAS&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="540" y="1080" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-35" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-19" target="zZAwamqaLNWORr6iWZXO-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-19" value="Current Linear Trajectory Zone&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Violation Detection&lt;/span&gt;&lt;div&gt;Service&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;spacingLeft=10;spacingRight=10;fillColor=#d5e8d4;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1735" y="603.75" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=1;" parent="1" source="zZAwamqaLNWORr6iWZXO-21" target="zZAwamqaLNWORr6iWZXO-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-82" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" target="zZAwamqaLNWORr6iWZXO-63" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1040" y="1400" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-21" value="Intended Trajectory Imminent Zone Violation Detector" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1381.25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-29" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=none;endFill=0;shadow=0;flowAnimation=0;strokeWidth=10.999999999999998;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-65" target="zZAwamqaLNWORr6iWZXO-28" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="1448.75" as="sourcePoint" />
+            <mxPoint x="335" y="1418.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-32" target="zZAwamqaLNWORr6iWZXO-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-32" value="&lt;div&gt;&lt;b&gt;Over-Alerting&lt;/b&gt;&lt;/div&gt;With Sufficiently Long Time Window T&lt;sub&gt;W&lt;/sub&gt;, can alert on imminent violations when vehicles will likely divert before such violations occur. Alert Rate can go up with T&lt;sub&gt;W&lt;/sub&gt;&amp;nbsp;when vehicles are near zone boundaries." style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1955" y="590" width="370" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-34" value="Time Window&lt;div&gt;T&lt;sub&gt;W&lt;/sub&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;fillColor=#d5e8d4;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1755" y="718.75" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-39" value="Service Users shall tune T&lt;sub&gt;W&lt;/sub&gt; to be appropriate for the behavior in use of the service." style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;dashed=1;fillColor=#d5e8d4;strokeColor=#000000;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="2030" y="740" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-46" value="&lt;b&gt;Vehicles&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="110" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-47" value="&lt;b&gt;Zones&lt;/b&gt;&lt;div&gt;(keep-in and keep-out)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;spacingTop=10;spacingBottom=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="110" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-59" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-57" target="zZAwamqaLNWORr6iWZXO-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-57" value="Zone Violation Reaction Service" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;strokeColor=#666666;spacingLeft=10;spacingRight=10;spacingBottom=10;spacingTop=10;spacing=10;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="240" y="867.5" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-60" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-58" target="zZAwamqaLNWORr6iWZXO-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-58" value="Zone Violation Display and Logging Service" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#f5f5f5;strokeColor=#666666;spacingLeft=10;spacingRight=10;spacingBottom=10;spacingTop=10;spacing=10;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="240" y="780" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-63" value="&lt;b&gt;Linear Trajectory only Approximates Planned Impending Trajectory for Small T&lt;/b&gt;&lt;sub style=&quot;font-weight: bold;&quot;&gt;W&lt;/sub&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;div&gt;Causing&lt;b style=&quot;&quot;&gt; &lt;/b&gt;Potential False Alarms When Vehicle is near zone Boundary and moving towards it.&lt;/div&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingRight=10;spacingLeft=10;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="815" y="1020" width="300" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-67" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Three-Tiered Flight Control&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1300" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-68" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.272;entryY=-0.009;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-35" target="zZAwamqaLNWORr6iWZXO-24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-70" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-69" target="zZAwamqaLNWORr6iWZXO-73" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="1670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-69" value="&lt;b&gt;Can Violate Zones&lt;/b&gt;&lt;div&gt;Zone-unaware Trajectory Planners can violate zone bounaries.&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingRight=10;spacingLeft=10;fillColor=#ffe6cc;strokeColor=#000000;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="295" y="1510" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-73" value="&lt;b&gt;Intended Flight Trajectory Zone Violation&lt;/b&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;∃&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;aircraft A, flight trajectory&amp;nbsp; F&lt;sub&gt;A&lt;/sub&gt;, zone Z, current time TC, time window T&lt;sub&gt;W&lt;/sub&gt;, future time T&lt;sub&gt;V&lt;/sub&gt;&amp;nbsp;where T&lt;sub&gt;C&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;C&lt;/sub&gt;+T&lt;sub&gt;W&lt;/sub&gt;, intended trajectory C&lt;sub&gt;A&lt;/sub&gt;&amp;nbsp;of A : ~Flight Route Zone Violation &amp;amp;&amp;amp; trajectoryViolates&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;(F&lt;sub&gt;A&lt;/sub&gt;, Z,T&lt;sub&gt;V&lt;/sub&gt;)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;spacing=30;" parent="1" vertex="1">
+          <mxGeometry x="70" y="1650" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-75" value="The trajectory planner shall detect when a vehicle is sufficiently likely to violate a zone boundary before it is too late to plan a zone-obeying flight trajectory." style="ellipse;whiteSpace=wrap;html=1;dashed=1;spacing=20;" parent="1" vertex="1">
+          <mxGeometry x="370" y="1610" width="230" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-76" value="The trajectory planner shall react to detected impending zone violations by overriding planned flight trajectory with one that obeys zones." style="ellipse;whiteSpace=wrap;html=1;dashed=1;spacing=20;" parent="1" vertex="1">
+          <mxGeometry x="365" y="1740" width="325" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-77" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.556;exitY=1.004;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitPerimeter=0;dashed=1;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-65" target="zZAwamqaLNWORr6iWZXO-76" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="1489" as="sourcePoint" />
+            <mxPoint x="550" y="1630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-79" value="&lt;b&gt;Flight&lt;/b&gt;&lt;div&gt;&lt;b&gt;Trajectory&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Planners&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="585" y="1526.25" width="65" height="52.5" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-85" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-84" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1815" y="576.25" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-84" value="&lt;b&gt;False Alarm Impending Violations Alerts,&amp;nbsp;&lt;/b&gt;where vehicle does not, in fact, end up violating the zone, are more likely to occur as T&lt;sub style=&quot;&quot;&gt;W&lt;/sub&gt; Increases." style="ellipse;whiteSpace=wrap;html=1;spacingRight=10;spacingLeft=10;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="1715" y="396.25" width="235" height="133.75" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-92" value="Wing Leader&lt;div&gt;as Client&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="85" y="683.75" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-93" value="Ground Station&lt;div&gt;as Client&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="82.5" y="752.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-98" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;World&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="445" y="220" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zZAwamqaLNWORr6iWZXO-99" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;World&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="95" y="460" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-50" target="JSQSmUIgRKh7VZr8fQnd-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="250" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-7" value="Imminent and Current&lt;div&gt;Zone Violation&lt;/div&gt;&lt;div&gt;Notification Service&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="595" width="180" height="83.13" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.473;exitY=0.996;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-54" target="3HOIWTGmucpw2cb6dpyh-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1.008;exitY=0.452;exitDx=0;exitDy=0;entryX=-0.012;entryY=0.513;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-54" target="JSQSmUIgRKh7VZr8fQnd-55" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1755" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-29" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="3HOIWTGmucpw2cb6dpyh-16" target="3HOIWTGmucpw2cb6dpyh-28" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-16" value="Imminent and Current Zone Violation Subscription Service" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="694.37" width="180" height="83.13" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.01;entryY=0.568;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-6" target="3HOIWTGmucpw2cb6dpyh-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-23" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Imminent Zone Violation Detection Service&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1272.5" y="807.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-24" value="The service shall correctly subscribe all requesting OpenUxAS observers." style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1452.5" y="661.29" width="220" height="58.73" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-25" value="The service shall promptly subscribe all requesting OpenUxAS observers." style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1452.5" y="731.27" width="220" height="58.73" as="geometry" />
+        </mxCell>
+        <mxCell id="3HOIWTGmucpw2cb6dpyh-28" value="Standard Subscription Service Approach" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1715" y="900" width="180" height="83.13" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-5" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.776;exitY=0.063;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1020" y="350" as="sourcePoint" />
+            <mxPoint x="1060" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-6" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1110" y="429" as="sourcePoint" />
+            <mxPoint x="1070" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-11" value="Time T&lt;sub&gt;W&lt;/sub&gt; will be set relative to potential velocity and potential behaviors of vehicles such that false positive alerts satisfy threshold probability P&lt;sub&gt;T&lt;/sub&gt;." style="ellipse;whiteSpace=wrap;html=1;dashed=1;spacing=10;spacingLeft=20;spacingRight=20;" parent="1" vertex="1">
+          <mxGeometry x="1357.5" y="406.25" width="285" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.009;entryY=0.452;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-11" target="zZAwamqaLNWORr6iWZXO-84" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1675" y="240" as="sourcePoint" />
+            <mxPoint x="1647.5" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-14" value="" style="endArrow=none;html=1;rounded=0;exitX=0.325;exitY=0.034;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="zZAwamqaLNWORr6iWZXO-84" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1840" y="430" as="sourcePoint" />
+            <mxPoint x="1690" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-15" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;COULD WE USE UML2?&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="815" y="800" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-17" value="&lt;b&gt;&lt;font style=&quot;font-size: 27px;&quot;&gt;KEY&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="2097.5" y="1421.25" width="117.5" height="58.75" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-18" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Solution&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" parent="1" vertex="1">
+          <mxGeometry x="2310" y="1547.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-20" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;Solution System&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="2605" y="1637.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-21" target="JSQSmUIgRKh7VZr8fQnd-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-37" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1706.8965517241377" y="1743.750000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-21" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Identified Problem&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="1730" y="1558.75" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-22" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Requirement&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="2475" y="1546.25" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-24" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-18" target="JSQSmUIgRKh7VZr8fQnd-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2225" y="1467.5" as="sourcePoint" />
+            <mxPoint x="2275" y="1417.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-28" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=none;endFill=0;shadow=0;flowAnimation=0;strokeWidth=10.999999999999998;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" target="JSQSmUIgRKh7VZr8fQnd-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2772.5" y="1558.75" as="sourcePoint" />
+            <mxPoint x="2787.5" y="1588.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-29" value="Refined&lt;div&gt;By&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="2772.5" y="1547.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-32" value="Solved By" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1940" y="1488.75" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-34" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.689;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2192.5" y="1408.75" as="sourcePoint" />
+            <mxPoint x="2762.5" y="1628.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-35" value="Solved&lt;div&gt;By&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="2772.5" y="1616.25" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-36" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Problem World State&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Description&lt;/font&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;spacing=30;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="1743.75" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-38" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Desired World State Description&lt;/span&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;spacing=10;spacingLeft=20;spacingRight=10;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="1738.75" width="222.5" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-39" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.6;exitY=0.981;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-21" target="JSQSmUIgRKh7VZr8fQnd-38" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1830" y="1628.75" as="sourcePoint" />
+            <mxPoint x="1726" y="1748.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-50" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(251, 251, 251);&quot;&gt;Desired World State: Impending and Occurring Zone Violation Awareness&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/b&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;Given&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;vehicle V, zone Z,&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;time window T&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;W&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 9px;&quot;&gt;,&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;threshold probability P&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;T&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&amp;nbsp;present time T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&amp;nbsp;&lt;/sub&gt;&lt;i style=&quot;forced-color-adjust: none;&quot;&gt;during the mission M :&lt;/i&gt;&lt;/font&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;IF&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;time T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;+T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;: vehicleV&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;iolatesZone(V,Z,T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;,P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;) &amp;amp;&amp;amp; (&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&amp;nbsp;T where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;lt;=T&amp;lt;T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&amp;nbsp;&lt;/sub&gt;: ~vehicleViolatesZone(V,Z,T,P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;) ) THEN aware(OpenUXAS, T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;, vehicleViolatesZone(V,Z,T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;, P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;) )&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;AND IF ~&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;time T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;+T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;: vehicleV&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;iolatesZone(V,Z,T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;,P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;)&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;THEN&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;(&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&amp;nbsp;T where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;lt;=T&amp;lt;=T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;W&amp;nbsp;&lt;/sub&gt;:&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;aware(OpenUXAS, T&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;P&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;, ~vehicleViolatesZone(V,Z,T&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;, P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;) ) )&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;spacing=20;" parent="1" vertex="1">
+          <mxGeometry x="555" y="130" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-53" value="&lt;b&gt;Problem World State: Impending and Occurring Zone Violation Unawareness&lt;/b&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Given&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;vehicle V, zone Z,&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 10px;&quot;&gt;time window T&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;W&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;,&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 10px;&quot;&gt;threshold probability P&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;T&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;background-color: initial; font-size: 10px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;time T&lt;sub&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub&gt;C&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;C&lt;/sub&gt;+T&lt;sub&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;: vehicleV&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;iolatesZone(V,Z,T&lt;sub&gt;V&lt;/sub&gt;,P&lt;sub&gt;T&lt;/sub&gt;) &amp;amp;&amp;amp; (&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;T where T&lt;sub&gt;C&lt;/sub&gt;&amp;lt;=T&amp;lt;T&lt;sub&gt;V&amp;nbsp;&lt;/sub&gt;: ~vehicleViolatesZone(V,Z,T,P&lt;sub&gt;T&lt;/sub&gt;) ) &amp;amp;&amp;amp; ~aware(OpenUXAS, T&lt;sub&gt;C&lt;/sub&gt;, vehicleViolatesZone(V,Z,T&lt;sub&gt;V&lt;/sub&gt;,P&lt;sub&gt;T&lt;/sub&gt;) )&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;spacing=20;" parent="1" vertex="1">
+          <mxGeometry x="540" y="-80" width="420" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-54" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(251, 251, 251);&quot;&gt;Solution World State: Impending and Occurring Zone Violation Alert&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/b&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 10px; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;Given mission M, mission&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;vehicle set VS and zone set ZS, set of potential observers OBS,&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;time window T&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;W&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 9px;&quot;&gt;,&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial; font-size: 10px;&quot;&gt;threshold probability P&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;T,&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;notification time window N&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;W.&lt;/sub&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251); font-size: 10px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&amp;nbsp;present service tick time T&lt;sub style=&quot;forced-color-adjust: none; font-weight: 400;&quot;&gt;P&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; font-weight: 400;&quot;&gt;&lt;i style=&quot;forced-color-adjust: none;&quot;&gt;during the mission M&lt;/i&gt;&lt;/span&gt;, frequency of ticks&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;forced-color-adjust: none;&quot;&gt;u&lt;/i&gt;&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;F&lt;/sub&gt;, V&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; font-size: 12px;&quot;&gt;∈&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; font-size: 10px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;VS, Z&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; background-color: initial;&quot;&gt;∈&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; background-color: initial;&quot;&gt;ZS,&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;S&amp;nbsp;&lt;span style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; background-color: initial;&quot;&gt;∈&lt;/span&gt;&amp;nbsp;{ si&amp;nbsp;&lt;span style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal; background-color: initial;&quot;&gt;∈&lt;/span&gt;&amp;nbsp;OBS | subscribedAtTime(si, T&lt;sub style=&quot;forced-color-adjust: none; font-weight: 400; font-style: normal;&quot;&gt;C&lt;/sub&gt;) } :&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251); font-size: 10px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;IF&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;time T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;+T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;: vehicleV&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;iolatesZone(V,Z,T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;,P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;) &amp;amp;&amp;amp; (&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&amp;nbsp;T where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;lt;=T&amp;lt;T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&amp;nbsp;&lt;/sub&gt;: ~vehicleViolatesZone(V,Z,T,P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;) ) THEN&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: initial;&quot;&gt;∀&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;s&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;∈&amp;nbsp;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;S :&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;notifiedByTime(s, T&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;P&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;+N&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;W&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;, vehicleViolatesZone(V,Z,T&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;V&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;,P&lt;/span&gt;&lt;sub style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;T&lt;/sub&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;) )&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none;&quot;&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left; background-color: rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;AND IF ~&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;time T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;+T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;: vehicleV&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;iolatesZone(V,Z,T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;,P&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;T&lt;/sub&gt;)&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;THEN&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: initial;&quot;&gt;∀&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;s&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;∈&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;&amp;nbsp;OBS :&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;~notifiedAtTime&lt;/font&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;(s,&lt;span style=&quot;forced-color-adjust: none;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;vehicleViolatesZone(V,Z,T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;V&lt;/sub&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;), T&lt;sub style=&quot;forced-color-adjust: none;&quot;&gt;P&lt;/sub&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; background-color: initial;&quot;&gt;&lt;font style=&quot;forced-color-adjust: none; font-size: 10px;&quot;&gt;)&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="1127.5" y="120" width="470" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-55" value="&lt;b&gt;Solution World State: Immediate Velocity Projection Zone Violation Alert&lt;br&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 10px; text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Given mission M, mission&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;vehicle set VS and zone set ZS, set of potential observers OBS,&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;time window T&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;W&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;,&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;threshold probability P&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;T,&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;notification time window N&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;W.&lt;/sub&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;∀&lt;/font&gt;&amp;nbsp;present service tick time T&lt;sub&gt;P&amp;nbsp;&lt;/sub&gt;&lt;i&gt;during the mission M&lt;/i&gt;, frequency of ticks&amp;nbsp;&lt;i&gt;u&lt;/i&gt;&lt;sub&gt;F&lt;/sub&gt;, V&amp;nbsp;&lt;font style=&quot;font-size: 12px;&quot;&gt;∈&lt;/font&gt;&amp;nbsp;VS, Z&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;∈&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ZS,&amp;nbsp;&lt;/span&gt;S&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;∈&lt;/span&gt;&amp;nbsp;{ si&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;∈&lt;/span&gt;&amp;nbsp;OBS | subscribedAtTime(si, T&lt;sub&gt;C&lt;/sub&gt;) }, where L&lt;sub&gt;V&lt;/sub&gt;&amp;nbsp;is the linear trajectory of vehicle V projected from time T&lt;sub&gt;P&lt;/sub&gt;&amp;nbsp;to T&lt;sub&gt;W&lt;/sub&gt;&amp;nbsp;using V&#39;s present position and velocity :&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 10px;&quot;&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;IF&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;time T&lt;sub&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub&gt;P&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;P&lt;/sub&gt;+T&lt;sub&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;: linearTrajectoryV&lt;/font&gt;&lt;span style=&quot;font-size: 12px; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;iolatesZone(L&lt;sub&gt;V&lt;/sub&gt;,Z,T&lt;sub&gt;V&lt;/sub&gt;) &amp;amp;&amp;amp; (&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;∀&lt;/font&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;T where T&lt;sub&gt;P&lt;/sub&gt;&amp;lt;=T&amp;lt;T&lt;sub&gt;V&amp;nbsp;&lt;/sub&gt;: ~vehicleViolatesZone(V,Z,T,P&lt;sub&gt;T&lt;/sub&gt;) ) THEN&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;∀&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;s&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;∈&amp;nbsp;S :&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;notifiedByTime(s, T&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;P&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+N&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;W&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;, vehicleViolatesZone(V,Z,T&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;V&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;,P&lt;/span&gt;&lt;sub style=&quot;background-color: initial;&quot;&gt;T&lt;/sub&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;) )&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;AND IF ~&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;∃&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;time T&lt;sub&gt;V&amp;nbsp;&lt;/sub&gt;where T&lt;sub&gt;P&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;V&lt;/sub&gt;&amp;nbsp;&amp;lt;= T&lt;sub&gt;P&lt;/sub&gt;+T&lt;sub&gt;W&lt;/sub&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 10px; background-color: initial;&quot;&gt;: linearTrajectoryViolatesZone&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;(L&lt;sub&gt;V&lt;/sub&gt;,Z,T&lt;sub&gt;V&lt;/sub&gt;)&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;THEN&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;∀&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;s&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;∈&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;OBS :&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;~notifiedAtTime&lt;/font&gt;&lt;span style=&quot;font-size: 10px; background-color: initial;&quot;&gt;(s,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: initial;&quot;&gt;vehicleViolatesZone(V,Z,T&lt;sub&gt;V&lt;/sub&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: initial;&quot;&gt;), T&lt;sub&gt;P&lt;/sub&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;)&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="1795" y="100" width="470" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-56" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.881;exitY=0.846;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-11" target="zZAwamqaLNWORr6iWZXO-34" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1655" y="476" as="sourcePoint" />
+            <mxPoint x="1712" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-57" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-27" target="JSQSmUIgRKh7VZr8fQnd-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="580" as="sourcePoint" />
+            <mxPoint x="640" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-58" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.818;exitY=-0.035;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="KBQtOnZJJO23YoY9Fe5M-27" target="JSQSmUIgRKh7VZr8fQnd-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="348" y="700" as="sourcePoint" />
+            <mxPoint x="650" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-2" value="The monitor shall assert that a vehicle is in impending or current violation with a zone with threshold probability when it receives a corresponding notification to that effect." style="ellipse;whiteSpace=wrap;html=1;dashed=1;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="772.5" y="380" width="265" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-1" value="The monitor shall assume that a vehicle is in impending or current violation at threshold probability only if it is notified by the violation detection service within time N&lt;sub&gt;W&lt;/sub&gt;." style="ellipse;whiteSpace=wrap;html=1;dashed=1;spacing=10;spacingLeft=20;spacingRight=20;" parent="1" vertex="1">
+          <mxGeometry x="900" y="495" width="285" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-59" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Solution World State Description&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=default;align=center;verticalAlign=middle;spacing=10;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2380" y="1738.75" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-60" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Soltion-Enabling&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Requirement&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="2170" y="1848.75" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-61" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Solution Applicability&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Problem&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;spacingLeft=10;spacingBottom=10;spacingRight=10;spacingTop=10;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="2010" y="1738.75" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-66" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="JSQSmUIgRKh7VZr8fQnd-61" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2110" y="1608.75" as="sourcePoint" />
+            <mxPoint x="2050" y="1598.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-69" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.336;exitY=0.026;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-60" target="JSQSmUIgRKh7VZr8fQnd-61" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1990" y="1638.75" as="sourcePoint" />
+            <mxPoint x="2040" y="1588.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-70" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JSQSmUIgRKh7VZr8fQnd-19" target="JSQSmUIgRKh7VZr8fQnd-60" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1990" y="1638.75" as="sourcePoint" />
+            <mxPoint x="2040" y="1588.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JSQSmUIgRKh7VZr8fQnd-75" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Show&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Solution system solves identified problem:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Identified Problem solved by Solution System&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;2. Problem World State Description + Solution World State Description + Solution-Enabling Requirements --&amp;gt; Desired World State Description&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Often done by argument when not shown formally.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This is really just ye ol&#39; assume/guarantee again.&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="1560" y="1920" width="470" height="230" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
