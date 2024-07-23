@@ -169,8 +169,8 @@
                       <e
                           id="__gsn__190d6bfb369"
                           color="#ffffff"
-                          name="Reactive Trajectory Planner">
-                        See the zone violation detection and reaction planner for vehicles in problemView.png.
+                          name="Monitoring Applications">
+                        Monitoring can be used to observe upcoming and ongoing violations as well as for OpenUxAS to react.
                       </e>
                     </g>
 
