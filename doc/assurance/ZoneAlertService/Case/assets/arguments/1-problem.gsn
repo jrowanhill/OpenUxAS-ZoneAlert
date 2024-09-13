@@ -32,195 +32,237 @@
         id="__gsn__1907ef577a1"
         color="#ffffff"
         name="Understood Problem">
-      The Impending Zone Violation Unawareness problem is understood.
+      The Zone Violation Unawareness Problem in OpenUxAS is sufficiently understood.
+
+      <c
+          id="__gsn__191571b38b5"
+          color="#ffffff"
+          name="Problem">
+        The zone violation unawareness problem is understood as not having a capability in OpenUxAS that can create and share awareness of existing and imminent zone violations. See problem-diagram.png/Step 2
+      </c>
 
       <s
-          id="__gsn__1907ef68a43"
+          id="__gsn__191ec55d3d6"
           color="#ffffff"
           name="Strategy">
-        By discussing how the problem has been adequately defined and validated by the stakeholders under quality work and care.
+        It is shown that the above state of the world is known to be the undesired state because it emerges from the problems OpenUxAS is trying to solve.
 
         <c
-            id="__gsn__190d69819ca"
+            id="__gsn__191ed19e8b7"
             color="#ffffff"
-            name="Problem Validity">
-          Whether a problem is truly the one that stakeholders desire to be solved.
-        </c>
-
-        <c
-            id="__gsn__190d6981f43"
-            color="#ffffff"
-            name="Problem Definition">
-          A definition of a problem as a change from an existing world state to a desired world state [cite JCK] and surrounded by informing context.
+            name="Carrying Out Missions without Zone Violations">
+          OpenUxAS is attempting to coordinate multiple vehicles to perform missions without violating declared zones. See problem-diagram.png/step 1
         </c>
 
         <g
-            id="__gsn__1907ef69218"
+            id="__gsn__191ec55d3db"
             color="#ffffff"
-            name="Correct Problem">
-          The problem of detecting imminent and occurring violations has been adequately identified and validated.
+            name="OpenUxAS Solution Can Cause Zone Violations">
+          The current OpenUxAS solution can cause zone violations.
 
           <s
-              id="__gsn__190d6a1e39e"
+              id="__gsn__191ec55d3dc"
               color="#ffffff"
               name="Strategy">
-            By arguing each attribute of a correct problem
+            By enumerating potential known reasonable causes of zone violations in OpenUxAS
 
             <g
-                id="__gsn__190d6a1f085"
+                id="__gsn__191ec55d3dd"
                 color="#ffffff"
-                name="Valid">
-              The problem of knowing about imminent and existing zone violations by vehicles is the problem intended to be solved by stakeholders.
+                name="Faults in Control Services">
+              Unmitigated faults in OpenUxAS's vehicle control services could result in controllers accidentally violating zones
+
+              <e
+                  id="__gsn__191ec55d3de"
+                  color="#ffffff"
+                  name="Design Faults">
+                Observation: Design faults are a common part of software systems. See problem-diagram.png/ step1/ OpenUxAS/ DesignFaults
+              </e>
+            </g>
+
+            <g
+                id="__gsn__191ec55d3df"
+                color="#ffffff"
+                name="Limitations in Control Services">
+              Not all control systems of OpenUxAS are designed to obey zones.
+
+              <e
+                  id="__gsn__191ec55d3e0"
+                  color="#ffffff"
+                  name="Vehicle Control Limitations">
+                There are controllers for vehicles, such as vehicle collision avoidance, that do not account for zones in their planned trajectories. See problem-diagram.png/step1/OpenUxAS
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__191ec55d3e3"
+            color="#ffffff"
+            name="Zone Violations Should Be Mitigated">
+          Zone violations are potential failures that should be adequately mitigated.
+
+          <g
+              id="__gsn__191ec55d3e4"
+              color="#ffffff"
+              name="Zone Violations Can Be Failures">
+            Zone violations are potential failures with consequences.
+
+            <s
+                id="__gsn__191ec55d3e5"
+                color="#ffffff"
+                name="Strategy">
+              By showing that zone violations are system errors and that some of those errors result in failure of the system.
+
+              <g
+                  id="__gsn__191ec55d3e6"
+                  color="#ffffff"
+                  name="Zone Violations are Errors">
+                A violation of a zone by a vehicle is an erroneous state of the system.
+
+                <e
+                    id="__gsn__191ec55d3e7"
+                    color="#ffffff"
+                    name="Zone Violations are Errors">
+                  A vehicle violating a zone is violating of a constraint on vehicle position that the system is intended to prevent. See problem-diagram.png/ step1/ OpenUxAS/ ZoneViolation
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__191ec55d3e8"
+                  color="#ffffff"
+                  name="Some Zone Violations are Failures">
+                A violation of a zone can have consequences that exceed the tolerance of stakeholders.
+
+                <e
+                    id="__gsn__191ec55d3e9"
+                    color="#ffffff"
+                    name="Example">
+                  Zones might represent safety constraints, such as a keep-out zone representing a heavily populated area where vehicle intrusion could cause significant civilian injury or death.
+                </e>
+              </g>
+            </s>
+          </g>
+
+          <g
+              id="__gsn__191ec55d3ea"
+              color="#ffffff"
+              name="Failures Should be Mitigated">
+            Negative impacts/failures resulting from zone violations should be mitigated to acceptable levels for stakeholders.
+
+            <e
+                id="__gsn__191ec55d3eb"
+                color="#ffffff"
+                name="FaultFailure Mitigation">
+              See intention to apply fault and failure mitigation through error correction and failure acceptance analysis. problem-diagram.png/ step1/Fault Tolerance
+            </e>
+          </g>
+        </g>
+
+        <g
+            id="__gsn__191ec55d3d9"
+            color="#ffffff"
+            name="No Detection Capability is a Problem for Adequate Mitigation">
+          Not having the ability to detect existing and imminent zone violations is a problem for adequately mitigating zone violations.
+
+          <s
+              id="__gsn__191ec55d3da"
+              color="#ffffff"
+              name="Strategy">
+            By showing that the OpenUxAS solution design can result in zone violations and that the detection of imminent and existing violations is desired.
+
+            <g
+                id="__gsn__191ec55d3e1"
+                color="#ffffff"
+                name="Imminent Zone Violation Detection Desired">
+              To the extent possible, it would be useful to detect imminent zone violations.
 
               <s
-                  id="__gsn__190d6aa1ebe"
+                  id="__gsn__191ec55d3e2"
                   color="#ffffff"
                   name="Strategy">
-                By showing that the problem is well-situated in a carefully vested problem diagram.
-
-                <c
-                    id="__gsn__190849b5480"
-                    color="#ffffff"
-                    name="Problem Diagram">
-                  This argument discusses the problem diagram presented in problemView.png.
-                </c>
-
-                <j
-                    id="__gsn__190c6c6eeb7"
-                    color="#ffffff"
-                    name="Vehicles Should Obey Zones">
-                  OpenUxAS is designed so that vehicles should obey zones to the extent practicable.
-                </j>
+                By showing that zone violations are often failures that should be mitigated, and that imminent zone violation detection is required for the intended OpenUxAS mitigation design.
 
                 <g
-                    id="__gsn__190d6aae093"
+                    id="__gsn__191ec55d3ec"
                     color="#ffffff"
-                    name="Zone Violations Will Occur">
-                  Sometimes, a vehicle will not be able to avoid violating a zone.
+                    name="Imminent Zone Violation Detection Required by Mitigation Solution">
+                  Detection of imminent zone violations is required by the intended mitigated solution design for OpenUxAS.
 
-                  <s
-                      id="__gsn__190d6b132a5"
+                  <g
+                      id="__gsn__191ec55d3ed"
                       color="#ffffff"
-                      name="Strategy">
-                    Show by examples
+                      name="Detect and Avoid">
+                    In the OpenUxAS design it is intended that imminent zone violations will be corrected through detection and avoidance.
 
-                    <g
-                        id="__gsn__190d6b13d02"
+                    <e
+                        id="__gsn__191ec55d3ee"
                         color="#ffffff"
-                        name="Competing Constraints">
-                      In some cases, violating a zone will be a desired outcome for competing constraints.
+                        name="Detect and Avoid Pattern">
+                      See problem-diagram.png / step1 / Fault Tolerance by Error Correction
+                    </e>
 
-                      <e
-                          id="__gsn__190d6ab1c4e"
-                          color="#ffffff"
-                          name="Priority Tactical Conflicting Actions">
-                        In some cases, tactical actions should be taken that will violate zones of some types (soft zones).
-                      </e>
-                    </g>
-
-                    <g
-                        id="__gsn__190d6b13adc"
+                    <e
+                        id="__gsn__191ec55d3ef"
                         color="#ffffff"
-                        name="Technical Limitations of OpenUxAS">
-                      Tactical vehicle trajectory planners are not all zone-aware.
-
-                      <e
-                          id="__gsn__190d6b271a0"
-                          color="#ffffff"
-                          name="Existing Mission Goal Controllers">
-                        Existing goal
-                      </e>
-                    </g>
-                  </s>
-                </g>
-
-                <g
-                    id="__gsn__190d6abfcda"
-                    color="#ffffff"
-                    name="Useful to Know About Violations">
-                  In cases where a vehicle will not avoid a zone, it is useful to know about the impending and occurring zone violation.
-
-                  <s
-                      id="__gsn__190d6b5ed63"
-                      color="#ffffff"
-                      name="Strategy">
-                    Show by identified applications
-
-                    <g
-                        id="__gsn__190d6b5f579"
-                        color="#ffffff"
-                        name="Monitoring">
-                      It will be useful to log, alert, and display when and where vehicles will or have violated a zone.
-
-                      <e
-                          id="__gsn__190d6bc4fcf"
-                          color="#ffffff"
-                          name="Monitoring Application">
-                        See the monitoring application of problemView.png.
-                      </e>
-                    </g>
-
-                    <g
-                        id="__gsn__190d6b5f905"
-                        color="#ffffff"
-                        name="Compensation">
-                      It might be useful for OpenUxAS to react to imminent or impending zone violations.
-
-                      <e
-                          id="__gsn__190d6bfb369"
-                          color="#ffffff"
-                          name="Monitoring Applications">
-                        Monitoring can be used to observe upcoming and ongoing violations as well as for OpenUxAS to react.
-                      </e>
-                    </g>
-
-                    <g
-                        id="__gsn__190d6b73e4b"
-                        color="#ffffff"
-                        name="Recovery Through Avoidance">
-                      It might be useful for vehicles (such as wingman) to know about impending zone violations so that a reactive planner could attempt to override the planned trajectory with one that does not violate zones.
-
-                      <e
-                          id="__gsn__190d6bcc02c"
-                          color="#ffffff"
-                          name="Reactive Trajectory Planner">
-                        See the zone violation detection and reaction planner for vehicles in problemView.png.
-                      </e>
-                    </g>
-                  </s>
+                        name="Detect and Avoid Implementation">
+                      See problem=diagram/png / step2/Services for Fault Tolerance by Imminent and Existing Zone Violation Correction
+                    </e>
+                  </g>
                 </g>
               </s>
             </g>
 
             <g
-                id="__gsn__190d6a1f694"
+                id="__gsn__191ec55d3f0"
                 color="#ffffff"
-                name="Well-Defined">
-              The problem of knowing about imminent and existing zone violations by vehicles is sufficiently defined as existing versus desired world state with appropriate surrounding context.
+                name="Existing Zone Violation Detection Desired">
+              To the extent that zone violations still occur, it is useful to know where and when they occur.
 
-              <g
-                  id="__gsn__190d6c73225"
+              <s
+                  id="__gsn__191ec55d3f1"
                   color="#ffffff"
-                  name="Formally Defined">
-                The problem is specified in first-order predicate logic derived from the problem diagram.
+                  name="Strategy">
+                By showing that the zone violations are often failures that should be mitigated, and detection of existing violations is required for the intended OpenUxAS design.
 
-                <e
-                    id="__gsn__190d6c78196"
+                <away-goal
+                    id="__gsn__191ec55d3f2"
                     color="#ffffff"
-                    name="Predicate Logic Definition">
-                  Definition of the binary world state that is not desired, such that a monitoring solution would provide it's negation.
-                </e>
-              </g>
+                    name="Zone Violations Should Be Mitigated">
+                  Zone violations are potential failures that should be mitigated.
+                </away-goal>
+
+                <g
+                    id="__gsn__191ec55d3f3"
+                    color="#ffffff"
+                    name="Existing Zone Violation Detection Required by Mitigation Solution">
+                  Detection of existing zone violations is required by the intended mitigation solution design for OpenUxAS.
+
+                  <g
+                      id="__gsn__191ec55d3f4"
+                      color="#ffffff"
+                      name="Zone Violation Acceptance">
+                    In the design of OpenUxAS it is intended that the system will detect and record zone violations and analyze them to determine system acceptability.
+
+                    <e
+                        id="__gsn__191ec55d3f5"
+                        color="#ffffff"
+                        name="Acceptance Pattern">
+                      See problem-diagram.png / step1 / Fault Acceptance by Analysis of Related Faults
+                    </e>
+
+                    <e
+                        id="__gsn__191ec55d3f6"
+                        color="#ffffff"
+                        name="Acceptance Implementation">
+                      See problem-diagram.png/ step2/ Services for Fault Acceptance byAnalysis of Zone Violations
+                    </e>
+                  </g>
+                </g>
+              </s>
             </g>
           </s>
         </g>
-
-        <m
-            id="__gsn__1907f0017c6"
-            color="#ffffff"
-            name="Confidence in Construction">
-          There is significant reason to believe the produced problem diagram would be valid.
-        </m>
       </s>
     </g>
   </gsn>

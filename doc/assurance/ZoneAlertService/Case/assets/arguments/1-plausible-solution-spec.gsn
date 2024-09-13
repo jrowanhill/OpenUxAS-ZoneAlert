@@ -32,7 +32,7 @@
         id="__gsn__19093bb1e2f"
         color="#ffffff"
         name="A Plausible Solution">
-      A plausible solution to the problem of Impending Zone Violation Unawareness has been specified.
+      A plausible solution is specified for the problem of Impending Zone Violation Unawareness.
 
       <s
           id="__gsn__19093ee714d"
@@ -71,7 +71,7 @@
             id="__gsn__190e087d000"
             color="#ffffff"
             name="Zone Violation Monitoring as OpenUxAs Service">
-          The requested zone violation monitoring service can be solved by as an OpenUxAS subscription service.
+          The requested zone violation monitoring service can be implemented as an  OpenUxAS service that warns subscribers when the current trajectory of a vehicle is likely to violate a zone boundary within a reasonable look ahead time window.
 
           <c
               id="__gsn__190e08cf97b"
@@ -90,7 +90,7 @@
                 id="__gsn__190e0ae5ed0"
                 color="#ffffff"
                 name="Computation Model">
-              Given notifications of vehicle state (position and velocity) at a sufficient frequency, the monitoring service can observer the vehicles for imminent and occurring zone violations  and report them to subscribing observers.
+              Given notifications of vehicle state (position and velocity) at a sufficient frequency, the monitoring service can observer the vehicles for imminent and occurring zone violations and report them to subscribing observers.
             </j>
 
             <j
@@ -149,6 +149,31 @@
               </e>
             </g>
           </s>
+
+          <s
+              id="__gsn__19132b5740b"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__19132b5921f"
+                color="#ffffff"
+                name="We Can Know Vehicle Trajectories and Zones">
+            </g>
+
+            <g
+                id="__gsn__19132b65f68"
+                color="#ffffff"
+                name="Can Use Future Projection on Trajectory To Check for Zone Violations">
+              default text
+            </g>
+
+            <g
+                id="__gsn__19132b5e8f1"
+                color="#ffffff"
+                name="These Warnings Are Useful for a Reasonable Projected Time Into the Future">
+            </g>
+          </s>
         </g>
 
         <g
@@ -198,7 +223,7 @@
                       id="__gsn__190e0dfae61"
                       color="#ffffff"
                       name="Strategy">
-                    By practical computation of  linear trajectory and imminent and occurring violations of that trajectory with zone boundaries up to a future time window, TW.
+                    By practical computation of linear trajectory and imminent and occurring violations of that trajectory with zone boundaries up to a future time window, TW.
 
                     <j
                         id="__gsn__190e0e0cec4"
@@ -258,7 +283,7 @@
                             id="__gsn__190e0be121a"
                             color="#ffffff"
                             name="Computation Approach">
-                          The computation of imminent or occurring violation of a keep out zone consists of checking if current position is in the zone and then, if not, determining the earliest parametric collision time of the linear vehicle trajectory with a zone boundary. This is done by planar computation for top  and bottom of the zone and polygonal intersection for in the x-y plane.
+                          The computation of imminent or occurring violation of a keep out zone consists of checking if current position is in the zone and then, if not, determining the earliest parametric collision time of the linear vehicle trajectory with a zone boundary. This is done by planar computation for top and bottom of the zone and polygonal intersection for in the x-y plane.
                         </e>
                       </g>
 

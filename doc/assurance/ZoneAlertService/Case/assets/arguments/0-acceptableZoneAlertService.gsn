@@ -35,114 +35,58 @@
       The Zone Alert Service solves the Impending Zone Violation Unawareness problem.
 
       <c
-          id="__gsn__18db8c735de"
+          id="__gsn__18db8c70679"
           color="#ffffff"
-          name="System: Zone Alert Service">
-        A service to alert OpenUxAS subscribers to alert then when an OpenUxAS vehicle's current linear trajectory would violate a zone boundary within a tactical time window, and quantify the amount of time until violation.
+          name="Problem: Zone Violation Unawareness Problem">
+        Awareness of when and where vehicles are in existing and imminent violation of zones is a problem for use of OpenUxAS as a coordinated UAS mission execution system.
       </c>
 
       <c
-          id="__gsn__18db8c70679"
+          id="__gsn__18db8c735de"
           color="#ffffff"
-          name="Problem: Impending Zone Violation Unawareness Problem">
-        Awareness that the current linear trajectory of a vehicle will violate one or more zone boundaries within a tactical time window.
+          name="Solution: Zone Alert Service through Vehicle Velocity Projection">
+        A service to alert OpenUxAS subscribers to alert then when an OpenUxAS vehicle's current linear trajectory would violate a zone boundary within a tactical time window, and quantify the amount of time until violation.
       </c>
 
       <s
-          id="__gsn__18fbb61be67"
+          id="__gsn__18fc0625209"
           color="#ffffff"
           name="Strategy">
-        By showing an acceptably correct problem and solution and the surrounding intention and action of iteratively improving both as information becomes available.
-
-        <c
-            id="__gsn__18f9c4399bb"
-            color="#ffffff"
-            name="Present State">
-          Note that this argument represents the present state of problem understanding and solution development. Earlier 'versions' of this argument and evidence can represent earlier iterations of problem understanding and solutions and the latter's usage.
-        </c>
+        By showing that those involved understand the problem to be solved, that a solution was specified that is believed to solve the problem, with a correct implementation of that specification,  and the resulting implementation does indeed sufficiently solve the problem.
 
         <j
-            id="__gsn__18f9c18d49e"
+            id="__gsn__1915d6ce896"
             color="#ffffff"
             name="Justification">
-          People solve problems by thinking of solutions and implementing them. They then check that that the implemented solution is working (And iterating as needed.) We can assure a working solution by correctness of these three steps. Of course, this will likely be after iterations of the three steps as errors are corrected.
+          This is the classic model of software engineering as presented by John Knight in his book.
         </j>
 
-        <c
-            id="__gsn__18f9c76c3b9"
+        <m
+            id="__gsn__18db9043dd7"
             color="#ffffff"
-            name="Note">
-          While the argument for the satisfactory solution should be strong enough to stand on its own, for large and complex projects it is still useful (and customary) to assure that a culture of careful improvement and attention to detail is in place. This is because some will present a strong argument for the system while hiding a culture of chaos.
-        </c>
-
-        <g
-            id="__gsn__18fbb61c7ad"
-            color="#ffffff"
-            name="Acceptable Solution">
-          An effective solution is provided to the correct problem.
-
-          <s
-              id="__gsn__18db882e898"
-              color="#ffffff"
-              name="Strategy">
-            It is shown that the problem is understood and the system solves the understood problem.
-
-            <j
-                id="__gsn__18f7820b88f"
-                color="#ffffff"
-                name="Justification">
-              One must sufficiently understand the problem to be able to solve it. Then one can focus on solving it and assuring that the solution matches the well-defined problem.
-            </j>
-
-            <m
-                id="__gsn__18db9043dd7"
-                color="#ffffff"
-                name="Understood Problem">
-              The problem is understood.
-            </m>
-
-            <g
-                id="__gsn__18db9044d68"
-                color="#ffffff"
-                name="The System Solves the Problem">
-              The system solves the understood problem.
-
-              <s
-                  id="__gsn__18fc0625209"
-                  color="#ffffff"
-                  name="Strategy">
-                By having a plausible solution defined, correctly implemented as an OpenUXAS service, and this service works to solve the problem.
-
-                <m
-                    id="__gsn__18fc062567b"
-                    color="#ffffff"
-                    name="A Plausible Solution">
-                  A plausible solution to the problem has been specified.
-                </m>
-
-                <m
-                    id="__gsn__18fc06259c1"
-                    color="#ffffff"
-                    name="Correct Implementation of the Solution">
-                  The OpenUxAS Zone Alert Service is a correct implementation of the specified solution.
-                </m>
-
-                <m
-                    id="__gsn__18fc0627746"
-                    color="#ffffff"
-                    name="The Solution Works">
-                  The implementation demonstrably solves the problem.
-                </m>
-              </s>
-            </g>
-          </s>
-        </g>
+            name="Understood Problem">
+          The Zone Violation Unawareness Problem in OpenUxAS is sufficiently understood.
+        </m>
 
         <m
-            id="__gsn__18fbb660fa7"
+            id="__gsn__18fc062567b"
             color="#ffffff"
-            name="Iterative Improvement Over Lifecycle">
-          Understanding of the problem and correctness of its solution are iteratively corrected and improved to an extent reasonably practicable.
+            name="A Likely Solution is Proposed">
+          An OpenUxAS Zone Alert Service applying Vehicle Velocity Projection is likely to solve the Zone Violation Unawareness problem.
+        </m>
+
+        <m
+            id="__gsn__18fc06259c1"
+            color="#ffffff"
+            name="Correct Implementation of the Solution">
+          The OpenUxAS Zone Alert Service is a correct implementation of the Zone Alert Service through Applying Vehicle Velocity Projection.
+        </m>
+
+        <m
+            id="__gsn__18fc0627746"
+            color="#ffffff"
+            name="The Solution is Confirmed to Solve the Problem">
+          The OpenUxAS Zone Alert Service is confirmed to solve the Zone Violation Unawareness Problem.
         </m>
       </s>
     </g>

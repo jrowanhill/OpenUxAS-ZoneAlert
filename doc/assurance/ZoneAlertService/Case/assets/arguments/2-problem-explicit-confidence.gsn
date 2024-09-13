@@ -35,93 +35,184 @@
       There is significant reason to believe the produced problem diagram would be valid.
 
       <s
-          id="__gsn__190081f9782"
+          id="__gsn__19157e99fe0"
           color="#ffffff"
-          name="Strategy: Means of Understanding">
-        Through gathering of sufficient parties and expertise to define the problem, along with direct evidence that the problem has been well defined.
-
-        <c
-            id="__gsn__190081f9783"
-            color="#ffffff"
-            name="Why Define the Problem">
-          It is easy to get the problem wrong and waste many iterations solving the wrong problem.
-        </c>
-
-        <a
-            id="__gsn__19084ba8f91"
-            color="#ffffff"
-            name="Reasonable Problem Analysis Performed">
-          A reasonable analysis of the problem was performed by stakeholders and engineers.
-        </a>
+          name="Strategy">
+        Confidence in the problem definition is gained by showing that the right resources for this problem analysis have been acquired and that the resulting definition includes key areas of problem analysis.
 
         <g
-            id="__gsn__190081f9784"
+            id="__gsn__1915752c076"
             color="#ffffff"
-            name="Stakeholders Identified">
-          The people/entities who have the problem and those that can help describe it are identified as stakeholders.
-
-          <e
-              id="__gsn__190081f9785"
-              color="#ffffff"
-              name="Problem Owner: S. Regisford">
-            Regisford is the person who wants to solve the problem of not knowing when tactical flight might violate zone.
-          </e>
-        </g>
-
-        <g
-            id="__gsn__190081f9786"
-            color="#ffffff"
-            name="Sufficient Expertise">
-          Stakeholders have sufficient information to define the problem.
+            name="Sufficient Resources">
+          Adequate resources required to understand the problem are assembled for its analysis.
 
           <s
-              id="__gsn__190081f9787"
+              id="__gsn__190081f9782"
               color="#ffffff"
-              name="Strategy">
-            Through available expert stakeholders and reference information sufficient expertise is demonstrated.
+              name="Strategy: Means of Understanding">
+            Through gathering of sufficient parties and expertise to define the problem, along with direct evidence that the problem has been well defined.
+
+            <c
+                id="__gsn__190081f9783"
+                color="#ffffff"
+                name="Why Define the Problem">
+              It is easy to get the problem wrong and waste many iterations solving the wrong problem.
+            </c>
+
+            <a
+                id="__gsn__19084ba8f91"
+                color="#ffffff"
+                name="Reasonable Problem Analysis Performed">
+              A reasonable analysis of the problem was performed by stakeholders and engineers.
+            </a>
 
             <g
-                id="__gsn__190081f9788"
+                id="__gsn__190081f9784"
                 color="#ffffff"
-                name="Expert Stakeholders">
-              Stakeholders with expertise in flight zones are identified.
+                name="Stakeholders Identified">
+              The people/entities who have the problem and those that can help describe it are identified as stakeholders.
 
               <e
-                  id="__gsn__190081f9789"
+                  id="__gsn__190081f9785"
                   color="#ffffff"
-                  name="Expert Stakeholders">
-                Sean Regisford is identified as a resource who understands the semantics of zones in OpenUxAS.
+                  name="Problem Owner: S. Regisford">
+                Regisford is the person who wants to solve the problem of not knowing when tactical flight might violate zone.
               </e>
             </g>
 
             <g
-                id="__gsn__190081f978a"
+                id="__gsn__190081f9786"
                 color="#ffffff"
-                name="Reference Information">
-              Reference information on zones and zone awareness are available.
+                name="Sufficient Expertise">
+              Stakeholders have sufficient information to define the problem.
+
+              <s
+                  id="__gsn__190081f9787"
+                  color="#ffffff"
+                  name="Strategy">
+                Through available expert stakeholders and reference information sufficient expertise is demonstrated.
+
+                <g
+                    id="__gsn__190081f9788"
+                    color="#ffffff"
+                    name="Expert Stakeholders">
+                  Stakeholders with expertise in flight zones are identified.
+
+                  <e
+                      id="__gsn__190081f9789"
+                      color="#ffffff"
+                      name="Expert Stakeholders">
+                    Sean Regisford is identified as a resource who understands the semantics of zones in OpenUxAS.
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__190081f978a"
+                    color="#ffffff"
+                    name="Reference Information">
+                  Reference information on zones and zone awareness are available.
+
+                  <e
+                      id="__gsn__190081f978b"
+                      color="#ffffff"
+                      name="Reference Information">
+                    The OpenUxAS codebase and data structures define zones. Existing polygon code for zone routing partially explains zones semantics when reverse engineered.
+                  </e>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__190081f9795"
+                color="#ffffff"
+                name="Inputs Assembled">
+              Input information from stakeholders and domain experts is collected for use in problem analysis.
 
               <e
-                  id="__gsn__190081f978b"
+                  id="__gsn__190081f9796"
                   color="#ffffff"
-                  name="Reference Information">
-                The OpenUxAS codebase and data structures define zones. Existing polygon code for zone routing partially explains zones semantics when reverse engineered.
+                  name="CONOPS Capture">
+                CONOPs discussion notes.
               </e>
             </g>
           </s>
         </g>
 
         <g
-            id="__gsn__190081f9795"
+            id="__gsn__19157536612"
             color="#ffffff"
-            name="Inputs Assembled">
-          Input information from stakeholders and domain experts is collected for use in problem analysis.
+            name="Key Areas of Analysis and Definitions">
+          Results model the typical aspects of problem definition that are important for creating valid solutions.
 
-          <e
-              id="__gsn__190081f9796"
+          <s
+              id="__gsn__19157541d76"
               color="#ffffff"
-              name="CONOPS Capture">
-            CONOPs discussion notes.
-          </e>
+              name="Strategy">
+            Enumerated consideration over the common elements of a problem definition: Problem state definition, desired
+
+            <c
+                id="__gsn__19157582dfa"
+                color="#ffffff"
+                name="Required Problem Definition Elements">
+              state definition, the range of environment to be handled by a solution, and stakeholder constraints on desired solutions.
+            </c>
+
+            <g
+                id="__gsn__191575425e1"
+                color="#ffffff"
+                name="Problem State Identified">
+              The problem identifies undesired state.
+
+              <e
+                  id="__gsn__1915bf4d130"
+                  color="#ffffff"
+                  name="Problem Diagram: Problem State">
+                See the problem diagram and the natural language and formal definitions of the problem as world state.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__19157542838"
+                color="#ffffff"
+                name="Desired State Identified">
+              The problem identifies the desired state.
+
+              <e
+                  id="__gsn__1915bf60a21"
+                  color="#ffffff"
+                  name="Problem Diagram: Desired State">
+                See the problem diagram and the natural language and formal definitions of the desired world state.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__191575543e1"
+                color="#ffffff"
+                name="Environment Identified">
+              The environment in which the solution must operate, and all of its reasonably anticipatable variations and events, are identified.
+
+              <e
+                  id="__gsn__19157f36f33"
+                  color="#ffffff"
+                  name="Problem Diagram: World Definition">
+                See the world definition in the problem definition diagram, including its generalized constraints, context, and requirements.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__191575560c9"
+                color="#ffffff"
+                name="Solution Constraints Identified">
+              Constraints on viable solutions, requested by the problem stakeholders, have been identified.
+
+              <e
+                  id="__gsn__19157f3fa45"
+                  color="#ffffff"
+                  name="Problem Definition: OpenUxAS Service Constraint">
+                See the problem definition diagram, where solutions to general problems are constrained to re-usable, loosely coupled services.
+              </e>
+            </g>
+          </s>
         </g>
       </s>
     </g>
