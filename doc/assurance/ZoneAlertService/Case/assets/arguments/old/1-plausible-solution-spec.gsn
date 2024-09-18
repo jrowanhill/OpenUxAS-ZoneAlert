@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__19093bb1e2f"
+        color="#ffffff"
+        name="A Likely Solution is Proposed">
+      An OpenUxAS Zone Violation Alert Service applying Vehicle Velocity Projection is likely to solve the Imminent and Existing Zone Violation Detection Problem
+
+      <s
+          id="__gsn__19093ee714d"
+          name="Strategy">
+        default text
+
+        <c
+            id="__gsn__19093ef1be8"
+            color="#ffffff"
+            name="Impending Zone Violation Unawareness">
+          The problem of Impending Zone Violation Unawareness is that, within a given fixed time window, OpenUxAS doesn't know when vehicles are about to or have violated zones.
+        </c>
+
+        <a
+            id="__gsn__190e096543e"
+            color="#ffffff"
+            name="Assumption">
+          The problem of imminent and occurring zone violation unawareness can be solved by an OpenUxAS service that monitors for and reports the occurrences.
+        </a>
+
+        <c
+            id="__gsn__190e093202f"
+            color="#ffffff"
+            name="Threshold Probability">
+          A threshold probability is defined. It describes the minimum likelihood of a vehicle having an imminent zone violation in order to report it.
+        </c>
+
+        <a
+            id="__gsn__190e092c607"
+            color="#ffffff"
+            name="Threshold Probability Determination">
+          The threshold probability threshold is fixed by the service and may be abstract.
+        </a>
+
+        <g
+            id="__gsn__190e087d000"
+            color="#ffffff"
+            name="Zone Violation Monitoring as OpenUxAs Service">
+          The requested zone violation monitoring service can be implemented as an OpenUxAS service that warns subscribers when the current trajectory of a vehicle is likely to violate a zone boundary within a reasonable look ahead time window.
+
+          <c
+              id="__gsn__190e08cf97b"
+              color="#ffffff"
+              name="OpenUxAS Services">
+            OpenUxAS is architected as a loosely coupled system based on services that rely on subscriptions for their input.
+          </c>
+
+          <s
+              id="__gsn__190e092279d"
+              color="#ffffff"
+              name="Strategy">
+            By arguing that the computation required can be performed using input and output available in OpenUxAS.
+
+            <j
+                id="__gsn__190e0ae5ed0"
+                color="#ffffff"
+                name="Computation Model">
+              Given notifications of vehicle state (position and velocity) at a sufficient frequency, the monitoring service can observer the vehicles for imminent and occurring zone violations and report them to subscribing observers.
+            </j>
+
+            <j
+                id="__gsn__190e0ae6165"
+                color="#ffffff"
+                name="Architecture">
+              The imminent and occurring zone violation monitoring service can be constructed from two core functions. One records current observer requests. The other computes detection of relevant zone events and publishes them to registered observers.
+            </j>
+
+            <g
+                id="__gsn__190e0922d69"
+                color="#ffffff"
+                name="Input:Vehicle State Events">
+              The service can subscribe to all of the vehicle state reports and receive them at a rapid frequency relative to movement of vehicles.
+
+              <e
+                  id="__gsn__190e099dd2b"
+                  color="#ffffff"
+                  name="Vehicle State Events">
+                Vehicle state (position and velocity) events registered with OpenUxAS.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__190e0b6827f"
+                color="#ffffff"
+                name="Input Vehicle and Zone Declarations">
+              Vehicle and zone declarations are both receivable by OpenUxAS events.
+
+              <e
+                  id="__gsn__190e0b733c8"
+                  color="#ffffff"
+                  name="Vehicle Declaration Events">
+                See OpenUxAS events and services that send them out.
+              </e>
+
+              <e
+                  id="__gsn__190e0b778ee"
+                  color="#ffffff"
+                  name="Zone Declarations">
+                See zone declaration events and generating service in OpenUxAS.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__190e0922bc7"
+                color="#ffffff"
+                name="Output: Violation Events to Observers">
+              Observers that wish to know when a vehicle has an occurring or likely imminent zone violation subscribe to the service
+
+              <e
+                  id="__gsn__190e09ce38d"
+                  color="#ffffff"
+                  name="OpenUxAS Subscription Service">
+                OpenUxAS maintains a distributed observer pattern using a publication-subscribe system.
+              </e>
+            </g>
+          </s>
+
+          <s
+              id="__gsn__19132b5740b"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__19132b5921f"
+                color="#ffffff"
+                name="We Can Know Vehicle Trajectories and Zones">
+            </g>
+
+            <g
+                id="__gsn__19132b65f68"
+                color="#ffffff"
+                name="Can Use Future Projection on Trajectory To Check for Zone Violations">
+              default text
+            </g>
+
+            <g
+                id="__gsn__19132b5e8f1"
+                color="#ffffff"
+                name="These Warnings Are Useful for a Reasonable Projected Time Into the Future">
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__190e0a0450f"
+            color="#ffffff"
+            name="Viable Zone Violation Detection Solution">
+          Applying the linear trajectory of the last reported state of the vehicle to compute imminent and occurring zone violations is practicable and reasonable solution.
+
+          <s
+              id="__gsn__190e0b10e07"
+              name="Strategy">
+            default text
+
+            <j
+                id="__gsn__190e0b13dfc"
+                color="#ffffff"
+                name="Linear Trajectory Computation">
+              It is easy to compute the linear trajectory of a vehicle forward in time from its current vehicle state (position and velocity).
+            </j>
+
+            <g
+                id="__gsn__190e0b116c3"
+                color="#ffffff"
+                name="Reasonable Imminent Violation Computation">
+              Computing imminent and occurring zone violations for each vehicle from last state is practicable, and efficient.
+
+              <s
+                  id="__gsn__190e0b99bd5"
+                  color="#ffffff"
+                  name="Strategy">
+                show practicability and efficiency
+
+                <g
+                    id="__gsn__190e0b9a6fa"
+                    color="#ffffff"
+                    name="Practicable">
+                  The computation of imminent or occurring violation of a zone is practicable.
+
+                  <s
+                      id="__gsn__190e0caf4f1"
+                      color="#ffffff"
+                      name="Strategy">
+                    By showing that computing zone violations from linear trajectories is computationally practicable, and that monitoring service's requirement that detection of imminent collisions only be above a given threshold probability, PT, can be satisfied by tuning the lookahead time window TW.
+                  </s>
+
+                  <s
+                      id="__gsn__190e0dfae61"
+                      color="#ffffff"
+                      name="Strategy">
+                    By practical computation of linear trajectory and imminent and occurring violations of that trajectory with zone boundaries up to a future time window, TW.
+
+                    <j
+                        id="__gsn__190e0e0cec4"
+                        color="#ffffff"
+                        name="Computable Linear Trajectory">
+                      Linear trajectory computation from current position and velocity is simple physics.
+                    </j>
+
+                    <c
+                        id="__gsn__190e0e2042d"
+                        color="#ffffff"
+                        name="Probability Threshold, PT">
+                      The monitoring service requests that alerts be sent for any and all imminent zone violations that are likely to occur above a threshold probability for reasonably expected vehicle behaviors.
+                    </c>
+
+                    <a
+                        id="__gsn__190e0cafd6c"
+                        color="#ffffff"
+                        name="Probability Threshold Satisfaction">
+                      Only alerting for detections of imminent zone violations with probability &gt;= PT can be acceptably approximated by tuning the lookahead time window, TW, up to which the linear trajectory of a vehicle is projected.
+
+                      <comment
+                          id="__gsn__190e0db699e"
+                          color="#ffffff"
+                          name="Note">
+                        Could be made a claim and backed up by simulations.
+                      </comment>
+                    </a>
+
+                    <s
+                        id="__gsn__190e0bc763f"
+                        color="#ffffff"
+                        name="Enumeration">
+                      By zone type
+
+                      <c
+                          id="__gsn__190e0bcc499"
+                          color="#ffffff"
+                          name="Zone Types">
+                        Keep-In and Keep-Out zones.
+                      </c>
+
+                      <g
+                          id="__gsn__190e0bc7e2d"
+                          color="#ffffff"
+                          name="For Keep-Out Zones">
+                        The computation of imminent or occurring violation of a keep-out zone is practicable.
+
+                        <c
+                            id="__gsn__190e0bef443"
+                            color="#ffffff"
+                            name="Optimization">
+                          Keep-out zones can be merged in the x-y plane if they have the same altitude limits. This allows one toto determine whether a resulting composite zone is violated, thereby reducing the number of edge checks.
+                        </c>
+
+                        <e
+                            id="__gsn__190e0be121a"
+                            color="#ffffff"
+                            name="Computation Approach">
+                          The computation of imminent or occurring violation of a keep out zone consists of checking if current position is in the zone and then, if not, determining the earliest parametric collision time of the linear vehicle trajectory with a zone boundary. This is done by planar computation for top and bottom of the zone and polygonal intersection for in the x-y plane.
+                        </e>
+                      </g>
+
+                      <g
+                          id="__gsn__190e0bc7fa2"
+                          color="#ffffff"
+                          name="Merging Keep-In Zones">
+                        One can merge keep-in zones that share the same altitude limits.
+
+                        <c
+                            id="__gsn__190e0c79295"
+                            color="#ffffff"
+                            name="Optimization">
+                          Keep-out zones can be merged in the x-y and z planes to determine whether a resulting composite zone is violated, thereby reducing the number of edge checks.
+                        </c>
+
+                        <e
+                            id="__gsn__190e0c3485c"
+                            color="#ffffff"
+                            name="Computational Approach">
+                          One can compute whether a last vehicle state is in at least one keep-in zone for all points on the lienar trajectory in a time window.
+
+                          <a
+                              id="__gsn__190e0c3916d"
+                              color="#ffffff"
+                              name="Assumption">
+                            Keep-In zones cannot be merged, as a vehicle may have a specific set of keep-in zones where they must stay within at least one.
+                          </a>
+                        </e>
+                      </g>
+                    </s>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__190e0b9a8ac"
+                    color="#ffffff"
+                    name="Efficient">
+                  The naive cost of computation for all vehicles reporting state on a regular basis is O(z v) where v is the number of vehicles and z is the number of zones.
+
+                  <e
+                      id="__gsn__190e0baeb7c"
+                      color="#ffffff"
+                      name="Order of Operations">
+                    The naive cost of computation for all vehicles reporting state on a regular basis is O(z v) where v is the number of vehicles and z is the number of zones.
+                  </e>
+
+                  <e
+                      id="__gsn__190e0baee52"
+                      color="#ffffff"
+                      name="Computation Cost">
+                    The cost of computing imminent and occurring violations for a vehicle state event consists of
+                  </e>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+      </s>
+
+      <s
+          id="__gsn__191fd4765c4"
+          name="Strategy">
+        default text
+
+        <g
+            id="__gsn__191fd49307f"
+            color="#ffffff"
+            name="Goal">
+          The alert service can follow the standard OpenUxAS pattern of utilizing a service base that subscribes to and sends notifications and a detector function that performs zone violation calculations.
+
+          <e
+              id="__gsn__191fd4c2a1b"
+              color="#ffffff"
+              name="Zone Alert Service Detail">
+            See the zone alert service detail of the default text
+          </e>
+
+          <e
+              id="__gsn__191fd4cfd19"
+              color="#ffffff"
+              name="Evidence">
+            default text
+          </e>
+
+          <s
+              id="__gsn__191fd4d099a"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__191fd4d10aa"
+                color="#ffffff"
+                name="Valid Design">
+              The design of a detector on the basis of received messages appears valid.
+
+              <e
+                  id="__gsn__191fd4ff8ef"
+                  name="Evidence">
+                default text
+              </e>
+            </g>
+
+            <g
+                id="__gsn__191fd4dd844"
+                color="#ffffff"
+                name="Verified Interface">
+              The inputs and outputs of the proposed design are verified notifications from OpenUxAS with appropriate semantics.
+
+              <e
+                  id="__gsn__191fd4ff4c6"
+                  name="Evidence">
+                default text
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__191fd49387b"
+            color="#ffffff"
+            name="Goal">
+          The detector component can utilize information received from available notifications to detect existing zone violations and predict future zone violations along each vehicle's future trajectory.
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

@@ -52,7 +52,7 @@
           id="__gsn__18fc0625209"
           color="#ffffff"
           name="Strategy">
-        By showing that those involved understand the problem to be solved, that a solution was specified that is believed to solve the problem, with a correct implementation of that specification,  and the resulting implementation does indeed sufficiently solve the problem.
+        By showing that those involved understand the problem to be solved, that a solution was specified that is believed to solve the problem, with a correct implementation of that specification, and the resulting implementation does indeed sufficiently solve the problem.
 
         <j
             id="__gsn__1915d6ce896"
@@ -65,28 +65,28 @@
             id="__gsn__18db9043dd7"
             color="#ffffff"
             name="Understood Problem">
-          The Zone Violation Unawareness Problem in OpenUxAS is sufficiently understood.
+          The Imminent and Existing Zone Violation Detection Problem is sufficiently understood.
         </m>
 
         <m
             id="__gsn__18fc062567b"
             color="#ffffff"
             name="A Likely Solution is Proposed">
-          An OpenUxAS Zone Alert Service applying Vehicle Velocity Projection is likely to solve the Zone Violation Unawareness problem.
+          An OpenUxAS Zone Violation Alert Service applying Vehicle Velocity Projection is likely to solve the Imminent and Existing Zone Violation Detection Problem
         </m>
 
         <m
             id="__gsn__18fc06259c1"
             color="#ffffff"
             name="Correct Implementation of the Solution">
-          The OpenUxAS Zone Alert Service is a correct implementation of the Zone Alert Service through Applying Vehicle Velocity Projection.
+          The OpenUxAS Zone Violation Alert Service is a correct implementation of the Zone Alert Service through Applying Vehicle Velocity Projection.
         </m>
 
         <m
             id="__gsn__18fc0627746"
             color="#ffffff"
             name="The Solution is Confirmed to Solve the Problem">
-          The OpenUxAS Zone Alert Service is confirmed to solve the Zone Violation Unawareness Problem.
+          The OpenUxAS Zone Violation Alert Service is confirmed to solve the Imminent and Existing Zone Violation Detection Problem
         </m>
       </s>
     </g>

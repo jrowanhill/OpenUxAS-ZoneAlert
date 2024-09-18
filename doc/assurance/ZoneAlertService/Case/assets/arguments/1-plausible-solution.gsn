@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__192008bcf2d"
+        color="#ffffff"
+        name="A Likely Solution is Proposed">
+      An OpenUxAS Zone Violation Alert Service applying Vehicle Velocity Projection is likely to solve the Imminent and Existing Zone Violation Detection Problem
+
+      <s
+          id="__gsn__192008cd46a"
+          color="#ffffff"
+          name="Strategy">
+        By arguing the proposed solution is computable and efficient, while also being acceptable as a compromise solution.
+
+        <g
+            id="__gsn__192008cd979"
+            color="#ffffff"
+            name="Efficiently Computable">
+          Linear Trajectory-based Detection is efficiently computable from available information from OpenUxAS
+
+          <s
+              id="__gsn__1920090c5fc"
+              color="#ffffff"
+              name="Strategy">
+            By showing that the required input information is available as subscribable
+
+            <g
+                id="__gsn__19200917d85"
+                color="#ffffff"
+                name="Implementable as Standard OpenUxAS Service">
+              Linear Trajectory-Based Alerting can be implemented as a typical OpenUxAS Service Architecture with a Detector function that computes alerts on each vehicle state report received.
+
+              <e
+                  id="__gsn__19200922eeb"
+                  color="#ffffff"
+                  name="Alerter Architecture">
+                See the alerter architecture, in blue in problem-diagram.png/ step 2 / Zone Violation Reporting Service (detail box)
+              </e>
+            </g>
+
+            <g
+                id="__gsn__1920090ceac"
+                color="#ffffff"
+                name="Efficiently Computable">
+              Efficient Computation of existing and imminent zone violations from current position and linear velocity in time O(ZE) where Z is the number of defined zones and E is the expected number of polygonal edges defining a zone in the x-y plane.
+
+              <s
+                  id="__gsn__1920098ba40"
+                  color="#ffffff"
+                  name="Strategy">
+                By the algorithm's keep steps
+
+                <c
+                    id="__gsn__19200b65715"
+                    color="#ffffff"
+                    name="Zone Geometry">
+                  A zone's geometry is a maximum and minum altitude, and a closed polygon (with no intersecting edges) in the x-y plane.
+                </c>
+
+                <c
+                    id="__gsn__19200b357b3"
+                    color="#ffffff"
+                    name="Linear Trajectory">
+                  The linear trajectory of a vehicle at present time Ts to future time Te = Ts + Tw, where Tw is a lookahead window, is defined as the vector along the current linear velocity of the vehicle projected from Ts to Te. This can be represented as a parametric function f(t)-&gt; Cartesian Space (3 dimensions) over the time domain [Ts, Te].
+                </c>
+
+                <g
+                    id="__gsn__1920098c501"
+                    color="#ffffff"
+                    name="Linear Trajectory Efficiently Computable">
+                  The linear trajectory of a vehicle to a fixed lookahead time is efficiently computable using a vehicle's state report in O(1) time.
+
+                  <s
+                      id="__gsn__1920094abf7"
+                      color="#ffffff"
+                      name="Strategy">
+                    By showing that the necessary inputs are available and computation is standard mathematics.
+
+                    <g
+                        id="__gsn__1920094b4c2"
+                        color="#ffffff"
+                        name="Position and Velocity Available">
+                      Position and velocity information are available with each vehicle state report.
+
+                      <e
+                          id="__gsn__1920096ef1e"
+                          color="#ffffff"
+                          name="OpenUxAS Message Definitions">
+                        See OpenUxAS message definitions file.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__1920094b68c"
+                        color="#ffffff"
+                        name="Linear Trajectory Computation">
+                      The linear trajectory of a vehicle to a lookahead time window is computable as a line segment using the reported position and velocity information of the aircraft and the time window length.
+
+                      <e
+                          id="__gsn__19200979e0c"
+                          color="#ffffff"
+                          name="Basic Parametric Motion">
+                        See standard textbook
+                      </e>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__19200bb7c17"
+                    color="#ffffff"
+                    name="Keep-Out Zone Violations Efficiently Computable">
+                  Computing earliest existing and imminent keep-out zone violations along a vehicles linear velocity is computable in O(ZE) time with available information. (Z is number of zones and E is the number of edges defining a typical zone polygon.)
+
+                  <s
+                      id="__gsn__19200bb7c18"
+                      color="#ffffff"
+                      name="Strategy">
+                    By arguing an overall effective computation and the its two sub-algorithms (steps).
+
+                    <j
+                        id="__gsn__19200bb7c1a"
+                        color="#ffffff"
+                        name="Keep-Out Zone Violation Definition">
+                      A keep-out zone is violated by a vehicle on its linear trajectory f(t) if and only if one or more points of trajectory is on or within the keep out zone region.
+                    </j>
+
+                    <j
+                        id="__gsn__19200bb7c19"
+                        color="#ffffff"
+                        name="Keep-Out Zone First Violation">
+                      Given a trajectory f(t) where t is in [Ts,Te], a keep-out zone is first violated by a trajectory at time Tc iff the trajectory intersects the keep-out zone's boundary at time Tc and does not violate the zone for time range [Ts, Tc).
+                    </j>
+
+                    <a
+                        id="__gsn__19200bb7c1b"
+                        color="#ffffff"
+                        name="Assumption">
+                      Further efficiencies in computation can be obtained if desired through simple bounding boxes and organization of zones graph models, etc.
+                    </a>
+
+                    <g
+                        id="__gsn__19200bb7c1e"
+                        color="#ffffff"
+                        name="Earliest Keep-Out Zone Violation Computation">
+                      A keep out zone is computed to be violated at time TC, as follows: 1. computing whether the trajectory is ON or INSIDE the keep-out zone at the trajectories' start time and 2. if not, determining the first intersection of the trajectory and the zone boundary
+
+                      <s
+                          id="__gsn__19200bbab99"
+                          color="#ffffff"
+                          name="Strategy">
+                        By simple geometric observations about intersection of a vector and a zone (through algorithms) and the sub-algorithms applied
+
+                        <j
+                            id="__gsn__19200bc603a"
+                            color="#ffffff"
+                            name="Axiom 1">
+                          If the trajectory start position is on or in a keep-out zone then the vehicle is already in violation
+                        </j>
+
+                        <j
+                            id="__gsn__19200bdea36"
+                            color="#ffffff"
+                            name="Axiom 2">
+                          If the vehicle is not already within the keep out zone, then if the vehicle's trajectory ever touches the zone boundary, then the vehicle is in violation of the zone at that time.
+                        </j>
+
+                        <e
+                            id="__gsn__19200e79c36"
+                            color="#ffe6cc"
+                            name="Figure">
+                          Maybe
+                        </e>
+                      </s>
+                    </g>
+
+                    <public-goal
+                        id="__gsn__19200c37bfb"
+                        color="#ffffff"
+                        name="Efficiently Computing Point is INSIDE, OUTSIDE, or ON a Zone Boundary">
+                      A point in cartesian space can be computed to be inside, outside, or on a zone boundary in O(E) time where E is the expected number of edges in the polygonal boundary of zones.
+
+                      <s
+                          id="__gsn__19200c37bfc"
+                          color="#ffffff"
+                          name="Strategy">
+                        By directly demonstrating the efficient computability of sufficient substeps
+
+                        <j
+                            id="__gsn__19200c37bfd"
+                            color="#ffffff"
+                            name="Justification">
+                          The sufficiency of the claimed sub-steps is self-evident.
+                        </j>
+
+                        <g
+                            id="__gsn__19200c37bfe"
+                            color="#ffffff"
+                            name="Outside Zone Computation">
+                          The point (x,y,z) is computed to be outside a zone boundary if (z &lt; minAlt or z &gt; mazAlt) OR (x,y) NOT INSIDE polygonBoundary NOR (x,y) ON polygonBoundary.
+
+                          <e
+                              id="__gsn__19200c37bff"
+                              color="#ffffff"
+                              name="Geometric Proof">
+                            .
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19200c37c00"
+                            color="#ffffff"
+                            name="On Zone Boundary Computation">
+                          The point (x,y,z) is on a zone boundary iff [ minAlt &lt;= z &lt;= maxAlt AND (x,y) ON polygonBoundary ] OR [ (z = minAlt or z = mazAlt ) AND ( (x,y) IN polygonBoundary]
+
+                          <e
+                              id="__gsn__19200c37c01"
+                              color="#ffffff"
+                              name="Geometric Proof">
+                            default text
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19200c37c02"
+                            color="#ffffff"
+                            name="Inside Zone Boundary Computation">
+                          The point (x,y,z) is in a zone boundary iff [minAlt &lt; z &lt; maxAlt] and (x,y) IN polygonBoundary
+
+                          <e
+                              id="__gsn__19200c37c03"
+                              color="#ffffff"
+                              name="Geometric Proof">
+                            default text
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19200c37c04"
+                            color="#ffffff"
+                            name="Efficient IN or ON PolygonBoundary Computations">
+                          Computing whether (x,y) INSIDE OR ON boundaryPolygon can be efficiently computed with one of several common algorithms.
+
+                          <e
+                              id="__gsn__19200c37c05"
+                              color="#ffffff"
+                              name="Citation">
+                          </e>
+                        </g>
+                      </s>
+                    </public-goal>
+
+                    <g
+                        id="__gsn__19200bb7c23"
+                        color="#ffffff"
+                        name="Efficiently Computing First Future Intersection">
+                      One can compute the earliest intersection of the trajectory and the zone boundary for the time range (Ta, Tb]. with reasonable efficiency in time O(E) where E is the expected number of edges in a zone.
+
+                      <a
+                          id="__gsn__19200c62b62"
+                          color="#ffffff"
+                          name="Assumption">
+                        The start point of the linear trajectory is outsize the zone boundary.
+                      </a>
+
+                      <s
+                          id="__gsn__19200bb7c24"
+                          color="#ffffff"
+                          name="Strategy">
+                        By the computational algorithm to apply and its decomposed subcomputations.
+
+                        <a
+                            id="__gsn__19200bb7c25"
+                            color="#ffffff"
+                            name="Line Segment Intersection Computation">
+                          How a line segment is computed to intersect the parametric trajectory fxy(t) in the x-y plane will depend on how trajectories are stored and interpreted, but is generally computable.
+                        </a>
+
+                        <g
+                            id="__gsn__19200bb7c26"
+                            color="#ffffff"
+                            name="Overall Computation of Intersection">
+                          The earliest intersection of a trajectory vector, represented parametrically as f(t) for time interval (Ta, Tb], and a zone boundary can be computed as follows: Compute the first sub-domain of time domain (Ta,Tb], defined as [Tu,Tv] such that Tu&gt;Ta and zoneMinAlt &lt;= fz(t) &lt;= zoneMaxAlt. The temporal inequality is computable for finite domain computations. Then compute the earliest intersection of the trajectory with the zone polygonal boundary in time range [Tu,Tv], if any. If there is such an intersection, return the result. Otherwise, one can return that no intersection exists between the linear trajectory and the zone.
+
+                          <e
+                              id="__gsn__19200bb7c27"
+                              color="#ffffff"
+                              name="See Figure">
+                            default text
+                          </e>
+
+                          <s
+                              id="__gsn__19200cf992f"
+                              color="#ffffff"
+                              name="Strategy">
+                            From the basic geometry of a vector's potential intersections with a zone region.
+
+                            <g
+                                id="__gsn__19200cfa035"
+                                color="#ffffff"
+                                name="When No Altitude Intersection, No Zone Intersection">
+                              If the algorithm computes that no part of the trajectory vector on [Ts, Te] intersects the zone's altitude range, then no zone intersection exists on the trajectory to time Te.
+
+                              <e
+                                  id="__gsn__19200d8d150"
+                                  color="#ffffff"
+                                  name="Basic Geometry">
+                                The zone is within the altitude range. A trajectory that does not cross this range therefore cannot intersect the zone.
+                              </e>
+                            </g>
+
+                            <g
+                                id="__gsn__19200d79be9"
+                                color="#ffffff"
+                                name="At Most One Altitude Intersection Range">
+                              The trajectory vector intersections the zone's altitude range at most once.
+
+                              <e
+                                  id="__gsn__19200d8216f"
+                                  color="#ffffff"
+                                  name="Basic Geometry">
+                                The trajectory is linear and therefore can only pass through a range of altitudes once.
+                              </e>
+                            </g>
+
+                            <g
+                                id="__gsn__19200cfa26e"
+                                color="#ffffff"
+                                name="When No Polgon Intersection on Altitude Intersection Range">
+                              A vector in the altitude range of the zone intersects the zone only if there is an earliest point on the vector that it is in or on the polygonal zone boundary in the x-y plane.
+
+                              <e
+                                  id="__gsn__19200db5366"
+                                  color="#ffffff"
+                                  name="Basic Geometry">
+                                From the definition of a vector in Cartesian space and the definition of a zone boundary, the vectors intersection set has an earliest point in the trajectory vector's temporal parametric representation.
+                              </e>
+                            </g>
+                          </s>
+                        </g>
+
+                        <g
+                            id="__gsn__19200bb7c28"
+                            color="#ffffff"
+                            name="Computation of Earliest Intersection of Trajectory in [Tu, Tv] with Zone Boundary">
+                          A first intersection on a maximal subdomain [Tu,Tv] (for which MinAlt &lt;= fz(t) &lt;= MaxAlt for t in [Tu,Tv]) is correctly computed as follows: (1) Compute if the horizontal plane trajectory point fxy(Tu) is ON or INSIDE the polygonal boundary of the zone in the xy plane. (2) If ON or IN the polygon boundary, then fxy(Tu) is the first intersection point in the subdomain [Tu,Tv] and can be returned as such. (3) Otherwise, compute the first intersection point and time between fxy(t) and the zone polygon boundary within range [Tu, Tv] using a sub-algorithm. If no such intersection is found, then the trajectory on [Tu,Tv] does not intersect the zone and that is returned.
+
+                          <s
+                              id="__gsn__19200e0fe57"
+                              color="#ffffff"
+                              name="Strategy">
+                            Through consideration of the above two sub-computations
+
+                            <j
+                                id="__gsn__19200e502f2"
+                                color="#ffffff"
+                                name="Justification">
+                              If the first point of the trajectory is not in the zone polygon boundary, then the first polygon boundary intersection with the trajectory vector will be entering the zone, not leaving it.
+                            </j>
+
+                            <away-goal
+                                id="__gsn__19200e14d2a"
+                                color="#ffffff"
+                                name="Efficiently Computing Point is INSIDE, OUTSIDE, or ON a Zone Boundary">
+                              A point in cartesian space can be computed to be inside, outside, or on a zone boundary in O(E) time where E is the expected number of edges in the polygonal boundary of zones.
+                            </away-goal>
+
+                            <g
+                                id="__gsn__19200bb7c2a"
+                                color="#ffffff"
+                                name="Computation of XY Plane Intersection of Trajectory with Polygon Boundary">
+                              Computing the first temporal intersection point of a trajectory projection on the x-y plane, fxy(t), in time range [Tu, Tv], and a zone's x-y plane polygonal boundary is computed as follows: 1. For each edge E of the polygon, solve fxy(t) element of LIneSegment(E) over time range [Tu,Tv]. This can be solved algebraically. Compute the earliest time t for which the above is true. The computation might compute that no such intersection exists. Compare results over all edges for the earliest time result, if any. Return that time and position if any, otherwise return no such intersection found.
+
+                              <e
+                                  id="__gsn__19200bb7c2b"
+                                  color="#ffffff"
+                                  name="Basic Geometry">
+                                In the x-y plane, the trajectory intersects any polygon edge where the location on the trajectory vector and an edge are equivalent. Solving parametrically for time t against the linear trajectory vector for all edges allows the smallest time t to be used to choose the earliest intersection time and point.
+                              </e>
+                            </g>
+
+                            <e
+                                id="__gsn__19200e5c37d"
+                                color="#ffffff"
+                                name="See Figure">
+                              default text
+                            </e>
+                          </s>
+                        </g>
+                      </s>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__192009a8499"
+                    color="#ffcccc"
+                    name="Keep-In Zone Violations Efficiently Computable">
+                  Computing existing and imminent keep-out zone violations along the vehicles linear velocity is computable with available information in time O( ...... )
+
+                  <g
+                      id="__gsn__19201022ca4"
+                      color="#ffffff"
+                      name="Efficient Algorithm">
+                    The algorithm computes the earliest time in [Ts, Te] at which the trajectory is not in any keep-in zones in order of operations O(ZE) where Z is the number of keep-in zones and E is the expected number of edges of a keep-in zones polygonal boundary.
+
+                    <s
+                        id="__gsn__192009b5ace"
+                        color="#ffffff"
+                        name="Strategy">
+                      Through claim of an algorithm given axioms of keep-in zone violation, and claims about the computation of its steps.
+
+                      <j
+                          id="__gsn__19200e9af8d"
+                          color="#ffffff"
+                          name="Keep-In  Zone Violation Definition">
+                        A keep-in zone is violated by a vehicle on its linear trajectory f(t) if and only if one or more points of trajectory is outside all registered keep-in zones at some time Tc in [Ts,Te].
+                      </j>
+
+                      <j
+                          id="__gsn__19200e9b922"
+                          color="#ffffff"
+                          name="Keep-In Zone First Violation">
+                        Given a trajectory f(t) where t is in [Ts,Te], a keep-in zone is first violated by a trajectory at time Tc iff the trajectory is inside at least one keep-in zone for all times less than Tc in [Ts,Te] and outside all keep-in zones at time Tc.
+                      </j>
+
+                      <g
+                          id="__gsn__19200ef7b8b"
+                          color="#ffffff"
+                          name="Earliest Keep-In Zone Violation Detection Algorithm">
+                        Describe overall algorithm here.
+
+                        <s
+                            id="__gsn__1920107fedc"
+                            name="Strategy">
+                          default text
+
+                          <g
+                              id="__gsn__19201080a79"
+                              color="#ffffff"
+                              name="Satisfies the Algorithm Goal">
+                            A postcondition of the algorithm is that it returns the goal of the algorithm, that it returns, if one exists, the earliest time in [Ts,Te] where the trajectory vector is not contained in any keep-in zone boundaries.
+
+                            <s
+                                id="__gsn__192010a2f05"
+                                name="Strategy">
+                              default text
+
+                              <c
+                                  id="__gsn__19201099245"
+                                  color="#ffcccc"
+                                  name="Doubt">
+                                Make sure the algorithm handles the edge case of starting on a keep-in zone boundary and then either leaving the zone or entering the zone.
+                              </c>
+
+                              <g
+                                  id="__gsn__1920169ea59"
+                                  name="Goal">
+                                default text
+                              </g>
+
+                              <g
+                                  id="__gsn__1920169ecdd"
+                                  name="Goal">
+                                default text
+                              </g>
+                            </s>
+                          </g>
+
+                          <g
+                              id="__gsn__19201080cf8"
+                              color="#ffffff"
+                              name="Computational Efficiency">
+                            The time taken by the algorithm is O(ZE).
+
+                            <s
+                                id="__gsn__192010ae7c2"
+                                name="Strategy">
+                              default text
+
+                              <g
+                                  id="__gsn__192010ae7c4"
+                                  color="#ffffff"
+                                  name="Substep O(....)">
+                                default text
+                              </g>
+                            </s>
+                          </g>
+                        </s>
+                      </g>
+                    </s>
+                  </g>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__192008d11cd"
+            color="#ffffff"
+            name="Acceptable Compromise Solution">
+          With some relaxation of goals and adjusted architecture of OpenUxAS, the detector service is an acceptable solution to alerting on existing and imminent future zone violations.
+
+          <s
+              id="__gsn__192010c819a"
+              color="#ffffff"
+              name="Strategy">
+            By explaining that the solution works except for potential of false positive and negatives at an analytically difficult to determine rate highly influenced by vehicle behavior, mission goals, and zone placements; and that resulting potential mission failures would be compensated for using acceptance of mission goal failures and zone violation failures through past performance analysis and predictive modeling.
+
+            <g
+                id="__gsn__192011dd95e"
+                color="#ffffff"
+                name="Can Result in False Positive and Negative Detections">
+              Use of a linear velocity as trajectory of a vehicle, over short time scales (lookahead window) is a weak estimate of a vehicles future trajectory, and there in result in false positive and negative detections of zone violations.
+
+              <e
+                  id="__gsn__192011eac11"
+                  color="#ffffff"
+                  name="Diagram">
+                See problem-diagram.png/step 2 / Zone Violation Detector and Linear Trajectory-Based Zone Violation Detector / Compromise
+              </e>
+            </g>
+
+            <g
+                id="__gsn__1920120370e"
+                color="#ffffff"
+                name="False Positive and Negative Detection Acceptance">
+              Analysis can be used to determine if the effect of expected false positive and negative detection rates and use of the zone violation avoidance service have unacceptable or acceptable impacts on achieving mission goals and avoiding unacceptable zone violations.
+
+              <s
+                  id="__gsn__192012190af"
+                  color="#ffffff"
+                  name="Strategy">
+                Through performance assessment on past missions and setting Tw to predict acceptable future mission performance
+
+                <g
+                    id="__gsn__1920121a00c"
+                    color="#ffffff"
+                    name="Lagging Indicator Models">
+                  Past performance of vehicle false positive and negative detections, and the impact on overall effectiveness of zone violation avoidance and mission goal performance can be assessed.
+
+                  <e
+                      id="__gsn__1920122457b"
+                      color="#ffffff"
+                      name="Service Definition">
+                    See problem-diagram.png/ step 4 / OpenUxAS / Past Performance 
+Assessment (Mission Goals and Zone Violation Performance)
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1920123402b"
+                    color="#ffffff"
+                    name="Tw-Setting Predictive Models">
+                  Tw, the lookahead time window, can be input to models to predict likely mission goal success and zone violation rates given detector false positive and negative violation detections for a given mission, vehicle set, and zone configuration.
+
+                  <s
+                      id="__gsn__1920123ffea"
+                      color="#ffffff"
+                      name="Strategy">
+                    Through proposed solutions for predictive modeling
+
+                    <g
+                        id="__gsn__19201242c14"
+                        color="#ffffff"
+                        name="Scenario-Bsaed
+Testing and Simulation">
+                      scenarios might be able to be used to predict how behavior of vehicles (in simulation) cause false positive or negative zone violation alerts and how response services impact mission goals and zone violation rates for a given mission, Tw, vehicle set, and zone set. This can be used to tune Tw.
+
+                      <e
+                          id="__gsn__192012fc569"
+                          color="#ffffff"
+                          name="Proposed Solution">
+                        See problem-diagram.png/ step 4/ Scenario-Based Testing and Simulation
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__19201242db6"
+                        color="#ffffff"
+                        name="Past Mission 
+Results-Based Indicators and Prediction Model">
+                      Past mission performance and similarity to proposed missions, vehicles and zone configurations might be used to predict Tw with acceptable mission goal completion and zone violations.
+
+                      <e
+                          id="__gsn__1920130685c"
+                          color="#ffffff"
+                          name="Proposed Solution">
+                        See problem-diagram.png/ step 4/ Past Mission 
+Results-Based Indicators and Prediction Model
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__192012fa549"
+                        color="#ffffff"
+                        name="Probability-Field-Based
+Mission Geometry
+Analysis">
+                      A probability-field model of vehicle trajectories might be possible to compute acceptable Tw against mission definitions, zones configuration and vehicle sets
+
+                      <e
+                          id="__gsn__19201309f34"
+                          color="#ffffff"
+                          name="Proposed Solution">
+                        See problem-diagram.png/ step 4/ Probability-Field-Based
+Mission Geometry
+Analysis
+                      </e>
+                    </g>
+                  </s>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>
