@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="bUUqg679XfmgL5BK57HB">
-    <mxGraphModel dx="1294" dy="936" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1467" dy="1061" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -60,7 +60,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-7" value="When&lt;br&gt;To&lt;br&gt;Check?" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1062.5" y="566.25" width="120" height="60" as="geometry" />
+          <mxGeometry x="1062.5" y="509.02" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="DVeMuobm-aGxhQHQA0kC-31" target="DVeMuobm-aGxhQHQA0kC-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -86,16 +86,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-12" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ORIGINAL:&lt;/div&gt;&lt;div&gt;CHECK EACH ZONE FOR VIOLATION&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;REALIZED:&lt;/div&gt;&lt;div&gt;&lt;div&gt;(1) Collect All Announced Keep-In and Keep-Out Zones&lt;/div&gt;&lt;div&gt;(2) Polygon Merge Keep-Out Zones into new set&lt;/div&gt;&lt;div&gt;(3) Polygon Merge Keep-In Zones into new set&amp;nbsp;&lt;div&gt;(4) Check each reported vehicle position and linear trajectory against each merged zone&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
-          <mxGeometry x="1250" y="676.5600000000001" width="345" height="148.12" as="geometry" />
+          <mxGeometry x="1250" y="619.33" width="345" height="148.12" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-31" value="How to Check" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1362.5" y="561.24" width="120" height="60" as="geometry" />
+          <mxGeometry x="1362.5" y="504.01" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yFI-hpcA_uPZDY2qY_ZT-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-34" target="DVeMuobm-aGxhQHQA0kC-122" edge="1">
+        <mxCell id="eaLvXD2Lj2M1wNl7xkW3-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-34" target="DVeMuobm-aGxhQHQA0kC-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eaLvXD2Lj2M1wNl7xkW3-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-34" target="eaLvXD2Lj2M1wNl7xkW3-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-34" value="Check&lt;br&gt;on Received&lt;br&gt;Vehicle State&lt;br&gt;Reports" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
-          <mxGeometry x="1062.5" y="685.9300000000001" width="120" height="63.75" as="geometry" />
+          <mxGeometry x="1062.5" y="628.7" width="120" height="63.75" as="geometry" />
         </mxCell>
         <mxCell id="yFI-hpcA_uPZDY2qY_ZT-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-36" target="DVeMuobm-aGxhQHQA0kC-41" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -243,14 +246,14 @@
         <mxCell id="DVeMuobm-aGxhQHQA0kC-118" value="Allow" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
           <mxGeometry x="850" y="1200" width="70" height="46.87" as="geometry" />
         </mxCell>
-        <mxCell id="yFI-hpcA_uPZDY2qY_ZT-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DVeMuobm-aGxhQHQA0kC-122" target="DVeMuobm-aGxhQHQA0kC-124" edge="1">
+        <mxCell id="eaLvXD2Lj2M1wNl7xkW3-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVeMuobm-aGxhQHQA0kC-122" target="DVeMuobm-aGxhQHQA0kC-124">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-122" value="Can Cause Failure to Warn ifNot Received" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1062.5" y="786.56" width="120" height="60" as="geometry" />
+          <mxGeometry x="868.75" y="740" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-124" value="Allow" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" parent="1" vertex="1">
-          <mxGeometry x="920" y="790.1400000000001" width="77.5" height="50.63" as="geometry" />
+          <mxGeometry x="891.25" y="823.58" width="77.5" height="36.42" as="geometry" />
         </mxCell>
         <mxCell id="DVeMuobm-aGxhQHQA0kC-129" value="Avoid Boost Dependencies" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="3525" y="2341.57" width="160" height="88.12" as="geometry" />
@@ -1353,6 +1356,15 @@
         </mxCell>
         <mxCell id="eaLvXD2Lj2M1wNl7xkW3-10" value="Stakeholders say &quot;NO&quot;, consider all declared zones" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" vertex="1" parent="1">
           <mxGeometry x="1410" y="1272.51" width="120" height="69.38" as="geometry" />
+        </mxCell>
+        <mxCell id="eaLvXD2Lj2M1wNl7xkW3-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="eaLvXD2Lj2M1wNl7xkW3-12" target="eaLvXD2Lj2M1wNl7xkW3-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eaLvXD2Lj2M1wNl7xkW3-12" value="What about state received while still merging zones" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1088.1200000000001" y="740" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eaLvXD2Lj2M1wNl7xkW3-14" value="Process ASAP afterwards in Reception Order" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;dx=20;dy=0;align=right;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="819.37" width="136.25" height="40.63" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
