@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1907ef577a1"
+        color="#ffffff"
+        name="Understood Problem">
+      The Imminent and Existing Zone Violation Detection Problem is sufficiently understood.
+
+      <c
+          id="__gsn__191571b38b5"
+          color="#ffffff"
+          name="Problem: Imminent and Existing Zone Violation Detection">
+        The problem of existing and imminent zone violation is the problem of requiring an OpenUxAS service to inform zone violation detection and avoidance mechanisms that about existing and imminent zone violations, respectively. For the recording service, the report must be within a fixed time future time delay from detection of the present violation. For the avoidance service, the report must be before the violation with enough time for avoidance reactions. The required mechanism is depicted in problem-diagram.png / step 2 / OpenUxAS / Existing and Imminent Zone Violation Reporter
+Service.
+      </c>
+
+      <c
+          id="__gsn__191fd24faf2"
+          color="#ffffff"
+          name="OpenUxAS">
+        Solutions to the problems presented are implemented are to be implemented as OpenUxAS services in a loosely-coupled notification-based paradigm, see problem-diagram.png/ step 2/ OpenUxAS, Message-Type-Based
+Publish/Subscribe
+      </c>
+
+      <s
+          id="__gsn__191fc59abc8"
+          color="#ffffff"
+          name="Strategy">
+        By showing that the problem of zone violations in OpenUxAS is fundamental to reliable systems engineering of OpenUxAS, that fault tolerance and analysis techniques are proposed as solutions, that those solutions require detecting existing and imminent zone violations, and that a a common service can be developed to detect existing and/or imminent zone violations.
+
+        <j
+            id="__gsn__191fd317009"
+            color="#ffffff"
+            name="Zone Violations are Undesirable">
+          Zone violations are undesirable states of an executing mission. See problem-diagram.png / step 1 / OpenUxAS / Zone Violation
+        </j>
+
+        <a
+            id="__gsn__191fd2fa157"
+            color="#ffffff"
+            name="A Single Parameterized Detector Service">
+          If a detector service can detect violations from the present time up to some given future time, then parameterizing how long into the future it reports potential violations, where this value can be set to zero, allows it to be parameterized to detect existing violations or existing and imminent violations, accordingly.
+        </a>
+
+        <j
+            id="__gsn__191fd2bd4f8"
+            color="#ffffff"
+            name="Justification">
+          The OpenUxAS loosely-coupled architecture allows for commons services to be developed to be used by multiple other services, some yet to be determined.
+        </j>
+
+        <g
+            id="__gsn__191ec55d3db"
+            color="#ffffff"
+            name="OpenUxAS Solution Can Cause Zone Violations">
+          The current OpenUxAS solution can cause zone violations due to software faults and incapabilities.
+
+          <s
+              id="__gsn__191ec55d3dc"
+              color="#ffffff"
+              name="Strategy">
+            By enumerating potential known reasonable causes of zone violations in OpenUxAS
+
+            <g
+                id="__gsn__191ec55d3dd"
+                color="#ffffff"
+                name="Faults in Control Services">
+              Unmitigated faults in OpenUxAS's vehicle control services could result in controllers accidentally violating zones
+
+              <e
+                  id="__gsn__191ec55d3de"
+                  color="#ffffff"
+                  name="Design Faults">
+                Observation: Design faults are a common part of software systems. See problem-diagram.png/ step1/ OpenUxAS/ DesignFaults
+              </e>
+            </g>
+
+            <g
+                id="__gsn__191ec55d3df"
+                color="#ffffff"
+                name="Limitations in Control Services">
+              Not all control systems of OpenUxAS are designed to obey zones.
+
+              <e
+                  id="__gsn__191ec55d3e0"
+                  color="#ffffff"
+                  name="Vehicle Control Limitations">
+                There are controllers for vehicles, such as vehicle collision avoidance, that do not account for zones in their planned trajectories. See problem-diagram.png/step1/OpenUxAS
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__191fcc871d6"
+            color="#ffffff"
+            name="Proposed Zone Violation Avoidance and Analysis">
+          Zone violation analysis and avoidance are proposed solutions to mitigate OpenUxAS faults and incapabilities that result in zone violations.
+
+          <s
+              id="__gsn__191fcec21f4"
+              color="#ffffff"
+              name="Strategy">
+            By arguing separately for zone violation avoidance and zone violation acceptance.
+
+            <g
+                id="__gsn__191fcec2924"
+                color="#ffffff"
+                name="Zone Violation Avoidance">
+              Avoiding imminent zone violations is a form of fault tolerance.
+
+              <s
+                  id="__gsn__191fcf3d9f2"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing how zone violation avoidance is a form of error correction, which is a form of fault tolerance
+
+                <a
+                    id="__gsn__191fcf58457"
+                    color="#ffffff"
+                    name="Zone Violation Avoidance is Error Correction">
+                  Zone violation avoidance is a form of predictive error avoidance.
+                </a>
+
+                <public-goal
+                    id="__gsn__191fcec26bb"
+                    color="#ffffff"
+                    name="Zone Violations are Errors">
+                  Zone violations are errors of mission performance that can result from OpenUxAS faults and incapabilities.
+
+                  <e
+                      id="__gsn__191fcefcb24"
+                      color="#ffffff"
+                      name="Solution Declaration">
+                    Zone violations are violations of constraints defined on the initial mission problem. See problem-diagram.png/ step 1/ OpenUxAS.
+                  </e>
+                </public-goal>
+
+                <g
+                    id="__gsn__191fced9e0f"
+                    color="#ffffff"
+                    name="Error Correction">
+                  Error avoidance is a standard form of fault tolerance.
+
+                  <e
+                      id="__gsn__191fcf26131"
+                      color="#ffffff"
+                      name="Error Avoidance Pattern of Fault Tolerance">
+                    See problem-diagram.png/ step 1 / Fault Tolerance by Error Avoidance and standard taxonomies of fault tolerance techniques.
+                  </e>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__191fcf80717"
+                color="#ffffff"
+                name="Zone Violation Analysis">
+              Analyzing zone violations that arise in OpenUxAS-performed missions is a way to determine if faults and incapabilities that cause zone violations can be accepted.
+
+              <s
+                  id="__gsn__191fcf87b9e"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing that some zone violations will result in mission failure, and that analyzing potential mission failures for acceptance is a means to determine if residual OpenUxAS faults and incapabilities  that cause zone violations are acceptable.
+
+                <a
+                    id="__gsn__191fd0e8d0e"
+                    color="#ffffff"
+                    name="Assumption">
+                  Sufficient solutions to solve analyses of residual mission failures due to zone violations that will occur exist. These techniques can provide analysis of past missions and predict expected success or failure rates of future missions.
+                </a>
+
+                <g
+                    id="__gsn__191fcf884ca"
+                    color="#ffffff"
+                    name="Some Zone Violations are Failures">
+                  Some potential zone violations violate constraints the violation of which render the mission a failure.
+
+                  <s
+                      id="__gsn__191fcf9bade"
+                      color="#ffffff"
+                      name="Strategy">
+                    By showing that zone violations are errors, showing the basic idea of how some errors are system failures, and noting that it is assumed that zone violations are sufficient failure of missions.
+
+                    <a
+                        id="__gsn__191fd017850"
+                        color="#ffffff"
+                        name="Some Zone Violations Thwart Missions">
+                      Zone violations might cause accidents (physical, political, etc.) that are too severe to declare a mission a success.
+                    </a>
+
+                    <g
+                        id="__gsn__191fcf9c214"
+                        color="#ffffff"
+                        name="Some System Errors are Failures">
+                      Some errors of a system represent failures of service.
+
+                      <e
+                          id="__gsn__191fcf9cf2b"
+                          color="#ffffff"
+                          name="Some Errors as Failures Pattern">
+                        See problem-diagram.png/ step 1/ Failures are Errors of Provided Service vs Defined Service 
+Intent
+                      </e>
+                    </g>
+
+                    <away-goal
+                        id="__gsn__191fcfae98c"
+                        color="#ffffff"
+                        name="Zone Violations are Errors">
+                      Zone violations are errors of mission performance that can result from OpenUxAS faults and incapabilities.
+                    </away-goal>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__191fd0aa7be"
+                    color="#ffffff"
+                    name="Fault Acceptance via Failure Analysis">
+                  A common means of determining whether residual faults (and incapabilities) in a system can be accepted is to determine whether resulting failures are acceptable.
+
+                  <e
+                      id="__gsn__191fd0d1d5f"
+                      color="#ffffff"
+                      name="Common Acceptance Technique">
+                    See pattern at problem-diagram.png / step 1/ Fault Acceptance by Analysis of Related Failures as well as existing taxonomies of fault acceptance techniques.
+                  </e>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__191fc5ac51c"
+            color="#ffffff"
+            name="As a Result, Zone Violation Detection is  Required">
+          Zone violation analysis and zone violation avoidance both require zone violation detection. Zone violation analysis requires existing zone violation detection. Zone violation avoidance requires imminent zone violation detection.
+
+          <s
+              id="__gsn__191fc5d582c"
+              name="Strategy">
+            By considering the detection requirements of the two services.
+
+            <g
+                id="__gsn__191fc5d5c5d"
+                color="#ffffff"
+                name="Violation Avoidance Requires Imminent Detector">
+              Zone violation avoidance requires detection of imminent zone violations in time to avoid them.
+
+              <g
+                  id="__gsn__191fc607b24"
+                  color="#ffffff"
+                  name="Zone Violation Avoidance Service Requirement">
+                The imminent zone violation avoidance service requires notification of imminent zone violations.
+
+                <e
+                    id="__gsn__191fc613655"
+                    color="#ffffff"
+                    name="Problem/Solution Analysis">
+                  See the  alert notification requirement of problem-diagram.png / step 2/ OpenUxAS / Zone Violation Avoidance Service
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__191fc630835"
+                  color="#ffffff"
+                  name="Why Notifications Are Required">
+                Imminent zone violation notifications are required because the avoidance reactor requires an imminent zone violation detector.
+
+                <e
+                    id="__gsn__191fc64d311"
+                    color="#ffffff"
+                    name="Fault Tolerance Through Error Correction">
+                  See problem-diagram.png / step 1 /  Fault Tolerance through Error Correction
+                </e>
+              </g>
+            </g>
+
+            <g
+                id="__gsn__191fc5d5e13"
+                color="#ffffff"
+                name="Violation Analysis Requires Violation Detector">
+              Live zone violation analysis requires existing zone violation detection within some short delay of occurring.
+
+              <a
+                  id="__gsn__191fc69de46"
+                  color="#ffffff"
+                  name="Assumption">
+                Live analysis requires live event detection
+              </a>
+
+              <g
+                  id="__gsn__191fc65881c"
+                  color="#ffffff"
+                  name="Zone Violation Analysis Service Requirement">
+                The zone violation avoidance analysis service requires live notification of now-occurring zone violations.
+
+                <e
+                    id="__gsn__191fc664d66"
+                    color="#ffffff"
+                    name="Problem/Solution Analysis">
+                  See the alert notification requirement of problem-diagram.png / step 2/ OpenUxAS / Zone Violation Analysis Service
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__191fc6742b0"
+                  color="#ffffff"
+                  name="Why Notifications Are Required">
+                Zone violation notifications are required because the analysis service requires a zone violation reporter.
+
+                <e
+                    id="__gsn__191fc6742b1"
+                    color="#ffffff"
+                    name="Fault Tolerance Through Error Correction">
+                  See problem-diagram.png / step 1 / Fault Acceptance by Analysis of Related
+Failures
+                </e>
+              </g>
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

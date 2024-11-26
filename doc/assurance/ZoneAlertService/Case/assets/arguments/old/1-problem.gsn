@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1907ef577a1"
+        color="#ffffff"
+        name="Understood Problem">
+      The Zone Violation Unawareness Problem in OpenUxAS is sufficiently understood.
+
+      <c
+          id="__gsn__191571b38b5"
+          color="#ffffff"
+          name="Concretization">
+        The zone violation unawareness problem is understood as not wanting to be in the world state of having one or more UxAS vehicles in an existing or imminently headed for a zone violation without UxAS services being able to be aware of it.
+      </c>
+
+      <c
+          id="__gsn__191e1c2e673"
+          color="#ffffff"
+          name="Reason for Solving">
+        The purpose of solving the Zone Violation Unawareness Problem in OpenUxAS is to enable OpenUxAS to reactively avoid impending violations and record and gain knowledge about violations that do occur.
+      </c>
+
+      <c
+          id="__gsn__191571afb23"
+          color="#ffffff"
+          name="Formalization">
+        The Impending Zone Violation is formalized in first-order predicate logic as the following:
+
+        <c
+            id="__gsn__1915748ae15"
+            color="#ffffff"
+            name="Undesired World State: Existing or Impending Zone Violation without Awareness">
+          Given vehicle V, zone Z, time window TW, threshold probability PT:∃ time TV where TC &lt;= TV &lt;= TC+TW : vehicleViolatesZone(V,Z,TV,PT) &amp;&amp; (∀ T where TC&lt;=T&lt;TV : ~vehicleViolatesZone(V,Z,T,PT) ) &amp;&amp; ~aware(OpenUXAS, TC, vehicleViolatesZone(V,Z,TV,PT) )
+        </c>
+
+        <c
+            id="__gsn__191574c78e5"
+            color="#ffffff"
+            name="Desired World State: Existing or Impending Zone Violation Awareness">
+          Given vehicle V, zone Z, time window TW, threshold probability PT:∀ present time TP during the mission M: [[IF ∃ time TV where TP &lt;= TV &lt;= TP+TW : vehicleViolatesZone(V,Z,TV,PT) &amp;&amp; (∀ T where TP&lt;=T&lt;TV : ~vehicleViolatesZone(V,Z,T,PT) ) THEN aware(OpenUXAS, TP, vehicleViolatesZone(V,Z,TV, PT) )AND IF ~∃ time TV where TP &lt;= TV &lt;= TP+TW : vehicleViolatesZone(V,Z,TV,PT) THEN (∀ T where TP&lt;=T&lt;=TW : aware(OpenUXAS, TP, ~vehicleViolatesZone(V,Z,T, PT) ) ) ]]
+        </c>
+
+        <c
+            id="__gsn__1915748b0b9"
+            color="#ffffff"
+            name="Desired Solution Constraint: Existing and Impending Zone Violation Alerting">
+          Given mission M, mission vehicle set VS and zone set ZS, set of potential observers OBS, time window TW, threshold probability PT, notification time window NW.∀ present service tick time TP during the mission M, frequency of ticks uF, V ∈ VS, Z ∈ ZS, S ∈ { si ∈ OBS | subscribedAtTime(si, TC) } : [[ IF ∃ time TV where TP &lt;= TV &lt;= TP+TW : vehicleViolatesZone(V,Z,TV,PT) &amp;&amp; (∀ T where TP&lt;=T&lt;TV : ~vehicleViolatesZone(V,Z,T,PT) ) THEN ∀ s ∈ S : notifiedByTime(s, TP+NW, vehicleViolatesZone(V,Z,TV,PT) )AND IF ~∃ time TV where TP &lt;= TV &lt;= TP+TW : vehicleViolatesZone(V,Z,TV,PT) THEN ∀ s ∈ OBS : ~notifiedAtTime(s, vehicleViolatesZone(V,Z,TV), TP) ]]
+        </c>
+      </c>
+
+      <s
+          id="__gsn__1907ef68a43"
+          color="#ffffff"
+          name="Strategy">
+        By arguing that the problem has been captured within and validated against a developed problem diagram. The argument is further supported by arguing over confidence in the general development of the problem diagram.
+
+        <c
+            id="__gsn__190d69819ca"
+            color="#ffffff"
+            name="Problem Validity">
+          Whether a problem is truly the one that stakeholders desire to be solved.
+        </c>
+
+        <c
+            id="__gsn__190d6981f43"
+            color="#ffffff"
+            name="Problem Definition">
+          A definition of a problem as a change from an existing world state to a desired world state [cite JCK] and surrounded by informing context.
+        </c>
+
+        <g
+            id="__gsn__1915c144fed"
+            color="#ffffff"
+            name="Problem Capture">
+          The stakeholder's problem is sufficiently identified and captured.
+
+          <s
+              id="__gsn__1915c14e7b7"
+              color="#ffffff"
+              name="Strategy">
+            By showing the problem diagram captures the correct problem and its solution constraints,
+
+            <g
+                id="__gsn__1907ef69218"
+                color="#ffffff"
+                name="Problem Capture">
+              The problem of detecting existing and imminent zone violations has been adequately identified and captured.
+
+              <s
+                  id="__gsn__190d6aa1ebe"
+                  color="#ffffff"
+                  name="Strategy">
+                By reasoning over induction of what the problem and desired world states are.
+
+                <c
+                    id="__gsn__190849b5480"
+                    color="#ffffff"
+                    name="Problem Diagram">
+                  This argument discusses the problem diagram presented in problemView.png.
+                </c>
+
+                <j
+                    id="__gsn__190c6c6eeb7"
+                    color="#ffffff"
+                    name="Vehicles Should Obey Zones">
+                  OpenUxAS is designed so that vehicles should obey zones to the extent practicable.
+                </j>
+
+                <g
+                    id="__gsn__1915c0327e2"
+                    color="#ffffff"
+                    name="Problem State: Unknown Zone Violations Occur">
+                  The problem within OpenUxAS is that it is expected that vehicles will violate zones and that OpenUxAS may not know when such a violation is imminent nor when it is occuring.
+
+                  <g
+                      id="__gsn__190d6aae093"
+                      color="#ffffff"
+                      name="Zone Violations Occur in OpenUxAS">
+                    Sometimes, a vehicle will not be able to avoid violating a zone.
+
+                    <s
+                        id="__gsn__190d6b132a5"
+                        color="#ffffff"
+                        name="Strategy">
+                      Show by enumerating example causes.
+
+                      <g
+                          id="__gsn__190d6b13d02"
+                          color="#ffffff"
+                          name="Competing Constraints">
+                        In some cases, violating a zone will be a desired outcome for competing constraints.
+
+                        <e
+                            id="__gsn__190d6ab1c4e"
+                            color="#ffffff"
+                            name="Priority Tactical Conflicting Actions">
+                          In some cases, tactical actions should be taken that will violate zones of some types (soft zones).
+                        </e>
+                      </g>
+
+                      <g
+                          id="__gsn__190d6b13adc"
+                          color="#ffffff"
+                          name="Technical Limitations of OpenUxAS">
+                        Tactical vehicle trajectory planners are not all zone-aware.
+
+                        <e
+                            id="__gsn__190d6b271a0"
+                            color="#ffffff"
+                            name="Existing Mission Goal Controller">
+                          Example reference to existing vehicle controller that does not have zone awareness.
+                        </e>
+                      </g>
+                    </s>
+                  </g>
+
+                  <g
+                      id="__gsn__1915c048c1d"
+                      color="#ffffff"
+                      name="Imminent and Existing Zone Violations Are Unknown">
+                    There is currently no regularized way for OpenUxAS to be aware when vehicles have or are likely about to violate zones: there exists no available clear function or API to predict and detect imminent and existing zone violations by vehicles, respectively.
+
+                    <e
+                        id="__gsn__1915c07d658"
+                        color="#ffffff"
+                        name="OpenUxAS Software And Documentation">
+                      OpenUxAS software and documentation as of November 2023.
+                    </e>
+                  </g>
+                </g>
+
+                <g
+                    id="__gsn__190d6abfcda"
+                    color="#ffffff"
+                    name="Desired State: Likely Imminent and Existing Violations are Known">
+                  In cases where a vehicle will not avoid a zone, it is useful to know about the impending and occurring zone violation.
+
+                  <s
+                      id="__gsn__190d6b5ed63"
+                      color="#ffffff"
+                      name="Strategy">
+                    Show by identified example application of violation knowledge.
+
+                    <g
+                        id="__gsn__190d6b5f579"
+                        color="#ffffff"
+                        name="Monitoring">
+                      It will be useful to log, alert, and display when and where vehicles will or have violated a zone.
+
+                      <e
+                          id="__gsn__190d6bc4fcf"
+                          color="#ffffff"
+                          name="Monitoring Application">
+                        See the monitoring application of problemView.png.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__190d6b5f905"
+                        color="#ffffff"
+                        name="Compensation">
+                      It might be useful for OpenUxAS to react to imminent or impending zone violations.
+
+                      <e
+                          id="__gsn__190d6bfb369"
+                          color="#ffffff"
+                          name="Monitoring Applications">
+                        Monitoring can be used to observe upcoming and ongoing violations as well as for OpenUxAS to react.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__190d6b73e4b"
+                        color="#ffffff"
+                        name="Recovery Through Avoidance">
+                      It might be useful for vehicles (such as wingman) to know about impending zone violations so that a reactive planner could attempt to override the planned trajectory with one that does not violate zones.
+
+                      <e
+                          id="__gsn__190d6bcc02c"
+                          color="#ffffff"
+                          name="Reactive Trajectory Planner">
+                        See the zone violation detection and reaction planner for vehicles in problemView.png.
+                      </e>
+                    </g>
+                  </s>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__1915c201daa"
+                color="#ffffff"
+                name="Solution Constraint Capture">
+              Stakeholder desired constraints on solutions have been adequately identified and captured.
+
+              <s
+                  id="__gsn__1915c20a27f"
+                  color="#ffffff"
+                  name="Strategy">
+                Enumeration over identified and captured constraints.
+
+                <g
+                    id="__gsn__1915c113bcc"
+                    color="#ffffff"
+                    name="Solution Constraint: OpenUxAS Service">
+                  The constraint on the solution that the detection function be an OpenUxAS service is adequately captured in the problem diagram.
+
+                  <e
+                      id="__gsn__1915c124928"
+                      color="#ffffff"
+                      name="Problem Diagram: Requirement Constraints">
+                    .
+                  </e>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__1915c22f573"
+            color="#ffffff"
+            name="Problem Validation">
+          The stakeholders have reviewed and agree with the correctness and completeness of the captured problem definition.
+
+          <e
+              id="__gsn__1915c237087"
+              color="#ffcccc"
+              name="Stakeholder Sign-Off">
+            Sign-off by stakeholders on the problem definition as provided in the problem diagram.
+          </e>
+        </g>
+
+        <m
+            id="__gsn__1907f0017c6"
+            color="#ffffff"
+            name="Confidence in Construction">
+          There is significant reason to believe the produced problem diagram would be valid.
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>

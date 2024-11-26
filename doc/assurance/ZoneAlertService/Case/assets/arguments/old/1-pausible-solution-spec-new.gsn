@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__19137d28272"
+        color="#ffffff"
+        name="A Likely Solution is Proposed">
+      An OpenUxAS Zone Alert Service based on  Vehicle Velocity Projection is likely to solve the Zone Violation Unawareness problem.
+
+      <s
+          id="__gsn__1915d26f34a"
+          color="#ffffff"
+          name="Strategy">
+        By arguing that the proposed solution, using current position and linear velocity to detect existing and predict future zone violations out to a fixed future time window, will solve the problem of zone violation unawareness.
+
+        <c
+            id="__gsn__1915d279ad0"
+            color="#ffffff"
+            name="General Rule of Solution">
+          The solution, when applied to the world problem state, sufficiently achieves and maintains the world desired state.
+        </c>
+
+        <a
+            id="__gsn__1915d5c8014"
+            color="#ffffff"
+            name="Assumption">
+          OpenUxAS systems are not aware of existing and imminent zone violations by vehicles.
+        </a>
+
+        <g
+            id="__gsn__1915d26fc57"
+            color="#ffffff"
+            name="Goal">
+          The proposed service allows OpenUxAS systems to know about existing and imminent zone violations by vehicles.
+
+          <s
+              id="__gsn__191476ab6a0"
+              name="Strategy">
+            default text
+
+            <c
+                id="__gsn__19147a38d79"
+                color="#ffffff"
+                name="Problem Summary">
+              Want to solve the problem of not knowing when vehicle have just or will soon likely violate keep-in and keep-out zone rules.
+            </c>
+
+            <c
+                id="__gsn__1914c4c20b5"
+                color="#ffffff"
+                name="Well-Considered">
+              Areas of concern and pitfalls related to proposed solutions have been considered.
+            </c>
+
+            <g
+                id="__gsn__1914c927d2b"
+                color="#ffffff"
+                name="Practicable Computation">
+              One can compute when keep-in and keep-out zone rules are violated by a known vehicle trajectory and do so with reasonable efficiency.
+
+              <s
+                  id="__gsn__1914c92a1bb"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing that we can compute zone rule violation rules for keep-out and keep-in zones respectively.
+
+                <c
+                    id="__gsn__1914cc2a079"
+                    color="#ffffff"
+                    name="Zone: Geometric Definition">
+                  A zone is defined by its boundary, which is defined as a non-degenerate irregular polygon in the x-y plane and a minimum and maximum altitude on the z axis.
+                </c>
+
+                <c
+                    id="__gsn__1914c9b4453"
+                    color="#ffffff"
+                    name="Trajectory: Geometric Definition">
+                  The trajectory is a parametrically defined function in cartesian space for for all times Ts &lt;= t &lt;= Te = Ts + Tw, where Tw is a lookahead time window from the start time Ts and Te is the end time of the trajectory given the lookahead window.
+                </c>
+
+                <g
+                    id="__gsn__1914cacc768"
+                    color="#ffffff"
+                    name="Computable Keep-Out Zone Violations">
+                  Violations of a keep-out zone by a trajectory are efficiently computable.
+
+                  <c
+                      id="__gsn__191518b353a"
+                      color="#ffffff"
+                      name="Keep Out Zone Violation Definition">
+                    A keep out zone if violated by a trajectory if any points of the trajectory are IN or ON the keep-out zone boundary.
+                  </c>
+
+                  <s
+                      id="__gsn__1915191b0d6"
+                      color="#ffffff"
+                      name="Strategy">
+                    By arguing for the correctness and efficiency of a defined algorithm and its sub-algorithms.
+
+                    <c
+                        id="__gsn__19151fd9c3e"
+                        color="#ffffff"
+                        name="Algorithm: Keep-Out Zone Violation Detection">
+                      Given a list of keep-out zone definitions and a vehicle trajectory. Compute as follows: 1. For each zone: A. Compute whether the current position on the trajectory f(Ts) violates the zone. If so, record violation at time and position (Ts, f(s)) . B. Otherwise, compute the earliest future violation of the zone by the trajectory on the time interval (Ts, Te]. Record the violation if there is one. 2. Having completed the main loop over the zones, report the computed zone violation results.
+                    </c>
+
+                    <g
+                        id="__gsn__19151f65b67"
+                        color="#ffffff"
+                        name="Correctness">
+                      Assuming the sub-algorithms are correct, the algorithm will return the earliest time keep-out zone violation in time range [Ts,Te] for each zone, for any zones where such a violation exists in the input time range.
+
+                      <s
+                          id="__gsn__19151fedf70"
+                          name="Strategy">
+                        default text
+
+                        <g
+                            id="__gsn__19151fef1a2"
+                            color="#ffffff"
+                            name="For General Case">
+                          default text
+                        </g>
+
+                        <g
+                            id="__gsn__19151f65d8c"
+                            color="#ffffff"
+                            name="Edge Cases">
+                          Works for identified edge cases
+
+                          <g
+                              id="__gsn__19151f775b1"
+                              color="#ffffff"
+                              name="Handles Violation at Time Ts">
+                            The algorithm detects any violations that occur at time Ts.
+                          </g>
+
+                          <g
+                              id="__gsn__19151f777c9"
+                              color="#ffffff"
+                              name="Handles Simultaneous Violations">
+                            The algorithm achieves the desired post condition when more than one zone violates the trajectory in time [Te,Ts].
+                          </g>
+                        </g>
+                      </s>
+                    </g>
+
+                    <g
+                        id="__gsn__1915192872b"
+                        color="#ffffff"
+                        name="Efficiency">
+                      In general, this algorithm is O(V*Z), where V is the number of vehicle trajectories to observe and Z the number of keep-out zones to observe.
+
+                      <e
+                          id="__gsn__1915198a95f"
+                          color="#ffffff"
+                          name="Algorithm Analysis">
+                        .
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__19151960105"
+                        color="#ffffff"
+                        name="Optimization">
+                      Simple optimizations can be applied to the algorithm, such as checking simple bounding boxes around zones and trajectories, and eliminating conflict computation for those that do not overlap. More advanced computational geometric optimizations / algorithms may exist.
+
+                      <e
+                          id="__gsn__19151982a25"
+                          color="#ffffff"
+                          name="Bounding Box Example">
+                        default text
+                      </e>
+
+                      <e
+                          id="__gsn__19151986fcc"
+                          color="#ffffff"
+                          name="Computational Geometry Text Book">
+                        .
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__191519612c7"
+                        color="#ffffff"
+                        name="Sub-Algorithms">
+                      The sub-functions defined in the algorithm are efficiently computable.
+
+                      <s
+                          id="__gsn__1915199f4ca"
+                          color="#ffffff"
+                          name="Strategy">
+                        Enumerated argument over each sub-function.
+
+                        <c
+                            id="__gsn__191519af270"
+                            color="#ffffff"
+                            name="Sub-functions">
+                          Computing whether current location of vehicle on trajectory f(Ts) violates a given zone, Computing the earliest future violation of a trajectory by a zone for (Ts, Te].
+                        </c>
+
+                        <g
+                            id="__gsn__1914d53301f"
+                            color="#ffffff"
+                            name="Computation of Present Keep-Out Zone Violation">
+                          Violation of Keep-Out Zone by a trajectory's present position is efficiently computable from the zone boundary and trajectory.
+
+                          <s
+                              id="__gsn__1914d54f438"
+                              color="#ffffff"
+                              name="Strategy">
+                            By arguing an overall effective computation and the computation of its sub-steps.
+
+                            <c
+                                id="__gsn__1915201b97b"
+                                color="#ffffff"
+                                name="Algorithm: Finding Present Keep-Out Zone Violation">
+                              The present position of a vehicle can be computed to violate or not violate a keep-out zone by computing whether the trajectory at time Ts, f(Ts) is INSIDE or ON the zone boundary, in which case the present position violates the zone, otherwise it does not violate the zone. INSIDE or ON a zone boundary is computed as
+                            </c>
+
+                            <j
+                                id="__gsn__19152e34454"
+                                color="#ffffff"
+                                name="Correct by Definition">
+                              A point being INSIDE or ON a keep-out zone boundary is the definition of keep-out zone violation, therefore the above computation is correct.
+                            </j>
+
+                            <g
+                                id="__gsn__1915202e264"
+                                color="#ffffcc"
+                                name="Efficiency">
+                              default text
+                            </g>
+
+                            <g
+                                id="__gsn__19152030c5c"
+                                color="#ffffff"
+                                name="Sub-Algorithms">
+                              The sub-functions defined in the algorithm are efficiently computable.
+
+                              <s
+                                  id="__gsn__19152037805"
+                                  color="#ffffff"
+                                  name="Strategy">
+                                Enumerated argument over each sub-function.
+
+                                <c
+                                    id="__gsn__19152041455"
+                                    color="#ffffff"
+                                    name="Sub-functions">
+                                  Computing whether a point in cartesian space is inside, outside, or ON a zone boundary.
+                                </c>
+
+                                <public-goal
+                                    id="__gsn__1914d5864e5"
+                                    color="#ffffff"
+                                    name="Computing INSIDE, OUTSIDE, or ON a Zone Boundary">
+                                  A point in cartesian space can be efficiently computed to be inside, outside, or on a zone boundary
+
+                                  <s
+                                      id="__gsn__1914d5864e6"
+                                      color="#ffffff"
+                                      name="Strategy">
+                                    By directly demonstrating the efficient computability of sufficient substeps
+
+                                    <j
+                                        id="__gsn__1914d5864e7"
+                                        color="#ffffff"
+                                        name="Justification">
+                                      The sufficiency of the claimed sub-steps is self-evident.
+                                    </j>
+
+                                    <g
+                                        id="__gsn__1914d5864e9"
+                                        color="#ffffff"
+                                        name="Outside Zone Computation">
+                                      The point (x,y,z) is computed to be outside a zone boundary if (z &lt; minAlt or z &gt; mazAlt) OR (x,y) NOT INSIDE polygonBoundary NOR (x,y) ON polygonBoundary.
+
+                                      <e
+                                          id="__gsn__1914d5864ea"
+                                          color="#ffffff"
+                                          name="Geometric Proof">
+                                        .
+                                      </e>
+                                    </g>
+
+                                    <g
+                                        id="__gsn__1914d5864eb"
+                                        color="#ffffff"
+                                        name="On Zone Boundary Computation">
+                                      The point (x,y,z) is on a zone boundary iff [ minAlt &lt;= z &lt;= maxAlt AND (x,y) ON polygonBoundary ] OR [ (z = minAlt or z = mazAlt ) AND ( (x,y) IN polygonBoundary]
+
+                                      <e
+                                          id="__gsn__1914d5864ec"
+                                          color="#ffffff"
+                                          name="Geometric Proof">
+                                        default text
+                                      </e>
+                                    </g>
+
+                                    <g
+                                        id="__gsn__1914d5864ed"
+                                        color="#ffffff"
+                                        name="Inside Zone Boundary Computation">
+                                      The point (x,y,z) is in a zone boundary iff [minAlt &lt; z &lt; maxAlt] and (x,y) IN polygonBoundary
+
+                                      <e
+                                          id="__gsn__1914d5864ee"
+                                          color="#ffffff"
+                                          name="Geometric Proof">
+                                        default text
+                                      </e>
+                                    </g>
+
+                                    <g
+                                        id="__gsn__1914d5bbf86"
+                                        color="#ffffff"
+                                        name="Efficient IN or ON PolygonBoundary Computations">
+                                      Computing whether (x,y) INSIDE OR ON boundaryPolygon can be efficiently computed with one of several common algorithms.
+
+                                      <e
+                                          id="__gsn__1914d5bbf87"
+                                          color="#ffffff"
+                                          name="Citation">
+                                      </e>
+                                    </g>
+                                  </s>
+                                </public-goal>
+                              </s>
+                            </g>
+                          </s>
+                        </g>
+
+                        <g
+                            id="__gsn__1914d689043"
+                            color="#ffffff"
+                            name="Computation of Earliest Future Keep-Out Zone Violation">
+                          Violation of a Keep-Out zone by future trajectory to some fixed future time window is efficiently computable from the zone boundary and trajectory.
+
+                          <s
+                              id="__gsn__1914d7c0d8c"
+                              color="#ffffff"
+                              name="Strategy">
+                            By arguing an overall effective computation and the computation of its sub-steps.
+
+                            <j
+                                id="__gsn__19151a014c3"
+                                color="#ffffff"
+                                name="Keep-Out Zone First Violation">
+                              Given a trajectory f(t) where t is in [Ts,Te], a keep-out zone is first violated by a trajectory at time TC iff the trajectory intersects the keep-out zone's boundary at time TC and does not violate the zone for time range [Ts, Tc).
+                            </j>
+
+                            <c
+                                id="__gsn__191528c0e5f"
+                                color="#ffffff"
+                                name="Earliest Future Keep-Out Zone Violation Computation">
+                              A keep out zone is computed to be violated at time TC, as follows: 1. computing whether the trajectory is ON or INSIDE the keep-out zone at the trajectories' start time and 2. if not, determining the first intersection of the trajectory and the zone boundary, 3. otherwise, computing the next two intersections of the trajectory and the zone boundary. If steps 2 or 3 determine that such a respective intersection exists, then an earliest future zone violation has been detected. Otherwise, no such violation exists on the defined trajectory.
+                            </c>
+
+                            <c
+                                id="__gsn__191528c11d1"
+                                color="#ffffff"
+                                name="Computing First or Second Future Violation">
+                              To compute the first violation on the time range (Ts, Te], compute the time and position of the earliest intersection of the trajectory with the zone boundary on time interval (Ts, Te] using a sub-algorithm. Return the result as having found or not found an intersection, with the time and position if found. If one is computing the second intersection, first compute as above, and if an intersection is found at time TC, apply the sub-algorithm again for time range (TC, Te]. Otherwise no such intersection is found. Report the recorded intersection as required.
+                            </c>
+
+                            <g
+                                id="__gsn__1914cadc3bd"
+                                color="#ffffff"
+                                name="Earliest Future Keep-Out Zone Violation Computation">
+                              A keep out zone is computed to be violated at time TC, as follows: 1. computing whether the trajectory is ON or INSIDE the keep-out zone at the trajectories' start time and 2. if not, determining the first intersection of the trajectory and the zone boundary, 3. otherwise, computing the next two intersections of the trajectory and the zone boundary. If steps 2 or 3 determine that such a respective intersection exists, then an earliest future zone violation has been detected. Otherwise, no such violation exists on the defined trajectory.
+
+                              <e
+                                  id="__gsn__1914cc7df85"
+                                  color="#ffffff"
+                                  name="Geometric Figure">
+                                See accompanying geometric figure FX
+                              </e>
+                            </g>
+
+                            <away-goal
+                                id="__gsn__19151c5c35a"
+                                color="#ffffff"
+                                name="Computing INSIDE, OUTSIDE, or ON a Zone Boundary">
+                              A point in cartesian space can be efficiently computed to be inside, outside, or on a zone boundary
+                            </away-goal>
+
+                            <g
+                                id="__gsn__1914d7cc2c4"
+                                color="#ffffff"
+                                name="Computing First or Second Future Violation">
+                              To compute the first violation on the time range (Ts, Te], compute the time and position of the earliest intersection of the trajectory with the zone boundary on time interval (Ts, Te] using a sub-algorithm. Return the result as having found or not found an intersection, with the time and position if found. If one is computing the second intersection, first compute as above, and if an intersection is found at time TC, apply the sub-algorithm again for time range (TC, Te]. Otherwise no such intersection is found. Report the recorded intersection as required.
+
+                              <e
+                                  id="__gsn__1914d85eacf"
+                                  color="#ffffff"
+                                  name="See Figure">
+                                .
+                              </e>
+                            </g>
+
+                            <g
+                                id="__gsn__1914d7cc6ee"
+                                color="#ffffff"
+                                name="Computable First Future Intersection">
+                              One can compute the earliest intersection of the trajectory and the zone boundary for the time range (Ta, Tb]. with reasonable efficiency.
+
+                              <s
+                                  id="__gsn__1914cf384d4"
+                                  color="#ffffff"
+                                  name="Strategy">
+                                By the computational algorithm to apply and its decomposed subcomputations.
+
+                                <a
+                                    id="__gsn__19151e287bb"
+                                    color="#ffffff"
+                                    name="Line Segment Intersection Computation">
+                                  How a line segment is computed to intersect the parametric trajectory fxy(t) in the x-y plane will depend on how trajectories are stored and interpreted, but is generally computable.
+                                </a>
+
+                                <g
+                                    id="__gsn__1914cbb7cf0"
+                                    color="#ffffff"
+                                    name="Overall Computation of Intersection">
+                                  The earliest intersection of a trajectory and a zone boundary for time interval (Ta, Tb] can be computed as follows: Compute the first sub-domain of time domain (Ta,Tb], defined as [Tu,Tv] such that Tu&gt;Ta and minAlt &lt;= fz(t) &lt;= maxAlt. The temporal inequality is computable for finite domain computations. Then compute the earliest intersection of the trajectory with the zone polygonal boundary in time range [Tu,Tv], if any. If there is such an intersection, return the result. Otherwise, iterate, recomputing the above for input time range (Tv, Tb]. Continue until an intersection is found or a next time range does not exist.
+
+                                  <e
+                                      id="__gsn__1914d8aca49"
+                                      color="#ffffff"
+                                      name="See Figure">
+                                    default text
+                                  </e>
+                                </g>
+
+                                <g
+                                    id="__gsn__1914ce5a0f9"
+                                    color="#ffffff"
+                                    name="Computation of Earliest Intersection of Trajectory in [Tu, Tv] with Zone Boundary">
+                                  A first intersection on a maximal subdomain [Tu,Tv] (for which MinAlt &lt;= fz(t) &lt;= MaxAlt for t in [Tu,Tv]) is correctly computed as follows: (1) Compute if the horizontal plane trajectory point fxy(Tu) is ON or INSIDE the polygonal boundary of the zone in the xy plane. (2) If ON or IN the polygon boundary, then fxy(Tu) is the first intersection point in the subdomain [Tu,Tv] and can be returned as such. (3) Otherwise, compute the first intersection point between fxy(t) and the zone polygon boundary within range [Tu, Tv] using a sub-algorithm. If no such intersection is found, then the trajectory on [Tu,Tv] does not intersect the zone and that is returned.
+
+                                  <e
+                                      id="__gsn__1914d8af0be"
+                                      color="#ffffff"
+                                      name="See Figures">
+                                    default text
+                                  </e>
+                                </g>
+
+                                <g
+                                    id="__gsn__1914cf0e773"
+                                    color="#ffffff"
+                                    name="Computation of XY Plane Intersection of Trajectory with Polygon Boundary">
+                                  Computing the first temporal intersection point of a trajectory projection on the x-y plane, fxy(t), in time range [Tu, Tv], and a zone's x-y plane polygonal boundary is computed as follows: 1. For each edge E of the polygon, solve fxy(t) element of LIneSegment(E) over time range [Tu,Tv]. This can be solved algebraically. Compute the earliest time t for which the above is true. The computation might compute that no such intersection exists. Compare results over all edges for the earliest time result, if any. Return that time and position if any, otherwise return no such intersection found.
+
+                                  <e
+                                      id="__gsn__1914d8b3d68"
+                                      color="#ffffff"
+                                      name="See Figure">
+                                    default text
+                                  </e>
+                                </g>
+
+                                <g
+                                    id="__gsn__19151de89ab"
+                                    color="#ffffff"
+                                    name="Line Segment Intersection Computation">
+                                  Computing when and where a trajectory fxy(t) in time range [Tu,Tv] intersects a line segment defined by two points A and B, if it all, is performed depending on the functional form of fxy(t). If defined by a series of line segments then segment intersection can be computed in O(L) where L is the number of segments defining the trajectory. If the trajectory is represented by a real-valued analytic function, then finite solution for earliest t against the line segment can be directly performed using appropriate IEEE floating point numerical methods.
+
+                                  <e
+                                      id="__gsn__19151e11310"
+                                      color="#ffffff"
+                                      name="Algebraic Solution Method">
+                                    ref
+                                  </e>
+                                </g>
+                              </s>
+                            </g>
+                          </s>
+                        </g>
+                      </s>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__1914cafbbb1"
+                    color="#ffffff"
+                    name="Computable Keep-In Zone Violations">
+                  A keep-in zone violation is computable by computing times and locations of trajectory intersections with the zone boundary and determining whether those points are inside no other keep-in zones.
+
+                  <s
+                      id="__gsn__1914cb0ff02"
+                      name="Strategy">
+                    default text
+
+                    <c
+                        id="__gsn__191518bc1e0"
+                        color="#ffffff"
+                        name="Keep-In Zone Violations">
+                      A keep-in zone is violated by a trajectory if there exist points on the trajectory that are not IN or ON at least one keep-in zone boundary.
+                    </c>
+
+                    <g
+                        id="__gsn__1914c9a7da9"
+                        color="#ffffff"
+                        name="Keep-In Zone Violation Detection Algorithm">
+                      A computable, reasonably efficient algorithm for keep-in zone violation detection is as follows. For each trajectory over [Ts,Te], 1. Compute the set of keep-in zone boundaries IZ that the trajectory is IN or ON at f(Ts). 2. Compute the ordered set of all ordered pairs of intersection times and zone ids, {(TI,Z)} between keep-in zone boundaries and the trajectory over time range [Ts, Te]. 5. For each ordered pair (TI,Z). 5a. If Z is in IZ, remove it from the set. If Z is not in IZ, add it to the set. 5b. If the size of set IZ is zero, report time TI and its position f(TI) as a keep-in zone violation. Otherwise, go on to the next ordered pair. 6. If no time and position was reported in the loop, report that no keep-in zone violation was found.
+
+                      <s
+                          id="__gsn__19151f1176a"
+                          color="#ffffff"
+                          name="Strategy">
+                        By demonstrating correct post condition that holds for identified "edge" or "corner" cases.
+
+                        <a
+                            id="__gsn__19151f3675f"
+                            color="#ffffff"
+                            name="Given">
+                          A smooth, continuous trajectory function over times domain [Ts, Te].
+                        </a>
+
+                        <g
+                            id="__gsn__19151f11c47"
+                            color="#ffffff"
+                            name="Post Condition">
+                          This algorithm detects the earliest, if existing, time in [Ts,Te] where the trajectory is going to leave its last keep-in zones and not be in any.
+
+                          <e
+                              id="__gsn__1914cf6c8a6"
+                              color="#ffffff"
+                              name="Geometric Figure">
+                            See the accompanying geometric figure F2.
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19151f11ef4"
+                            color="#ffffff"
+                            name="Edge Case">
+                          It still works even if keep-in zones share a boundary.
+
+                          <e
+                              id="__gsn__19151f23795"
+                              color="#ffffff"
+                              name="Evident That">
+                            IZ contains all zones that the vehicle is in and the iteration includes all boundary interactions even at the same point and time.
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19151f4d995"
+                            color="#ffffff"
+                            name="Edge Case">
+                          It still works even if the range is effectively [Ts,Ts].
+                        </g>
+                      </s>
+                    </g>
+                  </s>
+                </g>
+
+                <comment
+                    id="__gsn__19151e3b76a"
+                    color="#ffffff"
+                    name="Comment">
+                  The questions we encounter below are similar to what we discussed at the workshop. At what point to the code descriptions below become ill-suited to this representation? Are we better off not arguing over the actions of the algorithm and just showing people pseudocode for them to interpret?
+                </comment>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__1914738ece8"
+                color="#ffffff"
+                name="Goal">
+              A linear projection of a vehicle's instantaneous velocity into the near future approximates its likely trajectory for small lookahead times and slowly accelerating vehicles.
+
+              <s
+                  id="__gsn__1914738e7b0"
+                  name="Strategy">
+                default text
+
+                <g
+                    id="__gsn__1914738f495"
+                    color="#ffffff"
+                    name="Goal">
+                  We can approximate a vehicle's future, near-term trajectory as a projection of the vehicle's current linear velocity.
+
+                  <c
+                      id="__gsn__191473a7126"
+                      color="#ffffff"
+                      name="Context">
+                    We could later extend this with dead recoking, by, for example, including instantaneous acceleration to compute a natural curve of the trajectory, but this has been found to often be incorrect beyond very short term projcetions.
+                  </c>
+                </g>
+
+                <g
+                    id="__gsn__191477c2c10"
+                    color="#ffffff"
+                    name="Goal">
+                  As the vehicle gets closer to a predicted zone violation in time, the likelyhood that the prediction is correct approaches 1.
+                </g>
+
+                <g
+                    id="__gsn__191476b0f9f"
+                    color="#ffffff"
+                    name="Goal">
+                  The computation is fasst
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__191476a9ad0"
+                color="#ffffff"
+                name="Goal">
+              Computations of violations against the trajectory heuristic are acceptable for applied vehicle flight capabilities, lookahead time windows, and possible proximity to zone boundaries.
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

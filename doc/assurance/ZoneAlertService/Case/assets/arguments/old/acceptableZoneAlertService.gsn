@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18db882c3f2"
+        color="#ffffff"
+        name="Acceptable Zone Alert Service">
+      The Zone Alert Service solves the Impending Zone Violation Unawareness problem.
+
+      <c
+          id="__gsn__18db8c735de"
+          color="#ffffff"
+          name="System: Zone Alert Service">
+        A service to alert OpenUxAS subscribers to alert then when an OpenUxAS vehicle's current linear trajectory would violate a zone boundary within a tactical time window, and quantify the amount of time until violation.
+      </c>
+
+      <c
+          id="__gsn__18db8c70679"
+          color="#ffffff"
+          name="Problem: Impending Zone Violation Unawareness Problem">
+        Awareness that the current linear trajectory of a vehicle will violate one or more zone boundaries within a tactical time window.
+      </c>
+
+      <s
+          id="__gsn__18fbb61be67"
+          color="#ffffff"
+          name="Strategy">
+        By showing an acceptably correct problem and solution and the surrounding intention and action of iteratively improving both as information becomes available.
+
+        <c
+            id="__gsn__18f9c4399bb"
+            color="#ffffff"
+            name="Present State">
+          Note that this argument represents the present state of problem understanding and solution development. Earlier 'versions' of this argument and evidence can represent earlier iterations of problem understanding and solutions and the latter's usage.
+        </c>
+
+        <j
+            id="__gsn__18f9c18d49e"
+            color="#ffffff"
+            name="Justification">
+          People solve problems by thinking of solutions and implementing them. They then check that that the implemented solution is working (And iterating as needed.) We can assure a working solution by correctness of these three steps. Of course, this will likely be after iterations of the three steps as errors are corrected.
+        </j>
+
+        <c
+            id="__gsn__18f9c76c3b9"
+            color="#ffffff"
+            name="Note">
+          While the argument for the satisfactory solution should be strong enough to stand on its own, for large and complex projects it is still useful (and customary) to assure that a culture of careful improvement and attention to detail is in place. This is because some will present a strong argument for the system while hiding a culture of chaos.
+        </c>
+
+        <g
+            id="__gsn__18fbb61c7ad"
+            color="#ffffff"
+            name="Acceptable Solution">
+          An effective solution is provided to the correct problem.
+
+          <s
+              id="__gsn__18db882e898"
+              color="#ffffff"
+              name="Strategy">
+            It is shown that the problem is understood and the system solves the understood problem.
+
+            <j
+                id="__gsn__18f7820b88f"
+                color="#ffffff"
+                name="Justification">
+              One must sufficiently understand the problem to be able to solve it. Then one can focus on solving it and assuring that the solution matches the well-defined problem.
+            </j>
+
+            <m
+                id="__gsn__18db9043dd7"
+                color="#ffffff"
+                name="Understood Problem">
+              The Zone Violation Unawareness probem is understood.
+            </m>
+
+            <m
+                id="__gsn__18db9044d68"
+                color="#ffffff"
+                name="The System Solves the Problem">
+              The Zone Alert System solves the defined Zone Violation Unawareness problem.
+            </m>
+          </s>
+        </g>
+
+        <m
+            id="__gsn__18fbb660fa7"
+            color="#ffffff"
+            name="Iterative Improvement Over Lifecycle">
+          Understanding of the problem and correctness of its solution are iteratively corrected and improved to an extent reasonably practicable.
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>
