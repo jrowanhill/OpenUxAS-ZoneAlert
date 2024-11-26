@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="5f0bae14-7c28-e335-631c-24af17079c00">
-    <mxGraphModel dx="917" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1467" dy="1061" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -135,6 +135,15 @@
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-32" value="Process Vehicle&amp;nbsp;&lt;div&gt;State&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="750" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-38" value="MakeZoneViolation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-39" value="&lt;div&gt;FindPointsForAbstract&lt;/div&gt;&lt;div&gt;Geometry&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-40" value="&lt;div&gt;findClosestIntersection&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="790" width="150" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
