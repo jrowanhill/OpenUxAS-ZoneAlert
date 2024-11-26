@@ -31,7 +31,7 @@
         <mxCell id="nVS5muNwlV8S-vVGrIBC-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4Vm4h1DBtU_fKJOTUtkn-10" target="nVS5muNwlV8S-vVGrIBC-18">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-10" value="&lt;div&gt;Process Zone Declaration&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-10" value="Add Zone" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="210" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4Vm4h1DBtU_fKJOTUtkn-11" target="nVS5muNwlV8S-vVGrIBC-6">
@@ -43,7 +43,7 @@
         <mxCell id="nVS5muNwlV8S-vVGrIBC-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4Vm4h1DBtU_fKJOTUtkn-12" target="nVS5muNwlV8S-vVGrIBC-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-12" value="&lt;div&gt;Process Vehicle Config&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-12" value="&lt;div&gt;Add Vehicle&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="350" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-1" target="nVS5muNwlV8S-vVGrIBC-7">
@@ -70,7 +70,7 @@
         <mxCell id="nVS5muNwlV8S-vVGrIBC-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-4" target="nVS5muNwlV8S-vVGrIBC-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-4" value="Process Vehicle&amp;nbsp;&lt;div&gt;State&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-4" value="Process Vehicle&amp;nbsp;&lt;div&gt;State Report&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="750" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-5" value="Compute Linear&lt;div&gt;Trajectory&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -103,7 +103,7 @@
         <mxCell id="4Vm4h1DBtU_fKJOTUtkn-2" value="VisibilityGraph" style="rounded=0;whiteSpace=wrap;html=1;" parent="nVS5muNwlV8S-vVGrIBC-13" vertex="1">
           <mxGeometry x="100" y="60" width="90" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-14" value="Process&lt;div&gt;Declarations&lt;/div&gt;&lt;div&gt;Complete&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-14" value="Prepare for Active State" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="490" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-16" value="&lt;div&gt;Store Vehicle&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -115,25 +115,25 @@
         <mxCell id="nVS5muNwlV8S-vVGrIBC-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-29" target="4Vm4h1DBtU_fKJOTUtkn-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-29" value="&lt;div&gt;Process Zone Declaration&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-29" value="&lt;div&gt;Add Zone&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="210" y="275" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-30" target="4Vm4h1DBtU_fKJOTUtkn-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-30" value="&lt;div&gt;Process Vehicle Config&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-30" value="&lt;div&gt;Add Vehicle&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="350" y="275" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-31" target="nVS5muNwlV8S-vVGrIBC-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-31" value="Process&lt;div&gt;Declarations&lt;/div&gt;&lt;div&gt;Complete&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-31" value="Prepare for Active&lt;div&gt;State&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="490" y="275" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-32" target="nVS5muNwlV8S-vVGrIBC-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-32" value="Process Vehicle&amp;nbsp;&lt;div&gt;State&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-32" value="Process Vehicle&amp;nbsp;&lt;div&gt;State Report&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="750" y="270" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-38" value="MakeZoneViolation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
