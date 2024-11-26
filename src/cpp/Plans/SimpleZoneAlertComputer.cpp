@@ -63,6 +63,9 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<afrl::cmasi::AbstractZone> zone
         // make sure the zone isn't empty
         isSuccess &= !(boundaryPtr->vposGetBoundaryPoints_m().empty());
 
+
+        HAVE TO STORE MIN AND MAX ALTITUDE SOMEWHERE
+
         // if all is well, store the zone, otherwise, make sure no zone is stored (in case this is replacing an earlier declaration)
         if (isSuccess) {
             boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
@@ -80,6 +83,8 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<afrl::cmasi::AbstractZone> zone
 
 
 void SimpleZoneAlertComputer::addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig) {
+
+TODO
 
 }
 
@@ -112,6 +117,9 @@ vector<shared_ptr<ProcessedZone>> SimpleZoneAlertComputer::prepareForActiveState
     polygons.clear();
 
     vector<shared_ptr<afrl::alerts::ProcessedZone>> processedZones;
+
+    MAKE SURE WE EXTRACT AND STORE MIN AND MAX ALTITUDE FOR MERGED ZONE RESULT
+    MIGHT BE TRICKY UNLESS WE KNOW WHICH POLYGONS MERGED
 
     // now re-extract boundaries and polygons from the visibility graph
     // for easy intersection testing
@@ -170,6 +178,12 @@ vector<shared_ptr<ImminentZoneViolation>> SimpleZoneAlertComputer::processVehicl
     CPosition startPos(vehicleState->getLocation()->getLatitude(), vehicleState->getLocation()->getLongitude(),
         vehicleState->getLocation()->getAltitude(), 0);
 
+    FIGURE OUT IF THIS IS THE FIRST VEHICLE STATE RECEIVED FOR THIS VEHICLE
+    IF SO, CHECK FOR ANY MERGED KEEP IN ZONE THIS VEHICLE POSITION IS IN AND STORE
+    IN A FUNCTION/MAP
+
+
+
     // get instantaneous linear velocity vector and use it to compute starting and ending points
     array<float, 3> velocity = worldFrameVelocity(vehicleState);
 
@@ -179,6 +193,9 @@ vector<shared_ptr<ImminentZoneViolation>> SimpleZoneAlertComputer::processVehicl
     // cycle through all of the zones to find potential violations
     // This is primitive and can be improved, but is the approach of "SimpleZoneAlertComputer"
     for (int zoneIndex = 0; zoneIndex < polygons.size(); zoneIndex++) {
+
+
+        MAKE THIS A FUNCTION CALLED FIND VIOLATIONS
 
         shared_ptr<CBoundary> boundaryPtr = boundaries[zoneIndex];
         shared_ptr<CPolygon> polyPtr = polygons[zoneIndex];
@@ -207,6 +224,8 @@ vector<shared_ptr<ImminentZoneViolation>> SimpleZoneAlertComputer::processVehicl
         // a) The zone is keep-out and the vehicle start position is outside the zone
         // b) The zone is keep-in and the vehicle start position is in the zone
         // otherwise, no concern if the zone is crossed
+        THE ABOVE IS NO LONGER TRUE. SEMANTICS OF KEEP-IN ZONE VIOLATION WERE LATER DEFINED IN TERMS OF THE 
+        INITIAL MERG#ED KEEP-IN ZONE, IF ANY, A VEHICLE'S FIRST STATE REPORT IS IN
         if ( vehicleInZone == boundaryPtr->bGetKeepInZone()) {
 
             // Report the 'soonest' intersection

@@ -32,6 +32,18 @@ public:
 
     virtual ~ZoneAlertComputer() = 0;
 
+
+    /**
+     * @returns the lookahead time with which the zone alert computer detects potential imminent zone violations
+     */
+    virtual double getLookaheadTime();
+
+
+    /**
+     * @returns whether the lookahead time assigned to the Zone Alert Computer is acceptable for its use
+     */
+    virtual bool acceptableLookaheadTime();
+
     /**
      * @brief Add a declared zone to the analyzer
      * 

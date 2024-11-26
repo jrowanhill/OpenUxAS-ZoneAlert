@@ -51,6 +51,7 @@ public:
 
     double getLookaheadTime() { return lookaheadTime; }
 
+    bool acceptableLookaheadTime() {return lookaheadTime > 0; }
 
     //---- Inherited Methods -----//
 
@@ -60,13 +61,60 @@ public:
 
     vector<shared_ptr<afrl::alerts::ProcessedZone>> prepareForActiveState();
 
-    vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> processVehicleStateReport(
+    vector<shared_ptr<afrl::alerts::ZoneViolation>> processVehicleStateReport(
                 shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
                 std::stringstream &sstrErrorMessage);
 
     //---- End Inherited Methods ----//
 
 protected:
+
+    /** 
+     * @brief compute existing and imminent zone violations from vehicle linear trajectory
+     * @param vehicleID the id of the vehicle being checked for zone violations
+     * @param startPos the position of the vehicle in the state state report 
+     * @param startTime the time of the vehicle state reported position
+     * @param endPos the position of the vehicle along its linear velocity to lookahead time.
+     * @param velocity the velocity vector between start point and end point
+    */
+    vector<shared_ptr<ZoneViolation>> findViolations(const int64_t vehicleID,
+        const CPosition &startPos, const float startTime, const CPosition &endPos,
+        const array<float, 3> &velocity);
+
+    
+    /**
+     * @brief compute whether there is an existing zone violation between a merged zone and
+     * a vehicle given the vehicle's position
+     * @param zoneID the id of the merged zone
+     * @param vehicleID the id of the vehicle
+     * @param vehiclePosition the positin of the vehicle
+     * @param timeOfPosition the time at which the vehicle is at the position
+     * @returns Null if there is no existing violation at the reported position with the merged zone,
+     * otherwise returns an ExistingZoneViolation between the vehile and zone at the reported position and time
+     */
+    ExistingZoneViolation *findExistingViolationWith(const int64_t zoneID, const int64_t vehicleID, 
+        const CPosition &vehiclePosition);
+
+    /**
+     * @brief compute whether there is an imminent zone violation between a merged zone and a vehicle 
+     * givemn the vehicles linear trajectory in the lookahead time window
+     * @param zoneID the id of the merged zone
+     * @param vehicleID the id of the vehicle being checked for zone violations
+     * @param startPos the position of the vehicle in the state state report 
+     * @param startTime the time of the vehicle state reported position
+     * @param endPos the position of the vehicle along its linear velocity to lookahead time.
+     * @param velocity the velocity vector between start point and end point
+     * @returns Null if there is no imminent violation on the linear trajectory to lookahead time between
+     * the vehicle and the zone, otherwise returns the imminent violation containing the earliest future time (from reported time)
+     * and position at which the vehicle will be in violation with the zone if it follows its present immediate velocity
+     */
+    ImminentZoneViolation *findImminentViolationWith(const int64_t zoneID, const int64_t vehicleID,
+        const CPosition &startPos, const float startTime, const CPosition &endPos,
+        const array<float, 3> &velocity);
+
+    
+
+
 
     /** @brief A code function borrowed from RoutePlannerVisibilityService class to convert
      * received lat,long, alt coordinates into local planar x,y,z coords
