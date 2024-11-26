@@ -115,6 +115,29 @@ protected:
                     array<float, 3> velocity, CPosition futurePosition);
 
 
+    /** @brief Creates an zone violation event object from information about the event.
+     * 
+     * @param zoneID the id of the zone with which a vehicle has a detected zone violation event
+     * @param isKeepInZone whether the violated zone is of type keep in (true) or keep out (false)
+     * @param vehicleID the id of the vehicle in violation with the zone
+     * @param vehicleStateReportTime the timestamp of the vehicle state report from which violation was detected
+     * @param east_m the positionn in cartesian ground plane x coordinate of violation in meters
+     * @param north_m the position in cartesian ground plane y coordinate of violation in meters
+     * @param altitude_m the altitude (z coordinate) of violation in meters
+     * @param timeToIntercept the time of violation occurence at the indicated position
+     *
+     * @return an ActiveZoneViolation iff the timeToIntercept is the present vehicle state report time
+     * 
+     *  
+     */
+    inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
+                int zoneID, bool isKeepInZone, 
+                int64_t vehicleID, float vehicleStateReportTime,
+                double east_m, double north_m, double altitude_m,
+                float timeToIntercept);
+
+
+
 private:
 
     // ---- start with a very simple and inefficient implementation ----

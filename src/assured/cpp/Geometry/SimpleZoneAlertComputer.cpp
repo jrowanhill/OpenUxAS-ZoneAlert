@@ -193,8 +193,20 @@ vector<shared_ptr<ImminentZoneViolation>> SimpleZoneAlertComputer::processVehicl
                             boundaryPtr->vposGetBoundaryPoints_m(), 
                             sstrErrorMessage);
 
-        // Intended behavior is to only alert on keep-out zones that the vehicle is currently outside, 
-        // and keep-in zones the vehicle is currently inside
+        // if the zone is a keep out zone and is in current violation (inside the zone, report)
+
+        // if the zone is a keep in zone and is in current violation, we won't know, because it used to be
+        // inside and is now outsize, to detect, we would need to know previously reported state that was inside 
+        // the zone and is now outside
+        // WE CAN DO THAT
+        SO ADD THAT TO BEGHAVIOR AND DATA STRUCTURES ETC.
+
+
+
+        // Intended check depends on zone type. Only need to check for intersection with the zone if
+        // a) The zone is keep-out and the vehicle start position is outside the zone
+        // b) The zone is keep-in and the vehicle start position is in the zone
+        // otherwise, no concern if the zone is crossed
         if ( vehicleInZone == boundaryPtr->bGetKeepInZone()) {
 
             // Report the 'soonest' intersection
@@ -369,6 +381,42 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(afrl::cmasi::Abstra
     return (isSuccess);
 }
 
+inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
+                int zoneID, bool isKeepInZone, 
+                int64_t vehicleID, float vehicleStateReportTime,
+                double east_m, double north_m, double altitude_m,
+                float timeToIntercept)
+{
+
+    shared_ptr<ZoneViolation> violation;  
+
+    // Store the position of the violation in a 3D position vector (m)
+    Position3D* positionPtr = new Position3D();
+    positionPtr->setEast(east_m);
+    positionPtr->setNorth(north_m);
+    positionPtr->setAltitude(altitude_m);
+
+    // Make an Active or Imminent ZoneViolation depending on if it is active at the vehicles position
+    // at the time of its state report, or is predicted to happen in the future of that report, respectively
+    if (timeToIntercept == vehicleStateReportTime) {
+        violation = make_shared<ActiveZoneViolation> (new ActiveZoneViolation());
+    }
+    else {
+        violation = make_shared<ImminentZoneViolation> (new ImminentZoneViolation());
+    }
+
+    // fill out remaining data required for a ZoneViolation alert
+    violation->setZoneID(zoneID);
+    violation->setKeepIn(isKeepInZone);
+    violation->setVehicleID(vehicleID);
+    violation->setInterceptPosition(positionPtr);
+    violation->setTimeToIntercept(timeToIntercept);
+
+    return violation;
+}
+
+}
+
+
 
 };
-
