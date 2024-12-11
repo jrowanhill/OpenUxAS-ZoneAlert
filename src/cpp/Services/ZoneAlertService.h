@@ -65,6 +65,11 @@ namespace service
  *  - afrl::cmasi::KeyValuePair
  * 
  * 
+ * @requirements SR-2, SR-3, SR-4 SR-5, Sr-6, SR-6-1, SR-6-2, SR-6-4, SR-7, SR-7-2
+ * 
+ *
+ *  (these are really while the service is alive)
+ * 
  */
 
 class ZoneAlertService : public ServiceBase
@@ -107,14 +112,26 @@ private:
     /** brief Copy assignment operation not permitted */
     void operator=(ZoneAlertService const&) = delete;
 
+    /**
+     * @requirements SR-1, SR-2-1, SR-2-2-2, SR-2-2-2-1, SR-2-2-2-2
+     * 
+     */
     bool configure(const pugi::xml_node& serviceXmlNode) override;
 
+    /** 
+    * @requirements SR-2-2, SR-2-2-1, SR-3, SR-4-1, SR-4-2, SR-5-1, SR-5-2, SR-6-1-1,
+    *               SR-7-1
+    * 
+    */
     bool initialize() override;
 
     bool start() override;
 
     bool terminate() override;
 
+    /** 
+    * @requirements SR-4-3, SR-5-3, SR-6-1-2, SR-7-3, SR-8
+    */
     bool processReceivedLmcpMessage(std::unique_ptr<uxas::communications::data::LmcpMessage> receivedLmcpMessage) override;
 
 protected:
@@ -128,6 +145,8 @@ protected:
      * @param keepIn whether the zone is a keep in or keep out zone
      * @return true if the service successfully registers the zone
      * @return false if the service fails to register the zone
+     * 
+     * @requirements SR-4-3-1
      */
     bool registerZone(std::shared_ptr<AbstractZone> zone, bool keepIn);
 
@@ -137,8 +156,19 @@ protected:
      * @param vehicleConfig The vehicle configuration message
      * @return true if the service successfully registers the vehicle
      * @return false if the service fails to register the vehicle
+     * 
+     * @requires SR-5-3-1
      */
     bool registerVehicle(std::shared_ptr<AirVehicleConfiguration> vehicleConfig);
+
+    /**
+     * @brief merge zones for zone violation detection
+     * 
+     * @return true if the service successfully merges the zones and publishes the merging
+     *    
+     * @requires SR-6-1-3, SR-6-4-3, SR-6-4-3-1, SR-6-4-3-2, SR-6-4-3-3
+     */
+    bool mergeZones(); 
 
     /**
      * @brief Called when a vehicle reports its state. This is where the service checks for potential future zone violations.
@@ -147,6 +177,10 @@ protected:
      * PredictedAlert for each previously registered zone for which there is a predicted imminent violation.
      * 
      * @return std::vector<PredictedViolation> 
+     * 
+     * @requires SR-7-3-1, SR-7-4, SR-7-4-1, SR-7-4-2, SR-7-4-3, SR-7-4-4, SR-7-4-4-1, SR-7-4-4-2, 
+     *           SR-7-4-5, SR-7-4-5-1, SR-7-4-5-2, SR-7-4-5-6, SR-7-5
+     * 
      */
     vector<alerts::ImminentZoneViolation> processVehicleStateReport(shared_ptr<AirVehicleState> vehicleState);
 

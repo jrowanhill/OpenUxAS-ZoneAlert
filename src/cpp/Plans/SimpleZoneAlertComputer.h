@@ -51,6 +51,9 @@ public:
 
     double getLookaheadTime() { return lookaheadTime; }
 
+    /**
+     * @requirements SR-2-2-2-3
+     */
     bool acceptableLookaheadTime() {return lookaheadTime > 0; }
 
     //---- Inherited Methods -----//

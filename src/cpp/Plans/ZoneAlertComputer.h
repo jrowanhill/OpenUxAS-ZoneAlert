@@ -53,6 +53,8 @@ public:
      * @post if it returns true, then it will zone alert, otherwise it is not stored for zone alerts.
      * @post Always replaces any previously declared zone with same id, whether successful or not.
      * @post Always deletes a previously declared zone if it returns false
+     * 
+     * @requirements SR-4-3-2
      */
     virtual bool addZone(shared_ptr<afrl::cmasi::AbstractZone> zonePtr, bool keepIn) = 0;
 
@@ -60,6 +62,8 @@ public:
      * @brief Add a declared vehicle to the analyzer
      * 
      * @param vehicleConfigPtr A pointer to the vehicle configuration to report
+     * 
+     * @requirements SR-5-3-1-2
      */
     virtual void addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig) = 0;
 
@@ -68,16 +72,24 @@ public:
      * 
      * @pre All zones and vehicles have been declared
      * @post The zone alert computer is ready to detect imminent zone collisions from reported vehicle states.
+     * 
+     * @requirements  SR-6-1-3, SR-6-2, SR-6-2-1, SR-6-2-2, SR-6-2-3, SR-6-2-3-1, SR-6-2-3-2,
+     *                SR-6-2-3-3, SR-6-2-3-4, SR-6-2-4, SR-6-3, SR-6-4-1 SR-6-4-2, SR-6-4-2-1,
+     *                SR-6-4-2-2, SR-6-4-2-3, SR-9
      */
-    virtual vector<shared_ptr<afrl::alerts::ProcessedZone>> prepareForActiveState() = 0;
+    virtual vector<shared_ptr<afrl::alerts::ProcessedZone>> mergeZones() = 0;
 
     /**
      * @brief Process a vehicle state and report any predicted zone violations
      * 
      * @param vehicleState 
      * @return std::vector<PredictedViolation> a vector predicted zone violations for the vehicle
+     *
+     * @requires SR-7-3-2, SR-7-3-2-1, SR-7-3-2-2, SR-7-3-2-2-1,SR-7-3-2-3, SR-7-3-2-4, SR-7-3-2-5
+     *           SR-7-3-2-6, SR-7-3-2-7, SR-10
+     * 
      */
-    virtual vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> processVehicleStateReport(
+    virtual vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> computeZoneViolations(
         shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
         std::stringstream &sstrErrorMessage) = 0;
 
