@@ -20,7 +20,7 @@
 #include "afrl/cmasi/AbstractZone.h"
 #include "afrl/cmasi/AirVehicleConfiguration.h"
 #include "afrl/cmasi/AirVehicleState.h"
-#include "afrl/alert/ImminentZoneViolation.h"
+#include "uxas/messages/ImminentZoneViolation.h"
 
 #include "ServiceBase.h"
 #include "TypeDefs/UxAS_TypeDefs_Timer.h"
@@ -105,6 +105,9 @@ public:
 
 private:
 
+    static
+    ServiceBase::CreationRegistrar<ZoneAlertService> s_registrar;
+
     //---- Standard OpenUxAS Service Interface ---//
 
     ZoneAlertService(ZoneAlertService const&) = delete;
@@ -182,7 +185,7 @@ protected:
      *           SR-7-4-5, SR-7-4-5-1, SR-7-4-5-2, SR-7-4-5-6, SR-7-5
      * 
      */
-    vector<alerts::ImminentZoneViolation> processVehicleStateReport(shared_ptr<AirVehicleState> vehicleState);
+    vector<ImminentZoneViolation> processVehicleStateReport(shared_ptr<AirVehicleState> vehicleState);
 
 private:
     // storage for the option entries
@@ -197,8 +200,8 @@ private:
 
 };
 
-}; //namespace service
-}; //namespace uxas
+} //namespace service
+} //namespace uxas
 
 #endif /* UXAS_00_SERVICE_TEMPLATE_H */
 

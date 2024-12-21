@@ -11,7 +11,7 @@
 
 <MDM>
     <SeriesName>ALERTS</SeriesName>
-    <Namespace>afrl/alerts</Namespace>
+    <Namespace>uxas/messages</Namespace>
     <Version>1</Version>
     
     <EnumList>      
@@ -20,25 +20,39 @@
     <StructList>
 
         <!-- A position reporting data structure in xy plane of flat earth local coords-->
-        <Struct Name="Position2D">
+        
+        <Struct Name="ZoneVertex">
             <Field Name="east" Type="real64" Optional="false" />
             <Field Name="north" Type="real64" Optional="false" />
         </Struct>
+        
+        <Struct Name="Position3D">
+            <Field Name="east" Type="real64" Optional="false" />
+            <Field Name="north" Type="real64" Optional="false" />
+            <Field Name="altitude" Type="real64" Optional="false" />
+        </Struct>
 
-        <!-- Indicates that a zone will be violated if vehicle remains on last reported trajectory -->
-        <Struct Name="ImminentZoneViolation">
+        <!-- Indicates a zone violation at a given time and position by a given vehicle -->
+        <Struct Name="ZoneViolation">
             <!-- ID of the vehicle with imminent zone violation -->
             <Field Name="VehicleID" Type="int64" Optional="false" />
-            <!-- ID of the zone that will be imminently violated --> 
+            <!-- ID of the PROCESSED zone that will be imminently violated --> 
             <Field Name="ZoneID" Type="int64" Optional="false" />
             <!-- Type of Zone that will be violated  -->
             <Field Name="KeepIn" Type="bool" Optional="false" />
             <!-- Time (absolute) of expected violation -->            
-            <Field Name="TimeToIntercept" Type="real32" Optional="false" />
-            <!-- Position (absolute) of expected viola -->
-            <Field Name="InterceptPosition" Type="Position2D" Series="ALERTS" Optional="false" />
+            <Field Name="InterceptTime" Type="int64" Optional="false" />
+            <!-- Position (absolute) of expected violation -->
+            <Field Name="InterceptPosition" Type="Position3D" Series="ALERTS" Optional="false" />
         </Struct>
 
+        <!-- Indicates a zone violation occuring at the time of a vehicle's state report-->
+        <Struct Name="ActiveZoneViolation" Extends="ZoneViolation">
+        </Struct>
+
+        <!-- Indicates that a zone will be violated in the future if vehicle remains on last reported trajectory -->
+        <Struct Name="ImminentZoneViolation" Extends="ZoneViolation">
+        </Struct>
 
         <!-- Indicates a zone that has been processed to detect zone violations. Such zones
              do not refer to thedeclared zones as this zone is the result of padding zones
@@ -49,10 +63,8 @@
             <!-- If the processed zone is keep in or keep out-->
             <Field Name="KeepIn" Type="bool" Optional="false" />
             <!-- The vertices of the processed zone in flat x,y space-->
-            <Field Name="Vertices" Type="Position2D[]" Optional="false" />
+            <Field Name="Vertices" Type="ZoneVertex[]" Optional="false" />
         </Struct> 
-
-
 
  </StructList>
 </MDM>

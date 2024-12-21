@@ -11,14 +11,16 @@
 #include "afrl/cmasi/AirVehicleConfiguration.h"
 #include "afrl/cmasi/AirVehicleState.h"
 #include "afrl/cmasi/AbstractZone.h"
-#include "afrl/alerts/ImminentZoneViolation.h"
+#include "uxas/messages/ImminentZoneViolation.h"
+#include "uxas/messages/ProcessedZone.h"
 
 
 using namespace n_FrameworkLib;
 using namespace std;
+using namespace uxas::messages;
+using namespace afrl::cmasi;
 
 namespace zoneAlert {
-
 
 /**
  * @brief A device that computers alerts for imminent zone violations.
@@ -34,9 +36,9 @@ public:
 
 
     /**
-     * @returns the lookahead time with which the zone alert computer detects potential imminent zone violations
+     * @returns the lookahead time with which the zone alert computer detects potential imminent zone violations. In milliseconds
      */
-    virtual double getLookaheadTime();
+    virtual int64_t getLookaheadTime();
 
 
     /**
@@ -49,6 +51,7 @@ public:
      * 
      * @param zone The AbstractZone that has been declared
      * @param keepIn whether the zone was sent as a KeenIn or KeepOut zones
+     * @return whether the zone was added succesfully
      * 
      * @post if it returns true, then it will zone alert, otherwise it is not stored for zone alerts.
      * @post Always replaces any previously declared zone with same id, whether successful or not.
@@ -56,42 +59,45 @@ public:
      * 
      * @requirements SR-4-3-2
      */
-    virtual bool addZone(shared_ptr<afrl::cmasi::AbstractZone> zonePtr, bool keepIn) = 0;
+    virtual bool addZone(shared_ptr<AbstractZone> zonePtr, bool keepIn) = 0;
 
     /**
      * @brief Add a declared vehicle to the analyzer
      * 
      * @param vehicleConfigPtr A pointer to the vehicle configuration to report
+     * @return whether the vehicle was added succesfully
      * 
      * @requirements SR-5-3-1-2
      */
-    virtual void addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig) = 0;
+    virtual bool addVehicle(shared_ptr<AirVehicleConfiguration> vehicleConfig) = 0;
 
     /**
      * @brief Prepare data further for active alerting of imminent zone violations
      * 
      * @pre All zones and vehicles have been declared
-     * @post The zone alert computer is ready to detect imminent zone collisions from reported vehicle states.
+     * @post The zone alert computer is ready to detect imminent zone collisions from reported vehicle states or
+     * null or empty vector if none
      * 
      * @requirements  SR-6-1-3, SR-6-2, SR-6-2-1, SR-6-2-2, SR-6-2-3, SR-6-2-3-1, SR-6-2-3-2,
      *                SR-6-2-3-3, SR-6-2-3-4, SR-6-2-4, SR-6-3, SR-6-4-1 SR-6-4-2, SR-6-4-2-1,
      *                SR-6-4-2-2, SR-6-4-2-3, SR-9
      */
-    virtual vector<shared_ptr<afrl::alerts::ProcessedZone>> mergeZones() = 0;
+    virtual vector<shared_ptr<ProcessedZone>> * mergeZones() = 0;
 
     /**
      * @brief Process a vehicle state and report any predicted zone violations
      * 
      * @param vehicleState 
-     * @return std::vector<PredictedViolation> a vector predicted zone violations for the vehicle
+     * @return std::vector<PredictedViolation> a vector predicted zone violations for the vehicle or
+     * null or empty vector if none
      *
      * @requires SR-7-3-2, SR-7-3-2-1, SR-7-3-2-2, SR-7-3-2-2-1,SR-7-3-2-3, SR-7-3-2-4, SR-7-3-2-5
      *           SR-7-3-2-6, SR-7-3-2-7, SR-10
      * 
      */
-    virtual vector<shared_ptr<afrl::alerts::ImminentZoneViolation>> computeZoneViolations(
-        shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
-        std::stringstream &sstrErrorMessage) = 0;
+    virtual vector<shared_ptr<ZoneViolation>> * computeZoneViolations(
+        shared_ptr<AirVehicleState> vehicleState, 
+        stringstream &sstrErrorMessage) = 0;
 
 protected:
 
@@ -103,7 +109,7 @@ protected:
      * @param vehicleState the vehicle state from which current linear trajectory is derived
      * @return as a standard array with linear velocity in x, y, and z world components
      */
-    array<float,3> worldFrameVelocity(shared_ptr<afrl::cmasi::AirVehicleState> vehicleState) {
+    array<float,3> worldFrameVelocity(shared_ptr<AirVehicleState> vehicleState) {
 
         // compute x and y components of velocity from ground track and ground speed in m/s
         // note sin and cos are computed as doubles for accuracy and implicit precision reduction conversion occurs in the multiplication

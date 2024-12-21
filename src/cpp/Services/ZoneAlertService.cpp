@@ -24,7 +24,8 @@
 //include LMCP Messages
 
 #include <iostream>     // std::cout, cerr, etc
-#include <afrl/cmasi/KeepInZone.h>
+#include "afrl/cmasi/KeepInZone.h"
+#include "afrl/cmasi/AutomationRequest.h"
 
 // convenience definitions for the option strings
 #define STRING_XML_OPTION_STRING "OptionString"
@@ -61,7 +62,6 @@ bool ZoneAlertService::configure(const pugi::xml_node& ndComponent)
     {
         m_option02 = ndComponent.attribute(STRING_XML_OPTION_INT).as_int();
     }
-
     return (isSuccess);
 }
 
@@ -104,8 +104,6 @@ bool ZoneAlertService::terminate()
 bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communications::data::LmcpMessage> receivedLmcpMessage)
 {
     if (afrl::cmasi::isAbstractZone(receivedLmcpMessage->m_object)) {
-        return registerZone()
-
 
         // Is it a keep in or keep out zone? 
         bool isKeepIn = afrl::cmasi::isKeepInZone(receivedLmcpMessage->m_object);
@@ -125,9 +123,8 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
             << abstractZone->getZoneID()
             << " *** " << std::endl;
         }
-        else {
-            return true;
-        }
+
+        return success;
     }
     else if (afrl::cmasi::isAirVehicleConfiguration(receivedLmcpMessage->m_object)) {
         auto airVehicleConfiguration = std::static_pointer_cast<afrl::cmasi::AirVehicleConfiguration> (receivedLmcpMessage->m_object);
@@ -137,7 +134,16 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
 
         // Store the aircraft configuration in the alert computer
         // @TODO Check memory safety of casting from unique_ptr to static pointer above and then to shared pointer in the method call
-        return zoneAlertComputerPtr->addVehicle(airVehicleConfiguration);
+        
+        auto success = zoneAlertComputerPtr->addVehicle(airVehicleConfiguration);
+
+        if (!success) {
+        std::cout << "*** Service[" << s_typeName() << "] Failed to apply vehicle declration with id " 
+            << airVehicleConfiguration->getID()
+            << " *** " << std::endl;
+        }
+
+        return success;
          
     }
     else if (afrl::cmasi::isAirVehicleState(receivedLmcpMessage->m_object)) {
@@ -149,32 +155,49 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
 
         // Process the aircraft state to identify impending zone violations
         // @TODO Check memory safety of casting from unique_ptr to static pointer above and then to shared pointer in the method call
-        zoneAlertComputerPtr->processVehicleStateReport(airVehicleState);
+        stringstream errorLog;
+        auto violationsPtr = zoneAlertComputerPtr->computeZoneViolations(airVehicleState, errorLog);
 
-        RECORD AND HANDLE OUTPUT HERE
-        SOME CODE LIKE THIS BELOW
+        // report any errors that occured in construction
+        string errors = errorLog.str();
+        if (errors.length()>0) {
+            std::cerr << errors;
+        }
 
-        auto keyValuePairOut = std::make_shared<afrl::cmasi::KeyValuePair>();
-        keyValuePairOut->setKey(s_typeName());
-        keyValuePairOut->setValue(std::to_string(m_serviceId));
-        sendSharedLmcpObjectBroadcastMessage(keyValuePairOut);
+        // report each detected violation
+        if (violationsPtr != NULL) {
+            for (int i = 0; i<violationsPtr->size(); i++) {
+                sendSharedLmcpObjectBroadcastMessage((*violationsPtr)[i]);
+            }
+
+            violationsPtr->clear();
+            delete violationsPtr;
+        }
 
         return true;
     }
-    else if (afrl::cmasi:ThatWEAREALLDONEMESSAGE) {
-        ZoneAlertComputer-->virtual vector<shared_ptr<afrl::alerts::ProcessedZone>>
+    else if(afrl::cmasi::isAutomationRequest(receivedLmcpMessage->m_object)) {
+
+        // assuming that all zones and vehicles have been declared, and now automation
+        // is being requested, perform zone merging and report merged zones
+
+        // @todo: Handle the fact that this is asynchronous and might miss out on 
+        // the start of missiosn if merging takes too long (falls behind, required soft keep-up computational real-time)
+        auto mergedZonesPtr = zoneAlertComputerPtr->mergeZones();
+
+        // report each merged zone
+        if (mergedZonesPtr != NULL) {
+            for (int i = 0; i<mergedZonesPtr->size(); i++) {
+                sendSharedLmcpObjectBroadcastMessage((*mergedZonesPtr)[i]);
+            }
+
+            mergedZonesPtr->clear();
+            delete mergedZonesPtr;
+        }
     }
 
     return false;
 }
-
-//-------------- Internal Logic Functions -------------//
-
-bool ZoneAlertService::registerZone(std::shared_ptr<AbstractZone> zone, bool keepIn) {
-
-}
-
-
 
 
 }; //namespace service

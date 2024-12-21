@@ -3,20 +3,23 @@
 
 #pragma once
 
-#include "ZoneAlertComputer.h";
+#include "ZoneAlertComputer.h"
 
 #include <map>
 
 #include "afrl/cmasi/AirVehicleConfiguration.h"
-#include "afrl/alerts/ImminentZoneViolation.h"
-#include "afrl/alerts/Position2D.h"
-#include "afrl/alerts/ProcessedZone.h"
+#include "uxas/messages/ActiveZoneViolation.h"
+#include "uxas/messages/ImminentZoneViolation.h"
+#include "uxas/messages/ZoneViolation.h"
+#include "uxas/messages/ZoneVertex.h"
+#include "uxas/messages/ProcessedZone.h"
 
 #include "Polygon.h"
 #include "VisibilityGraph.h"
 
 using namespace std;
 using namespace n_FrameworkLib;
+
 
 namespace zoneAlert {
 
@@ -49,7 +52,7 @@ public:
 
     ~SimpleZoneAlertComputer();
 
-    double getLookaheadTime() { return lookaheadTime; }
+    int64_t getLookaheadTime() { return lookaheadTime; }
 
     /**
      * @requirements SR-2-2-2-3
@@ -58,14 +61,14 @@ public:
 
     //---- Inherited Methods -----//
 
-    bool addZone(shared_ptr<afrl::cmasi::AbstractZone> zonePtr, bool keepIn);
+    bool addZone(shared_ptr<AbstractZone> zonePtr, bool keepIn);
 
-    void addVehicle(shared_ptr<afrl::cmasi::AirVehicleConfiguration> vehicleConfig);
+    bool addVehicle(shared_ptr<AirVehicleConfiguration> vehicleConfig);
 
-    vector<shared_ptr<afrl::alerts::ProcessedZone>> prepareForActiveState();
+    vector<shared_ptr<ProcessedZone>> * mergeZones();
 
-    vector<shared_ptr<afrl::alerts::ZoneViolation>> processVehicleStateReport(
-                shared_ptr<afrl::cmasi::AirVehicleState> vehicleState, 
+    vector<shared_ptr<ZoneViolation>> * computeZoneViolations(
+                shared_ptr<AirVehicleState> vehicleState, 
                 std::stringstream &sstrErrorMessage);
 
     //---- End Inherited Methods ----//
@@ -89,34 +92,52 @@ protected:
      * @brief compute whether there is an existing zone violation between a merged zone and
      * a vehicle given the vehicle's position
      * @param zoneID the id of the merged zone
-     * @param vehicleID the id of the vehicle
-     * @param vehiclePosition the positin of the vehicle
-     * @param timeOfPosition the time at which the vehicle is at the position
+     * @param vehicleID the reporting vehicle's id
+     * @param startPos the Cartesian starting position reported by the vehicle
+     * @param timestamp the time of the vehicle state
+     * @param sstrErrorMessage a string stream in which to report unrecoverable errors
+     * 
      * @returns Null if there is no existing violation at the reported position with the merged zone,
      * otherwise returns an ExistingZoneViolation between the vehile and zone at the reported position and time
      */
-    ExistingZoneViolation *findExistingViolationWith(const int64_t zoneID, const int64_t vehicleID, 
-        const CPosition &vehiclePosition);
+     inline shared_ptr<ZoneViolation> findExistingViolationWith(
+            const int64_t zoneID, const int64_t vehicleID, 
+            const CPosition &startPos, const int64_t timestamp, 
+            std::stringstream &sstrErrorMessage);
 
     /**
      * @brief compute whether there is an imminent zone violation between a merged zone and a vehicle 
      * givemn the vehicles linear trajectory in the lookahead time window
+     * 
      * @param zoneID the id of the merged zone
      * @param vehicleID the id of the vehicle being checked for zone violations
      * @param startPos the position of the vehicle in the state state report 
-     * @param startTime the time of the vehicle state reported position
      * @param endPos the position of the vehicle along its linear velocity to lookahead time.
-     * @param velocity the velocity vector between start point and end point
+     * @param startTime the time of the vehicle state reported position in the uxas clock (milliseconds)     * 
+     * @param velocity the velocity vector between start point and end point in meters per second
+     * @param sstrErrorMessage a string stream in which to report unrecoverable errors
+     * 
      * @returns Null if there is no imminent violation on the linear trajectory to lookahead time between
      * the vehicle and the zone, otherwise returns the imminent violation containing the earliest future time (from reported time)
      * and position at which the vehicle will be in violation with the zone if it follows its present immediate velocity
      */
-    ImminentZoneViolation *findImminentViolationWith(const int64_t zoneID, const int64_t vehicleID,
-        const CPosition &startPos, const float startTime, const CPosition &endPos,
-        const array<float, 3> &velocity);
+    shared_ptr<ZoneViolation> findImminentViolationWith(const int64_t zoneID,
+        const int64_t vehicleID, const CPosition &startPos, const CPosition &endPos,
+        const int64_t startTime, const array<float, 3> &velocity,        
+        std::stringstream &sstrErrorMessage);
 
     
-
+    /** @brief A function to compute the initial keep in zone for a given vehicle 
+     * 
+     * @param vehicleID the id of the vehicle to check
+     * @param currentPos the stated position of the vehicle
+     * @param sstrErrorMessage a place to report errors while checking keep in zones
+     * 
+     * @return the id of the merged keep-in zone that the vehicle began in, or zero if in not initially in a merged keep-in zone
+     * 
+     */
+    inline const int checkForInitialKeepInZone(const int64_t vehicleID, 
+        const CPosition &currentPos, std::stringstream &sstrErrorMessage);
 
 
     /** @brief A code function borrowed from RoutePlannerVisibilityService class to convert
@@ -125,7 +146,8 @@ protected:
      * TODO: It is bad that this code is copied from router planner visibility service. 
      * Refactor so that the code is a single source static function somwwhere.     * 
     */
-    bool bFindPointsForAbstractGeometry(afrl::cmasi::AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints);
+    bool bFindPointsForAbstractGeometry(AbstractGeometry* pAbstractGeometry, 
+        n_FrameworkLib::V_POSITION_t& vposBoundaryPoints);
 
 
 
@@ -150,7 +172,7 @@ protected:
 
 
     /** @brief Given a future motion vector, the velocity on that vector, and a position 
-     * on that vector, compute the time in the future at which that position is achieved
+     * on that vector, compute the lookaheadTimetime in the future at which that position is achieved
      *
      * @param startPos the start of the vector
      * @param endPos the end of the vector
@@ -160,9 +182,10 @@ protected:
      * @pre The futurePosition is on the vector from startPos to endPos
      * @pre the velocity is the velocity on the vector from startPos to endPos
      * 
-     * @return the number of seconds in the future in which the future position is achieved
+     * @return the number of seconds in the future in which the future position 
+     * is achieved (milliseconds)
      */
-    inline double computeTimeToPosition(CPosition startPos, CPosition endPos, 
+    inline int64_t computeTimeToPosition(CPosition startPos, CPosition endPos, 
                     array<float, 3> velocity, CPosition futurePosition);
 
 
@@ -175,20 +198,16 @@ protected:
      * @param east_m the positionn in cartesian ground plane x coordinate of violation in meters
      * @param north_m the position in cartesian ground plane y coordinate of violation in meters
      * @param altitude_m the altitude (z coordinate) of violation in meters
-     * @param timeToIntercept the time of violation occurence at the indicated position
+     * @param timeToIntercept the time until violation occurence at the indicated position 
      *
-     * @return an ActiveZoneViolation iff the timeToIntercept is the present vehicle state report time
-     * 
-     *  
+     * @return an ActiveZoneViolation if and only if the timeToIntercept is the present vehicle state report time
      */
-    inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
+    inline shared_ptr<ZoneViolation> makeZoneViolation(
                 int zoneID, bool isKeepInZone, 
-                int64_t vehicleID, float vehicleStateReportTime,
+                int64_t vehicleID, int64_t vehicleStateReportTime,
                 double east_m, double north_m, double altitude_m,
-                float timeToIntercept);
-
-
-
+                int64_t timeToIntercept);
+    
 private:
 
     // ---- start with a very simple and inefficient implementation ----
@@ -207,9 +226,19 @@ private:
     // Asumption: assuming CMASI int64 can be a simple int is based on other OpenUxAS code that does so
     map<int, shared_ptr<CPolygon>> polygons;
 
+    // we also separately point at keepoutzone and keepInZones to cut down on iterations
+    set<int> keepOutZones;
+    set<int> keepInZones;
+
+    // a map from aircraft ids to their initial keep in zone.
+    // is zero if no such zone for an aircraft
+    map<int, int> initialKeepInZones; 
+
     // ----- member variables ------//
 
-    const double lookaheadTime;
+    // The amount of lookahead time for imminent violation checks, in milliseconds
+    // this unit is used because UxAS operates time on a discrete millisecond clock
+    const int64_t lookaheadTime;
 
 };
 
