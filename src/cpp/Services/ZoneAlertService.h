@@ -27,7 +27,7 @@
 
 #include "ZoneAlertComputer.h"
 
-using namespace std;
+//using namespace std;
 
 using namespace afrl;
 using namespace cmasi;
@@ -185,7 +185,7 @@ protected:
      *           SR-7-4-5, SR-7-4-5-1, SR-7-4-5-2, SR-7-4-5-6, SR-7-5
      * 
      */
-    vector<ImminentZoneViolation> processVehicleStateReport(shared_ptr<AirVehicleState> vehicleState);
+    std::vector<ImminentZoneViolation> processVehicleStateReport(std::shared_ptr<AirVehicleState> vehicleState);
 
 private:
     // storage for the option entries

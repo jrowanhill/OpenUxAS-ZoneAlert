@@ -17,11 +17,18 @@
 #include "Polygon.h"
 #include "VisibilityGraph.h"
 
-using namespace std;
+//using namespace std;
 using namespace n_FrameworkLib;
 
 
 namespace zoneAlert {
+
+using std::vector;
+using std::array;
+using std::map;
+using std::set;
+
+using std::shared_ptr;
 
 /**
  * @brief An implementation of the ZoneAlertComputer that computes simple linear trajectory violations from present vehicle state against known zones.
@@ -50,7 +57,7 @@ public:
      */
     SimpleZoneAlertComputer(double lookahead);
 
-    ~SimpleZoneAlertComputer();
+    virtual ~SimpleZoneAlertComputer();
 
     int64_t getLookaheadTime() { return lookaheadTime; }
 
@@ -166,7 +173,7 @@ protected:
      * @return the closest intersection from startPos of the vector with the polygon boundary, 
      * or NULL if no such intersection
     */
-    inline shared_ptr<CPosition> findClosestIntersection(CPosition startPos, 
+    inline CPosition * findClosestIntersection(CPosition startPos, 
                     CPosition endPos, shared_ptr<CPolygon> polygonPtr, 
                     shared_ptr<CBoundary> polygonBoundaryPtr);
 

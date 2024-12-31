@@ -9,14 +9,16 @@
 
 #define CIRCLE_BOUNDARY_INCREMENT (n_Const::c_Convert::dPiO10())
 
-using namespace std;
 using namespace n_FrameworkLib;
 using namespace uxas::messages;
 using namespace afrl::cmasi;
 
 namespace zoneAlert {
 
-SimpleZoneAlertComputer::SimpleZoneAlertComputer(double lookahead) :
+using std::shared_ptr;
+using std::make_shared;
+
+SimpleZoneAlertComputer::SimpleZoneAlertComputer(double lookahead) : ZoneAlertComputer(),
     lookaheadTime(lookahead),
     airVehicleConfigs(),
     boundaries(),
@@ -43,10 +45,10 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<AbstractZone> zonePtr, bool kee
     if (isSuccess) {
         // store the XY-plane polygonal boundary of the zone (this copies the boundaryPoints in an internal record)
         auto boundaryPtr = make_shared<CBoundary>(
-            new CBoundary(zonePtr->getZoneID(), keepIn, boundaryPoints, *zonePtr));
+            zonePtr->getZoneID(), keepIn, boundaryPoints, *zonePtr);
 
         // Create a Polygon
-        auto polygonPtr = make_shared<CPolygon>(new CPolygon(zonePtr->getZoneID()));
+        auto polygonPtr = make_shared<CPolygon>(zonePtr->getZoneID());
 
         // And update its values using the inside-out approach of the legacy codebase
         polygonPtr->plytypGetPolygonType().bGetKeepIn() = keepIn; // TODO: check. this smells
@@ -120,10 +122,12 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
 
     // now re-extract boundaries and polygons from the visibility graph
     // for easy intersection testing
-    for (auto iter = visibilityGraph.vplygnGetPolygons().begin(); iter != visibilityGraph.vplygnGetPolygons().end(); iter++) {
+    for (auto iter = visibilityGraph.vplygnGetPolygons().begin(); 
+              iter != visibilityGraph.vplygnGetPolygons().end(); 
+              iter++) {
         
-        // steal reference to polygon from our visibility graph
-        polygons[iter->iGetID()] = make_shared<CPolygon>(iter);
+        // copy construct the current polygon as a shared version
+        polygons[iter->iGetID()] = make_shared<CPolygon>(*iter);
         
         // recreate boundary, pulling the CPositions out of visibiity graph
         // and copying them into our boundary points vector for the polygon
@@ -141,8 +145,8 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
         // note we do build the boundaries with blank abstract zones. That info was lost in use of visibilitygraph
         AbstractZone blankAbstract;
         auto boundaryPtr = make_shared<CBoundary>(
-            new CBoundary(iter->iGetID(), iter->plytypGetPolygonType().bGetKeepIn(), boundaryPoints, 
-                            blankAbstract));
+            iter->iGetID(), iter->plytypGetPolygonType().bGetKeepIn(), boundaryPoints, 
+                            blankAbstract);
         boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
 
         //  store zones by ype in sets for faster iteration during violation checks
@@ -154,8 +158,7 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
         }
 
         // create an announcement of the zone
-        shared_ptr<ProcessedZone> procZonePtr = 
-            make_shared<ProcessedZone>(new ProcessedZone());
+        shared_ptr<ProcessedZone> procZonePtr = make_shared<ProcessedZone>();
         for (auto vit = boundaryPtr->vposGetBoundaryPoints_m().begin(); 
                     vit != boundaryPtr->vposGetBoundaryPoints_m().end(); vit++) {
             ZoneVertex * vertexPosPtr = new ZoneVertex();
@@ -333,6 +336,9 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findExistingViolationW
             return makeZoneViolation(zoneID, boundaryPtr->bGetKeepInZone(), vehicleID, timestamp,
                 startPos.m_east_m, startPos.m_north_m, startPos.m_altitude_m, 0);
         }
+        else {
+            return NULL;
+        }
 
     }
     catch(const std::out_of_range &e) {
@@ -382,6 +388,7 @@ shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findImminentViolationWith(
                             closestIntersectionPtr->m_north_m,
                             closestIntersectionPtr->m_altitude_m, startTime+timeToIntercept);
 
+            delete closestIntersectionPtr;
         }
         else {
             return NULL;
@@ -402,14 +409,16 @@ shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findImminentViolationWith(
         sstrErrorMessage << "An unknown exception occured in determining point in polygon for merged zone id = '"
             << zoneID << "'.\n";
         return NULL;
-    }    
+    }
+
+    return NULL;    
 }
 
 
 /*
  * @TODO: finding the first intersection by first finding all intersections is wasteful 
  */
-shared_ptr<CPosition> SimpleZoneAlertComputer::findClosestIntersection(
+CPosition * SimpleZoneAlertComputer::findClosestIntersection(
             CPosition startPos, CPosition endPos, shared_ptr<CPolygon> polygonPtr, 
             shared_ptr<CBoundary> polygonBoundaryPtr) {
 
@@ -424,17 +433,17 @@ shared_ptr<CPosition> SimpleZoneAlertComputer::findClosestIntersection(
 
         double farthest = std::numeric_limits<double>::max();
 
-        for (auto intersection = (intersections.begin()); intersection != intersections.end(); 
+        for (auto intersection = intersections.begin(); intersection != intersections.end(); 
             intersection++) {
-            double dist = startPos.relativeDistance2D_m(*intersection);
 
+            double dist = startPos.relativeDistance2D_m(*intersection);
             if (dist<farthest) {
                 closestPtr = &(*intersection);
             }
         }
     }    
 
-    return make_shared<CPosition>(closestPtr);
+    return closestPtr;
 }
 
 
@@ -535,10 +544,7 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* p
             wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
             vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
 
-            //South/West Corner
-            wayRotated.m_north_m = -pRectangle->getHeight() / 2.0;
-            wayRotated.m_east_m = -pRectangle->getWidth() / 2.0;
-            wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
+            //South/West Cornernew ImminentZoneViolation()
             vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
 
             //South/East Corner
@@ -553,6 +559,7 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* p
     }
     return (isSuccess);
 }
+
 
 inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
                 int zoneID, bool isKeepInZone, 
@@ -572,10 +579,10 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
     // Make an Active or Imminent ZoneViolation depending on if it is active at the vehicles position
     // at the time of its state report, or is predicted to happen in the future of that report, respectively
     if (timeToIntercept == vehicleStateReportTime) {
-        violation = make_shared<ActiveZoneViolation> (new ActiveZoneViolation());
+        violation = make_shared<ActiveZoneViolation> ();
     }
     else {
-        violation = make_shared<ImminentZoneViolation> (new ImminentZoneViolation());
+        violation = make_shared<ImminentZoneViolation> ();
     }
 
     // fill out remaining data required for a ZoneViolation alert

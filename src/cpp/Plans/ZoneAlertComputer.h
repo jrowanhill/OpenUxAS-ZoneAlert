@@ -16,11 +16,19 @@
 
 
 using namespace n_FrameworkLib;
-using namespace std;
 using namespace uxas::messages;
 using namespace afrl::cmasi;
 
 namespace zoneAlert {
+
+using std::vector;
+using std::array;
+
+using std::stringstream;
+
+using std::shared_ptr;
+
+using std::isfinite;
 
 /**
  * @brief A device that computers alerts for imminent zone violations.
@@ -32,19 +40,18 @@ class ZoneAlertComputer {
 
 public:
 
-    virtual ~ZoneAlertComputer() = 0;
-
+    virtual ~ZoneAlertComputer() {};
 
     /**
      * @returns the lookahead time with which the zone alert computer detects potential imminent zone violations. In milliseconds
      */
-    virtual int64_t getLookaheadTime();
+    virtual int64_t getLookaheadTime() = 0;
 
 
     /**
      * @returns whether the lookahead time assigned to the Zone Alert Computer is acceptable for its use
      */
-    virtual bool acceptableLookaheadTime();
+    virtual bool acceptableLookaheadTime() = 0;
 
     /**
      * @brief Add a declared zone to the analyzer
@@ -147,10 +154,8 @@ protected:
 private:
 
     /**
-     * @brief Convert degrees to radians
-     * 
-     * @param d degrees 
-     * @return double (floating-point double precision) equivalent value in radians
+     * @brief Convert degrees to radiansusing std::stringstream;
+uble precision) equivalent value in radians
      */
     static double d2r(double d) {
         return (d / 180.0) * ((double) M_PI);

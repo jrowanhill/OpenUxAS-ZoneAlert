@@ -41,7 +41,7 @@
             <!-- Type of Zone that will be violated  -->
             <Field Name="KeepIn" Type="bool" Optional="false" />
             <!-- Time (absolute) of expected violation -->            
-            <Field Name="InterceptTime" Type="int64" Optional="false" />
+            <Field Name="TimeToIntercept" Type="int64" Optional="false" />
             <!-- Position (absolute) of expected violation -->
             <Field Name="InterceptPosition" Type="Position3D" Series="ALERTS" Optional="false" />
         </Struct>

@@ -37,6 +37,9 @@ namespace uxas  // uxas::
 namespace service   // uxas::service::
 {
 
+using std::string;
+using std::stringstream;
+
 // this entry registers the service in the service creation registry
 ZoneAlertService::ServiceBase::CreationRegistrar<ZoneAlertService>
 ZoneAlertService::s_registrar(ZoneAlertService::s_registryServiceTypeNames());
