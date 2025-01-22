@@ -11,6 +11,10 @@ source "${SCRIPT_DIR}/../../infrastructure/paths.sh"
 # Activate the python venv
 activate_venv
 
+# ---- RUN THE BUILD-LEVEL Unit Tests -----
+
+
+# ---- RUN THE SERVICE-LEVEL INTEGRATION TESTS ------
 # A specified qualifier should be used to set the env for finding uxas
 qualifier=$( get_option "$*" "--qualifier" )
 if [[ -n ${qualifier} ]]; then
@@ -26,3 +30,5 @@ else
     debug_and_run "eval \"\$( \"${OPENUXAS_ROOT}/anod\" printenv uxas )\""
     debug_and_run "python3 \"${TESTS_DIR}/cpp/run-tests.py\" $*"
 fi
+
+

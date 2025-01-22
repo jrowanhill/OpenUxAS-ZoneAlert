@@ -20,7 +20,8 @@ class Uxas(spec('common')):
             Anod.Dependency('sqlite'),
             Anod.Dependency('boost'),
             Anod.Dependency('sqlitecpp'),
-            Anod.Dependency('wellclear')]
+            Anod.Dependency('wellclear'),
+            Anod.Dependency('googletest')]
 
     @property
     def build_source_list(self):
@@ -66,6 +67,7 @@ class Uxas(spec('common')):
         self.deps['sqlitecpp'].setenv()
         self.deps['czmq'].setenv()
         self.deps['wellclear'].setenv()
+        self.deps['googletest'].setenv()
 
     @Anod.primitive()
     def build(self):
