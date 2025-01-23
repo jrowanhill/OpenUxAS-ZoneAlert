@@ -36,8 +36,15 @@ doc/reference/UserManual/UxAS_UserManual.toc
 # generated LMCP source code
 src/LMCP
 
+# compositional testing builds
+tests/constructive/obj
+tests/constructive/bin
+
 # test output
 tests/**/output/**
+
+# constructive test output
+tests/constructive/build
 
 # example output
 examples/**/log/**

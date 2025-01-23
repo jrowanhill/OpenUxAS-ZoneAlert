@@ -119,7 +119,7 @@ endef
 # GENERATE_COMPILER_RULE(object_file, source_file)
 #
 # Generate a makefile rule to compile a C++ source
-#
+#source
 define GENERATE_COMPILE_RULE
 
 $(OBJECT_DIR)/$1: $2
@@ -139,6 +139,7 @@ help:
 	@echo "   all:   Compile the project"
 	@echo "   clean: Clean all build artefacts"
 	@echo "   help:  This target"
+	@echo "   test:  Compile and execute compositional tests"
 	@echo
 	@echo "User variables:"
 	@echo "   DEBUG_BUILD: if 'true' then display full compilation command line"
@@ -146,12 +147,6 @@ help:
 	@echo "   ENABLE_WARNINGS: if 'true' enable all C++ warnings"
 	@echo "   ENABLE_COVERAGE: if 'true' compile uxas with gcov enabled"
 
-clean:
-	@echo "[Remove objects]"
-	rm -f $(OBJECTS)
-	rm -rf $(OBJECT_DIR)/uxas
-	@echo "[Remove makefile fragments (dependencies)]"
-	rm -f $(DEPS)
 
 all: $(OBJECT_DIR)/uxas
 	@echo "[Project compiled]"
@@ -169,3 +164,56 @@ $(foreach object, $(OBJECTS_BASE), $(eval $(call GENERATE_COMPILE_RULE,$(object)
 
 # Include the Makefile fragments containing the dependencies
 -include $(DEPS)
+
+# --- Constructive Testing --- 
+
+COMPTEST_DIR=tests/cpp/constructive
+
+COMPTEST_LINKER_FLAGS:= $(LINKER_FLAGS) -lgtest_main -lgtest
+
+COMPTEST_BUILD_DIR:= $(COMPTEST_DIR)/build
+
+COMPTEST_EXEC:= $(COMPTEST_BUILD_DIR)/uxastest
+
+test: all $(COMPTEST_EXEC)
+	@echo "[Starting Compositional Testing]"
+	@$(COMPTEST_EXEC)
+	@echo "[Completed Compositional Testing]"
+
+
+COMPTEST_SOURCES:= $(foreach source_dir, $(COMPTEST_DIR), $(wildcard $(source_dir)/*.cpp))
+
+# The list of non relocated object files
+COMPTEST_OBJECTS_BASE:=$(patsubst %.cpp,%.o,$(COMPTEST_SOURCES))
+
+# final location for constructive test builds
+COMPTEST_OBJECT_DIR:= $(COMPTEST_BUILD_DIR)
+
+# The final location of all objects
+COMPTEST_OBJECTS:=$(foreach object, $(COMPTEST_OBJECTS_BASE),$(COMPTEST_OBJECT_DIR)/$(object))
+
+
+define GENERATE_COMPTEST_COMPILE_RULE
+
+$(COMPTEST_OBJECT_DIR)/$1: $2
+	$$(call COMPILE_CXX,$$@,$$<)
+
+endef
+
+# Create a compilation rule for each compositional test file found
+$(foreach object, $(COMPTEST_OBJECTS_BASE), $(eval $(call GENERATE_COMPTEST_COMPILE_RULE,$(object),$(patsubst %.o,%.cpp, $(object)))))
+
+$(COMPTEST_EXEC): $(COMPTEST_OBJECTS)
+	@echo "[Link google testing main]"
+	@mkdir -p $(COMPTEST_BUILD_DIR)
+	@$(CXX) -o $@ $^ $(COMPTEST_LINKER_FLAGS) $(CXX_FLAGS)
+
+clean:
+	@echo "[Remove objects]"
+	rm -f $(OBJECTS)
+	rm -rf $(OBJECT_DIR)/uxas
+	@echo "[Remove makefile fragments (dependencies)]"
+	rm -f $(DEPS)
+	@echo "[Removing constructive test build]"
+	rm -f $(COMPTEST_OBJECTS)
+	rm -f $(COMPTEST_EXEC)
