@@ -1,4 +1,5 @@
-/** A pure virtual defining the interface for zone alert computation.
+/** A pure virtual defining the interface for zone alert computer.
+ * @author Jonathan Rowanhill
 */
 
 #pragma once

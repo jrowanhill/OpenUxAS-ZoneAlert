@@ -1,4 +1,7 @@
-/** A class that keeps declared Zones as BoundedZones to test aircraft for violation
+/** A simple ZoneAlertComputer that keeps declared Zones as BoundedZones to test aircraft for violation.
+ * Performs very nieve (costly!) lookup and check of of zones whenever an aircraft reports a position.
+ * @author Jonathan Rowanhill
+ * 
 */
 
 #pragma once
