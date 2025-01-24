@@ -169,6 +169,8 @@ $(foreach object, $(OBJECTS_BASE), $(eval $(call GENERATE_COMPILE_RULE,$(object)
 
 COMPTEST_DIR=tests/cpp/constructive
 
+COMPTEST_TESTS_DIR:=$(COMPTEST_DIR)/tests
+
 COMPTEST_LINKER_FLAGS:= $(LINKER_FLAGS) -lgtest_main -lgtest
 
 COMPTEST_BUILD_DIR:= $(COMPTEST_DIR)/build
@@ -181,7 +183,9 @@ test: all $(COMPTEST_EXEC)
 	@echo "[Completed Compositional Testing]"
 
 
-COMPTEST_SOURCES:= $(foreach source_dir, $(COMPTEST_DIR), $(wildcard $(source_dir)/*.cpp))
+COMPTEST_SOURCES:= $(foreach source_dir, $(COMPTEST_TESTS_DIR), $(wildcard $(source_dir)/*.cpp))
+
+COMPTEST_SOURCES+= $(foreach source_dir, $(COMPTEST_TESTS_DIR), $(wildcard $(source_dir)/**/*.cpp))
 
 # The list of non relocated object files
 COMPTEST_OBJECTS_BASE:=$(patsubst %.cpp,%.o,$(COMPTEST_SOURCES))
@@ -203,7 +207,7 @@ endef
 # Create a compilation rule for each compositional test file found
 $(foreach object, $(COMPTEST_OBJECTS_BASE), $(eval $(call GENERATE_COMPTEST_COMPILE_RULE,$(object),$(patsubst %.o,%.cpp, $(object)))))
 
-$(COMPTEST_EXEC): $(COMPTEST_OBJECTS)
+$(COMPTEST_EXEC): $(OBJECTS) $(COMPTEST_OBJECTS)
 	@echo "[Link google testing main]"
 	@mkdir -p $(COMPTEST_BUILD_DIR)
 	@$(CXX) -o $@ $^ $(COMPTEST_LINKER_FLAGS) $(CXX_FLAGS)

@@ -130,7 +130,10 @@ protected:
         return std::array<float,3> {{xv, yv, zv}};
     }
     
-    /**
+    /**TEST(Sanity, FALSITY) {
+    EXPECT_EQ(1, 0);
+}
+
      * @brief Compute the end position of vehicle state from linear trajectory with a lookahead time
      * 
      * @details Given vehicle position, currents linear trajectory, and a future time, this function
@@ -206,4 +209,4 @@ uble precision) equivalent value in radians
 
 };
 
-};
+}

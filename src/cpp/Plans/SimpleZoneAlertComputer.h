@@ -58,7 +58,7 @@ public:
      * 
      * @param lookahead the amount of time (in seconds) that computer will look for impending zone violations
      */
-    SimpleZoneAlertComputer(double lookahead);
+    SimpleZoneAlertComputer(int64_t lookahead);
 
     virtual ~SimpleZoneAlertComputer();
 

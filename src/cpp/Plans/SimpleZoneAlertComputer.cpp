@@ -18,7 +18,7 @@ namespace zoneAlert {
 using std::shared_ptr;
 using std::make_shared;
 
-SimpleZoneAlertComputer::SimpleZoneAlertComputer(double lookahead) : ZoneAlertComputer(),
+SimpleZoneAlertComputer::SimpleZoneAlertComputer(int64_t lookahead) : ZoneAlertComputer(),
     lookaheadTime(lookahead),
     airVehicleConfigs(),
     boundaries(),
