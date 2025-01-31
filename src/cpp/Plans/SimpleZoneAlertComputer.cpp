@@ -544,7 +544,10 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* p
             wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
             vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
 
-            //South/West Cornernew ImminentZoneViolation()
+            //South/West Corner
+            wayRotated.m_north_m = -pRectangle->getHeight() / 2.0;
+            wayRotated.m_east_m = -pRectangle->getWidth() / 2.0;
+            wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
             vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
 
             //South/East Corner

@@ -58,7 +58,7 @@ public:
      * @brief Add a declared zone to the analyzer
      * 
      * @param zone The AbstractZone that has been declared
-     * @param keepIn whether the zone was sent as a KeenIn or KeepOut zones
+     * @param keepIn whether the zone was sent as a KeepIn or KeepOut zones
      * @return whether the zone was added succesfully
      * 
      * @post if it returns true, then it will zone alert, otherwise it is not stored for zone alerts.

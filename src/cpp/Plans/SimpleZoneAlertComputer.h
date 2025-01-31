@@ -153,6 +153,21 @@ protected:
     /** @brief A code function borrowed from RoutePlannerVisibilityService class to convert
      * received lat,long, alt coordinates into local planar x,y,z coords
      * 
+     * ASSUMES: All zones sent to this service over the lifetime of the OpenUxAS execution
+     * have geometry close enough to the first declared lat/long of the first encountered
+     * zone location3D such that flatearth geomtry is acceptable.
+     * 
+     * POSTCONDITION: The first zone position to be passed into this function during the
+     * execution of the ZoneAlert service is at the origin of flat earth coordinates for the 
+     * remainder of the execution lifetime of the service.
+     * 
+     * ERROR: Circular zones inscribe a polygon within the circle. This is acecptable for keep-in zones
+     * but unacceptable for keep-out zones, and the polygonal boundary will be smaller and internal to the 
+     * initially declared circular keep out zone
+     * 
+     *   ERROR's FAULT: This function only inscribes a polygon within the circle, rather than with edges
+     * touching the circle, even if the zone type is a keep-out zone 
+     *    
      * TODO: It is bad that this code is copied from router planner visibility service. 
      * Refactor so that the code is a single source static function somwwhere.     * 
     */
