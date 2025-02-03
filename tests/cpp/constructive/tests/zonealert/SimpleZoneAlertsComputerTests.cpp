@@ -380,6 +380,15 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZoneRectangles) 
 
 }
 
+/** Test Rectangular Zone Translation Relative to First Declared Zone Point */
+
+/** Test Rectangular Geometry Matches that of RoutePlannerVisibilityService before VisbilityGraph creation 
+ * 
+ * TODO: When do we think about equivalence with padding? 
+ * NOTE: BOTH OUTPUT BIND POITNS IN PLANE WITHOUT PADDING. THAT IS APPLIED LATER IN ROUTE PLANNER
+ */
+
+
 
 Location3D * loc(double latitude, double longitude, double altitude =0.0) {
 
@@ -443,11 +452,12 @@ AbstractZone * makePolygonZone(int id, bool keepIn,
 }
 
 
-/** CHecks basic  Geometry for Polygon Zones 
+/** Checks Basic Geometry for Polygon Zones
+ *  
  * CLAIM: Polygon zones are correctly computed by bFindPointsForAbstractGeometry
  * near 0 latitude and longitude, and zone type, zone padding and altitude 
  * information of any kind does not affect the resulting output geometry.
- * DEFINTION: Correct computation is points on a horizontal plane oriented north and east
+ * DEFINITION: Correct computation is points on a horizontal plane oriented north and east
  *   with plane-defining vector being the radial vector from the earth at the first 
  *   latitude and longitude of the first computed polygon's vertices.
  * RATIONALE: A few tests with simple computations near the equator and Grenwich line
@@ -458,7 +468,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
     
     n_FrameworkLib::V_POSITION_t pointVector;
     
-    //--check resulting cartesian geometry of an unrotated rectangle at 0 Lat, 0 Long
+    //--expect a basic triangle with the relative coordinates based on a simple flat projection to earth
 
     double deg1 = 0.001;
 
@@ -472,8 +482,6 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
     bool result = zacPtr->bFindPointsForAbstractGeometry(triangleZone1->getBoundary(),
                                 pointVector);
     EXPECT_TRUE(result);
-
-    //--expect a basic triangle with the relative coordinates based on a simple flat projection to earth
 
     double metersPerDegreeLongitudeAtEquator = 111300; // source: internet :p
     double metersPerDegreeLatitudeAtEquator = 111100; // source: internet :p
@@ -499,86 +507,136 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
 
     delete triangleZone1;
 
+    pointVector.clear();
+
+
+    //-----test a relatively small, globe-projected pentagram as it appears on a plane near the equator.
+
+    double del = (2.0*M_PI)/5.0;
+    double st = (1.0/4.0)*(2.0*M_PI);
+
+    AbstractZone * pentaZone2 = (KeepInZone*) makePolygonZone(1, false, // zone 1 is keep out
+                    verts(5, 
+                      loc(deg1*sin(st),         deg1*cos(st), 1000), 
+                      loc(deg1*sin(st+del),     deg1*cos(st+del), 1000), 
+                      loc(deg1*sin(st+(2*del)), deg1*cos(st+(2*del)), 1000),
+                      loc(deg1*sin(st+(3*del)), deg1*cos(st+(3*del)), 1000),
+                      loc(deg1*sin(st+(4*del)), deg1*cos(st+(4*del)), 1000)
+                     ),
+                    20.0,             // padding
+                    8000.0, 10000.0,  // zone altitudes
+                    250.0, 26542.0,   // start and end times
+                    std::vector<int> {1, 2});
+
+    result = zacPtr->bFindPointsForAbstractGeometry(pentaZone2->getBoundary(),
+                                pointVector);
+    EXPECT_TRUE(result);
     
+    EXPECT_EQ(5, pointVector.size());
+
+    EXPECT_NEAR(X*cos(st), pointVector[0].m_east_m, roughEstimate);
+    EXPECT_NEAR(Y*sin(st), pointVector[0].m_north_m, roughEstimate);
+    EXPECT_NEAR(0, pointVector[0].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR(X*cos(st+del), pointVector[1].m_east_m, roughEstimate);
+    EXPECT_NEAR(Y*sin(st+del), pointVector[1].m_north_m, roughEstimate);
+    EXPECT_NEAR(0, pointVector[1].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR(X*cos(st+(2*del)), pointVector[2].m_east_m, roughEstimate);
+    EXPECT_NEAR(Y*sin(st+(2*del)), pointVector[2].m_north_m, roughEstimate);
+    EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR(X*cos(st+(3*del)), pointVector[3].m_east_m, roughEstimate);
+    EXPECT_NEAR(Y*sin(st+(3*del)), pointVector[3].m_north_m, roughEstimate);
+    EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR(X*cos(st+(4*del)), pointVector[4].m_east_m, roughEstimate);
+    EXPECT_NEAR(Y*sin(st+(4*del)), pointVector[4].m_north_m, roughEstimate);
+    EXPECT_NEAR(0, pointVector[4].m_altitude_m, acceptedError); // expect 0 altitude
 
 }
 
-/**
+/** Test Polygonal Zone Translation Relative to First Declared Zone Point */
+
+/** Test Polygonal Geometry Matches that of RoutePlannerVisibilityService before VisbilityGraph creation 
  * 
- * Note: This is an example of true unit test. The functionality of translating poitns from abstract
- * geometry is mocked so that we can see the expected behavior of storing polygon cartesian points in the addZone function
- * In many cases, we do not always apply true unit testing in compositional testing. For rapid software development, 
- * we apply it when it is useful to understand compositional correctness, but not merely to show local functional
- * correctness, unless local function is sufficiently complex that there is a sufficient risk of bugs. 
- 
-TEST(SimpleZoneAlertComputer, addZon    EXPECT_NEAR(300/2, pointVector[0].m_east_m, acceptedError);
-    EXPECT_NEAR(500/2, pointVector[0].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[0].m_altitude_m, acceptedError); // expect 0 altitude
-
-    EXPECT_NEAR(-300/2, pointVector[1].m_east_m, acceptedError);
-    EXPECT_NEAR(500/2, pointVector[1].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[1].m_altitude_m, acceptedError); // expect 0 altitude
-
-    EXPECT_NEAR(-300/2, pointVector[2].m_east_m, acceptedError);
-    EXPECT_NEAR(-500/2, pointVector[2].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
-
-    EXPECT_NEAR(300/2, pointVector[3].m_east_m, acceptedError);
-    EXPECT_NEAR(-500/2, pointVector[3].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
-                        
-/**
- * Note: This is an example of true unit test. The functionality of translating poitns from abstract
- * geometry is mocked so that we can see the expected behavior of replacing polygon points 
- * in the addZone function
-/** Requirement: SR-4-3-2
- *  Satisfaction Rationale: The function satisfies the claimed requirement as follows: 
- * The function takes its input zone information and converts it from Location3D to cartesian
- * coordinates. The function utilzies the same code as the RoutePlanningServices to compute this
- * cartesian space. It follows the same assumptions of use of that code, namely that a conversion
- * object is created for each declared zone and used to convert that zones location3D from the 
- * assumed lat and longitide degrees and altitudes to a polygon at zero altitude with north and 
- * east position in meters relative to the first declared point. We understand the semantics of that first declared point, see below. The function appears to be creating the correct transformed
- * polygons in Cartesian Space, as d    EXPECT_NEAR(300/2, pointVector[0].m_east_m, acceptedError);
-    EXPECT_NEAR(500/2, pointVector[0].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[0].m_altitude_m, acceptedError); // expect 0 altitude
-
-    EXPECT_NEAR(-300/2, pointVector[1].m_east_m, acceptedError);
-    EXPECT_NEAR(500/2, pointVector[1].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[1].m_altitude_m, acceptedError); // expect 0 altitude
-
-    EXPECT_NEAR(-300/2, pointVector[2].m_east_m, acceptedError);
-    EXPECT_NEAR(-500/2, pointVector[2].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
-
-    EXPECT_NEAR(300/2, pointVector[3].m_east_m, acceptedError);
-    EXPECT_NEAR(-500/2, pointVector[3].m_north_m, acceptedError);
-    EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
-emonstrated for simple representative cases that cover all of the applied mathematical cases of the function within defined domains. Exceptional cases are 
- * known to be disallowed and included in interface constraints (preconditions). In addition, 
- * this correct transformation is equivalent to the same polygons as generated in the RoutePlanning
- * services code. This is demonstrated by direct comparison for various test cases both simple and more arbitrary. Furthermore, examination of the use of code shows that further variation is extremely unlikely for use cases (likely equivalent outside strange use cases shoudl not be included.) The resulting geometry is stored properly by the addZone function. Therefore, we conclude that the addZone function is correctly transforming declared zones and storing them in 
- * satisfaction of SR-4-3-2, namely storing the correct Cartesian planar form for each declared zone in an equivalent space to that of RoutePlanning by RoutePlannerVisilibityService.
- *
- * Assumption: Declared zones are semantically anticipatable within conventions (classical irregular polygons, non degenerate, limited < 100 vertices, etc.)
+ * TODO: When do we think about equivalence with padding? 
+ * NOTE: BOTH OUTPUT BIND POITNS IN PLANE WITHOUT PADDING. THAT IS APPLIED LATER IN ROUTE PLANNER
  */
-/*
-TEST(SimpleZoneAlertComputer, addZoneReplacesZonePolygonPointsCorrectly) {
-
-    //MOCK A ZONE COMPUTER WITH bFindsPointsForAbstractGeometry sending in a fixed set of points_iterator
-
-}
-*/
 
 
 
-/*  Claim: The function stores and maintains all zone information for any semantically legitimate zone passed to it in its parameters.
+/** Test correct geometry for cicular zones projected onto the x-y horizontal plane
+ * A. Polygon with all circle inside the polygon if keep-out, Polygon inside the circle if it is keep-in 
+ *    (conservative polygonal estimate for safety semantics)
  * 
- 
-//TEST_F(BasicZoneAlertComputerSetup, addsCorrectBasicZone) {
-//
-    //MOCK A ZONE COMPUTER WITH bFindsPointsForAbstractGeometry sending in a fixed set points_iterator
+ * PROBLEMSFORESEEN: THIS WILL FAIL FOR KEEP-OUT ZONES AS IT ALWAYS DOES INTERNAL POLYGON (VERTICES ON THE CIRCLE)
+ *  FOR ALL ZONE TYPES. THIS SHOULD HAVE A TEST WE SHOW FAILS AND REPRESENTS A BUG IN THE CODE BOTH FOR THIS
+ *  AND ROUTEPLANNINGVISIBILITYSERVICE. THIS IS AN EXMAPLE OF TDD USAGE TO SHOW FAILING PROPERTY OF CURRENT SYSTEM
+ * 
+ * NOTE: We discovered this bug while reverse engineering safety requirments for the RoutePlanningVisibilityService in a 
+ * previous sub-project for ASTRA or CRDiNAL (forget which)
+ */
 
-//}
+/** Test Circular Translation Relative to First Declared Zone Point */
+
+/** Test Circular Geometry Matches that of RoutePlannerVisibilityService before VisbilityGraph creation 
+ * 
+ * TODO: When do we think about equivalence with padding? 
+ * NOTE: BOTH OUTPUT BIND POITNS IN PLANE WITHOUT PADDING. THAT IS APPLIED LATER IN ROUTE PLANNER
+ */
+
+/** Test Mixed Geometry Scene Example Equivalence with RoutePlanner BindPoints
+ * 
+ * TODO: When do we think about equivalence with padding? 
+ * NOTE: BOTH OUTPUT BIND POITNS IN PLANE WITHOUT PADDING. THAT IS APPLIED LATER IN ROUTE PLANNER
+ * 
+ */
+
+
+
+/** CLAIM: After ALL zones are declared, and before Zone Alerting is required, all zones are successfully
+ * merged with overlapping zones of the same type (keep-in or keep-out). The result is a set of merged keep in zones
+ * generated from the original zones calcualted for the cartesian plan, and likewise for keep-out zones.
+ * 
+ * IF WE ARE USING THE Existing ROUTE Planner Visilibity Service merge code, resulting zones should be equivalent!
+ * IF WE ARE NOT, THEN Existing ROUTE PLANNER Visilibity Service merge zones should not be equjivalent but similar.
+ * 
+ * PROBLEM: ORDER OF VERTEX AND POLYGONS ENTERED INTO MERGING EFFECTS RESULTS FOR OUR ALGORITHM. IT MIGHT ALSO FOR 
+ * THE VISILIBITY ONE, SO MERGE RESULTS MIGHT NOT BE IDENTICAL IF WE MERGE insert VERTICES / ZONES IN A DIFFERENT ORDER
+ * 
+ * PROBLEM: CAN SET MEMBERS BE TOUCHING? 
+ * 
+ * RATIONALE: TBD, you get the gist above. TEST CASES WOULD BE BELOW
+ * 
+ */
+
+
+/** CLAIM: THE ROUTE PLANNING SERVICE EMITS THE SET OF MERGED ZONES WITH NEW IDS , ETC SEE REQUIREMENTS */
+
+/** CLAIM: THE ROUTE PLANNING SERVICE REPORTS WHEN A VEHICLE IS IN CURRENT CONFLICT WITH ANY GIVEN MERGED ZONE */
+
+/** CLAIM: Requiremnt for Keep-Out existing violation is satisfied */
+
+/** CLAIM: Requiremnt for Keep-In existing violation is satisfied */
+
+/** CLAIM: Requirement about Imminetnt violation reporting */
+
+/** CLAIM: Requirement about Keep-out imminent violation reporting*/
+
+/** CLAIM: Requirement about Keep-in imminent violation reporting*/
+
+
+/** CLAIM: THE Route Planning service correctly reports existing and imminent zone alerts that match route planning zone geometry 
+ * and only declares if they should occur and never when they aren't semantically occuring.
+ * 
+ * RATIONALE: SAME STORED GEOMETRY, AND CORRECT EXISTING AND IMMINENT CALCUALTIONS WITH CORRECT REPORTING HOOKS
+ * TESTS ABOVE SUPPORT. THIS LIKELY EXISTS AT ARGUMENT LEVEL
+ * 
+ * ALSO SCENARIOS ARE RUN AS DIRECT EVIDENCE SUPPORTING THIS FOR VARIOUS CASES AND CORNER CASES
+ *   FOR EXISTING AND IMMINENT DETECTIONS RELATIVE TO ROUTES PLANNED ON SAME ANNOUNCED ZONES
+ * 
+ * THIS SHOULD BE A REQUIREMENT IN THE HIERARCH HIGH UP
+ * THIS ARGUMENT SHOULD LIKELY BE FAR UP THE GSN AS THIS IS THE ESSENTIAL CORRECTNESS ARG.
+ * 
 */
-
