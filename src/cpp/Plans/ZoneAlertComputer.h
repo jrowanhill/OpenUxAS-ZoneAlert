@@ -66,6 +66,7 @@ public:
      * @post Always deletes a previously declared zone if it returns false
      * 
      * @requirements SR-4-3-2
+     * @requirements SR-4-3-2-1
      */
     virtual bool addZone(shared_ptr<AbstractZone> zonePtr, bool keepIn) = 0;
 
@@ -75,7 +76,7 @@ public:
      * @param vehicleConfigPtr A pointer to the vehicle configuration to report
      * @return whether the vehicle was added succesfully
      * 
-     * @requirements SR-5-3-1-2
+     * @requirements SR-5-3-2
      */
     virtual bool addVehicle(shared_ptr<AirVehicleConfiguration> vehicleConfig) = 0;
 
@@ -86,9 +87,9 @@ public:
      * @post The zone alert computer is ready to detect imminent zone collisions from reported vehicle states or
      * null or empty vector if none
      * 
-     * @requirements  SR-6-1-3, SR-6-2, SR-6-2-1, SR-6-2-2, SR-6-2-3, SR-6-2-3-1, SR-6-2-3-2,
-     *                SR-6-2-3-3, SR-6-2-3-4, SR-6-2-4, SR-6-3, SR-6-4-1 SR-6-4-2, SR-6-4-2-1,
-     *                SR-6-4-2-2, SR-6-4-2-3, SR-9
+     * @requirements  SR-6-2, SR-6-2-1, SR-6-2-2, SR-6-2-2-1, SR-6-2-2-2, SR-6-2-2-3, SR-6-2-2-4, SR-6-2-2-5, 
+     *                SR-6-3, SR-6-3-1, SR-6-3-2, SR-6-3-3, SR-6-3-3-1, SR-6-3-3-2, SR-6-3-3-3,
+     *                SR-9
      */
     virtual vector<shared_ptr<ProcessedZone>> * mergeZones() = 0;
 
@@ -158,8 +159,8 @@ protected:
 private:
 
     /**
-     * @brief Convert degrees to radiansusing std::stringstream;
-uble precision) equivalent value in radians
+     * @brief Convert degrees to radians
+     * 
      */
     static double d2r(double d) {
         return (d / 180.0) * ((double) M_PI);

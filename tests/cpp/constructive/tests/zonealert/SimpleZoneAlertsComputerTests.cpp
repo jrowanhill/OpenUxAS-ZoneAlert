@@ -125,6 +125,12 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
 
 /** Requirement: SR-4-3-2
  *  Satisfaction Rationale: The function satisfies the claimed requirement as follows: 
+ * 
+ * We know what the semantics are in the RoutePlanningVisbilityService as we apply the same code
+ * and studied it.
+ * 
+ * We the 
+ * 
  * The function takes its input zone information and converts it from Location3D to cartesian
  * coordinates. The function utilzies the same code as the RoutePlanningServices to compute this
  * cartesian space. It follows the same assumptions of use of that code, namely that a conversion
@@ -140,6 +146,63 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
  * Assumption: Declared zones are semantically anticipatable within conventions (classical irregular polygons, non degenerate, limited < 100 vertices, etc.)
  */
 
+/** Requirement: SR-4-3-2-1
+ * 
+ * RATIONALE:
+ * CLAIM: 1. RoutePLannerVisibiltiyService transforms geometry to the plane with a clear method, removes duplicate vertices in some
+ * known order if generated polygon has any two vertices closer than 1 meter in separation, then checks for polygon simplicity of the 
+ * polygon with vertices of closer than 1 meter removed, where the polygon considers two points equivalent that are 
+ * less than 1*10^-8 meters apart. If any such polygon encountered is not simple, the entire operating zone of regions is rejected.
+ * It then merges keep out zones and simultaneously expands them if they have positive padding distances declared with them. 
+ * It then merges all keep in zones but does not perform any shrinking or expansion of them, even if a padding value is provided with a given 
+ * zone declaration. It then eliminates all duplicate vertices that are within 1 meter of eachother for all resulting
+ * zone polygons and stores the result to generate the visibility graph for routing.
+ * 
+ * EVIDENCE: 1.1. Direct readthrough of code by engineers followed by signed agreement. 
+ * CLAIM: 2. Zone Alert does the same as the above
+ * STRATEGY: 2: Show that ZoneAlert performs the steps above in the same order with the same functions
+ * CLAIM: 2.1. The RoutePlannerVisbilityService converts a declared zone into a VisibilityGraph::CPolygon, this
+ * stores the declared zone geometry into polygon vertices, along with storage of the zones type and 
+ * padding.
+ * EVIDENCE: 2.1.1. Review and agrement by at least one other engineer with signoff at time of this work
+ * CLAIM: 2.2. The SimpleZoneAlertComputer does the equivalent work by converting the declared zone geometry to 
+ * points in the x-y plane using the same computational function code, resulting in the same function.
+ *   RATIONALE: 2.2
+ *      CLAIM: 2.2.1. The code was copied directly
+ *      ASSUMPTION: 2.2.1. RoutePlannerVisibilityService code is not changed after  claim 1
+ *      CLAIM: 2.2.2. The functionality of the code is to produce polygons as specified in that function from the 
+ *        abstract geometry types of circle, rectangle, and polygon, with geometry converted into the x-y plane in meter positions
+ *        relative to an origin that is at the first declared lat/long coordinate for the first declared zone.
+ *         STRATEGY: 2.2.2. Show for circle, rectangle, and polygon declared zone types, each
+ *            CLAIM: 2.2.2.1: The functionality to produce polygons from a declared circle zone is equivalent to that
+ *                     the RoutePlannerVisibilityService
+ *              STRATEGY: 2.2.2.1. Show correct position and radius for being first declared zone and not for various positions and radii
+ *                  JUSTIFICATION: 2.2.2.1. These are the only variables for a circle zone translation's behavior
+ *                     CLAIM: 2.2.2.1.1: When a circle is the first zone, then the origin is x and radius results in inscribed 
+ *                        circle of the given radius for x points starting at 0 radians, and for every x radians
+ *                     CLAIM: 2.2.2.1.2: When a circle is not the first zone, its center is realtive to the origin based on their
+ *                        latitudes and longitidues usiung the samne projection logic
+ *                          EVIDENCE: Uses equivalent code (calls same code)
+ *                     CLAIM: 2.2.2.1.3: A declared circle has the correct radius for generated points on the circle from its center and the x-y planes origin
+ *                          EVIDENCE: 2.2.2.1.3.1: Test cases
+*             CLAIM: 2.2.2.2: the functionality to produce polygons from declared rectangle zones ...
+
+             
+ *                              
+ *                     
+ *            CLAIM: 2.2.2.2: 
+ * CLAIM: 2. The Route checks for degeneracy of zones and rejects all zones if one or more is degenerate
+ *      EVIDENCE: READER INSPECTION
+ *      EVIDENCE: SIGN OFF oF MORE THAN ONE ENGINEER
+ * CLAIM  3. The Zone AlertService also rejects all zones if one or more is dengerate
+ *   FAILURE: Degenerate zones are produced and stored as zones where as DEGNERATE ZONES WILL NOT BE DECLARED FOR THE USE CASES, as such zones are disregarded by the 
+ *    ROUTEPLANNERVISIBILITY SERVICE BUT ALLOWED BY THE ZONE ALERTING SERVICE
+ *   EVIDENCE: TEST CASE below
+ * CLAIM 4. THe RoutePlannerVisibilityService checks that all zones are not irregular or dengerate with an 
+ *   epsilon separtion of 1 * 10 ^-8 for vertex separation
+ *    TODO: check if also true for non-same points on all line segments
+ * CLAIM 5: The 
+ */
 
 
 /** Class Stub to get at Protected Memebrs of SimpleZoneAlertComputer
@@ -192,7 +255,7 @@ AbstractZone * makeRectangleZone(int id, bool keepIn,
     return zone;
 }
 
-/** Zone testing afrl::cmasi::Alactly the same as RoutePlanner.
+/** Zone testing afrl::cmasi:Exactly the same as RoutePlanner.
  */
 class BasicZoneChecks  : public testing::Test {
     
@@ -630,7 +693,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
 /** CLAIM: THE Route Planning service correctly reports existing and imminent zone alerts that match route planning zone geometry 
  * and only declares if they should occur and never when they aren't semantically occuring.
  * 
- * RATIONALE: SAME STORED GEOMETRY, AND CORRECT EXISTING AND IMMINENT CALCUALTIONS WITH CORRECT REPORTING HOOKS
+ * RATIONALE: SAME STORED GEOMETRY, AND CORRECT EXISTING AND IMMINENT CALCULATIONS WITH CORRECT REPORTING HOOKS
  * TESTS ABOVE SUPPORT. THIS LIKELY EXISTS AT ARGUMENT LEVEL
  * 
  * ALSO SCENARIOS ARE RUN AS DIRECT EVIDENCE SUPPORTING THIS FOR VARIOUS CASES AND CORNER CASES

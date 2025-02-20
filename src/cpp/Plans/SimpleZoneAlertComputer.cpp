@@ -91,8 +91,6 @@ bool SimpleZoneAlertComputer::addVehicle(shared_ptr<AirVehicleConfiguration> veh
 
 vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
 
-    bool isSuccess = true;
-
     // walk all polygons and add them to the visibility graph
     // adding them to the visibility graph
     for (auto iter = boundaries.begin(); iter != boundaries.end(); iter++) {
@@ -103,14 +101,17 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
                         iter->second->getPadding() );
             if (errPolygon != n_FrameworkLib::CVisibilityGraph::errNoError)
             {
-                isSuccess = false;
-                break;
+                return NULL;
             }
     }
 
     // finalize all of the polygons in the visibility graph
     // this makes sure they are sound and grows/shrinks them by their padding
-    visibilityGraph.errFinalizePolygons();
+    auto errPolygon = visibilityGraph.errFinalizePolygons();
+
+    if (errPolygon != n_FrameworkLib::CVisibilityGraph::errNoError) {
+        return NULL;
+    }
 
     // Clear out old data
     /* @todo : Check reference count logistics for any lost data
