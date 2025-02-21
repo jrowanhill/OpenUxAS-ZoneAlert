@@ -6,6 +6,7 @@
 #include <gtest/gtest.h> 
 
 #include "SimpleZoneAlertComputer.h"
+#include "RoutePlannerVisibilityService.h"
 #include "afrl/cmasi/KeepInZone.h"
 #include "afrl/cmasi/KeepOutZone.h"
 #include "afrl/cmasi/Rectangle.h"
@@ -207,12 +208,12 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
 
 /** Class Stub to get at Protected Memebrs of SimpleZoneAlertComputer
  */
-class AccessibleSimpleZoneAlertComputer : public SimpleZoneAlertComputer 
+class AccessibleRoutePlanner : public uxas::service::RoutePlannerVisibilityService
 {
     public:
-        using SimpleZoneAlertComputer::bFindPointsForAbstractGeometry;
+        using uxas::service::RoutePlannerVisibilityService::bFindPointsForAbstractGeometry;
 
-        AccessibleSimpleZoneAlertComputer(int64_t lookahead) : SimpleZoneAlertComputer(lookahead) {}
+        AccessibleRoutePlanner() : uxas::service::RoutePlannerVisibilityService() {}
 };
 
 AbstractZone * makeRectangleZone(int id, bool keepIn, 
@@ -266,7 +267,7 @@ class BasicZoneChecks  : public testing::Test {
 
     void  SetUp() override {
         // setup square zone
-        zacPtr = new AccessibleSimpleZoneAlertComputer(5000);
+        //arpPtr = new AccessibleRoutePlanner();
 
 
         // the same rectangle but moves slightly
@@ -283,12 +284,12 @@ class BasicZoneChecks  : public testing::Test {
     };
 
     void TearDown() override {
-        delete zacPtr;
+        //delete arpPtr;
         //delete rectKeepInZone1; 
         //delete rectKeepInZone2;
     };
 
-    AccessibleSimpleZoneAlertComputer *zacPtr;
+    //AccessibleRoutePlanner *arpPtr;
 
     KeepInZone *rectKeepInZone1;
     KeepInZone *rectKeepInZone2;
@@ -321,7 +322,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZoneRectangles) 
                     250.0, 26542.0,   // start and end times
                     std::vector<int> {1, 2});
 
-    bool result = zacPtr->bFindPointsForAbstractGeometry(rectKeepInZone1->getBoundary(),
+    bool result = AccessibleRoutePlanner::bFindPointsForAbstractGeometry(rectKeepInZone1->getBoundary(),
                                 pointVector);
     EXPECT_TRUE(result);
 
@@ -357,7 +358,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZoneRectangles) 
 
     pointVector.clear();
 
-    result = zacPtr->bFindPointsForAbstractGeometry(rectKeepOutZone2->getBoundary(),
+    result = AccessibleRoutePlanner::bFindPointsForAbstractGeometry(rectKeepOutZone2->getBoundary(),
                                 pointVector);
 
     // NOW TEST THE ROTATED RECTANGLE ROTATED CLOCKWISE by 90 degrees
@@ -400,7 +401,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZoneRectangles) 
 
     pointVector.clear();
 
-    result = zacPtr->bFindPointsForAbstractGeometry(rectKeepInZone3->getBoundary(),
+    result = AccessibleRoutePlanner::bFindPointsForAbstractGeometry(rectKeepInZone3->getBoundary(),
                                 pointVector);
 
     // NOW TEST A DISPLACED RECTANGLE Given that the Cartesian coordinates are centered on the 
@@ -542,7 +543,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
                     250.0, 26542.0,   // start and end times
                     std::vector<int> {1, 2});
 
-    bool result = zacPtr->bFindPointsForAbstractGeometry(triangleZone1->getBoundary(),
+    bool result = AccessibleRoutePlanner::bFindPointsForAbstractGeometry(triangleZone1->getBoundary(),
                                 pointVector);
     EXPECT_TRUE(result);
 
@@ -591,7 +592,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
                     250.0, 26542.0,   // start and end times
                     std::vector<int> {1, 2});
 
-    result = zacPtr->bFindPointsForAbstractGeometry(pentaZone2->getBoundary(),
+    result = AccessibleRoutePlanner::bFindPointsForAbstractGeometry(pentaZone2->getBoundary(),
                                 pointVector);
     EXPECT_TRUE(result);
     

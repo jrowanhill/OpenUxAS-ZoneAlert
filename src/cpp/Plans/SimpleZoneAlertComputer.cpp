@@ -7,6 +7,8 @@
 #include <afrl/cmasi/Polygon.h>
 #include <afrl/cmasi/Rectangle.h>
 
+#include "RoutePlannerVisibilityService.h"
+
 #define CIRCLE_BOUNDARY_INCREMENT (n_Const::c_Convert::dPiO10())
 
 using namespace n_FrameworkLib;
@@ -40,7 +42,8 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<AbstractZone> zonePtr, bool kee
     // Make a variable to build boundary points
     // And call function on RoutePlannerVisibility Service to convert zone geometry to flat earch x-y-z coordinates
     V_POSITION_t boundaryPoints; //used to store the boundary points  while we convert the,   
-    bool isSuccess = bFindPointsForAbstractGeometry(zonePtr->getBoundary(), boundaryPoints);
+    
+    bool isSuccess = uxas::service::RoutePlannerVisibilityService::bFindPointsForAbstractGeometry(zonePtr->getBoundary(), boundaryPoints);
     
     if (isSuccess) {
         // store the XY-plane polygonal boundary of the zone (this copies the boundaryPoints in an internal record)
@@ -475,7 +478,7 @@ inline int64_t SimpleZoneAlertComputer::computeTimeToPosition(CPosition startPos
 
 }
 
-
+/**
 bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints) {
     
     bool isSuccess(true);
@@ -563,7 +566,7 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* p
     }
     return (isSuccess);
 }
-
+**/
 
 inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
                 int zoneID, bool isKeepInZone, 

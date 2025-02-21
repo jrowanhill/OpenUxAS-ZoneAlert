@@ -171,8 +171,8 @@ protected:
      * TODO: It is bad that this code is copied from router planner visibility service. 
      * Refactor so that the code is a single source static function somwwhere.     * 
     */
-    bool bFindPointsForAbstractGeometry(AbstractGeometry* pAbstractGeometry, 
-        n_FrameworkLib::V_POSITION_t& vposBoundaryPoints);
+  //  bool bFindPointsForAbstractGeometry(AbstractGeometry* pAbstractGeometry, 
+  //      n_FrameworkLib::V_POSITION_t& vposBoundaryPoints);
 
 
 
