@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1954cdc3436"
+        color="#ffcccc"
+        name="HL-1-3-1">
+      The zone geometry applied is sufficiently correct and accurate.
+
+      <s
+          id="__gsn__1954cdd9d14"
+          color="#ffcccc"
+          name="Strategy">
+        design and testing
+
+        <g
+            id="__gsn__1954cddaa68"
+            color="#ffcccc"
+            name="Algorithmic Correctness">
+          The algorithm used to construct a representation of declared zones as polygons on an Earth-tangent plane produces results that are complete, correct, and sufficiently accurate.
+
+          <s
+              id="__gsn__1954d0384e8"
+              color="#ffcccc"
+              name="Strategy">
+            By assuring key steps of the algorithm
+
+            <c
+                id="__gsn__1954d045c5a"
+                color="#ffffff"
+                name="Algorithm">
+              The algorithm consists of three steps: 1) Selection of a plane on which to represent zones, 2) computation and storage of zones as polygons on the selected plane, and 3) checking that zones meet minimum geometry requirements, expanding keep-out zones, and merging zones of the same type into a reduced set of polygons.
+            </c>
+
+            <g
+                id="__gsn__1954d03fb96"
+                color="#ffcccc"
+                name="Selection of Plane">
+              The algorithm selects an Earth tangent plane in a manner that is correct, complete, and useful for sufficiently accurate zone representation.
+
+              <s
+                  id="__gsn__1954d132919"
+                  color="#ffcccc"
+                  name="Strategy">
+                argue each claimed property
+
+                <c
+                    id="__gsn__1954d23ac67"
+                    color="#ffffff"
+                    name="Intention">
+                  The plane is defined as having its origin at the first lat/long from a zone declaration that is converted with the x axis aligned with positive longitude and the y axis aligned with positive latitude. All other lat/long competed from the declared zone and further declared zones are projected on this tangent plane.
+                </c>
+
+                <g
+                    id="__gsn__1954d13a8a1"
+                    color="#ffffff"
+                    name="Complete">
+                  An origin and orientation of a plane tangent to the earth is always deliberately selected when converting all zones.
+
+                  <e
+                      id="__gsn__1954d16f79a"
+                      color="#ffffff"
+                      name="Code Inspection">
+                    Inspeciton of the bFindPointsForAbstractGeometry function shows that
+                  </e>
+
+                  <e
+                      id="__gsn__1954d16feef"
+                      name="Evidence">
+                    default text
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1954d133257"
+                    color="#ffffff"
+                    name="Correct">
+                  The origin and orientation of the plane is computed as intended.
+
+                  <e
+                      id="__gsn__1954d2374f4"
+                      color="#ffffff"
+                      name="Code Inspection">
+                    Inspection of the code shows that the first encountered lat/long to convert to planar coordinates is stored and maintained as origin on the plane (0,0) and the computational code sets relative coordinates for later converted lat/long as pure y/x coordinate computations, respectively.
+                  </e>
+
+                  <e
+                      id="__gsn__1954d23779a"
+                      color="#ffffff"
+                      name="Unit Tests">
+                    Unit tests of planar computation show that the plane origin is computed by its first received lat/long.
+                  </e>
+
+                  <e
+                      id="__gsn__1954d263ab3"
+                      color="#ffffff"
+                      name="Unit Tests">
+                    Unit test of planar computation show that relative to the defined origin, latitude is represented as y coordinate value on the tangent plane from the origin, and x coordinate as longitude on the tangent plane from the origin.
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1954d133520"
+                    color="#ffcccc"
+                    name="Sufficiently Accurate">
+                  The intended and computed origin and orientation of the plane is sufficiently useful for accurate zone representation on the plane.
+
+                  <e
+                      id="__gsn__1954d0758a7"
+                      color="#ffcccc"
+                      name="CONTRAINDICATION">
+                    The selection of the first received lat/long of a zone as the origin of the plane is not a great way to choose the plane. It can result in the origin being 'off to the side'.
+                  </e>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__1954d03fe5f"
+                color="#ffcccc"
+                name="Computation of Polygons on the Plane">
+              The algorithm computes each declared zone as a polygon on the selected Earth-tangent plane correctly and with sufficient accuracy.
+
+              <s
+                  id="__gsn__1954d289c7a"
+                  color="#ffcccc"
+                  name="Strategy">
+                by each claimed property
+
+                <g
+                    id="__gsn__1954d28a1fb"
+                    color="#ffffff"
+                    name="Complete Zone Computation">
+                  All received zone declarations are converted into a polygonal zone representation on the chosen plane.
+
+                  <e
+                      id="__gsn__1954d2c611d"
+                      color="#ffffff"
+                      name="Source Inspection">
+                    Inspection of the source code shows that each zone declaration message triggers a handler to call bFindPointsForAbstractGeometry using the declared zone's abstract geometry as input, and from this constructs a CBoundary and CPolgon storing the resulting zone id, tpye (keep in or out) and polygonal representation of the zone on the selected plane.
+                  </e>
+
+                  <e
+                      id="__gsn__1954d2c62f6"
+                      color="#cdcdcd"
+                      name="Unit Tests">
+                    Unit tests show that each handled response to a Zone Declaration message results in construction of a CBoundary and Cpolygon with the declared zone's id and keep-in boolean status (keep-in or out), as well as a polygon representation.
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1954d28a5d6"
+                    color="#ffcccc"
+                    name="Accurate and Correct Zone Computation">
+                  All zones are converted into polygonal zone representations as intended with sufficient accuracy.
+
+                  <s
+                      id="__gsn__1954d34d1d2"
+                      color="#ffcccc"
+                      name="Strategy">
+                    By correct computation of basic data and polygonal zone representation.
+
+                    <g
+                        id="__gsn__1954d3520d7"
+                        color="#ffffff"
+                        name="Basic Data Computation">
+                      Zones are correctly stored by and with their id, and also correctly store whether they are keep-in / keep-out as declared, along with other data such as zone padding.
+
+                      <e
+                          id="__gsn__1954d361aea"
+                          color="#cdcdcd"
+                          name="Unit Tests">
+                        Unit tests show correct storage of zones by and with their id and with their correct keep-in or keep-out zone designation, along with data such as padding.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__1954d352333"
+                        color="#ffcccc"
+                        name="Polygonal Representation">
+                      Zones are correctly and sufficiently accurately represented as polygons on the target Earth-tangent plane as projected from their Abstract Geometries as radially curved shapes on the earth's surface.
+
+                      <s
+                          id="__gsn__1954d316a74"
+                          color="#ffcccc"
+                          name="Strategy">
+                        by intended type conversions
+
+                        <c
+                            id="__gsn__1954d31b88a"
+                            color="#ffffff"
+                            name="Intended Type Conversion">
+                          Zones are declared with a unique id, whether they are keep-in or not (keep-out), and their AbstractGeometry. The intent is to support conversion for three AbstractGeometry types: circles, rectangles, and polygons.
+                        </c>
+
+                        <g
+                            id="__gsn__1954d32c295"
+                            color="#ffcccc"
+                            name="Circular Zones">
+                          Circular zones are correctly computed and stored as an approximating polygon on the Earth-tangent plane with sufficient resulting accuracy.
+
+                          <c
+                              id="__gsn__1954d37e425"
+                              color="#ffffff"
+                              name="Circle Zones">
+                            A Circle Zone's shape geometry is defined as the latitude and longitude of its center, and its radius in meters on the earth's surface.
+                          </c>
+
+                          <g
+                              id="__gsn__1954ddf960a"
+                              color="#ffcccc"
+                              name="Sufficient Geometric Accuracy">
+                            The inscription of a polygon in a circle with a fixed number of vertices enscribed on the circle is a sufficiently accurate approximation of the circle's represented area.
+
+                            <e
+                                id="__gsn__1954d62bbf3"
+                                color="#ffcccc"
+                                name="Contraindication">
+                              Fixed number of vertices inscribed on a circle has decreasing accuracy with circle size. Confirm if sufficient accuracy
+                            </e>
+
+                            <g
+                                id="__gsn__1954d79c962"
+                                color="#ffcccc"
+                                name="Conservative Bounds">
+                              The approximation of the circle as a polygon is a conservative bounds on the original zone circular geometry.
+
+                              <c
+                                  id="__gsn__1954dff6b42"
+                                  color="#e6ccff"
+                                  name="ISSUE 24">
+                                default text
+                              </c>
+
+                              <e
+                                  id="__gsn__1954d764c6f"
+                                  color="#ffcccc"
+                                  name="Contraindication">
+                                Circles are inscribed and thus do not contain all points in a keep-out zone. This is not intended.
+                              </e>
+                            </g>
+
+                            <g
+                                id="__gsn__1954d8ef29b"
+                                color="#ffcccc"
+                                name="Sufficient Accuracy">
+                              The projection of the polygon vertices on the circle circumference on the circle on the plane is a sufficient projection of the circle on the curved surface of the earth.
+
+                              <c
+                                  id="__gsn__1954e329e54"
+                                  color="#e6ccff"
+                                  name="ISSUE 25">
+                                default text
+                              </c>
+                            </g>
+                          </g>
+
+                          <g
+                              id="__gsn__1954d79cc7a"
+                              color="#ffffff"
+                              name="Computationally Correct">
+                            The defined polygon on a plane is a set of points in fixed degree interval inscribed on the circle.
+
+                            <e
+                                id="__gsn__1954d607148"
+                                color="#ffffff"
+                                name="Unit Tests">
+                              Showing correct representation of circles on the plane in various positions relative to the plane's orign.
+                            </e>
+                          </g>
+                        </g>
+
+                        <g
+                            id="__gsn__1954d32c512"
+                            color="#ffcccc"
+                            name="Rectangle Zones">
+                          Rectangular zones are correctly computed and stored as an approximating polygon on the Earth-tangent plane.
+
+                          <c
+                              id="__gsn__1954d37e7b4"
+                              color="#ffffff"
+                              name="Rectangle Zones">
+                            A Rectangle Zone's shape geometry is defined as the latitude and longitude of its center, and its height (y coordinates) and width (x coordinates) in meters.
+                          </c>
+
+                          <g
+                              id="__gsn__1954d7e9b1a"
+                              color="#ffcccc"
+                              name="Conservative Bounds">
+                            A rectangle defined by its center point in latitude and longitude, rotational angle, height in meters, and width in meters, converted into a rotated rectangle of given hight and width, relative to the selected plane's origin, is sufficiently conservative bounds on the same 'rectangle' patch projected on the earth's surface.
+
+                            <c
+                                id="__gsn__1954e3317be"
+                                color="#e6ccff"
+                                name="ISSUE 25">
+                              default text
+                            </c>
+                          </g>
+
+                          <g
+                              id="__gsn__1954d7d495d"
+                              color="#ffffff"
+                              name="Computationally Correct">
+                            The defined polygon is a set of vertices describing the corners of the rectangle converted into points on the defined tangent plane.
+
+                            <e
+                                id="__gsn__1954d77ec98"
+                                color="#ffffff"
+                                name="Unit Tests">
+                              Showing correct representation of rectangles with various rotation, height, and width and enter on the target tangent plane.
+                            </e>
+                          </g>
+
+                          <g
+                              id="__gsn__1954de21ce7"
+                              color="#ffcccc"
+                              name="Sufficient Accuracy">
+                            The projection of the polygon vertices of a rectangle represented by a centerpoint on the earth and a set number of meters on the surface of the earth in height and width, computed as a rorated rectangle on the tangent plane, has sufficiently accurate vertices with respect to the actual curved surface of the zone.
+
+                            <c
+                                id="__gsn__1954e32cd75"
+                                color="#e6ccff"
+                                name="ISSUE 25">
+                              default text
+                            </c>
+                          </g>
+                        </g>
+
+                        <g
+                            id="__gsn__1954d32c731"
+                            color="#ffcccc"
+                            name="Polygon Zones">
+                          Polygon zones are correctly computed and stored as an approximating polygon on the Earth-tangent plane.
+
+                          <c
+                              id="__gsn__1954d37ecc4"
+                              color="#ffffff"
+                              name="Polygonal Zones">
+                            A polygonal zone's shape geometry is defined as a series of vertices each defined a latitude/longitude on the Earth's geodesic surface. A a result, this is not a planar polygon as formally defined.
+                          </c>
+
+                          <g
+                              id="__gsn__1954d812941"
+                              color="#ffcccc"
+                              name="Conservative Bounds">
+                            A 'polygonal' zone consisting of a curved shape defined by vertices on the earth's surface, converted to polygon the selected tangent plane defined by each of the original vertices converted to x,y coordinates on that plane, is sufficiently conservatively sounds representation of the 'polygonal' zone.
+
+                            <c
+                                id="__gsn__1954e33212a"
+                                color="#e6ccff"
+                                name="ISSUE 25">
+                              default text
+                            </c>
+                          </g>
+
+                          <g
+                              id="__gsn__1954d804d44"
+                              color="#ffffff"
+                              name="Computationally Correct">
+                            The defined polygon is a set of vertices describing the lat/longitude coordinates of a 'polygon' on the curved surface of the earth as projected onto the target tangent plane.
+
+                            <e
+                                id="__gsn__1954d804d45"
+                                color="#ffffff"
+                                name="Unit Tests">
+                              Showing correct representation of polygonal zones with various vertex lat/long converted each converted to corresponding points on the target tangent plane.
+                            </e>
+                          </g>
+
+                          <g
+                              id="__gsn__1954de31b92"
+                              color="#ffcccc"
+                              name="Sufficient Accuracy">
+                            The projection of the polygon vertices of a polygon with lat/long vertices on the curved earth, using direct projection of vertices, sufficiently captures the curved edges of the polygon in a flat space.
+
+                            <c
+                                id="__gsn__1954e32d7b1"
+                                color="#e6ccff"
+                                name="ISSUE 25">
+                              default text
+                            </c>
+                          </g>
+                        </g>
+
+                        <g
+                            id="__gsn__1954d333184"
+                            color="#ffffff"
+                            name="Other Abstract Geometries">
+                          Zones declared as any other AbstractGeometry class are discarded and not processed or stored, as intended.
+
+                          <e
+                              id="__gsn__1954d74bf1b"
+                              color="#cdcdcd"
+                              name="Unit Test">
+                            Received declaration of zones with AbstractGeometry other than Circle, Rectangle, and Polygon do not result in storage of a corresponding polygonal zone on the plane.
+                          </e>
+                        </g>
+                      </s>
+                    </g>
+
+                    <g
+                        id="__gsn__1954d3e7a9e"
+                        color="#ffffff"
+                        name="Remainder Unneeded">
+                      The remaining properties of declared zones, such as altitude bounds, affected vehicles,  and start and ending times, are not intended to be applied by the Zone Alert Service.
+
+                      <e
+                          id="__gsn__1954d3f7235"
+                          color="#cdcdcd"
+                          name="Use Case Documentation">
+                        .
+                      </e>
+
+                      <e
+                          id="__gsn__1954d3f9557"
+                          color="#cdcdcd"
+                          name="User Sign-Off">
+                        Sign off from users
+                      </e>
+                    </g>
+                  </s>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__1954d04325d"
+                color="#ffcccc"
+                name="Checking, Expanding, and Merging">
+              The checking of the applicability of declared zones, modification of zone boundaries by their padding, and merging of the collection of keep-in and keep-out zones, separately, into reduced sets of respective zones, is geometrically complete, correct and sufficiently accurate.
+
+              <s
+                  id="__gsn__1954d2ab4a9"
+                  color="#ffcccc"
+                  name="Strategy">
+                By the two sequential steps of the algorithm with fallout case
+
+                <c
+                    id="__gsn__1954e0b4f97"
+                    color="#ffffff"
+                    name="Algorithm">
+                  The algorithm loads a basic data structure called VisiblityGraph provided by RoutePLannerVisibilityService. Each zone is then added to this graph and the graph performs error checking and grid snapping of vertiecs to 1 meter. Any  resulting zone polygon that is degenerate, not vertex-ordered, or irregular, islogged as an error. Any detected error results in no more checking and no final zones are constructed. Otherwise, keep-out zones are expanded by their positive padding values (if any, negative values are ignored) and merged together as they overlap. Keep-in zones are merged together and no padding is applied regardless of any declared by any zones. The final resulting zones are extracted  from the visibility graph and stored as polygon data structures for use is Zone Violation detection.
+                </c>
+
+                <g
+                    id="__gsn__1954def52ee"
+                    color="#ffcccc"
+                    name="Polygon Checking">
+                  Polygon checking correctly checks all zones and logs the first zone found to be incorrectly ordered, degenerate, or irregular, ceasing adding any polygons to a base visibility graph structure.
+
+                  <g
+                      id="__gsn__1954debfb55"
+                      color="#ffcccc"
+                      name="Complete">
+                    All and only relevant zones are considered as part of the final assigned geometry.
+
+                    <g
+                        id="__gsn__1954deca07c"
+                        color="#ffffff"
+                        name="All Zones are Considered">
+                      All declared zones are input to the algorithm for construction of final desired zones for use in alerting.
+
+                      <e
+                          id="__gsn__1954dee2b68"
+                          color="#ffffff"
+                          name="Code Examination">
+                        The function visibiltiyGraph-&gt;addPolygon is called for all zones stored in intermediate form in the previous algorithm step.
+                      </e>
+
+                      <e
+                          id="__gsn__1954dee4a17"
+                          color="#ffffff"
+                          name="Unit Test">
+                        Unit test shows that addPolygon is called for all zones
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__1954deca25a"
+                        color="#ffcccc"
+                        name="Only Relevant Zones are Applied">
+                      Only zones determined to be relevant for a mission are considered for checking.
+
+                      <e
+                          id="__gsn__1954ded4870"
+                          color="#ffcccc"
+                          name="Contraindication">
+                        We consider all zones to be alerted upon, including those that declare exclusion of vehicles by id and by not being included in declared operating regions.
+
+                        <c
+                            id="__gsn__1954e001ce2"
+                            color="#e6ccff"
+                            name="ISSUE 26">
+                          default text
+                        </c>
+                      </e>
+                    </g>
+                  </g>
+
+                  <g
+                      id="__gsn__1954d2abe37"
+                      color="#ffcccc"
+                      name="Correct">
+                    All zones are correctly checked for sufficiency in Zone Alerting.
+
+                    <g
+                        id="__gsn__1954df9fe1b"
+                        color="#ffffff"
+                        name="Detection of Errors in One or More Zone Polygons">
+                      The algorithm will detect and log the first declared zone that  is degenerate or irregular or not in the right vertex order.
+
+                      <e
+                          id="__gsn__1954dfcbff4"
+                          color="#cdcdcd"
+                          name="Unit Test">
+                        Unit test shows that the fir first declared zone to fail its checks is not added to the visibility graph and its error logged, with further adding of zones to the graph ceased.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__1954dfa01b4"
+                        color="#ffcccc"
+                        name="Detection Correctness">
+                      Logging a single zone failure is sufficient detection behavior.
+
+                      <c
+                          id="__gsn__1954dfef420"
+                          color="#ccccff"
+                          name="Issue 27">
+                        Inherited Design Error
+                      </c>
+
+                      <e
+                          id="__gsn__1954dfc1e05"
+                          color="#ffcccc"
+                          name="Contraindication">
+                        It is unclear that the Simple Zone Alert Computer code, used here by the Zone Alert Service, sufficiently detects and logs errors for declared zones. It should detect them all for all declared zones.
+                      </e>
+                    </g>
+                  </g>
+                </g>
+
+                <g
+                    id="__gsn__1954df027fb"
+                    color="#ffcccc"
+                    name="No Result Polygons if Check Errros">
+                  No final zones are produced and stored for zone alerting if any intermediate zones, when snapped to 1 meter grid bounds,  have errors. otherwise, polygon padding and merging is performed.
+
+                  <c
+                      id="__gsn__1954df09ac3"
+                      color="#ffcccc"
+                      name="Design Error">
+                    It is possibly a design error. A better system would handle such issues more resiliently.
+                  </c>
+
+                  <c
+                      id="__gsn__1954dffa6d4"
+                      color="#e6ccff"
+                      name="ISSUE 28">
+                    Issue is tied to Route Planner. Both would need to be changed.
+                  </c>
+
+                  <e
+                      id="__gsn__1954e020238"
+                      color="#ffcccc"
+                      name="Contraindication">
+                    This is likely incorrect behavior resulting in reduced resiliency of OpenUxAS operation.
+                  </e>
+
+                  <e
+                      id="__gsn__1954e02ab5a"
+                      color="#cdcdcd"
+                      name="Unit Test">
+                    Shows thats that if there is one or more declared zones snapped to a 1 metter grid, are dengerate, not in vertex order, or are ireggular, then no polygon zones are padded and merged into final stored form, otherwise all snapped and checked zones are so merged.
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1954def5718"
+                    color="#ffcccc"
+                    name="Polygon Padding and Merging">
+                  Polygon keep-out zones are expanded by their padding distance is greater than zero, otherwise they do not change size, ,keep-in zones are kept the same size, and the two sets holding resulting keep-out and keep-in zones, respectively, are internally geometrically merged by overlaps into a set of reduced polygons, producing two sets, one of correctly merged keep-out zones and the other of correctly merge keep-in zones.
+
+                  <s
+                      id="__gsn__1954e15277d"
+                      color="#ffcccc"
+                      name="Strategy">
+                    By construction and results
+
+                    <g
+                        id="__gsn__1954e15461c"
+                        color="#ffcccc"
+                        name="Algorithm for Expanding and Merging">
+                      The algorithm for expanding and merging snapped-and checked polygonal zone representations is correct and accurate.
+
+                      <s
+                          id="__gsn__1954e071665"
+                          color="#ffcccc"
+                          name="Strategy">
+                        by steps of the algorithm
+
+                        <a
+                            id="__gsn__1954e0ae69c"
+                            color="#ffffff"
+                            name="Assumption">
+                          Visibility shrink/grow with merge functionality works correctly.
+                        </a>
+
+                        <a
+                            id="__gsn__1954e199d4d"
+                            color="#ffffff"
+                            name="Assumption">
+                          Extracting resulting polygons after expansion and merging is, of course, the right step to obtain the final results and store them for Zone Alerting (barring some use of the visibility graph, which we are not considering in the SImpleZoneAlertComputer) implementation.
+                        </a>
+
+                        <g
+                            id="__gsn__1954e072776"
+                            color="#ffffff"
+                            name="Growing Keep-Our Zones with Positive Padding">
+                          Keep out zones are expanded when merged, each by its declared padding value, so long as the value declared is positive. Negative padding is ignored.
+
+                          <g
+                              id="__gsn__1954e0a7eb5"
+                              color="#ffffff"
+                              name="Intended Use of  Keep-Out Zones">
+                            Not supporting negative padding on keep-out zones and supporting positive polygon padding during merging is the desired behavior.
+
+                            <e
+                                id="__gsn__1954e1207ad"
+                                color="#ffffff"
+                                name="Indication">
+                              Route planner use cases define padding as a means to assure that routes of vehicles that follow keep-out zone edges stay far enough away from zone actual edges. This is confirmed by system stakeholders.
+                            </e>
+                          </g>
+
+                          <g
+                              id="__gsn__1954e12cb1b"
+                              color="#ffffff"
+                              name="Completeness and Correctness">
+                            Keep-out zones each given an expansion distance of its declared padding distance if  its padding distance is a positive number , and otherwise just not expanding the polygon (ignoring negative padding and replacing with zero) is the desired behavior for expanding and merging keep-out zones, is correctly implemented.
+
+                            <e
+                                id="__gsn__1954e12cb1c"
+                                color="#cdcdcd"
+                                name="Unit Test">
+                              Unit testing shows that for lists of declared zones, those that declare positive padding are passed to expand and merge with their padding amount and ay other padding declaration amounts on zones result in zero padding being requested for those particular polygons in the merge operation.
+                            </e>
+                          </g>
+                        </g>
+
+                        <g
+                            id="__gsn__1954e08a113"
+                            color="#ffcccc"
+                            name="Not Changing Keep-In Zones">
+                          Keep -in zones are neither expanded nor shrunk when they are merged, regardless of any padding value with which any of them is declared.
+
+                          <g
+                              id="__gsn__1954e071ef5"
+                              color="#ffcccc"
+                              name="Intended Use for Keep-In Zones">
+                            Not shrinking keep-in zones regardless of declared padding is desired system behavior.
+
+                            <c
+                                id="__gsn__1954e07a7ca"
+                                color="#ffffff"
+                                name="Design Error">
+                              We infer that padading keep-out zones was to support route planning following the edges of keep-out zones. Thus selective padding is a cludge and this behavior of doing nothing with keep-in zone padding is erroneous and easily misleading oto the user.
+                            </c>
+
+                            <c
+                                id="__gsn__1954e3693b1"
+                                color="#e6ccff"
+                                name="ISSUE 29">
+                              default text
+                            </c>
+
+                            <e
+                                id="__gsn__1954e0854d6"
+                                color="#ffcccc"
+                                name="Contra-indication">
+                              We infer that padading keep-out zones was to support route planning following the edges of keep-out zones. Thus selective padding is a cludge and this behavior of doing nothing with keep-in zone padding is erroneous and easily misleading oto the user.
+                            </e>
+                          </g>
+
+                          <g
+                              id="__gsn__1954e08eb61"
+                              color="#ffffff"
+                              name="Correctness">
+                            Keep-in zones are neither expanded nor shrunk when they are merged regardless of their declared padding.
+
+                            <e
+                                id="__gsn__1954e098cca"
+                                color="#cdcdcd"
+                                name="Unit Test">
+                              Unit testing shows that keep-in zones are always passed to Vislibity merging with zero  shrink on merge operation regardless of zone declared padding.
+                            </e>
+                          </g>
+                        </g>
+
+                        <g
+                            id="__gsn__1954e08a3d0"
+                            color="#ffffff"
+                            name="Correctness of Extraction of Merged Results">
+                          FInal zones are correctly and completely extracted from the VisibilityGraph
+
+                          <e
+                              id="__gsn__1954e0ebf1f"
+                              color="#cdcdcd"
+                              name="UnitTests">
+                            UnitTests on polygons stored in a visibility graph are correctly extracted and stored in a final form.
+
+                            <a
+                                id="__gsn__1954e27a988"
+                                color="#ffffff"
+                                name="Assumption">
+                              We want to extract and store the results of merging, as the results the non-overlapping zones that we want to check for violations with vehicles during missions.
+                            </a>
+                          </e>
+                        </g>
+                      </s>
+                    </g>
+
+                    <g
+                        id="__gsn__1954e154b34"
+                        color="#ffffff"
+                        name="Representative Cases">
+                      The algorithm for expanding and merging zones produces correct expanded and merged zones from representative use case lists of acceptable (grid-snapped and checked) keep-in and keep-out zones.
+
+                      <e
+                          id="__gsn__1954e162e24"
+                          color="#cdcdcd"
+                          name="Representative Testing">
+                        Input this step of the algorithm of lists of keep-out and keep-in polygons with declared padding amounts results in correct merging of the zones with expansion (prior to merging) of keep-out zones with positive padding declarations.
+                      </e>
+                    </g>
+                  </s>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__1954cddacc4"
+            color="#ffffff"
+            name="Representative Results">
+          Representative tests results covering significant use cases show planar representation of declared zones are sufficiently complete, correct, and accurate.
+
+          <s
+              id="__gsn__1954cffc6ac"
+              color="#ffffff"
+              name="Strategy">
+            test case coverage and results
+
+            <g
+                id="__gsn__1954cf4829f"
+                color="#ffffff"
+                name="Covering Cases">
+              The cases developed for testing are largely representative of expected use UxAS in missions.
+
+              <e
+                  id="__gsn__1954cf81978"
+                  color="#cdcdcd"
+                  name="Zone Declaration Test Cases">
+                The test cases declaring sets of zones for use
+              </e>
+
+              <e
+                  id="__gsn__1954cf822f6"
+                  color="#cdcdcd"
+                  name="Coverage Analysis">
+                Comparison of tests cases with expected use cases of zone geometry by users.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__1954cf4847a"
+                color="#ffffff"
+                name="Results">
+              The results of the developed test cases show complete, correct, and sufficiently accurate representation of zones on an Earth-tangent plane.
+
+              <e
+                  id="__gsn__1954cf7750d"
+                  color="#cdcdcd"
+                  name="Tests">
+                Tests and results for cases covering expected use of keep-in and keep-out zones in OpenUxAS.
+              </e>
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>
