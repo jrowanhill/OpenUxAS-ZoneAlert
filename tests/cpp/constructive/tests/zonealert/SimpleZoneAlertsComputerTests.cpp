@@ -124,28 +124,167 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
  * 
 */
 
-/** Requirement: SR-4-3-2
- *  Satisfaction Rationale: The function satisfies the claimed requirement as follows: 
+/** 
+ * Requirement: HL-1-2 CLAIMFAILED:
+ * Rationale:  
+ * 1 CLAIMFAILED: Both services apply the same source code on the same data in the same order
+ *    1 CLAIMFAILED: SR-4: SUFFICIENT CLAIM: Both services identiically compute the zones as intermediate polygons on the same plane
+ *       1CLAIM: Both services respond to each AbstractZone declaration declared by calling bFindPointsForGeometry
+ *         1CLAIM: The RoutePlannerVisibiltiyService directly calls bFindPointsForABstractGeomrty
+ *             1Evidence.EXAMIANTION
+ *             2Evidence.UnitTest for call chain to bFindPointsForAbstractGeometry
+ *         2CLAIM: The Zone Alert Service calls SimpleZoneAlertComputer that in turn calls bFindPointsForAbstractGeometry
+ *             1Evidence.Examination of source code
+ *             2Evidence.UnitTest for call chain to bFindPointsForAbstractGeometry
+ *       2CLAIM: Both services store by zone id the resulting planar polygon for each declared zone
+ *       3CONTEXT: Computation is zone order dependent, as the first encountered lat/long determines origin of the plane
+ *       4 CLAIMFAILED: Both services process zones in the same order
+ *               1Claim: Both services process zones in the order they are received
+ *                  1Claim: Source code is message-event based  and declared zones are discrete messages
+ *                     1Evidence.Examine source code that is message-receipt-based
+ *                     2Evidence.Examine message type declarations
+ *               2 CLAIMFAILED: Both services always receive declare zones in the same order
+ *                  1 CLAIMFAILED: Each Service is single-threaded
+ *                     UNSUPPORTED
+ *                  2 CLAIMFAILED: Services receive in order messages at all agents if distributed arbitrarily
+ *                     UNSUPPORTED
+ *          2Claim: Both services compute the same plane on examples of zone input sequences
+ *             1Evidence.Test: Tests for various collections of zones show same computed plane origins and relative orientations of points on plane from zone inputs
+ *       3Claim: Both services compute same intermediate polygonal zones for some example input zones
+ *           1Evidence.Tests: Example input sets of zones produce the same results in both algorithsm for intermediate data
+ *    2 CLAIMFAILED: SR-6: Both services check and expand/merge zones using the same semantics
+ *       1CLAIM: Both services wait until all relevent zones have been initially declared to do final zone check by calling 
+ *          1CLAIM: Both services wait until all zone haves been declared to do final zone prep work
+ *             1Claim: RoutePlannerVisibilityService waits until all zones used in a given OperatingRegion have been declared to 
+ *                create final versions of those zones
+ *                1Evidence.Examination: of code to process final zones for an operating region on an operating region declaration message
+ *             2CLAIM: ZoneAlertService waits until all zones have been declared and the service is waiting for mission to start
+ *                1Claim: The ZoneAlertService tgriggers final zone prep on the X message which is sent once when the system is ready to start mission activities
+ *                   1Evidence.UnitTest: show examples that it triggers when X received, once, and not if X is not triggered
+ *                   2Evidence.Examination: of the source code
+ *       2 CLAIMFAILED: Both services identically check intemediate polygonal zones and expand and merge them for service use after received final event
+ *         1 CLAIMFAILED: Both services call the same code on the same intermediate zones
+ *            1Claim: Both services call errFinalizePolygons after their activating event
+ *               1Evidence.UnitTest showing call by each after respective events
+ *               2Evidence.Examination of source code flow of event handlers
+ *            2 CLAIMFAILED: Both services call errFinalizePolygons with the same zones
+ *               CONTRADICTED: if the declared operating zone does not use all declared zones
+ *               CONTRADICTED: if more than one operating region is declared
+ *         2Claim: Both services get the same results for examples check all stored intermediate zones 
+ *               2Evidence.Test Unit test on Zone Alert code and RoutePlanenr for equivalent results
+ *       3 CLAIMFAILED: Both services finish preparing final zones for service before their servies are required in mission
+ *             1 COUNTEREXAMPLE: The system waits for routes before it starts but will not wait for zone alert to prep and declare zones before
+ *                   it executes
+ * 2CLAIM: Both services produce the same final zones for use by their respective services for examples of zones
+ *    1Evidence.Test.DataInjection into the algorithm show equivalence for the two core services
  * 
- * We know what the semantics are in the RoutePlanningVisbilityService as we apply the same code
- * and studied it.
- * 
- * We the 
- * 
- * The function takes its input zone information and converts it from Location3D to cartesian
- * coordinates. The function utilzies the same code as the RoutePlanningServices to compute this
- * cartesian space. It follows the same assumptions of use of that code, namely that a conversion
- * object is created for each declared zone and used to convert that zones location3D from the 
- * assumed lat and longitide degrees and altitudes to a polygon at zero altitude with north and 
- * east position in meters relative to the first declared point. We understand the semantics of that first declared point, see below. The function appears to be creating the correct transformed
- * polygons in Cartesian Space, as demonstrated for simple representative cases that cover all of the applied mathematical cases of the function within defined domains. Exceptional cases are 
- * known to be disallowed and included in interface constraints (preconditions). In addition, 
- * this correct transformation is equivalent to the same polygons as generated in the RoutePlanning
- * services code. This is demonstrated by direct comparison for various test cases both simple and more arbitrary. Furthermore, examination of the use of code shows that further variation is extremely unlikely for use cases (likely equivalent outside strange use cases shoudl not be included.) The resulting geometry is stored properly by the addZone function. Therefore, we conclude that the addZone function is correctly transforming declared zones and storing them in 
- * satisfaction of SR-4-3-2, namely storing the correct Cartesian planar form for each declared zone in an equivalent space to that of RoutePlanning by RoutePlannerVisilibityService.
- *
- * Assumption: Declared zones are semantically anticipatable within conventions (classical irregular polygons, non degenerate, limited < 100 vertices, etc.)
  */
+
+/*
+ * Requirement: HL-1-3 CLAIMFAILED: CORRECT AND ACCURATE ZONE COMPUTATION
+    TBD
+ * Rationale:
+ * HL-1-3-1. Zone Geomtry applied is sufficiently correct and accurate
+ * HL-1-3-2. Comkputation of immediate conflicts is corret and accurate
+ * HL-1-3-3. Computation of impending conflicts is correct and accurate for linear interpolation standards
+ *
+ */
+
+ /* 
+ * HL-1-3-1: CLAIM: Computation of zone geometry is correct and accurate
+ * 
+ * RATIONALE:
+ *
+ * 1CLAIM: 
+ * 
+ * 
+ * 
+ */
+
+ /* 
+ * 
+ * Some of the correctness gunk below might be useful 
+ * 1 CLAIMFAILED: Both services apply the same algorithm and data to process zones for use in Route Planning and Zone Alerts
+ *    1Context: Description of the algorithm: 1) Create a plane tangent to the earth with origin based on first lat/long found in processing declared AbstractZones
+ *       with the plane oriented on lat (x) /long (x) at the plane's origin. 2) Convert all declared AbstractZones into polygons on that plane
+ *       3) Check all of the zones defined as polygons on the plane to make sure they are not degenerate, are oriented properly, and are regular.
+ *         If any is not, do not create any final zones for the operating region.
+ *       4) Merge all keep-in zones against overlap using Visilibity all buffer expand and merge all keep-out zones for overlap using Visilibity
+ *    1 CLAIMFAILED: SR-4: SUFFICIENT CLAIM: Both services identiically compute the zones as intermediate polygons on the same plane
+ *       1CLAIM: Both services respond to each AbstractZone declaration declared by calling bFindPointsForGeometry
+ *         1CLAIM: The RoutePlannerVisibiltiyService directly calls bFindPointsForABstractGeomrty
+ *             1Evidence.EXAMIANTION
+ *         2CLAIM: The Zone Alert Service calls SimpleZoneAlertComputer that in turn calls bFindPointsForAbstractGeometry
+ *             1Evidence.Examination of source code
+ *             2Evidence.UnitTest for call chain to bFindPointsForAbstractGeometry
+ *       2CLAIM: BFindPointsForGeometry performs conversion of AbstractZones into anplaner polygon zone representation
+ *       1 CLAIMFAILED: Both services identically compute the plane on which to project zones
+ *         1 CLAIMFAILED: Both services use the same deterministic algorithm to compute the plane tangent to a lat/long and its coordinates
+ *            1Claim: Both services take the first refered lat long of the first declared and received abstract zone and make that the origin of the plane with north pointed to north pointed on latitude axis at origin and and east pointed on longitudinal axis at origin
+ *               1Claim: planar conversion in one specific function that takes lat long as input and uyses first input on execution of the system as declared origin
+ *                  1Evidence: See source code of both services and note the call to X function
+ *               2Claim: that function notes the first call in its execution and for that case sets the origin of the plane by the received lat long
+ *                  1Evidence.Examine source code of the function and self evidence
+ *                  2Evidence.Test case showing first call sets planar origin lat/long and all later call are relative to that origin
+ *               3Claim: that function always converts lat and long as y and x tangents, respectively, to the lat and long at the origin on the tangent plane
+ *                  1Evidence.Examine the source code as reader in the coinversion funtion
+ *                  2Evidence.Test: Some example coordinate conversion cases showing they conform to expecte results for lat/long relative to the origin comp
+ *            2 CLAIMFAILED: Both services process zones in the same order
+ *               1Claim: Both services process zones in the order they are received
+ *                  1Claim: Source code is message-event based  and declared zones are discrete messages
+ *                     1Evidence.Examine source code that is message-receipt-based
+ *                     2Evidence.Examine message type declarations
+ *               2 CLAIMFAILED: Both services always receive declare zones in the same order
+ *                  1 CLAIMFAILED: Each Service is single-threaded
+ *                     UNSUPPORTED
+ *                  2 CLAIMFAILED: Services receive in order messages at all agents if distributed arbitrarily
+ *                     UNSUPPORTED
+ *          2Claim: Both services compute the same plane on examples of zone input sequences
+ *             1Evidence.Test: Tests for various collections of zones show same computed plane origins and relative orientations of points on plane from zone inputs
+ *       2Claim: Both services identically compute zones as lists of polygon vertices on the defined plane
+ *          1Claim: Both services use the same deterministic algorithm and data input order
+ *             1Claim: Both services identically convert each received Zone AbstractGeometry into a regular polygon with a list of vertices in the defined plane
+ *                SR-4-3-2-1: Both services apply bFindPointsForAbstractGeomrtry to convert abstract geometry to polygons on the plane
+ *                   SR-4-3-2-1.Evidence1.Examine source code to see how both call this function on input zones as the first thing they do with a received input zone
+ *                   SR-4-3-2-1.Evidence2.UnitTests show both systems call this first thing and  once on each received zone
+ *                2Claim: Both services get the same results for intermediately stored polygons for same AbstractZoneInputs
+ *                   1Claim: same results for CircleZone
+ *                      1Evidence.Test test case for various circles
+ *                   2Claim: same results for RectangleZone
+ *                      1Evidence.Test test case for various rectangles  
+ *                   3Claim: same results for PolygonZone
+ *                      1Evidence.Test test case for various polygons
+ *                   4Claim: same results for any other zone type not listed above
+ *                      1Evidence.Test test case for other shape type
+ *                   5Claim: Both services get same results for various examples of mixed AbatractZone inputs
+ *                      1Evidence.Test test case for example collections of shape
+ *                3AWAYCLAIM: Both services process zone inputs in the order
+ *       3Claim: Both services compute same intermediate polygonal zones for some example input zones
+ *           1Evidence.Tests: Example input sets of zones produce the same results in both algorithsm for intermediate data
+ *    2CLAIM: SR-6: Both services check and expand/merge zones using the same semantics
+ *       1CLAIM: Both services wait until all relevent zones have been initially declared to do final zone check by calling 
+ *          1CLAIM: Both services wait until all zone haves been declared to do final zone prep work
+ *             1Claim: RoutePlannerVisibilityService waits until all zones used in a given OperatingRegion have been declared to 
+ *                create final versions of those zones
+ *                1Evidence.Examination: of code to process final zones for an operating region on an operating region declaration message
+ *             2CLAIM: ZoneAlertService waits until all zones have been declared and the service is waiting for mission to start
+ *                1Claim: The ZoneAlertService tgriggers final zone prep on the X message which is sent once when the system is ready to start mission activities
+ *                   1Evidence.UnitTest: show examples that it triggers when X received, once, and not if X is not triggered
+ *                   2Evidence.Examination: of the source code
+ *       2Claim: Both services identically check intemediate polygonal zones and expand and merge them for service use after received final event
+ *         1Claim: Borht services call the same code on the same intermediate zones
+ *            1Claim: Both services call errFinalizePolygons after their activating event
+ *               1Evidence.UnitTest showing call by each after respective events
+ *               2Evidence.Examination of source code flow of event handlers
+ *            2 CLAIMFAILED: Both services call errFinalizePolygons with the same zones
+ *               CONTRADICTED: if the declared operating zone does not use all declared zones
+ *               CONTRADICTED: if more than one operating region is declared
+ *         2Claim: Both services get the same results for examples check all stored intermediate zones 
+ *               2Evidence.Test Unit test on Zone Alert code and RoutePlanenr for equivalent results
+ *       3 CLAIMFAILED: Both services finish preparing final zones for service before their servies are required in mission
+ *             1 COUNTEREXAMPLE: The system waits for routes before it starts but will not wait for zone alert to prep and declare zones before
+ *                   it executes
+*/
 
 /** Requirement: SR-4-3-2-1
  * 
@@ -384,7 +523,8 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZoneRectangles) 
     EXPECT_NEAR((-X*sin(A))+(-Y*cos(A)), pointVector[2].m_north_m, acceptedError);
     EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
 
-    EXPECT_NEAR((X*cos(A))-(-Y*sin(A)), pointVector[3].m_east_m, acceptedError);
+    EXPECT_NEAR((X*cos(A))-(-Y*sin(A)), pointVector[3].m_east_m * 
+    , acceptedError);
     EXPECT_NEAR((X*sin(A))+(-Y*cos(A)), pointVector[3].m_north_m, acceptedError);
     EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
 

@@ -67,6 +67,7 @@ public:
      * 
      * @requirements SR-4-3-2
      * @requirements SR-4-3-2-1
+     * @requirements SR-4-3-2-2
      */
     virtual bool addZone(shared_ptr<AbstractZone> zonePtr, bool keepIn) = 0;
 

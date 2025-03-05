@@ -380,24 +380,28 @@ shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findImminentViolationWith(
         // if we found an intersection between the vehicle linear trajectory
         // and the edge of the zone, examine to see if it happens within lookahead limit
         // note converstion from double to int64 varies by compiler standard
+        if (closestIntersectionPtr != NULL) {
 
-        auto timeToIntercept = computeTimeToPosition(startPos, endPos, 
-                                    velocity, *closestIntersectionPtr);
+            auto timeToIntercept = computeTimeToPosition(startPos, endPos, 
+                                        velocity, *closestIntersectionPtr);
 
-        if (closestIntersectionPtr != NULL && timeToIntercept <= lookaheadTime) {
-                
-                return makeZoneViolation( zoneID, boundaryPtr->bGetKeepInZone(), 
-                            vehicleID, startTime,
-                            closestIntersectionPtr->m_east_m, 
-                            closestIntersectionPtr->m_north_m,
-                            closestIntersectionPtr->m_altitude_m, startTime+timeToIntercept);
+            if (closestIntersectionPtr != NULL && timeToIntercept <= lookaheadTime) {
+                    
+                    return makeZoneViolation( zoneID, boundaryPtr->bGetKeepInZone(), 
+                                vehicleID, startTime,
+                                closestIntersectionPtr->m_east_m, 
+                                closestIntersectionPtr->m_north_m,
+                                closestIntersectionPtr->m_altitude_m, startTime+timeToIntercept);
 
-            delete closestIntersectionPtr;
+                delete closestIntersectionPtr;
+            }
+            else {
+                return NULL;
+            }
         }
         else {
             return NULL;
         }
-
     }
     catch(const std::out_of_range &e) {
         sstrErrorMessage << "Internal zone registration error for determining point in polygon for merged zone id = '"
@@ -529,14 +533,7 @@ bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* p
         {
             afrl::cmasi::Rectangle* pRectangle = static_cast<afrl::cmasi::Rectangle*> (pAbstractGeometry);
             double dCenterNorth_m(0.0);
-            double dCenterEast_m(0.0);
-            unitConversions.ConvertLatLong_degToNorthEast_m(
-                    pRectangle->getCenterPoint()->getLatitude(),
-                    pRectangle->getCenterPoint()->getLongitude(),
-                    dCenterNorth_m, dCenterEast_m);
-            double dRotationHeading_rad = pRectangle->getRotation() * n_Const::c_Convert::dDegreesToRadians();
-            n_FrameworkLib::CWaypoint wayRotated;
-            //North/East Corner
+            double dCenterEast_m(0.0);makeZoneViolation
             wayRotated.m_north_m = pRectangle->getHeight() / 2.0;
             wayRotated.m_east_m = pRectangle->getWidth() / 2.0;
             wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
