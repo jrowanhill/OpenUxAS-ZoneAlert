@@ -1,9 +1,24 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="5f0bae14-7c28-e335-631c-24af17079c00">
-    <mxGraphModel dx="1833" dy="1327" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1222" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="400" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="3W5gYO6pAXKULEPotOUU-14" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;RoutePlanner&lt;/font&gt;&lt;span style=&quot;font-size: 11px; background-color: initial;&quot;&gt;Visibility&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11px; background-color: initial;&quot;&gt;Service&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; background-color: initial;&quot;&gt;(Authoritative&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11px; background-color: initial;&quot;&gt;Zone Polygon&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; background-color: initial;&quot;&gt;Model)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=12;horizontal=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="275" y="690" width="305" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-2" value="VisibilityGraph" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="309.9971428571429" y="760" width="130.50000000000003" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-13" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="405" y="670" width="290" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-41" value="&lt;div&gt;AddZone&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="nVS5muNwlV8S-vVGrIBC-13">
+          <mxGeometry x="14.500000000000002" y="70" width="109.78571428571429" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-42" value="&lt;div&gt;expandAndMerge&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="nVS5muNwlV8S-vVGrIBC-13">
+          <mxGeometry x="14.500000000000002" y="110" width="109.78571428571429" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="3W5gYO6pAXKULEPotOUU-18" value="&lt;b&gt;SimpleZoneAlertComputer&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=12;" parent="1" vertex="1">
           <mxGeometry x="20" y="420" width="880" height="100" as="geometry" />
         </mxCell>
@@ -85,29 +100,34 @@
         <mxCell id="nVS5muNwlV8S-vVGrIBC-7" value="Find if In Zone" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="770" y="780" width="110" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-10" target="3W5gYO6pAXKULEPotOUU-14">
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-10" target="nVS5muNwlV8S-vVGrIBC-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="755" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-10" target="nVS5muNwlV8S-vVGrIBC-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="795" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-10" target="nVS5muNwlV8S-vVGrIBC-52">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-10" value="Compute Merged Zones" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="490" y="570" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="nVS5muNwlV8S-vVGrIBC-13" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="450" y="680" width="200" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="3W5gYO6pAXKULEPotOUU-14" value="Authoritative&lt;br&gt;Zone Polygon&lt;br&gt;Model" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=12;" parent="nVS5muNwlV8S-vVGrIBC-13" vertex="1">
-          <mxGeometry width="200" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-1" value="CPolygon" style="rounded=0;whiteSpace=wrap;html=1;" parent="nVS5muNwlV8S-vVGrIBC-13" vertex="1">
-          <mxGeometry x="100" y="10" width="90" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-2" value="VisibilityGraph" style="rounded=0;whiteSpace=wrap;html=1;" parent="nVS5muNwlV8S-vVGrIBC-13" vertex="1">
-          <mxGeometry x="100" y="60" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-14" value="Prepare for Active State" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="490" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-16" value="&lt;div&gt;Store Vehicle&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="350" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nVS5muNwlV8S-vVGrIBC-18" target="nVS5muNwlV8S-vVGrIBC-39">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-18" value="&lt;div&gt;Store Declared&lt;/div&gt;&lt;div&gt;Zone&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="210" y="570" width="120" height="60" as="geometry" />
@@ -140,10 +160,16 @@
           <mxGeometry x="1040" y="680" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-39" value="&lt;div&gt;FindPointsForAbstract&lt;/div&gt;&lt;div&gt;Geometry&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="700" width="120" height="60" as="geometry" />
+          <mxGeometry x="110" y="710" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nVS5muNwlV8S-vVGrIBC-40" value="&lt;div&gt;findClosestIntersection&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1030" y="790" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4Vm4h1DBtU_fKJOTUtkn-1" value="CPolygon" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="419.9971428571429" y="870" width="130.50000000000003" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nVS5muNwlV8S-vVGrIBC-52" value="&lt;div&gt;new&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="429.5" y="850" width="60.5" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
