@@ -43,7 +43,7 @@
         <g
             id="__gsn__192008cd979"
             color="#ffffff"
-            name="Efficiently Computable">
+            name="Computable and Efficient">
           Linear Trajectory-based Detection is efficiently computable from available information from OpenUxAS
 
           <s
@@ -69,8 +69,8 @@
             <g
                 id="__gsn__1920090ceac"
                 color="#ffffff"
-                name="Efficiently Computable">
-              Efficient Computation of existing and imminent zone violations from current position and linear velocity in time O(ZE) where Z is the number of defined zones and E is the expected number of polygonal edges defining a zone in the x-y plane.
+                name="Computable and Efficient">
+              Efficient, deterministic computation of existing and imminent zone violations from current position and linear velocity in time O(ZE) where Z is the number of defined zones and E is the expected number of polygonal edges defining a zone in the x-y plane.
 
               <s
                   id="__gsn__1920098ba40"
@@ -95,7 +95,7 @@
                 <g
                     id="__gsn__1920098c501"
                     color="#ffffff"
-                    name="Linear Trajectory Efficiently Computable">
+                    name="Linear Trajectory Computable and Efficient">
                   The linear trajectory of a vehicle to a fixed lookahead time is efficiently computable using a vehicle's state report in O(1) time.
 
                   <s
@@ -137,7 +137,7 @@
                 <g
                     id="__gsn__19200bb7c17"
                     color="#ffffff"
-                    name="Keep-Out Zone Violations Efficiently Computable">
+                    name="Keep-Out Zone Violations Computable and Efficient">
                   Computing earliest existing and imminent keep-out zone violations along a vehicles linear velocity is computable in O(ZE) time with available information. (Z is number of zones and E is the number of edges defining a typical zone polygon.)
 
                   <s
@@ -423,7 +423,7 @@
                 <g
                     id="__gsn__192009a8499"
                     color="#ffcccc"
-                    name="Keep-In Zone Violations Efficiently Computable">
+                    name="Keep-In Zone Violations Computable and Efficient">
                   Computing existing and imminent keep-out zone violations along the vehicles linear velocity is computable with available information in time O( ...... )
 
                   <g
@@ -525,6 +525,27 @@
         </g>
 
         <g
+            id="__gsn__1955dc19430"
+            color="#ffffff"
+            name="Compatible With Route Planning">
+          The geometric interpretation of zones is consistent with the interpretations and approximations applied by the Route Planning Visibility Service, such that route planning and Zone Alerting are consistent with respect to zone geometry.
+
+          <g
+              id="__gsn__1955dc2bbd8"
+              color="#ffffff"
+              name="Consistent Computation">
+            A Zone Alert Service solution can re-use the geometric computations of the Route Planner Visibility Service.
+
+            <e
+                id="__gsn__1955dc31796"
+                color="#ffffff"
+                name="Code Analysis">
+              Code analysis shows that the functions that compute zones can be made sufficiently available to other services so as to allow code re-use. If the code responds to the same subscription messages on zone declarations and operating regions, the resulting services can produce identical resulting zone geometry.
+            </e>
+          </g>
+        </g>
+
+        <g
             id="__gsn__192008d11cd"
             color="#ffffff"
             name="Acceptable Compromise Solution">
@@ -572,8 +593,7 @@
                       id="__gsn__1920122457b"
                       color="#ffffff"
                       name="Service Definition">
-                    See problem-diagram.png/ step 4 / OpenUxAS / Past Performance 
-Assessment (Mission Goals and Zone Violation Performance)
+                    See problem-diagram.png/ step 4 / OpenUxAS / Past Performance Assessment (Mission Goals and Zone Violation Performance)
                   </e>
                 </g>
 
@@ -592,8 +612,7 @@ Assessment (Mission Goals and Zone Violation Performance)
                     <g
                         id="__gsn__19201242c14"
                         color="#ffffff"
-                        name="Scenario-Bsaed
-Testing and Simulation">
+                        name="Scenario-Bsaed Testing and Simulation">
                       scenarios might be able to be used to predict how behavior of vehicles (in simulation) cause false positive or negative zone violation alerts and how response services impact mission goals and zone violation rates for a given mission, Tw, vehicle set, and zone set. This can be used to tune Tw.
 
                       <e
@@ -607,34 +626,28 @@ Testing and Simulation">
                     <g
                         id="__gsn__19201242db6"
                         color="#ffffff"
-                        name="Past Mission 
-Results-Based Indicators and Prediction Model">
+                        name="Past Mission  Results-Based Indicators and Prediction Model">
                       Past mission performance and similarity to proposed missions, vehicles and zone configurations might be used to predict Tw with acceptable mission goal completion and zone violations.
 
                       <e
                           id="__gsn__1920130685c"
                           color="#ffffff"
                           name="Proposed Solution">
-                        See problem-diagram.png/ step 4/ Past Mission 
-Results-Based Indicators and Prediction Model
+                        See problem-diagram.png/ step 4/ Past Mission Results-Based Indicators and Prediction Model
                       </e>
                     </g>
 
                     <g
                         id="__gsn__192012fa549"
                         color="#ffffff"
-                        name="Probability-Field-Based
-Mission Geometry
-Analysis">
+                        name="Probability-Field-Based Mission Geometry Analysis">
                       A probability-field model of vehicle trajectories might be possible to compute acceptable Tw against mission definitions, zones configuration and vehicle sets
 
                       <e
                           id="__gsn__19201309f34"
                           color="#ffffff"
                           name="Proposed Solution">
-                        See problem-diagram.png/ step 4/ Probability-Field-Based
-Mission Geometry
-Analysis
+                        See problem-diagram.png/ step 4/ Probability-Field-BasedMission GeometryAnalysis
                       </e>
                     </g>
                   </s>

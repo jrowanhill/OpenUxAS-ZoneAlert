@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1955dbc0a99"
+        color="#ffcccc"
+        name="Correct Implementation of the Solution">
+      The OpenUxAS Zone Violation Alert Service is a correct implementation of the proposed Zone Alert Service solution.
+
+      <s
+          id="__gsn__1955dd78f65"
+          color="#ffcccc"
+          name="Strategy">
+        Through design of the algorithm and testing of its output against representative cases.
+
+        <g
+            id="__gsn__1955dd79465"
+            color="#ffcccc"
+            name="Algorithmic Correctness">
+          The Zone Alert Service computes,  stores, and announces zones equivalent to those computed and applied by the Route Planner Visibility Service, and then from this geometry correctly computes and reports zone violations against vehicle state reports.
+
+          <s
+              id="__gsn__1955dbc3b64"
+              color="#ffcccc"
+              name="Strategy">
+            Each of the high level requirements for the system is satisfied by steps of the algorithm.
+
+            <m
+                id="__gsn__1955dc4284a"
+                color="#ffcccc"
+                name="HL-1-2">
+              The service shall compute, and apply zones of the same geometry computed and applied by the RoutePlannerVisibilityService.
+            </m>
+
+            <m
+                id="__gsn__1955de31cb3"
+                color="#ffcccc"
+                name="HL-1-4">
+              The service shall correctly declare all zones it constructs for zone alerting in a timely manner before mission start.
+            </m>
+
+            <g
+                id="__gsn__1955dc42aae"
+                color="#ffffff"
+                name="HL-1-3">
+              The service shall compute zone violations from vehicle state reports against zone geometry both correctly and accurately.
+
+              <s
+                  id="__gsn__1955dd03368"
+                  color="#ffffff"
+                  name="Strategy">
+                Show that the SimpleZoneAlertComputer's algorithm is correct and that representative results exemplify correct and accurate function.
+
+                <c
+                    id="__gsn__1955deb4413"
+                    color="#ffffff"
+                    name="SimpleZoneAlertComputer">
+                  The ZoneAlertComputer applies a SimpleZoneAlertComputer to compute zone violations.
+                </c>
+
+                <g
+                    id="__gsn__1955dd03a09"
+                    color="#ffffff"
+                    name="Zone Alert Algorithm Design">
+                  The SimpleZoneAlertComputer's computation of zone geometry is correct and accurate, and its computation of existing and imminent zone violations against zones and vehicle state reports is correct and accurate.
+
+                  <m
+                      id="__gsn__1955dc8cb80"
+                      color="#ffffff"
+                      name="HL-1-3-2">
+                    Computation of existing zone violations is correct and accurate with respect to a vehicle state event and stored zone geometry.
+                  </m>
+
+                  <m
+                      id="__gsn__1955dc9b449"
+                      color="#ffffff"
+                      name="HL-1-3-3">
+                    Computation of imminent zone violations is correct and accurate with respect to vehicle state events and linear immediate trajectory and stored zone geometry.
+                  </m>
+                </g>
+
+                <g
+                    id="__gsn__1955dd03c60"
+                    color="#ffffff"
+                    name="Integration Test Results">
+                  Test of representative vehicle state reports against fixed examples of injected zone geometry (not computed from declared zones) shows that the SimpleZoneAlertComputer is correctly computing existing and imminent zone violations.
+
+                  <e
+                      id="__gsn__1955dd44f22"
+                      color="#ffffff"
+                      name="Integeration Tests with Data Injection">
+                    Tests of the SimpleZoneAlertComputer
+                  </e>
+                </g>
+              </s>
+            </g>
+
+            <m
+                id="__gsn__1955df84af4"
+                color="#ffcccc"
+                name="HL-1-5">
+              The service shall correctly report all computed zone violations.
+            </m>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__1955dd798cd"
+            color="#ffffff"
+            name="Integration Test Results">
+          The ZoneAlertService correctly emits alerts and does not emit alerts for reported VehicleState messages against use-representative collections of declared zones.
+
+          <e
+              id="__gsn__1955dde01a9"
+              color="#ffffff"
+              name="Full Integration Tests">
+            Tests of the ZoneAlertService for declared vehicle state messages against representative scenarios with declared zones shows that vehicles report zone violations as intended by the definitions of existing and immediate zone violations for keep-in and keep-out zones.
+          </e>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

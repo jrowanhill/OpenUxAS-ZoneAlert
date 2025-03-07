@@ -32,7 +32,7 @@
         id="__gsn__1954843b9d7"
         color="#ffcccc"
         name="HL-1-2">
-      The ZoneAlertService shall utilize the same semantics for zone geometry as RoutePlannerVisibilityService
+      The service shall compute and apply zones of the same geometry computed and applied by the RoutePlannerVisibilityService.
 
       <c
           id="__gsn__1955d4b7646"
@@ -230,7 +230,7 @@
                                     id="__gsn__1955cfa6961"
                                     color="#ffffff"
                                     name="RoutePlannerVisibilityService Zone Declaration Handling">
-                                  RoutePlannerVisibilityService  RoutePlannerVisibilityService::bProcessZone which in turn calls  bFindPointsForAbstractGeometry on the zone's abstract geometry and a vector to store the polygon. If the return value of the findPOints function is successful the vector of vertives is stored in a CBoundary which is in turn stored in a map by zone id. If not succesful, nothing is stored in the map.
+                                  RoutePlannerVisibilityService RoutePlannerVisibilityService::bProcessZone which in turn calls bFindPointsForAbstractGeometry on the zone's abstract geometry and a vector to store the polygon. If the return value of the findPOints function is successful the vector of vertives is stored in a CBoundary which is in turn stored in a map by zone id. If not succesful, nothing is stored in the map.
 
                                   <e
                                       id="__gsn__19548e00316"
@@ -256,7 +256,7 @@
                                         id="__gsn__1955d0f95d2"
                                         color="#ffffff"
                                         name="ZoneAlertService AbstractZone Handler">
-                                      ZoneAlertService handles each received KeepInZone and KeepOutZone message by calling  registerZone which in turn calls the service's ZoneAlertComputer::addZone method with the zone declaration as a whole structure as well as its contained keep in flag.
+                                      ZoneAlertService handles each received KeepInZone and KeepOutZone message by calling registerZone which in turn calls the service's ZoneAlertComputer::addZone method with the zone declaration as a whole structure as well as its contained keep in flag.
 
                                       <c
                                           id="__gsn__1955cf80480"
