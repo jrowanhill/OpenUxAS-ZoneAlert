@@ -31,8 +31,15 @@
     <g
         id="__gsn__1955dcd44e0"
         color="#ffcccc"
-        name="HL-1-3-2, HL1-3-3">
-      Computation of existing and imminent zone violations is correct and accurate with respect to a vehicle state event and stored zone geometry.
+        name="Satisfies HL-1-1-2">
+      The service correctly and accurately reports zone violations from vehicle state reports and computed zone geometry
+
+      <c
+          id="__gsn__19581c7d17a"
+          color="#ccffff"
+          name="Req. HL-1-1-2">
+        .
+      </c>
 
       <s
           id="__gsn__1955dcdd298"
@@ -51,6 +58,20 @@
               color="#ffcccc"
               name="Strategy">
             Through an algorithm consisting of three steps.
+
+            <m
+                id="__gsn__19581d2003e"
+                color="#ffcccc"
+                name="Satisfies HL-1-1-2-1">
+              The zone geometry applied is sufficiently correct and accurate.
+
+              <c
+                  id="__gsn__19581d23708"
+                  color="#ccffff"
+                  name="Req HL-1-1-2-4">
+                .
+              </c>
+            </m>
 
             <g
                 id="__gsn__1956214a022"
@@ -77,7 +98,7 @@
                 id="__gsn__1956214a882"
                 color="#ffcccc"
                 name="Zone Alert Computer">
-              The SimpleZoneAlertComputer correctly and accurately computes and returns as a list all zone violations.
+              The SimpleZoneAlertService correctly and accurately computes and returns as a list all zone violations.
 
               <s
                   id="__gsn__1955e1ad516"
@@ -208,7 +229,7 @@
                     id="__gsn__1955e1adfb8"
                     color="#cdcdcd"
                     name="Keep-In Zone Violations">
-                  First, correct and accurate computation of keep-in zone violations and accumulation of ZoneViolation alert for each in  the results list.
+                  First, correct and accurate computation of keep-in zone violations and accumulation of ZoneViolation alert for each in the results list.
 
                   <s
                       id="__gsn__1955e1eab85"
@@ -258,7 +279,7 @@
                                 id="__gsn__1955e310ffc"
                                 color="#cdcdcd"
                                 name="checkForInitialKeepInZone">
-                              SimpleZoneAlertComputer::checkForInitialKeepInZone correctly and accurately checks whether a vehicle is making its first state report, and if so, whether that vehicle exists in or on any of the keep-in zone representations.  If it is not the first message, it returns previous findings.
+                              SimpleZoneAlertComputer::checkForInitialKeepInZone correctly and accurately checks whether a vehicle is making its first state report, and if so, whether that vehicle exists in or on any of the keep-in zone representations. If it is not the first message, it returns previous findings.
 
                               <c
                                   id="__gsn__1956237902f"
@@ -311,7 +332,7 @@
                                       id="__gsn__195623eca41"
                                       color="#cdcdcd"
                                       name="Unit Tests">
-                                    Unit tests to show that a vehicle's first call to constructed geometry examples of keep-in zones correctly determines if a vehicle's first VehicleState report has a position  in or on one of the keep-in zones (id &gt;=0) or has no keep-in zone (id == -1).
+                                    Unit tests to show that a vehicle's first call to constructed geometry examples of keep-in zones correctly determines if a vehicle's first VehicleState report has a position in or on one of the keep-in zones (id &gt;=0) or has no keep-in zone (id == -1).
                                   </e>
 
                                   <e
@@ -466,7 +487,7 @@
                                                   id="__gsn__19562678cff"
                                                   color="#cdcdcd"
                                                   name="Correct and Accurate inPolygon">
-                                                The call to the indicated zone's CPolygon::inPolygon function correctly and accurately returns a boolean value based on whether the input vehicle position is  inside the polygon or not.
+                                                The call to the indicated zone's CPolygon::inPolygon function correctly and accurately returns a boolean value based on whether the input vehicle position is inside the polygon or not.
 
                                                 <e
                                                     id="__gsn__195626857e9"
@@ -669,7 +690,7 @@
                                                   id="__gsn__19562b95be0"
                                                   color="#cdcdcd"
                                                   name="Correct and Accurate computeTimeToPosition">
-                                                The algorithm calls findTimeToPosition with the computed closestIntersection as the position and startPos and world frame velocity of the vehicle. The function correctly accurately computes the time at which the vehicle will be at the intersection point based on parameters of initial position, position, and  velocity.
+                                                The algorithm calls findTimeToPosition with the computed closestIntersection as the position and startPos and world frame velocity of the vehicle. The function correctly accurately computes the time at which the vehicle will be at the intersection point based on parameters of initial position, position, and velocity.
 
                                                 <e
                                                     id="__gsn__19562b95be1"
@@ -682,7 +703,7 @@
                                                     id="__gsn__19563119efa"
                                                     color="#cdcdcd"
                                                     name="Accuracy Unit Tests">
-                                                  Unit tests show that time accuracy is sufficient, including for  special cases of line segment length (e.g. low velocity,  intersection near initial position, etc.)
+                                                  Unit tests show that time accuracy is sufficient, including for special cases of line segment length (e.g. low velocity, intersection near initial position, etc.)
                                                 </e>
                                               </g>
 
@@ -707,13 +728,6 @@
                                                 Make Zone Violation returns a correct ZoneViolation as either, correctly, an ActiveZoneViolation or ImmediateZoneViolation message based on input parameters.
                                               </away-goal>
                                             </s>
-
-                                            <e
-                                                id="__gsn__19562b95be5"
-                                                color="#ffffcc"
-                                                name="For Formatting">
-                                              This evidence intentionally left blank
-                                            </e>
                                           </public-goal>
                                         </g>
 
@@ -752,7 +766,7 @@
                                       id="__gsn__195624e3cf4"
                                       color="#cdcdcd"
                                       name="Unit Test">
-                                    Unit test shows that if a mockeed checkForInitialKeepInZone returns &gt;=0  then one call is made to findExistingViolationWith and if that call returns null one call is made to findImminentViolationWIth.However, if findExistingViolationsWith returns a non-null shared_ptr to a ZoneViolation message, no calls are made to findImminentViolationWith. (all with the correct parameters)
+                                    Unit test shows that if a mockeed checkForInitialKeepInZone returns &gt;=0 then one call is made to findExistingViolationWith and if that call returns null one call is made to findImminentViolationWIth.However, if findExistingViolationsWith returns a non-null shared_ptr to a ZoneViolation message, no calls are made to findImminentViolationWith. (all with the correct parameters)
                                   </e>
                                 </g>
                               </s>
@@ -794,7 +808,7 @@
                         id="__gsn__19568207bb6"
                         color="#cdcdcd"
                         name="Keep-Out Zone Violation Detection Algorithm">
-                      The algorithm for keep-out zone violation detection iterates over all registered keep-out zones and determines which have existing, and if not, imminent, keep-out zone violations, which are placed in the violation alert list.
+                      The algorithm for keep-out zone violation detection iterates over all registered keep-out zones and determines which have existing, and if not, imminent, keep-out zone violations, that are placed in the violation alert list.
 
                       <s
                           id="__gsn__195631c7171"
@@ -812,14 +826,14 @@
                               id="__gsn__1956814900e"
                               color="#ffffff"
                               name="Code Inspection">
-                            Vector iterator over stored Keep-Our zones of the SimpleZoneAlertComputer.
+                            Vector iterator over stored Keep-Out zones of the SimpleZoneAlertComputer.
                           </e>
 
                           <e
                               id="__gsn__1956796c5f0"
                               color="#cdcdcd"
                               name="Unit Test">
-                            Unit test shows that following keep-in zone examination,  an iterator iterates over each and every keep-out zone.
+                            Unit test shows that following keep-in zone examination, an iterator iterates over each and every keep-out zone.
                           </e>
                         </g>
 
@@ -904,6 +918,27 @@
                                 </g>
 
                                 <g
+                                    id="__gsn__195729c0fc8"
+                                    color="#cdcdcd"
+                                    name="Conditional Test">
+                                  If and only if an existing violation is not detected for the zone, the zone is checked for imminent violation.
+
+                                  <e
+                                      id="__gsn__19572a1e815"
+                                      color="#ffffff"
+                                      name="Code Inspection">
+                                    Examination of the simple if logic of the iteration body.
+                                  </e>
+
+                                  <e
+                                      id="__gsn__19572a18c4c"
+                                      color="#cdcdcd"
+                                      name="Unit Test">
+                                    Unit tests show that if a zone returns that it found an existing violation, it does not check for an imminent violation, otherwise it does
+                                  </e>
+                                </g>
+
+                                <g
                                     id="__gsn__195631c71b2"
                                     color="#cdcdcd"
                                     name="Imminent Keep-In Zone Violation Detection">
@@ -924,155 +959,29 @@
 
                                     <g
                                         id="__gsn__195631c71b5"
-                                        color="#ffffff"
+                                        color="#cdcdcd"
                                         name="Imminent Violation Check Function">
                                       The findExistingViolationWith method correctly and accurately computes whether the indicated vehicle violates the indicated keep-in zone.
 
-                                      <public-goal
-                                          id="__gsn__195631c71b6"
+                                      <away-goal
+                                          id="__gsn__19572a3c511"
                                           color="#cdcdcd"
                                           name="findImminentViolationWith">
                                         The function SimpleZoneAlertComputer::findImminentViolationWith correctly and accurately determines if a vehicle linear trajectory from the provided start position to end position on the plane is in violation with a zone of the given id.
-
-                                        <s
-                                            id="__gsn__195631c71b7"
-                                            color="#cdcdcd"
-                                            name="Strategy">
-                                          Over the steps of the findImminentZoneViolation algorithm
-
-                                          <j
-                                              id="__gsn__195631c71b8"
-                                              color="#ffffff"
-                                              name="Justification">
-                                            Althgouh polygon-&gt;InPolygon function does not return true if the vehicle is ON the boundary of the polygon, this inaccuracy is deemed acceptable.
-                                          </j>
-
-                                          <j
-                                              id="__gsn__195631c71b9"
-                                              color="#ffffff"
-                                              name="Justification">
-                                            Floating-point inaccuracy is acceptable
-                                          </j>
-
-                                          <c
-                                              id="__gsn__195631c71ba"
-                                              color="#ffffff"
-                                              name="Expected Function">
-                                            A vehicle position violates a keep-in zone if it is not in the zone's polygon and violates a keep-out zone if it is in the zone polygon.
-                                          </c>
-
-                                          <g
-                                              id="__gsn__195631c71bb"
-                                              color="#cdcdcd"
-                                              name="Find Closest Intersection">
-                                            The SimpleZoneAlertComputer::findImminentiolationWith method calls SimpleZoneAlertComputer::findClosestIntersection calls Polygon-&gt;InPolygon with the vehicle position and end position and polygon boundary of the zone to check.
-
-                                            <e
-                                                id="__gsn__195631c71bc"
-                                                color="#ffffff"
-                                                name="Source Examination">
-                                              Examination of the sourcecode of SImpleZoneAlertCOmputer::findImminetViolationWith
-                                            </e>
-
-                                            <e
-                                                id="__gsn__195631c71bd"
-                                                color="#cdcdcd"
-                                                name="Unit Test">
-                                              Unit test showing 1 call to InPolygon on the correct zone polygon with correct start and end positions
-                                            </e>
-                                          </g>
-
-                                          <g
-                                              id="__gsn__195631c71be"
-                                              color="#cdcdcd"
-                                              name="Correct and Accurate findClosestIntersection">
-                                            The call to findClosestIntersection correctly and accurately computes the closest intersection, or if no such intersection exists, on the line segment indicated by the start and end position.
-
-                                            <e
-                                                id="__gsn__195631c71bf"
-                                                color="#cdcdcd"
-                                                name="Correctness Unit Tests">
-                                              Correctness testing for various polygon shapes against various start and ending positions shows corret trurn of a closest intercept (closest to startposition) if there is one and returning null if there is none.
-                                            </e>
-
-                                            <e
-                                                id="__gsn__195631c71c0"
-                                                color="#cdcdcd"
-                                                name="Accuracy Unit Tests">
-                                              Tests of the accuracy of the CPolygon::inPolygon function given the semantic constraints of 1 metter vertex snapping of RoutePlanner zone geometry interpretation.
-                                            </e>
-                                          </g>
-
-                                          <g
-                                              id="__gsn__195631c71c1"
-                                              color="#cdcdcd"
-                                              name="Conditional Return">
-                                            If findClosestIntersection returns NULL, then findImminenViolationWith returns NULL.
-
-                                            <e
-                                                id="__gsn__195631c71c2"
-                                                color="#cdcdcd"
-                                                name="Unit Test">
-                                              .
-                                            </e>
-                                          </g>
-
-                                          <g
-                                              id="__gsn__195631c71c3"
-                                              color="#cdcdcd"
-                                              name="Correct and Accurate computeTimeToPosition">
-                                            The algorithm calls findTimeToPosition with the computed closestIntersection as the position and startPos and world frame velocity of the vehicle. The function correctly accurately computes the time at which the vehicle will be at the intersection point based on parameters of initial position, position, and velocity.
-
-                                            <e
-                                                id="__gsn__195631c71c4"
-                                                color="#cdcdcd"
-                                                name="Unit Tests">
-                                              Simple unit tests show that the function SimpleZoneAlertComputer::computeTimeToPosition computes the time to intersection correctly.
-                                            </e>
-
-                                            <e
-                                                id="__gsn__195631c71c5"
-                                                color="#cdcdcd"
-                                                name="Accuracy Unit Tests">
-                                              Unit tests show that time accuracy is sufficient, including for special cases of line segment length (e.g. low velocity, intersection near initial position, etc.)
-                                            </e>
-                                          </g>
-
-                                          <g
-                                              id="__gsn__195631c71c6"
-                                              color="#cdcdcd"
-                                              name="Detection And Alert Generation">
-                                            A test then checks if an intersection position is not null and the time to interecept falls within the window, then makeZoneViolation is called to make an intersection to return, otherwise NULL Is returned.
-
-                                            <e
-                                                id="__gsn__195631c71c7"
-                                                color="#cdcdcd"
-                                                name="Unit Tests">
-                                              .
-                                            </e>
-                                          </g>
-
-                                          <away-goal
-                                              id="__gsn__195631c71c8"
-                                              color="#cdcdcd"
-                                              name="Make Zone Violation Correctness">
-                                            Make Zone Violation returns a correct ZoneViolation as either, correctly, an ActiveZoneViolation or ImmediateZoneViolation message based on input parameters.
-                                          </away-goal>
-                                        </s>
-                                      </public-goal>
+                                      </away-goal>
                                     </g>
 
                                     <g
                                         id="__gsn__195631c71ca"
                                         color="#cdcdcd"
                                         name="Compositional Test">
-                                      Compositional tests show that if a vehicle state report's position and initial velocity generates a line segment on its tangent plane that intersects the boundary of its keep-in zone, then violation of the keep-in zone is correctly reported, otherwise it is correctly not reported, with th correct location and time of the intersection in an ImminentZoneViolation message returned by the function.
+                                      Compositional tests show that if a vehicle state report's position and initial velocity generates a line segment on its tangent plane that intersects the boundary of its keep-out zone, then violation of the keep-out zone is correctly reported, otherwise it is correctly not reported, with the correct location and time of the intersection in an ImminentZoneViolation message returned by the function.
 
                                       <e
                                           id="__gsn__195631c71cb"
                                           color="#cdcdcd"
                                           name="Correctness Compositional Test">
-                                        Tests showing correct determination of wether a vehicle linear trajectory from start position to end position has any point that intersects the boundary of the keep-in zone polygon. If so returning an ImminentZoneViolation with correct and accurate time and location information about the intersection.
+                                        Tests showing correct determination of wether a vehicle linear trajectory from start position to end position has any point that intersects the boundary of the keep-out zone polygon. If so returning an ImminentZoneViolation with correct and accurate time and location information about the intersection.
                                       </e>
 
                                       <e
@@ -1091,7 +1000,7 @@
                                 id="__gsn__195679e823e"
                                 color="#cdcdcd"
                                 name="Compositional Tests">
-                              Tests show that for representative keep-out zones and vehicle states, the algorithm returns correct and accurate reports of  existing and imminent zone violation alerts.
+                              Tests show that for representative keep-out zones and vehicle states, the algorithm returns correct and accurate reports of existing and imminent zone violation alerts.
 
                               <e
                                   id="__gsn__19567a65816"
@@ -1116,17 +1025,31 @@
                         id="__gsn__195631c71d0"
                         color="#cdcdcd"
                         name="Compositional Tests">
-                      Compositional tests show for all logic cases that SimpleZoneAlertComputer::computeZoneViolations correctly detects keep-out zone violations for vehicles and non-violations for vehicles with various positions with various instantaneous velocities.
+                      Compositional tests show for all logic cases that SimpleZoneAlertComputer::computeZoneViolations correctly detects existing and imminent keep-out zone violations for vehicles and non-violations for vehicles with various positions with various instantaneous velocities.
 
                       <e
                           id="__gsn__195631c71d1"
                           color="#cdcdcd"
-                          name="Compositional Tests">
+                          name="Compositional Correctness Tests">
                         Unit tests showing for all logic cases that SimpleZoneAlertComputer::checkForViolations correctly detects keep-out zone violations for vehicles and non-violations for vehicles at various positions and velocities.
+                      </e>
+
+                      <e
+                          id="__gsn__19572999e19"
+                          color="#cdcdcd"
+                          name="Compositional Accuracy Tests">
+                        Unit tests showing for all logic cases that SimpleZoneAlertComputer::checkForViolations accurately detects keep-out zone violations for vehicles and non-violations for vehicles at various positions and velocities requiring accuracy for correct computation.
                       </e>
                     </g>
                   </s>
                 </g>
+
+                <comment
+                    id="__gsn__19572a6719c"
+                    color="#ffffff"
+                    name="ISSUE">
+                  LOTS OF REDUNDDANT TESTS COMPOSITIONALLY AT MULTIPLE LEVELS. SOE CAN PROBABLY BE SKIPPED.
+                </comment>
               </s>
             </g>
 
@@ -1153,9 +1076,16 @@
                     id="__gsn__195620cc021"
                     color="#cdcdcd"
                     name="Unit Test">
-                  Given a  mock ZoneAlertComputer, the service calls sendSharedLmcpObjectBroadcastMessage once for each ZoneAlert message returned by the ZoneAlertComputer.
+                  Given a mock ZoneAlertComputer, the service calls sendSharedLmcpObjectBroadcastMessage once for each ZoneAlert message returned by the ZoneAlertComputer.
                 </e>
               </g>
+            </g>
+
+            <g
+                id="__gsn__1958b082d4b"
+                color="#ffffff"
+                name="">
+              The computation of zone violations from vehicle state reports and zone geometry shall be sufficiently correct and accurate
             </g>
           </s>
         </g>

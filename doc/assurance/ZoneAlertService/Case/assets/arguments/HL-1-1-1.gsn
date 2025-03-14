@@ -31,13 +31,13 @@
     <g
         id="__gsn__1954843b9d7"
         color="#ffcccc"
-        name="HL-1-2">
-      The service shall compute and apply zones of the same geometry computed and applied by the RoutePlannerVisibilityService.
+        name="Satisfies HL-1-1-1">
+      The service computes and applies zones of the same geometry computed and applied by the RoutePlannerVisibilityService.
 
       <c
           id="__gsn__1955d4b7646"
           color="#ccffff"
-          name="HL-1-2">
+          name="HL-1-1-1">
       </c>
 
       <s

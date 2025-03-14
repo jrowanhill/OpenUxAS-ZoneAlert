@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1958b9ab636"
+        color="#ffcccc"
+        name="The Solution is Confirmed to Solve the Problem">
+      The OpenUxAS Zone Violation Alert Service is confirmed to solve the Imminent and Existing Zone Violation Detection Problem
+
+      <s
+          id="__gsn__1958b9ae822"
+          color="#ffcccc"
+          name="Strategy">
+        Via satisfaction of the highest level requirement and agreement with the operating solution by stakeholders.
+
+        <g
+            id="__gsn__1958b9b57ae"
+            color="#ffcccc"
+            name="Provides Zone Violation Awareness">
+          OpenUxAS is 'aware' of existing and imminent zone violations by vehicles to usefully avoid/recover/accept imminent and existing zone violations.
+
+          <c
+              id="__gsn__1958bc61af8"
+              color="#ccffff"
+              name="HL-1">
+            .
+          </c>
+
+          <g
+              id="__gsn__1958b9e9966"
+              color="#ffcccc"
+              name="Provides Zone Alert Service">
+            The solution provides an OpenUxAS ZoneAlertService to make OpenUxAS systems aware of potential for future zone violations by vehicles based on zone and vehicle positions and vehicle behavior.
+
+            <c
+                id="__gsn__1958bc5ddcf"
+                color="#ccffff"
+                name="HL-1-1">
+              .
+            </c>
+
+            <s
+                id="__gsn__19591942986"
+                color="#ffcccc"
+                name="Strategy">
+              By showing that the ZoneAlertService provides the desired solution and high-level sub-requirements are satisfied
+
+              <g
+                  id="__gsn__1958bac646e"
+                  color="#ffcccc"
+                  name="HL-1 Sub-requirement Satisfaction">
+                Each of the high-level sub-requirements of HL-1-1are satisfied.
+
+                <j
+                    id="__gsn__1958bc461d4"
+                    color="#ffffff"
+                    name="Justification">
+                  Repeating testing here obvious completeness of the sub-requirements
+                </j>
+
+                <s
+                    id="__gsn__1958bac711b"
+                    color="#ffcccc"
+                    name="Strategy">
+                  Enumerating validation of each specified sub-requirement.
+
+                  <g
+                      id="__gsn__1958bc48d4b"
+                      color="#cdcdcd"
+                      name="Same Zone Geometry">
+                    The service interprets declared zones in the same manner as the RoutePlannerVisibilityService.
+
+                    <c
+                        id="__gsn__1958bc65738"
+                        color="#ccffff"
+                        name="HL-1-1-1">
+                      .
+                    </c>
+
+                    <s
+                        id="__gsn__1958bd22262"
+                        color="#cdcdcd"
+                        name="Strategy">
+                      Via stakeholder agreement that use cases and edge cases show consistently equivalent geometry interpretation of zones by both services.
+
+                      <g
+                          id="__gsn__19595865137"
+                          color="#cdcdcd"
+                          name="Equivalence Rules">
+                        Stakeholders agree with the rules defining equivalence for zone geometries between the RoutePlannerVisiblityService and ZoneAlertService.
+
+                        <c
+                            id="__gsn__19595894e82"
+                            color="#ffffcc"
+                            name="Note">
+                          The need for equivalence rules appears in the validation reasoning. It would likely not emerge in defining ConOps or Use Cases, except indirectly and for some examples.
+                        </c>
+
+                        <e
+                            id="__gsn__1959587dccf"
+                            color="#cdcdcd"
+                            name="Equivalence Rules">
+                          .
+                        </e>
+
+                        <e
+                            id="__gsn__1959587e0bd"
+                            color="#cdcdcd"
+                            name="Stakeholder Sign-off">
+                          .
+                        </e>
+                      </g>
+
+                      <g
+                          id="__gsn__195958655c1"
+                          color="#cdcdcd"
+                          name="Equivalence">
+                        The geometries computed for zone declarations are equivalent, under the defined equivalence rules, for both the RoutePlannerVisiblityService and the ZoneAlertService.
+
+                        <g
+                            id="__gsn__19591a38729"
+                            color="#cdcdcd"
+                            name="Use Case Equivalence">
+                          Use cases of geometry have equivalent final stored semantics between the RoutePlannerVisibilityService and ZoneAlertService from the perspective of stakeholders.
+
+                          <e
+                              id="__gsn__1958bd79cec"
+                              color="#cdcdcd"
+                              name="Use Cased Resulting Equivalence">
+                            Use cases demonstrating that use expected zone geometry still provides the same zone descriptions for both services, and that stakeholders agree with this interpretation.
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19591a38d9f"
+                            color="#cdcdcd"
+                            name="Edge Case Equivalence">
+                          Edge cases of anticipated zone geometries have equivalent semantics in final storage in RoutePlannerVisibilityService and ZoneAlertService.
+
+                          <e
+                              id="__gsn__19591b447db"
+                              color="#cdcdcd"
+                              name="Edge Cases Resulting Equivalence">
+                            Edge cases of anticipated use cases demonstrating that edge cases expected zone geometry still provides the same zone descriptions for both services, and that stakeholders agree with this interpretation.
+
+                            <c
+                                id="__gsn__1958bd763ce"
+                                color="#ffffff"
+                                name="Confidence">
+                              Coverage confidence critical
+                            </c>
+
+                            <c
+                                id="__gsn__1958bd765e2"
+                                color="#ffffcc"
+                                name="Note">
+                              It will be important to show that the edge cases include study of zones with distance geometry from chosen origin, as well as cases where the declared order of zones varies greatly, as well as cases where zones are very narrow, odd angles, etc.
+                            </c>
+                          </e>
+                        </g>
+                      </g>
+                    </s>
+                  </g>
+
+                  <g
+                      id="__gsn__1958bc48fde"
+                      color="#ffcccc"
+                      name="Violation Reporting">
+                    The service shall take as input vehicle state reports and in response accurately and correctly report zone violations of the reported vehicle state against known zones
+
+                    <c
+                        id="__gsn__1958bc6778c"
+                        color="#ccffff"
+                        name="HL-1-1-2">
+                      .
+                    </c>
+
+                    <s
+                        id="__gsn__1958bd226a5"
+                        color="#ffcccc"
+                        name="Strategy">
+                      default text
+
+                      <g
+                          id="__gsn__1958bd24f7a"
+                          color="#ffcccc"
+                          name="Functional Correctness">
+                        The service satisfies its functional requirements.
+
+                        <m
+                            id="__gsn__195957f9697"
+                            color="#ffcccc"
+                            name="Correct Implementation of the Solution">
+                          The OpenUxAS Zone Violation Alert Service is a correct implementation of the proposed Zone Alert Service solution.
+                        </m>
+                      </g>
+
+                      <g
+                          id="__gsn__1958bd24c76"
+                          color="#cdcdcd"
+                          name="Observed Behavior">
+                        Observed behavior of the ZoneAlertService over representative use cases show that the intended violation reporting is in fact what the stakeholders want to see from the service.
+
+                        <g
+                            id="__gsn__1958be1e535"
+                            color="#ffffff"
+                            name="Demonstrations for Stakeholders">
+                          Demonstrations for stakeholders confirm that the ZoneAlertService is correctly and accurately reporting zone alerts against representative declared zones and reported vehicle states in the desired manner..
+
+                          <g
+                              id="__gsn__1958be5557c"
+                              color="#cdcdcd"
+                              name="Existing Violation Reporting">
+                            Violation reporting demonstrations show the expected reporting behavior for existing zone violations in representative use cases.
+
+                            <c
+                                id="__gsn__19595828c42"
+                                color="#ccffff"
+                                name="HL-1-1-2-1">
+                              .
+                            </c>
+
+                            <g
+                                id="__gsn__1958be95063"
+                                color="#cdcdcd"
+                                name="Use Case Acceptance">
+                              Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of existing zone violations against reported vehicle state messages for the desired use cases of the system.
+
+                              <e
+                                  id="__gsn__1959591bd7a"
+                                  color="#cdcdcd"
+                                  name="Use Case Demonstrations">
+                                .
+                              </e>
+
+                              <e
+                                  id="__gsn__19595914e54"
+                                  color="#cdcdcd"
+                                  name="Stakeholder Sign-offs">
+                                .
+                              </e>
+                            </g>
+
+                            <g
+                                id="__gsn__1958be953a0"
+                                color="#cdcdcd"
+                                name="Edge Case Acceptance">
+                              Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of existing zone violations against reported vehicle state messages for edge cases around the use cases of the system.
+
+                              <e
+                                  id="__gsn__19595926388"
+                                  color="#cdcdcd"
+                                  name="Edge Case Demonstrations">
+                                .
+                              </e>
+
+                              <e
+                                  id="__gsn__19595924113"
+                                  color="#cdcdcd"
+                                  name="Stakeholder Sign-offs">
+                                .
+                              </e>
+                            </g>
+                          </g>
+
+                          <g
+                              id="__gsn__1958be55809"
+                              color="#cdcdcd"
+                              name="Stakeholder Acceptance  for Imminent Violation Reporting">
+                            Stakeholders agree that the reporting of imminent zone violations is as desired for both correctness and accuracy.
+
+                            <c
+                                id="__gsn__1959582923f"
+                                color="#ccffff"
+                                name="HL-1-1-2-2">
+                              .
+                            </c>
+
+                            <g
+                                id="__gsn__1959593009c"
+                                color="#cdcdcd"
+                                name="Use Case Acceptance">
+                              Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of imminent zone violations against reported vehicle state messages for the desired use cases of the system.
+
+                              <e
+                                  id="__gsn__1959593009d"
+                                  color="#cdcdcd"
+                                  name="Use Case Demonstrations">
+                                .
+                              </e>
+
+                              <e
+                                  id="__gsn__1959593009e"
+                                  color="#cdcdcd"
+                                  name="Stakeholder Sign-offs">
+                                .
+                              </e>
+                            </g>
+
+                            <g
+                                id="__gsn__1959592e79f"
+                                color="#cdcdcd"
+                                name="Edge Case Acceptance">
+                              Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of imminent zone violations against reported vehicle state messages for edge cases around the use cases of the system.
+
+                              <e
+                                  id="__gsn__1959592e7a1"
+                                  color="#cdcdcd"
+                                  name="Edge Case Demonstrations">
+                                .
+                              </e>
+
+                              <e
+                                  id="__gsn__1959592e7a0"
+                                  color="#cdcdcd"
+                                  name="Stakeholder Sign-offs">
+                                .
+                              </e>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </s>
+                  </g>
+
+                  <g
+                      id="__gsn__19595993763"
+                      color="#cdcdcd"
+                      name="Zone Semantics Reporting">
+                    The service correctly declares all zones it constructed for alerting against the input declared zones.
+
+                    <c
+                        id="__gsn__195959ad965"
+                        color="#ccffff"
+                        name="HL-1-1-3">
+                      .
+                    </c>
+
+                    <g
+                        id="__gsn__195959acf4e"
+                        color="#cdcdcd"
+                        name="Applicability">
+                      Stakeholders agree that the transformed zones declared by the ZoneAlertService are of an acceptable form.
+
+                      <e
+                          id="__gsn__195959cd5c7"
+                          color="#b2b2b2"
+                          name="Use Case Results">
+                        Representative use cases for declared zones and the resulting zones declared b the ZoneAlertService.
+                      </e>
+
+                      <e
+                          id="__gsn__195959d945f"
+                          color="#cdcdcd"
+                          name="Stakeholder Sign-Off">
+                        .
+                      </e>
+                    </g>
+                  </g>
+                </s>
+              </g>
+
+              <g
+                  id="__gsn__1958b9e9c7f"
+                  color="#cdcdcd"
+                  name="Solution Intrinsic Validity">
+                Use of the ZoneAlertService shows that it makes OpenUxAS 'aware' of existing zone violations by vehicles to usefully avoid/recover/accept imminent and existing zone violations.
+
+                <c
+                    id="__gsn__19591425c74"
+                    color="#ffffff"
+                    name="Note">
+                  "I can see that this is useful"
+                </c>
+
+                <g
+                    id="__gsn__1958ba69722"
+                    color="#cdcdcd"
+                    name="Demos">
+                  Demonstrations of existing and imminent Zone Violation awareness within OpenUxAS for coverage of expected use cases.
+
+                  <e
+                      id="__gsn__19590e5f65c"
+                      color="#b2b2b2"
+                      name="Demonstrated Awareness">
+                    Demonstration of awareness of imminent and existing zone violations for expected use cases.
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1958bb8ff2c"
+                    color="#cdcdcd"
+                    name="Edge Case Demonstrations">
+                  Testing shows that the UxAS Zone Alert Service provides satisfactory zone alerts for existing and imminent violations at the edges of expected use conditions.
+
+                  <e
+                      id="__gsn__1958bbb8c68"
+                      color="#cdcdcd"
+                      name="Edge Case Tests With Sign-Off">
+                    Demonstrations for sufficiently covering edge cases around the use cases of the systems, with sign-off on behavior from stakeholders.
+
+                    <c
+                        id="__gsn__1958bbba9b2"
+                        color="#ffffcc"
+                        name="Confidence">
+                      Careful confidence argument for coverage of edge cases should be constructed.
+                    </c>
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__1958ba6991b"
+                    color="#cdcdcd"
+                    optional="true"
+                    name="Operational Results">
+                  Quantified awareness of zone violations, both imminent and existing, show sufficient system awareness in OpenUxAS.
+
+                  <e
+                      id="__gsn__19590e5caac"
+                      color="#cdcdcd"
+                      name="Operational Data and Analyses">
+                    .
+                  </e>
+                </g>
+              </g>
+            </s>
+          </g>
+        </g>
+
+        <g
+            id="__gsn__195906c1042"
+            color="#cdcdcd"
+            name="Solution Extrinsic Validity">
+          UxAS applications with the zone violation unawareness problem solve it sufficiently through the ZoneAlertService providing its imminent and existing zone violation alerts.
+
+          <c
+              id="__gsn__19591428390"
+              color="#ffffff"
+              name="Note">
+            "I can see that this fit the bill"
+          </c>
+
+          <g
+              id="__gsn__195906df5ed"
+              color="#cdcdcd"
+              name="Problem Case Demo Sufficiency">
+            It is demonstrated that for implemented use case applications of violation awareness, ZoneAlertService provides sufficient intentional and actual awareness to the use case applications.
+
+            <e
+                id="__gsn__1959074ef0a"
+                color="#cdcdcd"
+                name="Design Reviews">
+              Design reviews show that the provided ZoneAlertService provides sufficient violation awareness for application use cases.
+            </e>
+
+            <e
+                id="__gsn__195906ee04d"
+                color="#cdcdcd"
+                name="Demos">
+              Demonstrations of unawareness problems solved through the provided ZoneAlertService.
+            </e>
+          </g>
+
+          <g
+              id="__gsn__195906de847"
+              color="#cdcdcd"
+              optional="true"
+              name="Operational Sufficiency">
+            Operational data for applications shows that satisfactory zone violation awareness is provided at run-time by the ZoneAlertService.
+
+            <e
+                id="__gsn__195906edd26"
+                color="#cdcdcd"
+                name="Operational Results">
+              Operational data showing the fitness of the zone violation awareness provided by the ZoneAlertService in the resulting behavior of containing applications.
+            </e>
+          </g>
+        </g>
+
+        <g
+            id="__gsn__1958b9b5dfd"
+            color="#cdcdcd"
+            name="Stakeholder Agreement">
+          Stakeholders agree that the system is sufficiently solving the problem of zone violation unawareness by alerting to existing and imminent violations.
+
+          <e
+              id="__gsn__1958b9b98f7"
+              color="#cdcdcd"
+              name="Current Stakeholder Agreement">
+            Stakeholder agreement with process for changes in agreement over time to be registered and presented here in impact to assurance.
+          </e>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

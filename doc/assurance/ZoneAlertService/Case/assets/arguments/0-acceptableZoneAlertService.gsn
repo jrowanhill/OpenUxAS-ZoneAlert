@@ -80,6 +80,13 @@
             color="#ffffff"
             name="Correct Implementation of the Solution">
           The OpenUxAS Zone Violation Alert Service is a correct implementation of the proposed Zone Alert Service solution.
+
+          <c
+              id="__gsn__1958b2ceb25"
+              color="#ffffff"
+              name="Context">
+            This argues against the functional requirements
+          </c>
         </m>
 
         <m
@@ -87,6 +94,13 @@
             color="#ffffff"
             name="The Solution is Confirmed to Solve the Problem">
           The OpenUxAS Zone Violation Alert Service is confirmed to solve the Imminent and Existing Zone Violation Detection Problem
+
+          <c
+              id="__gsn__1958b2cc17f"
+              color="#ffffff"
+              name="Context">
+            This one argues against the high-level requirements
+          </c>
         </m>
       </s>
     </g>

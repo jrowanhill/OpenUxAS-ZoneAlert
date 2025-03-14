@@ -31,8 +31,14 @@
     <g
         id="__gsn__1954cdc3436"
         color="#ffcccc"
-        name="HL-1-3-1">
+        name="Correct Zone Geometry">
       The zone geometry applied is sufficiently correct and accurate.
+
+      <c
+          id="__gsn__19581d31e75"
+          color="#ccffff"
+          name="Req. HL-1-1-2-4">
+      </c>
 
       <s
           id="__gsn__1954cdd9d14"
@@ -429,7 +435,7 @@
                         id="__gsn__1954d3e7a9e"
                         color="#ffffff"
                         name="Remainder Unneeded">
-                      The remaining properties of declared zones, such as altitude bounds, affected vehicles,  and start and ending times, are not intended to be applied by the Zone Alert Service.
+                      The remaining properties of declared zones, such as altitude bounds, affected vehicles, and start and ending times, are not intended to be applied by the Zone Alert Service.
 
                       <e
                           id="__gsn__1954d3f7235"
@@ -466,7 +472,7 @@
                     id="__gsn__1954e0b4f97"
                     color="#ffffff"
                     name="Algorithm">
-                  The algorithm loads a basic data structure called VisiblityGraph provided by RoutePLannerVisibilityService. Each zone is then added to this graph and the graph performs error checking and grid snapping of vertiecs to 1 meter. Any  resulting zone polygon that is degenerate, not vertex-ordered, or irregular, islogged as an error. Any detected error results in no more checking and no final zones are constructed. Otherwise, keep-out zones are expanded by their positive padding values (if any, negative values are ignored) and merged together as they overlap. Keep-in zones are merged together and no padding is applied regardless of any declared by any zones. The final resulting zones are extracted  from the visibility graph and stored as polygon data structures for use is Zone Violation detection.
+                  The algorithm loads a basic data structure called VisiblityGraph provided by RoutePLannerVisibilityService. Each zone is then added to this graph and the graph performs error checking and grid snapping of vertiecs to 1 meter. Any resulting zone polygon that is degenerate, not vertex-ordered, or irregular, islogged as an error. Any detected error results in no more checking and no final zones are constructed. Otherwise, keep-out zones are expanded by their positive padding values (if any, negative values are ignored) and merged together as they overlap. Keep-in zones are merged together and no padding is applied regardless of any declared by any zones. The final resulting zones are extracted from the visibility graph and stored as polygon data structures for use is Zone Violation detection.
                 </c>
 
                 <g
@@ -534,7 +540,7 @@
                         id="__gsn__1954df9fe1b"
                         color="#ffffff"
                         name="Detection of Errors in One or More Zone Polygons">
-                      The algorithm will detect and log the first declared zone that  is degenerate or irregular or not in the right vertex order.
+                      The algorithm will detect and log the first declared zone that is degenerate or irregular or not in the right vertex order.
 
                       <e
                           id="__gsn__1954dfcbff4"
@@ -571,7 +577,7 @@
                     id="__gsn__1954df027fb"
                     color="#ffcccc"
                     name="No Result Polygons if Check Errros">
-                  No final zones are produced and stored for zone alerting if any intermediate zones, when snapped to 1 meter grid bounds,  have errors. otherwise, polygon padding and merging is performed.
+                  No final zones are produced and stored for zone alerting if any intermediate zones, when snapped to 1 meter grid bounds, have errors. otherwise, polygon padding and merging is performed.
 
                   <c
                       id="__gsn__1954df09ac3"
@@ -664,7 +670,7 @@
                               id="__gsn__1954e12cb1b"
                               color="#ffffff"
                               name="Completeness and Correctness">
-                            Keep-out zones each given an expansion distance of its declared padding distance if  its padding distance is a positive number , and otherwise just not expanding the polygon (ignoring negative padding and replacing with zero) is the desired behavior for expanding and merging keep-out zones, is correctly implemented.
+                            Keep-out zones each given an expansion distance of its declared padding distance if its padding distance is a positive number , and otherwise just not expanding the polygon (ignoring negative padding and replacing with zero) is the desired behavior for expanding and merging keep-out zones, is correctly implemented.
 
                             <e
                                 id="__gsn__1954e12cb1c"
@@ -719,7 +725,7 @@
                                 id="__gsn__1954e098cca"
                                 color="#cdcdcd"
                                 name="Unit Test">
-                              Unit testing shows that keep-in zones are always passed to Vislibity merging with zero  shrink on merge operation regardless of zone declared padding.
+                              Unit testing shows that keep-in zones are always passed to Vislibity merging with zero shrink on merge operation regardless of zone declared padding.
                             </e>
                           </g>
                         </g>
