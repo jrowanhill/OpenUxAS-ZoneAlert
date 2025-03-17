@@ -342,7 +342,7 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findExistingViolationW
         }
         else {
             return NULL;
-        }
+        } 
 
     }
     catch(const std::out_of_range &e) {
