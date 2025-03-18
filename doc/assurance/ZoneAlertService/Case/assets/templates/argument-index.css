@@ -1,0 +1,121 @@
+<style>          
+  td table {
+    width: 100%;
+    border: none;
+  }
+  
+  table {
+    text-align: left;
+  }
+  
+  #pop-up {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+  }
+  
+  #table-container {
+    position: relative;
+    
+    width: 870px;
+    height: 75%;
+    overflow: scroll;
+    margin: 120px auto;
+    padding: 20px;
+    
+    background-color: white;
+  }
+  
+  #pop-up-table {
+    width: 100%;
+  }
+  
+  .children,
+  .contexts,
+  .parent,
+  .type,
+  .ownership {
+    display: none;
+  }
+  
+  #context-table {
+    border-collapse: collapse;
+  }
+  
+  #context-table th {
+    vertical-align: bottom;
+  }
+  
+  .gsn-id {
+    width: 4.5em;
+  }
+  
+  .fake-column {
+    display:block; 
+    float:right; 
+    width: 4.5em;
+    padding-right:2px;
+  }
+  
+  .element-label {
+    width: 5em;
+  }
+  
+  .argument {
+    width: 14em;
+  }
+  
+  .muted {
+    background-color: #eee;
+  }
+  
+  .context {
+    background-color: #eeeed9;
+  }
+  
+  .evidence {
+    background-color: #d9eed9;
+  }
+  
+  .context .element {
+    padding-left: 10px;
+  }
+  
+  .border-right {
+    border-right: 2px solid green;
+  }
+  
+  .border-left {
+    border-left: 2px solid green;
+  }
+  
+  .border-top {
+    border-top: 2px solid green;
+  }
+  
+  .border-bottom {
+    border-bottom: 2px solid green;
+  }
+
+  .popup-clickable .element:hover,
+  .clickable .element:hover {
+    background: #ddf;
+    cursor: pointer;
+  }
+  
+  #context-table-scroller {
+    overflow: scroll;
+  }
+  
+  .handle {
+    font-size: smaller;
+    color: blue;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+</style>

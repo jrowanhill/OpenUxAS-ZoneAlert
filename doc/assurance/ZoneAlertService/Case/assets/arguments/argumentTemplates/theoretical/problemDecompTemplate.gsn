@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18da8571096"
+        color="#ffffff"
+        name="Effective Sub-Problem">
+      {The sub-problem} helps solve {the problem}.
+
+      <c
+          id="__gsn__18da925ac23"
+          color="#ffffff"
+          name="Definition: effective">
+        A {sub-problem} is effective for a {problem} if it helps solve it. engineered product is effective if it solves a {target problem}.
+      </c>
+
+      <c
+          id="__gsn__18da924efe6"
+          color="#ffffff"
+          name="Definition: {the problem}">
+        A problem.
+      </c>
+
+      <c
+          id="__gsn__18da97217bc"
+          color="#ffffff"
+          name="Definition: {the sub-problem}">
+        A problem that must be solved as part of the solution to a larger problem.
+      </c>
+
+      <s
+          id="__gsn__18da97522c0"
+          color="#ffffff"
+          name="Strategy">
+        By determining that the sub-problem is part of a vague, abstract solution to the problem, and that in the end, its {defined understanding} is part of an effective solution for the {defined understanding} of the problem.
+
+        <j
+            id="__gsn__18da97c0240"
+            color="#ffffff"
+            name="Justification">
+          The right-hand is just classic divide-and-conquer compositional reasoning. It is shown that given a defined solution for the defined understanding of the problem, with required contract (pre, post and invariants) defining the sub-problem, that the {defined understanding} of the {sub-problem} satisfies those constraints and that the {defined solution} of the {problem as a whole} satisfies the {problem}
+        </j>
+
+        <g
+            id="__gsn__18da977a204"
+            color="#ffffff"
+            name="Potential Problem Decomposition">
+          {The sub-problem} is part of an {abstract solution} of the {the problem}.
+        </g>
+
+        <g
+            id="__gsn__18da977a496"
+            color="#ffffff"
+            name="Effective Problem Decomposition">
+          The {defined understanding} of {the abstract sub-problem} is part of an {effective solution} to the {defined understanding} of {the problem}.
+
+          <s
+              id="__gsn__18da97f798a"
+              color="#ffffff"
+              name="Strategy">
+            Compositional reasoning over constraints defined in the solution of the problem and the sub-problem.
+
+            <g
+                id="__gsn__18da97f7da9"
+                color="#ffffff"
+                name="Goal">
+              THe {defined solution} of the {sub-problem} satisfies the sufficient constraints of the {sub-problem} in the {defined solution} of {the problem}.
+            </g>
+
+            <g
+                id="__gsn__18da97f7f7e"
+                color="#ffffff"
+                name="Goal">
+              The {defined solution} of {the problem} satisfies the sufficient constraints of the {defined understanding} of the {problem}.
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

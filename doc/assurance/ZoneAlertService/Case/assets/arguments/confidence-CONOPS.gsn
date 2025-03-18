@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189fa09fcbe"
+        color="#ffffff"
+        name="CONOPS">
+      CONOPS adequately defines the desired service.
+
+      <s
+          id="__gsn__189fa0ad5fb"
+          color="#ffffff"
+          name="Strategy">
+        By showing adequate definition of desired service and sufficiency for inference of a solution.
+
+        <j
+            id="__gsn__189fa73fc07"
+            color="#ffffff"
+            name="Justification">
+          The purpose of a CONOPs is to define what stakeholders want to exist/be done, and when used to engineer a solution, must be sufficient infer such a solution. Having these two properties, the CONOPs is thus fit for use.
+        </j>
+
+        <g
+            id="__gsn__189fa0ad5fc"
+            color="#ffffff"
+            name="CONOPS Quality">
+          The CONOPS is of sufficient quality and completeness to define the desired service.
+
+          <s
+              id="__gsn__189fa0ad5fd"
+              color="#ffffff"
+              name="Strategy">
+            By showing sufficient quality and completeness of each 
+CONOPS component
+
+            <j
+                id="__gsn__189fa1018d6"
+                color="#ffffff"
+                name="Justification">
+              The proposed components of CONOPS are standard and judged to be sufficient statement of desired service when taken as a whole.
+            </j>
+
+            <public-goal
+                id="__gsn__189fa0ad5fe"
+                color="#ffffff"
+                name="Use Cases">
+              Use of the ZoneWarning service is well understood.
+
+              <s
+                  id="__gsn__189fa0ad601"
+                  color="#ffffff"
+                  name="Strategy">
+                Enumeration of use cases and confirmation of completeness of that enumeration from stakeholder.
+
+                <g
+                    id="__gsn__189fa0ad602"
+                    color="#ffffff"
+                    name="Enumerated Use Cases">
+                  The use cases intended by the stakeholder have been individually defined.
+
+                  <s
+                      id="__gsn__189fa0ad603"
+                      color="#ffffff"
+                      name="Strategy">
+                    The use cases intended by the stakeholders are presented to the reader.
+
+                    <g
+                        id="__gsn__189fa0ad604"
+                        color="#ffffff"
+                        name="Use Case: Self-Regulation">
+                      A vehicle will attempt to regulate its positional behavior so as to not violate zones when it receives alerts of potential violations.
+
+                      <e
+                          id="__gsn__189fa0ad605"
+                          color="#ffffff"
+                          name="Use Case: Self-Regulation">
+                        [[Document Link]]
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__189fa0ad606"
+                        color="#ffffff"
+                        name="Use Case: Station Alert">
+                      A lead vehicle or ground station, for example, wants to be alerted as to any keep in or keep out zone violations pending in order to make higher-level decisions about the group.
+
+                      <e
+                          id="__gsn__189fa0ad607"
+                          color="#ffffff"
+                          name="Use Case: Station Alert">
+                        [[Document Link]]
+                      </e>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__189fa0ad608"
+                    color="#ffffff"
+                    name="No Others">
+                  Stakeholders do not foresee additional "different" use cases.
+
+                  <e
+                      id="__gsn__189fa0ad609"
+                      color="#ffffff"
+                      name="Verbal Confirmation">
+                    From stakeholder Sean Regisford in meeting 8/14/2023.
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__189fa897fd7"
+                    color="#ffffff"
+                    name="Risks to Use Cases Mitigated">
+
+                  <g
+                      id="__gsn__189fa88b111"
+                      color="#ffffff"
+                      name="Doubt">
+                    What is a use case is not correct?
+                  </g>
+
+                  <g
+                      id="__gsn__189fa893e48"
+                      color="#ffffff"
+                      name="Doubt">
+                    What if a use case comes to mind for Sean during development?
+                  </g>
+                </g>
+              </s>
+            </public-goal>
+
+            <public-goal
+                id="__gsn__189fa0ad60b"
+                color="#ffffff"
+                name="Environment Definition">
+              The environment in which the use cases are reasonably foreseen to operate is well-defined.
+
+              <s
+                  id="__gsn__189fa0ad60c"
+                  color="#ffffff"
+                  name="Strategy">
+                Through a basic entity identification process.
+
+                <g
+                    id="__gsn__189fa89ef21"
+                    color="#ffffff"
+                    name="Env'">
+                  default text
+
+                  <s
+                      id="__gsn__189fa8a1909"
+                      name="Strategy">
+                    default text
+
+                    <g
+                        id="__gsn__189fa0ad60d"
+                        color="#ffffff"
+                        name="Entities Identified">
+                      Entities of the are completely identified.
+                    </g>
+
+                    <g
+                        id="__gsn__189fa0ad60e"
+                        color="#ffffff"
+                        name="Entities Defined">
+                      Entities types are adequately defined by their intrinsic properties.
+                    </g>
+
+                    <g
+                        id="__gsn__189fa0ad60f"
+                        color="#ffffff"
+                        name="Entity Modifications Defined">
+                      Variability of entities is adequately define by their extrinsic properties.
+                    </g>
+
+                    <g
+                        id="__gsn__189fa0ad610"
+                        color="#ffffff"
+                        name="Entity Variability Identified">
+                      The range of values that entities can take through reasonably foreseen values of their intrinsic and extrinsic properties are correctly and completely identified.
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__189fa89f31c"
+                    color="#ffffff"
+                    name="Risks Mitigated">
+                  default text
+                </g>
+              </s>
+            </public-goal>
+
+            <g
+                id="__gsn__189fa1dec37"
+                color="#ffffff"
+                name="Requirements">
+              Other requirements of the solution beyond its uses and environment are well-defined.
+
+              <g
+                  id="__gsn__189fa8a8251"
+                  color="#ffffff"
+                  name="Req">
+                default text
+
+                <s
+                    id="__gsn__189fa25c786"
+                    color="#ffffff"
+                    name="Strategy">
+                  By categories of important requirements that are not captured by use cases and environment definition.
+
+                  <j
+                      id="__gsn__189fa25cf51"
+                      color="#ffffff"
+                      name="Justification">
+                    Accepted set of requirement types are covered. (Source?)
+                  </j>
+
+                  <g
+                      id="__gsn__189fa7604a5"
+                      color="#ffffff"
+                      name="Design Constraints">
+                    Design constraints desired by stakeholders are well-considered.
+                  </g>
+
+                  <g
+                      id="__gsn__189fa760bde"
+                      color="#ffffff"
+                      name="Performance Requirements">
+                    default text
+                  </g>
+
+                  <g
+                      id="__gsn__189fa87b550"
+                      color="#ffcccc"
+                      name="Doubt">
+                    Are there other areas of requirement that Sean has in his mind,, or will come to him, after we have already moved on designing a solution? How can we limit this damage?
+                  </g>
+
+                  <g
+                      id="__gsn__189fa887a60"
+                      color="#ffffff"
+                      name="Goal">
+                    We have plans for how to deal with additional requirements should they arise.
+                  </g>
+                </s>
+              </g>
+
+              <g
+                  id="__gsn__189fa8aa71b"
+                  color="#ffffff"
+                  name="Risks Mitigated">
+                The risks to understanding or identification of other requirements for the stakeholders are mitigated.
+              </g>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__189fa0f81c1"
+            color="#ffffff"
+            name="Sufficient for Solution">
+          The CONOPs is sufficient for engineers to infer a {solution specification}.
+
+          <c
+              id="__gsn__189fa0f81c2"
+              color="#ffffff"
+              name="[solution specification]">
+            .
+          </c>
+
+          <e
+              id="__gsn__189fa0f81c3"
+              color="#ffffff"
+              name="Sign-Off">
+            Agreement and sign-off by both engineers and owners that the service definition
+          </e>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

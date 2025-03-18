@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18dbdf08132"
+        color="#ffffff"
+        name="Test Confidence">
+      The tests results verify the absolute behavior of the executable.
+
+      <s
+          id="__gsn__18dbdf0dfc8"
+          color="#ffffff"
+          name="Strategy">
+        By showing that testing applies adequate tests against the potential behaviors of the executable.
+
+        <a
+            id="__gsn__18dbdf0dfc9"
+            color="#ffffff"
+            name="Assumption">
+          It is possible to test all behavior potential of the software in the defined world environment of the problem definition.
+        </a>
+
+        <g
+            id="__gsn__18dbdf0dfca"
+            color="#ffffff"
+            name="Correct Executable">
+          The correct executable with the intended hardware, compiler, and linked resources is constructed.
+
+          <e
+              id="__gsn__18dbdf0dfcb"
+              color="#ffffff"
+              name="Assembly Check">
+            A check that the correct hardware, compiler, and linked resources have been used to construct the software executable and its run=time environment.
+          </e>
+        </g>
+
+        <g
+            id="__gsn__18dbdf0dfcc"
+            color="#ffffff"
+            name="Testing Coverage">
+          Tests reasonably cover all possible behavior under the functional specification.
+
+          <s
+              id="__gsn__18dbdf0dfcd"
+              color="#ffffff"
+              name="Strategy">
+            Argue by code line coverage and more exacting input space coverage.
+
+            <a
+                id="__gsn__18dbdf0dfce"
+                color="#ffffff"
+                name="Assumption">
+              The software is input/output/side-effect deterministic on hardware and with the linked resources.
+            </a>
+
+            <g
+                id="__gsn__18dbdf0dfcf"
+                color="#ffffff"
+                name="Code Line Coverage">
+              All lines of source code are executed by at least one test case.
+
+              <e
+                  id="__gsn__18dbdf0dfd0"
+                  color="#ffffff"
+                  name="Code Coverage Metrics">
+                Measures of what lines of code are covered by tests and degree of untested lines.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__18dbdf0dfd1"
+                color="#ffffff"
+                name="Start State Coverage">
+              The space of potential start states for the executable are all effectively tested.
+
+              <s
+                  id="__gsn__18dbdf0dfd3"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing how the start state space, called the input space, is correctly partitioned into cells for all different deterministic relevant behaviors of the executable.
+
+                <c
+                    id="__gsn__18dbdf0dfd4"
+                    color="#ffffff"
+                    name="Relevant Behaviors">
+                  Relevant behaviors of software include functional and non-functional elements of the operating environment that meaningfully can impact software satisfying the solution specification.
+                </c>
+
+                <a
+                    id="__gsn__18dbdf0dfd5"
+                    color="#ffffff"
+                    name="Assumption">
+                  Different interleaving of the software with other executables and various resource allocation is effectively handled by the operating system.
+
+                  <comment
+                      id="__gsn__18dbdf0dfd6"
+                      color="#ffffff"
+                      name="JCR">
+                    we are working with general software and not concerned with real time and other resource concerns of the OS and below.
+                  </comment>
+                </a>
+
+                <a
+                    id="__gsn__18dbdf0dfd7"
+                    color="#ffffff"
+                    name="Assumption">
+                  Hardware failures are not considered.
+
+                  <comment
+                      id="__gsn__18dbdf0dfd8"
+                      color="#ffffff"
+                      name="JCR">
+                    We are working with general software. If this was mission or safety critical, hardware faults would be considerd.
+                  </comment>
+                </a>
+
+                <a
+                    id="__gsn__18dbdf0dfd9"
+                    color="#ffffff"
+                    name="Assumption">
+                  Comprehensive deterministic coverage of software behavior by tests is feasible.
+                </a>
+
+                <g
+                    id="__gsn__18dbdf0dfda"
+                    color="#ffffff"
+                    name="Correct Input Space Behavior Partition">
+                  The input space to the executable (all parameters and all variables of the world state under problem definition) is properly divided into regions for which behavior might differ.
+
+                  <comment
+                      id="__gsn__18dbdf0dfdb"
+                      color="#ffffff"
+                      name="JCR">
+                    For some systems, this can be a lot of work to determine.
+                  </comment>
+                </g>
+
+                <g
+                    id="__gsn__18dbdf0dfdc"
+                    color="#ffffff"
+                    name="Test Coverage">
+                  A test case exists for each partition cell of the input space.
+
+                  <e
+                      id="__gsn__18dbdf0dfdd"
+                      color="#ffffff"
+                      name="Test Coverage Grid">
+                    .
+                  </e>
+                </g>
+              </s>
+
+              <comment
+                  id="__gsn__18dbdf0dfd2"
+                  color="#ffffff"
+                  name="JCR">
+                Works for sufficiently simple deterministic software in relatively unaffecting environments.
+              </comment>
+            </g>
+          </s>
+        </g>
+
+        <comment
+            id="__gsn__18dbdf24413"
+            color="#ffffff"
+            name="JCR">
+          This is for the moment an argument utilizing complete coverage, other arguments exist when complete input cell coverage is not possible for deterministic software, or the software is not deterministic on inputs.
+        </comment>
+
+        <comment
+            id="__gsn__18dbdf0dfc5"
+            color="#ffffff"
+            name="JCR">
+          There are methods to mix the compositional reasoning together with the various levels of verificaiton testing. My plan was to see how that plays out.
+        </comment>
+      </s>
+    </g>
+  </gsn>
+</argument>

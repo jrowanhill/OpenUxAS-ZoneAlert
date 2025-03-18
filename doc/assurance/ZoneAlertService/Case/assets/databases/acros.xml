@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<acros>
+  <acro>
+    <term>FFU</term>
+    <def>Fit-for-Use</def>
+    <source>Dependable Computing</source>
+  </acro>
+  <acro>
+    <term>SCT</term>
+    <def>Safety-Case Toolkit</def>
+    <source>Dependable Computing</source>
+  </acro>
+  <acro>
+    <term>DCi</term>
+    <def>Dependable Computing</def>
+    <source>Dependable Computing</source>
+  </acro>
+</acros>

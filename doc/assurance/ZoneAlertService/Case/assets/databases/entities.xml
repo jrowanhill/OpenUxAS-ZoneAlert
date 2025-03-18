@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entities>
+  <entity id="1">
+    <document href="http://www.fda.gov/MedicalDevices/default.htm">
+      Medical Devices
+    </document>
+    <argument href="../arguments/syringe-hazards.html#?select=__gsn__137f2fb0381&amp;focus=:cancel">1.1</argument>
+  </entity>
+</entities>

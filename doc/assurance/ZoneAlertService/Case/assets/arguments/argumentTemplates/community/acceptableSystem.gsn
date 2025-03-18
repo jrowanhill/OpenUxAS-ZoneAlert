@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18db882c3f2"
+        color="#ffffff"
+        name="Acceptable {-System-}">
+      The {-System-} is an acceptable solution to {-Problem-}.
+
+      <c
+          id="__gsn__18db883a47c"
+          color="#ffffff"
+          name="System: {-System-}">
+        {-A definition of the system in general terms-}. {-SystemInfoLink-}
+      </c>
+
+      <c
+          id="__gsn__18db883a677"
+          color="#ffffff"
+          name="Problem: {-Problem-}">
+        {-A succinct definition of the problem the system solves in general terms-}.
+      </c>
+
+      <s
+          id="__gsn__18db882e898"
+          color="#ffffff"
+          name="Strategy">
+        By showing that the problem as system is meant to solve is well understood and that the system solves the problem.
+
+        <j
+            id="__gsn__18db886b6fb"
+            color="#ffffff"
+            name="Justification">
+          A system exists to solve a problem.
+        </j>
+
+        <g
+            id="__gsn__18db882e899"
+            color="#ffffff"
+            name="We Understand the Problem">
+          The problem is well understood.
+        </g>
+
+        <g
+            id="__gsn__18db885c532"
+            color="#ffffff"
+            name="The System Solves the Problem">
+          The system solves the understood problem.
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

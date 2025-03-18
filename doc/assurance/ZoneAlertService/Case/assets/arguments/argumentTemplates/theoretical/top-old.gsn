@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18bab3963aa"
+        color="#ffffff"
+        name="Assured">
+      The prototype zone ZoneAlertService is assured for the desired behaviors and qualities.
+
+      <c
+          id="__gsn__18bab3b40ff"
+          color="#ffffff"
+          name="Qualities">
+        Safety
+      </c>
+
+      <c
+          id="__gsn__18bab3b4309"
+          color="#ffffff"
+          name="Behaviors">
+        Provides a ZoneWarningService as Mandated
+      </c>
+
+      <c
+          id="__gsn__18bcf62e9a6"
+          color="#ffffff"
+          name="Context">
+        See Figure 1 and write-up on Highly-Iterative Assured Development Process
+      </c>
+
+      <s
+          id="__gsn__18bab3c09dc"
+          color="#ffffff"
+          name="Strategy">
+        Through a strategy of verification and validation performed through three viewpoints. (1) A verified and validated Mandate that captures the ask of stakeholders, (2) A verified implementation of the Mandate, and (2) An engineer-verified  Exposition of the implementation that is validated by stakeholders as satisfying their desired service.
+
+        <g
+            id="__gsn__18bab3c109f"
+            color="#ffffff"
+            name="Mandate">
+          The {stakeholder} {Mandate} for the {ZoneAlertService} is correct, complete, and validated.
+
+          <c
+              id="__gsn__18bc9623024"
+              color="#ffffff"
+              name="Definition: Mandate">
+            The captured definition of what stakeholders desire in a change to world state through development or modification of a system. See {defined intent} from (Overarching Properties). Often consists of asks and requests in natural language,  ConOps, and other models that capture stakeholder desired system. The mandate defines a system in terms of desired system/service behaviors. The Mandate model of this work models behaviors as functions on the real world (e.g. report zone alerts to all subscribers in bounded time) and qualities with which these functions are performed (e.g. safety, security, usability.)
+          </c>
+
+          <c
+              id="__gsn__18bc96845e0"
+              color="#ffffff"
+              name="Correct, Complete, and Validated">
+            The mandate captures all and only stakeholders' desired system/service behaviors to the extent reasonably practicable.
+          </c>
+
+          <s
+              id="__gsn__18bc9c49eb4"
+              color="#ffffff"
+              name="Strategy">
+            By showing that the Mandate is a sufficiently {complete, correct, and non-superflous capture} of the {stakeholder}'s {desired goals, functions and behaviors} of the {desired system} in a well-defined expected environment, all together in a consistent model.
+
+            <c
+                id="__gsn__18bca4c0a37"
+                color="#ffffff"
+                name="Context">
+              Stakeholders typical think of a {desired solution} in terms of {goals}, {functions}, and {behaviors} in {anticipated environment}s.
+            </c>
+
+            <g
+                id="__gsn__18bca978703"
+                color="#ffffff"
+                name="Desired Operational Environments">
+              The expected environments in which the system will operate are defined.
+
+              <e
+                  id="__gsn__18bca993c26"
+                  color="#ffffff"
+                  name="Mandate: CONOPS">
+                .
+              </e>
+
+              <e
+                  id="__gsn__18bcf33d2e6"
+                  color="#ffffff"
+                  name="Mandate: Use Cases">
+                .
+              </e>
+            </g>
+
+            <g
+                id="__gsn__18bc9c4a629"
+                color="#ffffff"
+                name="Sufficient and Non-Superfluous Goals, Qualities, Behaviors, and Functions">
+              The Mandate contains sufficiently {correct, complete, and non-superfluous} {goals, qualities, desired behaviors, and desired functions} of the {desired system} in stated {operating environment}s.
+
+              <c
+                  id="__gsn__18bca7080dc"
+                  color="#ffffff"
+                  name="Desired Qualities">
+                .
+              </c>
+
+              <c
+                  id="__gsn__18bca364e73"
+                  color="#ffffff"
+                  name="Desired Behaviors">
+                Desired Behaviors between
+              </c>
+
+              <c
+                  id="__gsn__18bcf493492"
+                  color="#ffffff"
+                  name="Defined Goals">
+                .
+              </c>
+
+              <c
+                  id="__gsn__18bca3407bf"
+                  color="#ffffff"
+                  name="Desired Functions">
+                Desired functions describe what the service should do in the 'real world'. (e.g. transport people between locations).
+              </c>
+
+              <e
+                  id="__gsn__18bca704ecf"
+                  color="#ffffff"
+                  name="Mandate: Goal Statement">
+                Explicitly declared goals.
+              </e>
+
+              <e
+                  id="__gsn__18bca7064ef"
+                  color="#ffffff"
+                  name="Mandate: CONOPS">
+                CONOPS Review
+              </e>
+
+              <e
+                  id="__gsn__18bca724bc8"
+                  color="#ffffff"
+                  name="Mandate: Use Cases">
+                .
+              </e>
+            </g>
+
+            <g
+                id="__gsn__18bca30e3e1"
+                color="#ffffff"
+                name="Internal Consistency">
+              The {captured} {desired goals, qualities, functions, and behaviors} of the Mandate are consistent with one another.
+
+              <e
+                  id="__gsn__18bca70a19b"
+                  color="#ffffff"
+                  name="Consistency Analyses">
+                Formal analyses and informal semantic analyses.
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18bb085b0ff"
+            color="#ffffff"
+            name="Design and Implementation">
+          The {ZoneAlertService} {Design and Implementation} correctly and completely satisfies the Mandate.
+
+          <c
+              id="__gsn__18bc9948fca"
+              color="#ffffff"
+              name="Definition: Implementation">
+            All design, specification, and implementation of the ZoneService to provide a solution for the Mandate.
+          </c>
+
+          <s
+              id="__gsn__18bca99d330"
+              color="#ffffff"
+              name="Strategy">
+            Through development of clear, sufficient {Requirements} from the {Mandate} that are satisfied by the Implementation.
+
+            <g
+                id="__gsn__18bca99d89c"
+                color="#ffffff"
+                name="Correct and Complete Mandate-Inferenced Requirements">
+              Each goal, quality, behavior, and function and the environments in which to be performed, are clearly stated as a set of quality requirements.
+
+              <e
+                  id="__gsn__18bca9ba649"
+                  color="#ffffff"
+                  name="Requirements">
+                The requirements of the mandate.
+              </e>
+
+              <e
+                  id="__gsn__18bcf4b4a6c"
+                  color="#ffffff"
+                  name="Mandate Map">
+                From mandate elements to requirements that has complete coverage.
+              </e>
+
+              <e
+                  id="__gsn__18bca9b5198"
+                  color="#ffffff"
+                  name="Requirements Analyses">
+                Requirements analyses process plans, logs.
+              </e>
+            </g>
+
+            <m
+                id="__gsn__18bca99db63"
+                color="#ffffff"
+                name="Mandate-Derived Requirements Satisfied">
+              The requirements derived from the Mandate are satisfied by the Implementation.
+            </m>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18bab3c12b8"
+            color="#ffffff"
+            name="Exposition">
+          The Exposition of the {ZoneAlertSystem} {Implementation} is correct, complete, and validated.
+
+          <c
+              id="__gsn__18bc995653c"
+              color="#ffffff"
+              name="Definition: Exposition">
+            Description and demonstration  of all mandate elements of the Implementation in a form digestible by stakeholders. Examples of exposition elements include demonstrations, showcases, analysis reports, arguments, etc., that are presented at a level that stakeholders can understand.
+          </c>
+
+          <s
+              id="__gsn__18bc98edc61"
+              color="#ffffff"
+              name="Strategy">
+            By showing the the Exposition is a sufficiently correct and complete representation of the engineered system and it is validated by the stakeholders.
+
+            <g
+                id="__gsn__18bc98ee827"
+                color="#ffffff"
+                name="Correct and Complete Exposition">
+              The Exposition of the Implementation sufficiently covers the implementation's {mandated} goals, qualities, functions, and behaviors as well as relevant unmandated {behaviors}.
+
+              <s
+                  id="__gsn__18bc99f4fe3"
+                  color="#ffffff"
+                  name="Strategy">
+                By showing that all {mandated elements}s are {covered}  and all {relevant un-mandated behaviors} are {captured} by the {Exposition}.
+
+                <c
+                    id="__gsn__18bcac092b5"
+                    color="#ffffff"
+                    name="Definition: covered mandate element">
+                  A covered mandate is an element that is adequately represented within the Exposition such that {stakeholder}s can asses whether the element is satisfied.
+                </c>
+
+                <c
+                    id="__gsn__18bcad3f09e"
+                    color="#ffffff"
+                    name="Definition: relevant un-mandated behavior">
+                  A {behavior} of the {Implementation} that is not part of the {Mandate} but is likely to be of interest or concern to the {stakeholders}.
+                </c>
+
+                <g
+                    id="__gsn__18bc99f5628"
+                    color="#ffffff"
+                    name="Correct and Complete Mandate Coverage">
+                  Each and every {mandated element} is {covered} by the {Exposition}.
+
+                  <e
+                      id="__gsn__18bcad63940"
+                      color="#ffffff"
+                      name="Map">
+                    A map from each {mandated element} to a set of {expositions} covering the {operating environment}.
+
+                    <c
+                        id="__gsn__18bcad6b427"
+                        color="#ffffff"
+                        name="Definition: Expositions">
+                      A series tests, demonstrations, reports, etc. for  {Exposition elements}.
+                    </c>
+                  </e>
+                </g>
+
+                <g
+                    id="__gsn__18bc99f57ef"
+                    color="#ffffff"
+                    name="Relevant Un-mandated Behaviors and Functions Captured">
+                  {relevant} {un-mandated behavior and functions}s are sufficiently {captured} in the Exposition.
+
+                  <s
+                      id="__gsn__18bc9b75da9"
+                      color="#ffffff"
+                      name="Strategy">
+                    By showing adequate identification and presentation of {relevant un-mandated elements}.
+
+                    <j
+                        id="__gsn__18bcf5f360a"
+                        color="#ffffff"
+                        name="Justification">
+                      Completeness is defined by relevance, which for now, is highly subjective.
+                    </j>
+
+                    <g
+                        id="__gsn__18bc9b763a2"
+                        color="#ffffff"
+                        name="Relevant Un-mandated Behaviors and Functions Identified">
+                      Relevant un-mandated behaviors and functions of the implementation have been identified.
+                    </g>
+
+                    <g
+                        id="__gsn__18bc9b765a2"
+                        color="#ffffff"
+                        name="Identified Un-mandated Elements Adequately Captured">
+                      Identified relevant un-mandated behaviors and functions are adequately captured for the Exposition.
+                    </g>
+                  </s>
+
+                  <comment
+                      id="__gsn__18bcf5a83c0"
+                      color="#ffffff"
+                      name="Comment: Hypothesis">
+                    Goals and qualities and extraneous functions will generally not be exposed to the level of the Mandate.  What will be exposed are behaviors that fall outside the mandate. Those may point at additional qualities, goals, functions, or behaviors that need to be in the mandate. In which case the mandate is updated and all elements re-worked iteratively.
+                  </comment>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__18bc98eec47"
+                color="#ffffff"
+                name="Validated Exposition">
+              The stakeholders accept the conveyed {Exposition} as satisfying their {desired system}.
+
+              <c
+                  id="__gsn__18bc998b28b"
+                  color="#ffffff"
+                  name="Note">
+                Validation is not with respect to the captured mandate, but instead with respect to the desired system in the heads of stakeholders. If it is not satisfactory, validation failure may lead to iteration of Mandate and Implementation. Early and frequent Exposition (as is applied in Agile Development) is encouraged.
+              </c>
+
+              <e
+                  id="__gsn__18bcf50d8d5"
+                  color="#ffffff"
+                  name="Checkoff Map">
+                Each mandated element is accepted in exposition by the stakeholders in review.
+              </e>
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

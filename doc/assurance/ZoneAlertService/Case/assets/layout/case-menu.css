@@ -1,0 +1,267 @@
+/*
+ * Overall styling for the nav menu.
+ *
+ * Fixed on the screen (always 40 px from the top of the window), blue
+ * background with white text.
+ *
+ * Initially, the nav is set up to be visible; we rely on scripting to move it
+ * offscreen and then to show it when it is hovered over. This is better than a
+ * CSS-driven approach to initial placement, because it lets us ensure that the
+ * "+" at the end of the menu is always correctly placed, no matter font size
+ * and no matter how many list items show up in the menu.
+ */
+nav {
+  position: fixed;
+  z-index: 100000;
+  
+  top: 40px;
+  
+  /* left is set by the script that follows the nav in the document */
+  
+  /* background-color: #020096; */
+  background-color: rgb(68,87,112);
+
+	font-weight: bold;
+	font: 100% Helvetica, Arial, sans-serif;
+
+	color: white;
+  
+  box-shadow: 0px 0px 5px #555;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+/*
+ * Generally, we want black links and for them to not be decorated.
+ */
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+/*
+ * Generally, we want links to be underlined; also on the 2nd-level lis
+ */
+nav a:hover,
+nav > ul > li > ul > li:hover {
+	text-decoration: underline;
+}
+
+/*
+ * The first-level ul is set up for floated items, as in the traditional
+ * left-to-right menu bar arrangement. No bullets for the list, etc.
+ */
+nav > ul {
+	list-style: none;
+	line-height: 1;
+
+	margin: 0;
+	padding: 0;
+	
+	padding-left: 1em;
+}
+
+/*
+ * The items of the first-level ul are floated left, accomplishing the
+ * left-to-right menu bar.
+ *
+ * The margin bottom is set to pull the drop-down menus up a bit, which is
+ * visually nicer.
+ */
+nav > ul > li {
+  line-height: 1;
+  
+	float: left; 
+	height: 20pt;
+
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	
+	margin-top: 0;
+	margin-bottom: -8px;
+}
+
+/*
+ * Since links are generally black, be specific that these links right here 
+ * should be white.
+ */
+nav > ul > li > a {
+  color: white;
+}
+
+/*
+ * Table Styling
+ *
+ * Tables provide the drop-down menus. We'd use lists here, typically, but we
+ * want to support both multiple columns and also "sections" in the drop-down, 
+ * which are demarcated in the structure of the document by using multiple
+ * tbody elements.
+ */
+ 
+/*
+ * Generally, the tables (& lists) should use smaller, black text.
+ *
+ * These tables are also set up to be initially positioned off the screen. We
+ * use scripting (rather than CSS hover pseudoelements) to move them onto the 
+ * screen. This is both more robust and also easier to activate with our test
+ * suite.
+ *
+ * The table also draws the border for the drop-down menu and sets up the drop
+ * shadow. We use rounded bottom corners to soften the look; the top corners are
+ * "hidden" by the overlap with the nav menu itself and so do not need to be
+ * rounded.
+ */
+nav > ul > li > ul,
+nav > ul > li > table {
+  line-height: 1;
+
+  text-align: left;
+  
+  font-size: smaller;
+  color: black;
+
+	position: absolute;
+	left: -999em;
+	height: auto;
+
+	font-weight: normal;
+	border-width: 0.25em;
+	padding-top: 0;
+	padding-bottom: .5em;
+	padding-left: 0;
+	padding-right: 0;
+	
+	margin: 0;
+	margin-top: 10px;
+	margin-left: -1em;
+	
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	
+	box-shadow: 0px 0px 20px #555;
+	
+	border-color: rgb(68,87,112);
+	border-width: 2px;
+	border-style: solid;
+  background-color: white;
+}
+
+/*
+ * List-specific styles
+ */
+nav > ul > li > ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 5px;
+}
+
+nav > ul > li > ul > li {
+  cursor: pointer;
+}
+
+/*
+ * Don't show the disc on the hrule, also don't do pointer
+ */
+nav > ul > li > ul > li.rule {
+  list-style: none;
+  cursor: default;
+}
+
+/*
+ * Leave extra space between the tbodies — only tds are block element, so we
+ * have to put the padding there
+ */
+nav > ul > li > table > tbody > tr:last-child > td {
+  padding-bottom: 10px;
+}
+
+/*
+ * Remove the extra (excess) space for the tds in the last tbody.
+ */
+nav > ul > li > table > tbody:last-child > tr:last-child > td {
+  padding-bottom: 0px;
+}
+
+/*
+ * The first row in each tbody serves as a header of sorts, so we style it
+ * distinctly
+ *
+ * For some reason, WebKit fails to resize the td (needed because of the bold)
+ * and instead wraps. Gecko gets this right.... A work around is needed for
+ * this issue.
+ */
+nav > ul > li > table > tbody > tr:first-child td {
+  background-color: #eee;
+  
+  font-weight: bold;
+  color: rgb(68,87,112);
+
+}
+
+
+/*
+ * Also ensure that the tds are at least 5 em wide (or they look silly). In a
+ * production case, this condition is unlikely to trigger, I expect.
+ */
+nav > ul > li > ul > li,
+nav > ul > li > table td {
+	padding-bottom: 2px;
+	padding-top: 2px;
+	
+	min-width: 200px;
+	overflow: hidden;
+}
+
+/*
+ * Ensure that there is adequate space between tds in the table, especially
+ * between columns.
+ */
+nav > ul > li > table td {
+	padding-right: 20px;
+}
+
+
+/*
+ * Empty cells should not have a min width - that's just silly.
+ */
+nav > ul > li > table td:empty {
+  min-width: 0px;
+}
+
+/*
+ * To make the multi-column nature of the table more clear, preface each td
+ * with a bullet.
+ */
+nav > ul > li > table td:before {
+  content: "\25cf ";
+}
+
+/*
+ * But not empty tds (because that would be silly) and not the tds of the first
+ * tr.
+ */
+nav > ul > li > table td:empty:before,
+nav > ul > li > table tr:first-child td:before {
+  content: '';
+}
+
+/*
+ * But less extra space should be left for the last column.
+ */
+nav > ul > li > table td:last-child {
+  padding-right: 5px;
+}
+
+/*
+ * For shortcut keystrokes (as on the viewer's menu contributions)
+ */
+.shortcut {
+  float: right;
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1914c75c6ca"
+        color="#ffffff"
+        name="Well-Considered">
+      Areas of concern and pitfalls related to proposed solutions have been considered.
+
+      <s
+          id="__gsn__1914c76057e"
+          color="#ffffff"
+          name="Strategy">
+        By addressing areas that could be considered and might be overlooked when proposing a solution to a technical problem.
+
+        <g
+            id="__gsn__1914c760a8f"
+            color="#ffffff"
+            name="Operating Conditions">
+          Range of operating conditions is considered
+        </g>
+
+        <g
+            id="__gsn__1914c760d0c"
+            color="#ffffff"
+            name="Solution Constraints">
+          Solution constraints are considerd, including functional and non-functional constraints
+        </g>
+
+        <g
+            id="__gsn__1914c769495"
+            color="#ffffff"
+            name="Goal">
+          Edge cases are identified and examined for ramifications against the proposed solution
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

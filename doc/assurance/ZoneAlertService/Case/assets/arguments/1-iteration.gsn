@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18db882c3f2"
+        color="#ffffff"
+        name="Iterative Improvement Over Lifecycle">
+      Understanding of the problem and correctness of its solution are iteratively corrected and improved to an extent reasonably practicable.
+
+      <s
+          id="__gsn__18fbb660fa8"
+          color="#ffffff"
+          name="Strategy">
+        Through means to detect issues with problem and solution and then produce corrective improements.
+
+        <g
+            id="__gsn__18fbb660fa9"
+            color="#ffe6cc"
+            name="Issue Detection Policy for Model Validation">
+          Engineers and stakeholders understand and collect information relevant to correction and improvement of the problem definition and its solution system over the system's lifecycle.
+
+          <e
+              id="__gsn__18fbb660fab"
+              color="#ffcccc"
+              name="Issue Tracking Policy">
+            A policy document describing how issues are detected that indicate incorrect problem and solution throughout each lifecycle phase.
+          </e>
+
+          <e
+              id="__gsn__18fbb660fad"
+              color="#ffcccc"
+              name="Forensic Analysis Policy">
+            A policy describing how one performs forensic analysis on system failures to identify and rectify root causes.
+          </e>
+        </g>
+
+        <g
+            id="__gsn__18fbb660fae"
+            color="#ffffff"
+            name="Issue Filing and Resolution">
+          Engineers and other stakeholders file issues relevant to the problem definition, resulting in its correction and improvement.
+
+          <e
+              id="__gsn__18fbb660faf"
+              color="#333333"
+              name="Iterative Review Process">
+            With issue tracking.
+          </e>
+
+          <e
+              id="__gsn__18fbb660fb0"
+              color="#ffffff"
+              name="Problem/Solution Expositions">
+            Iterative problem/solution expositions.
+          </e>
+
+          <e
+              id="__gsn__18fbb660fb1"
+              color="#ffcccc"
+              name="Issue Resolution">
+            All detected issues with the problem definition and CONOPs have been resolved.
+          </e>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

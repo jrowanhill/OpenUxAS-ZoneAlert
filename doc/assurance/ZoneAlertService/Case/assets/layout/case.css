@@ -1,0 +1,368 @@
+/* -------------------------------------------------------------------------- */
+/* Body                                                                      
+ *
+ * The trick of doing the centering and the box shadow here, on the body
+ * element, really only works because we don't want to have a background color
+ * (or anything else) for the page. So this is not a generally useful approach
+ * for a web site. However, for our purposes, it is ideal (and much cleaner than
+ * the previous approach of overlapped elements).
+ *
+ * Center the body (the whole page) and apply a drop shadow. Note that fixed
+ * width is required for margin-auto centering to work.
+ *
+ * Note that in WebKit (for Safari 6, at least), setting a background color
+ * interferes with a drop shadow. So we do not set the background color here.
+ */
+body {
+	font: 100% Georgia, "Times New Roman", Times, serif;
+	padding: 40px;
+	color: black;
+}
+
+/*
+ * In general, we do not want hyperlinks underlined. We will (in general) rely
+ * on the browser's coloring of links to clue the viewer.
+ */
+a {
+  text-decoration: none;
+  color: rgb(68,87,112);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header                                                                     
+ * 
+ * Styling for the header (banner, cover page, however you want to think of it)
+ *
+ * Cover pages generally have centered text, so....
+ */
+header {
+  text-align: center;
+}
+
+/*
+ * Use larger text in the header and make it bold. Also, don't leave lots
+ * of extra space between lines.
+ */
+header p {
+  font-size: 16pt;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/*
+ * Leave lots of space around images
+ */
+header img {
+  margin-top:    50px;
+  margin-bottom: 50px;
+  
+  width: 50%
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Content
+ *
+ * This is the primary content in the document. We like justified text, so we
+ * set it. Setting overflow to hidden is a useful trick in getting floats to
+ * "close" themselves, without having to introduce an element so that you can
+ * put non-floated text after floated text. 
+ */
+section#content {
+  text-align: justify;
+  
+  overflow: hidden;
+}
+
+/*
+ * To ease readability, set the line spacing to 1.5
+ */
+section#content p {
+  line-height: 1.5;
+}
+
+/*
+ * Keep a consistent look for list items
+ */
+section#content li {
+  line-height: 1.5;
+  margin-top: 8pt;
+  margin-bottom: 8pt;
+}
+
+/* 
+ * psuedo h1 style for a p so that we can do non-numbered headings. This is a
+ * holdover from when we actually relied on CSS to do the numbering of headings
+ * for us (which we no longer do, because IE<9 is horrible). It's still useful,
+ * I deem, in letting us think about non-heading headings.
+ */
+section#content p.h1 {
+  font-weight: bold;
+  font-size: 14pt;
+  margin-top: 24pt;
+}
+
+section#content h1 {
+  margin-top: 24pt;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+section#content h2 {
+  margin-top: 16pt;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+section#content h3 {
+  font-style: italic;
+  font-size: 12pt;
+  font-weight: normal;
+}
+
+/*
+ * By combining the width and height rules with per-image max-width and
+ * max-height, we very simply achieve aspect-ratio-preserving scaling up to the 
+ * specified (max) height and width of the image. If we set the per-image (max) * width and height to be the pixel dimensions of the image, then the image will * scale up to 100% of its pixel dimensions and no further.
+ *
+ * The display:block and margin:0px auto give us centering within the parent
+ * element.
+ */
+section#content img {
+  width: 100%;
+  height: 100%;
+  
+  border: none;
+  display: block;
+  
+  margin: 0px auto;
+}
+
+section#content figcaption {
+  padding-left: 1in;
+  padding-right: 1in;
+  margin-bottom: 24pt;
+  font-style: italic;
+  text-align: center;
+}
+
+/*
+ * Tables in HTML actually have a notion of a caption, but we do it with a class
+ * instead. I cannot recall why.
+ */
+section#content .table-caption {
+  padding-left: 1in;
+  padding-right: 1in;
+  margin-top: 24pt;
+  font-style: italic;
+  text-align: center;
+}
+
+/*
+ * Default table styles. These are likely to be insufficient for all but the
+ * simplest of tables, so custom CSS for documents with complex tables will 
+ * likely be required.
+ */
+section#content table {
+  margin: 0px auto;
+/* 
+  border-color: #888;
+  border-style: solid;
+  border-width: 1px;
+ */
+}
+
+section#content table th {
+  background-color: #eee;
+}
+
+section#content table td {
+  vertical-align: top;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Definitions                                                                
+ *
+ * Styling for definition lists: make it look rather like a two-column document,
+ * with the term to left and the definition to right
+ *
+ * In order to accomplish this, we have to say we want block layout.
+ */
+section#content dl, 
+section#content dd, 
+section#content dt {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+/*
+ * Reset the floating so that we get correct behavior.
+ */
+section#content dt {
+  width: 30%;
+  float: left;
+  clear: left;
+
+  padding-left:  3%;
+  padding-right: 3%;
+  font-weight: bold;
+}
+
+/*
+ * Provide some bottom padding, which gives us nice inter-element spacing.
+ */
+section#content dd {
+  margin-left: 36%;
+  
+  padding-right: 3%;
+  padding-bottom: 10px;
+}
+
+section#content dd p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Table of Contents, fig, etc.                                               
+ *
+ * Custom styles for these parts of the document.
+ */
+section#content #toc, 
+section#content #lof, 
+section#content #lot {
+  margin-top:    50px;
+  margin-bottom: 50px;
+}
+
+section#content #toc p, 
+section#content #lof p, 
+section#content #lot p {
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  line-height: 1;
+}
+
+section#content #toc p.l2 {
+  padding-left: .25in;
+}
+
+section#content #toc p.l3 {
+  padding-left: .5in;
+}
+
+/*
+ * Center these titles. Might want to remove that style, to match other kinds
+ * of documents?
+ */
+section#content #toc .title, 
+section#content #lof .title, 
+section#content #lot .title {
+  font-weight: bold;
+  font-size: 16pt;
+  text-align: center;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Special styling for the arguments table, since it has multiple sections 
+ *
+ * This matters because the text generator knows how to spit out a table of
+ * arguments. So this is not the same as the special index page.
+ */
+table#argumentstable > tbody > tr:first-child {
+  background-color: #eee;
+}
+
+table#argumentstable > tbody > tr:first-child td {
+  border-style:solid;
+  border-bottom:thin solid #020096;
+  color:#020096
+}
+
+table#argumentstable > tbody > tr:last-child td {
+  padding-bottom: 10px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* References
+ *
+ * Styling for multimarkdown's footnotes.
+ */
+section#content a.footnote {
+  vertical-align: super;
+  line-height: 0pt;
+}
+
+section#content #references {
+  counter-reset: ref-counter;
+}
+
+section#content #references p.reference {
+  counter-increment: ref-counter;
+}
+
+section#content #references p.reference:before {
+  content: counter(ref-counter) ". ";
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* Argument
+ *
+ * Styling for the container wrapping arguments that are embedded in the
+ * document.
+ */
+/* 
+section#content figure.argument-container {
+  margin: 0px auto;
+  overflow: hidden;
+}
+ */
+
+section#content figure.argument-container div {
+  border: 1px solid;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+section#content pre.argument {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                     
+ * 
+ * Not currently used, but I'm putting it here as an explicit reminder that it
+ * exists and can be used for styling.
+ */
+footer {
+}
+
+@media print {
+    figure {
+      page-break-inside: avoid;
+    }
+    
+    section#content figure.argument-container div {
+      border: none;
+    }
+    
+    .hide-on-print {
+      display: none;
+    }
+    
+    h1, h2, h3, h4 {
+      page-break-after: avoid;
+    }
+    
+    a {
+      color: inherit;
+    }
+}

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__19008174d9f"
+        color="#ffffff"
+        name="Confidence in Problem Diagram">
+      There is significant reason to believe the produced problem diagram would be valid.
+
+      <s
+          id="__gsn__190081f9782"
+          color="#ffffff"
+          name="Strategy: Means of Understanding">
+        Through gathering of sufficient parties and expertise to define the problem, along with direct evidence that the problem has been well defined.
+
+        <c
+            id="__gsn__190081f9783"
+            color="#ffffff"
+            name="Why Define the Problem">
+          It is easy to get the problem wrong and waste many iterations solving the wrong problem.
+        </c>
+
+        <g
+            id="__gsn__190081f9784"
+            color="#ffffff"
+            name="Stakeholders Identified">
+          The people/entities who have the problem and those that can help describe it are identified as stakeholders.
+
+          <e
+              id="__gsn__190081f9785"
+              color="#ffffff"
+              name="Problem Owner: S. Regisford">
+            Regisford is the person who wants to solve the problem of not knowing when tactical flight might violate zone.
+          </e>
+        </g>
+
+        <g
+            id="__gsn__190081f9786"
+            color="#ffffff"
+            name="Sufficient Expertise">
+          Stakeholders have sufficient information to define the problem.
+
+          <s
+              id="__gsn__190081f9787"
+              color="#ffffff"
+              name="Strategy">
+            Through available expert stakeholders, reference information, and performed research, sufficient expertise is demonstrated.
+
+            <g
+                id="__gsn__190081f9788"
+                color="#ffffff"
+                optional="true"
+                name="Expert Stakeholders">
+              Stakeholders with expertise in flight zones are identified.
+
+              <e
+                  id="__gsn__190081f9789"
+                  color="#ffcccc"
+                  name="Expert Stakeholders">
+                A list of stakeholders with required expertise, and those areas of expertise.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__190081f978a"
+                color="#ffffff"
+                optional="true"
+                name="Reference Information">
+              Reference information on zones and zone awareness are available.
+
+              <e
+                  id="__gsn__190081f978b"
+                  color="#ffcccc"
+                  name="Reference Information">
+                Reference sources for keep-in and keep-out zones and awareness.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__190081f978c"
+                color="#ffffff"
+                optional="true"
+                name="Research">
+              Research is performed as necessary to further understand zone unawareness.
+
+              <e
+                  id="__gsn__190081f978d"
+                  color="#ffcccc"
+                  name="Research">
+                Performed research to understand zone unawareness.
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__190081f9790"
+            color="#ffffff"
+            name="Problem Definition">
+          A problem definition document clearly defines the stakeholder's problem.
+
+          <s
+              id="__gsn__190081f9794"
+              color="#ffffff"
+              name="Strategy">
+            Argument of process. The correct inputs to a reasonable process are applied.
+
+            <g
+                id="__gsn__190081f9795"
+                color="#ffffff"
+                name="Inputs Assembled">
+              Input information from stakeholders and domain experts is collected for use in problem analysis.
+
+              <e
+                  id="__gsn__190081f9796"
+                  color="#ffffff"
+                  name="CONOPS Capture">
+                CONOPs discussion.
+              </e>
+            </g>
+
+            <g
+                id="__gsn__190081f9797"
+                color="#ffffff"
+                name="Reasonable Problem Analysis Performed">
+              A reasonable analysis of the problem was performed by stakeholders and engineers.
+
+              <e
+                  id="__gsn__190081f9798"
+                  color="#ffcccc"
+                  name="Problem Analysis Documentation">
+                .
+              </e>
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

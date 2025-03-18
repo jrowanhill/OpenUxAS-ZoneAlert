@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions>
+  <definition>
+    <term>Accidental Faults</term>
+    <def>introduced inadvertently</def>
+  </definition>
+  <definition>
+    <term>Administrator</term>
+    <def>an entity that has the authority to manage, modify, repair and use the system</def>
+  </definition>
+  <definition>
+    <term>Availability</term>
+    <def>readiness for correct service</def>
+  </definition>
+  <definition>
+    <term>Behavior</term>
+    <def>what the system does to implement its function; described by a sequence of states</def>
+  </definition>
+  <definition>
+    <term>Confidentiality</term>
+    <def>absence of unauthorized disclosure of information</def>
+  </definition>
+  <definition>
+    <term>Degraded Mode</term>
+    <def>delivery of a subset of needed services</def>
+  </definition>
+  <definition>
+    <term>Deliberate Faults</term>
+    <def>result of a harmful decision</def>
+  </definition>
+  <definition>
+    <term>Dependability</term>
+    <def>ability to avoid service failures that are more frequent and more severe than is acceptable</def>
+  </definition>
+  <definition>
+    <term>Dependence</term>
+    <def>the extent to which one system’s dependability is affected by another’s</def>
+  </definition>
+  <definition>
+    <term>Development Environment</term>
+    <def>the physical world, human developers, development tools, and production and test facilities</def>
+  </definition>
+  <definition>
+    <term>Development Faults</term>
+    <def>occur during development</def>
+  </definition>
+  <definition>
+    <term>Development Phase</term>
+    <def>all activities from initial concept to the decision that the system has passed all acceptance tests</def>
+  </definition>
+  <definition>
+    <term>Error</term>
+    <def>the part of the total state of the system that may lead to its subsequent service failure</def>
+  </definition>
+  <definition>
+    <term>External Faults</term>
+    <def>originate outside the system boundary and propagate errors into the system by interaction or interference</def>
+  </definition>
+  <definition>
+    <term>External State</term>
+    <def>the part of a system’s total state that is perceivable at the service interface</def>
+  </definition>
+  <definition>
+    <term>Failure</term>
+    <def>an event that occurs when the delivered service deviates from correct service</def>
+  </definition>
+  <definition>
+    <term>Fault Forecasting</term>
+    <def>to estimate the present number, the future incidence, and the likely consequences of faults</def>
+  </definition>
+  <definition>
+    <term>Fault Prevention</term>
+    <def>to prevent the occurrence or introduction of faults  </def>
+  </definition>
+  <definition>
+    <term>Fault Removal</term>
+    <def>to reduce the number and severity of faults</def>
+  </definition>
+  
+  <definition>
+    <term>Fault Tolerance</term>
+    <def>to avoid service failures in the presence of faults </def>
+  </definition>
+  <definition>
+    <term>Fault</term>
+    <def>the adjudged or hypothesized cause of an error </def>
+  </definition>
+  <definition>
+    <term>Function</term>
+    <def>what a system is intended to do </def>
+  </definition>
+  <definition>
+    <term>Functional Specification</term>
+    <def>describes the function of a system</def> 
+  </definition>
+  <definition>
+    <term>Hardware Faults</term>
+    <def>originate in, or affect, hardware </def>
+  </definition>
+  <definition>
+    <term>Human-made Faults</term>
+    <def>result from human actions</def>
+  </definition>
+  
+  <definition>
+    <term>Incompetence Faults</term>
+    <def>introduced from the lack of professional competence by authorized humans or from inadequacy of the development organization</def>
+  </definition>
+  <definition>
+    <term>Infrastructure</term>
+    <def>entities that provide specialized service to the system, such as information sources, communication links, power sources, etc.</def>
+  </definition>
+  <definition>
+    <term>Integrity</term>
+    <def>absence of improper system alterations</def>
+  </definition>
+  <definition>
+    <term>Interaction Faults</term>
+    <def>all external faults</def>
+  </definition>
+  <definition>
+    <term>Internal Faults</term>
+    <def>originate inside the system boundary</def>
+  </definition>
+  <definition>
+    <term>Internal State</term>
+    <def>the part of a system’s total state that is not perceivable at the service interface</def>
+  </definition>
+  <definition>
+    <term>Intruder</term>
+    <def>a malicious entity that attempts to exceed any authority it might have an alter service or halt it, alter the system’s functionality or performance, or access confidential information</def>
+  </definition>
+  <definition>
+    <term>Maintainability</term>
+    <def>ability to undergo modifications and repairs</def>
+  </definition>
+  <definition>
+    <term>Maintenance</term>
+    <def>not only repairs, but also all modifications of the system that take place during the use phase of the system</def>
+  </definition>
+  <definition>
+    <term>Malicious Faults</term>
+    <def>introduced by a human with the malicious objection of causing harm to the system</def>
+  </definition>
+  <definition>
+    <term>Natural Faults</term>
+    <def>are caused by natural phenomena without human participation</def>
+  </definition>
+  <definition>
+    <term>Non-deliberate faults</term>
+    <def>introduced without awareness</def>
+  </definition>
+  <definition>
+    <term>Non-malicious faults</term>
+    <def>introduced without a malicious objective</def>
+  </definition>
+  <definition>
+    <term>Operational Faults</term>
+    <def>occur during service delivery of the use phase</def>
+  </definition>
+  <definition>
+    <term>Partial Failure</term>
+    <def>a failure that leads to a degraded mode</def>
+  </definition>
+  <definition>
+    <term>Permanent Faults</term>
+    <def>presence is continuous in time</def>
+  </definition>
+  <definition>
+    <term>Physical Faults</term>
+    <def>all fault classes that affect hardware</def>
+  </definition>
+  <definition>
+    <term>Provider</term>
+    <def>an entity that delivers service at its use interfaces</def>
+  </definition>
+  <definition>
+    <term>Reliability</term>
+    <def>continuity of correct service</def>
+  </definition>
+  <definition>
+    <term>Safety</term>
+    <def>absence of catastrophic consequences on the users and the environment</def>
+  </definition>
+  <definition>
+    <term>Security</term>
+    <def>the composite of the attributes of confidentiality, integrity and availability</def>
+  </definition>
+  <definition>
+    <term>Service Failure</term>
+    <def>an event that occurs when the delivered service deviates from correct service</def>
+  </definition>
+  <definition>
+    <term>Service Interface</term>
+    <def>the part of the system boundary where service delivery takes place</def>
+  </definition>
+  <definition>
+    <term>Service Outage</term>
+    <def>the period of delivery of incorrect service</def>
+  </definition>
+  <definition>
+    <term>Service Restoration</term>
+    <def>the transition from incorrect service to correct service</def>
+  </definition>
+  <definition>
+    <term>Service Shutdown</term>
+    <def>intentional halt of service by an authorized entity</def>
+  </definition>
+  <definition>
+    <term>Service</term>
+    <def>the behavior of a system as it is perceived by its users (including, potentially, other systems)</def>
+  </definition>
+  <definition>
+    <term>Software Faults</term>
+    <def>affect software, i.e. programs or data</def>
+  </definition>
+  <definition>
+    <term>Structure</term>
+    <def>what enables the system to generate its behavior</def>
+  </definition>
+  <definition>
+    <term>System Boundary</term>
+    <def>the common frontier between a system and its environment</def>
+  </definition>
+  <definition>
+    <term>System</term>
+    <def>an entity that interacts with other entities, i.e., other systems, including hardware, software, humans, and the physical world</def>
+  </definition>
+  <definition>
+    <term>Total State</term>
+    <def>the set of the following states: computation, communication, stored information, interconnection, and physical condition</def>
+  </definition>
+  <definition>
+    <term>Transient Faults</term>
+    <def>presence is bounded in time</def>
+  </definition>
+  <definition>
+    <term>Trust</term>
+    <def>accepted dependence</def>
+  </definition>
+  <definition>
+    <term>Use Environment</term>
+    <def>the physical world, administrators, users, providers, infrastructure and intruders</def>
+  </definition>
+  <definition>
+    <term>Use Phase</term>
+    <def>begins when the system is accepted for use and starts the delivery of its services to users</def>
+  </definition>
+</definitions>

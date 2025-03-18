@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<argument>
+<properties>
+  <title>Example Modularization</title>
+  <author>Tony</author>
+  <version>Version 0.5</version>
+  <date></date>
+  <last-modified>07/03/2013</last-modified>
+  <status>Draft</status>
+  <prefix></prefix>
+  <confidence>false</confidence>
+  <note>Simple GSN fragment to demonstrate argument modularization.</note>
+</properties>
+
+<gsn>
+  <m id="__gsn__13ee712eae0"
+     name="System">
+    Assurance Case
+
+    <m id="__gsn__13ee712eadd"
+       name="Subsystem A">
+      Assurance Case
+    </m>
+    <m id="__gsn__13ee712eade"
+       name="Subsystem B">
+      Assurance Case
+    </m>
+    <m id="__gsn__13ee712eadf"
+       name="Subsystem C">
+      Assurance Case
+    </m>
+  </m>
+</gsn>
+</argument>

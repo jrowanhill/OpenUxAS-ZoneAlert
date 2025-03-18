@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189d60c6b68"
+        color="#ffffff"
+        name="Assured for Desired Properties">
+      The {Zone Approach Warning Service}  has the {desired properties} of the software.
+
+      <c
+          id="__gsn__18ad2707175"
+          color="#ffffff"
+          name="Defined: Desired Properties">
+        Desired properties of the software are {functional suitability} and {safety}.
+      </c>
+
+      <c
+          id="__gsn__18ad2835bc4"
+          color="#ffffff"
+          name="Functional Suitability">
+        Under ISO-25010, "This characteristic represents the degree to which a product or system provides functions that meet stated and implied needs when used under specified conditions."
+      </c>
+
+      <c
+          id="__gsn__18ad2835df9"
+          color="#ffffff"
+          name="Safety">
+        The use of the software in foreseeable desired applications will not lead to unacceptable accidents and losses.
+      </c>
+
+      <s
+          id="__gsn__189d63c891e"
+          color="#ffffff"
+          name="Strategy">
+        By showing that the service is provided as desired for each of a set of critical properties of quality systems.
+
+        <c
+            id="__gsn__189d67fe8a3"
+            color="#ffffff"
+            name="Quality System Attributes">
+          Functionality, Safety, Security, Reliability, Maintainable
+        </c>
+
+        <c
+            id="__gsn__189d6d42315"
+            color="#ffffff"
+            name="System and Environment">
+          All properties are considered in the context of the foreseeable states of the service system and its environment.
+        </c>
+
+        <m
+            id="__gsn__189d681aa1f"
+            color="#ffffff"
+            name="Functionality">
+          The service performs the desired functions.
+        </m>
+
+        <m
+            id="__gsn__189dbd8aad7"
+            color="#ffffff"
+            name="Usability">
+          The service is easily used by the stakeholders as they desire.
+        </m>
+
+        <m
+            id="__gsn__189d68221d3"
+            color="#ffffff"
+            name="Safety">
+          The service does not produce unacceptable accidents and loss.
+        </m>
+
+        <m
+            id="__gsn__189d682b3dd"
+            color="#ffffff"
+            name="Security">
+          The service performs its intended functions adequately in the presence of malicious activity and intended misuse.
+        </m>
+
+        <m
+            id="__gsn__189d683af0f"
+            color="#ffffff"
+            name="Reliability">
+          The service is predicted to not fail with acceptable probability.
+        </m>
+
+        <m
+            id="__gsn__189d685eb84"
+            color="#ffffff"
+            name="Maintainability">
+          The service is constructed in a manner that allows it to be repaired and/or modified in a sufficiently efficient and effective manner.
+        </m>
+      </s>
+
+      <s
+          id="__gsn__18acd5e1ec9"
+          color="#ffffff"
+          name="Strategy">
+        By arguing assurance within the crucible of a typical bench-engineer processes of rapid, iterative development of software.
+
+        <j
+            id="__gsn__18acd62b9aa"
+            color="#ffffff"
+            name="Justification">
+          Rapid, iterative software development among desk-engineers will not be performed through extensive linear documentation, but instead through testing and behavioral observation of the evolving system. Therefore, traditional models and specification and implementation are not offered as the primary approach to validation and verification, respectively.
+        </j>
+      </s>
+
+      <s
+          id="__gsn__18ad28144ea"
+          color="#ffffff"
+          name="Strategy">
+        Through {verification and validation} for the {desired properties} integrated into the software's development and maintenance approach.
+
+        <c
+            id="__gsn__18ad2643b6f"
+            color="#ffffff"
+            name="Defined: Valid and Verified">
+          The Zone Warning Service provides the service desired by stakeholders and provides that desired service correctly.
+
+          <c
+              id="__gsn__18acd5d0750"
+              color="#ffffff"
+              name="Defined: Verified">
+            The engineered service performs the desired service correctly.
+          </c>
+
+          <c
+              id="__gsn__18acd5d05b3"
+              color="#ffffff"
+              name="Defined: Valid">
+            The engineered service is the service desired by stakeholders.
+          </c>
+        </c>
+
+        <g
+            id="__gsn__18acd62a526"
+            color="#ffffff"
+            name="Valid">
+          The engineers and stakeholders believe that they have a correct and complete, shared understanding of the desired {Zone Warning Service}.
+
+          <s
+              id="__gsn__18acd6aa7ec"
+              color="#ffffff"
+              name="Strategy">
+            The engineers and stakeholders argue that a combination of CONOPS documentation with
+
+            <j
+                id="__gsn__18acd6cee51"
+                color="#ffffff"
+                name="Justification">
+              Many processes could be applied here. Traditional methods capture and vet requirements. Agile performs regular behavioral assessment by stakeholders and user-testers. Here, we assume that documentation and conversation with stakeholders drive most validation processes.
+            </j>
+
+            <c
+                id="__gsn__18acd740e8d"
+                color="#ffffcc"
+                name="CONOPS">
+              What written record best captures the desired service as captured by stakeholder teams and engineering teams?  Answer: CONOPS.
+            </c>
+
+            <g
+                id="__gsn__18acd7ea36c"
+                color="#ffffff"
+                name="CONOPS">
+              CONOPS documentation and verbal communications sufficiently capture the desired Zone Warning Service.
+            </g>
+          </s>
+
+          <s
+              id="__gsn__18acd8958df"
+              color="#ffffff"
+              name="Strategy">
+            Through mutual artifacts: (1) CONOPS, (2) DIALECTIC Correction and (3) System Behavior
+
+            <c
+                id="__gsn__18acd8a6c50"
+                color="#ffffff"
+                name="Question:">
+              How in hell do software engineers capture correction (deltas) of desired service through dialectics with stakehoders? They do it. They rely on it. How is it captured? It isn't. It's in the team brains after conversational handshakes. Oh boy.
+            </c>
+
+            <g
+                id="__gsn__18acdb48e51"
+                color="#ffffff"
+                name="Valid Mental Models">
+              default text
+
+              <s
+                  id="__gsn__18acdb4ba3b"
+                  name="Strategy">
+                default text
+
+                <c
+                    id="__gsn__18acdd3030d"
+                    color="#ffffff"
+                    name="Metnal Models">
+                  "One particularly interesting concept regarding interdisciplinary teamwork is that of mental models. Mental models contain knowledge about the world as it is perceived by an individual, and these models substantially guide this individual's thinking, decision‐ making, and behavior (Rouse &amp; Morris, 1986)"  [Schmidt and Müller 2023]
+                </c>
+
+                <g
+                    id="__gsn__18acdb3b9c6"
+                    color="#ffffff"
+                    name="Valid CONOPS">
+                  default text
+
+                  <comment
+                      id="__gsn__18acdb46f4c"
+                      color="#ffffff"
+                      name="Comment">
+                    this is a claim
+                  </comment>
+                </g>
+
+                <g
+                    id="__gsn__18acdb3bc21"
+                    color="#ffffff"
+                    name="Sufficient Dialectic Correction">
+                  default text
+
+                  <comment
+                      id="__gsn__18acdb45789"
+                      color="#ffffff"
+                      name="Comment">
+                    This is a process
+                  </comment>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__18acdb3be70"
+                color="#ffffff"
+                name="Valid Service Behavior">
+              default text
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__18acd62ad12"
+            color="#ffffff"
+            name="Verified">
+          The engineering team has developed a correct implementation of the engineering team's understanding of the desired {Zone Warning Service}.
+        </g>
+
+        <g
+            id="__gsn__18ad29938ea"
+            color="#ffffff"
+            name="Valid">
+          The {Zone Warning Service} is a correct
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

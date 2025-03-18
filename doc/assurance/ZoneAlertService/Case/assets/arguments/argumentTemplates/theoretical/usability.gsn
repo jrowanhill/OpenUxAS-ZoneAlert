@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189dbe3a603"
+        color="#ffffff"
+        name="Usability">
+      The service is easily used by the stakeholders as they desire to use it.
+
+      <s
+          id="__gsn__189f4e07175"
+          color="#ffffff"
+          name="Strategy">
+        By arguing that it is understood how stakeholders want to use the service, and that the service is built to support those uses.
+
+        <g
+            id="__gsn__189f4e0f30d"
+            color="#ffffff"
+            name="Use Cases Understood">
+          The engineering team understands all use cases of the Zone Warning Service with sufficient generality.
+
+          <s
+              id="__gsn__189f4e23770"
+              color="#ffffff"
+              name="Strategy">
+            By showing that the engineers understand the intended stakeholder use cases and technical application.
+
+            <public-goal
+                id="__gsn__189f4e23e19"
+                color="#ffffff"
+                name="Use Cases">
+              Use of the ZoneWarning service is well understood.
+
+              <s
+                  id="__gsn__189f4f20f84"
+                  name="Strategy">
+                default text
+
+                <g
+                    id="__gsn__189f4f21506"
+                    color="#ffffff"
+                    name="Complete Currently Intended Use Cases">
+                  Currently intended use cases have been provided by the stakeholder.
+
+                  <s
+                      id="__gsn__189f4f296a0"
+                      color="#ffffff"
+                      name="Strategy">
+                    Enumeration of use cases and confirmation of completeness of that enumeration from stakeholder.
+
+                    <g
+                        id="__gsn__189f54381e5"
+                        color="#ffffff"
+                        name="Enumerated Use Cases">
+                      The use cases intended by the stakeholder have been individually defined.
+
+                      <s
+                          id="__gsn__189f543c59d"
+                          color="#ffffff"
+                          name="Strategy">
+                        The use cases intended by the stakeholders are presented to the reader.
+
+                        <g
+                            id="__gsn__189f4f2c259"
+                            color="#ffffff"
+                            name="Use Case: Self-Regulation">
+                          A vehicle will attempt to regulate its positional behavior so as to not violate zones when it receives alerts of potential violations.
+
+                          <e
+                              id="__gsn__189f4f477bc"
+                              color="#ffffff"
+                              name="Use Case: Self-Regulation">
+                            [[Document Link]]
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__189f4f2c420"
+                            color="#ffffff"
+                            name="Use Case: Station Alert">
+                          A lead vehicle or ground station, for example, wants to be alerted as to any keep in or keep out zone violations pending in order to make higher-level decisions about the group.
+
+                          <e
+                              id="__gsn__189f4f63b8c"
+                              color="#ffffff"
+                              name="Use Case: Station Alert">
+                            [[Document Link]]
+                          </e>
+                        </g>
+                      </s>
+                    </g>
+
+                    <g
+                        id="__gsn__189f5438546"
+                        color="#ffffff"
+                        name="No Others">
+                      Stakeholders do not foresee additional "different" use cases.
+
+                      <e
+                          id="__gsn__189f544c4d3"
+                          color="#ffffff"
+                          name="Verbal Confirmation">
+                        From stakeholder Sean Regisford in meeting 8/14/2023.
+                      </e>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__189f4f2170d"
+                    color="#ffffff"
+                    name="Generalization">
+                  The engineers are able to properly generalize from the example use cases.
+
+                  <s
+                      id="__gsn__189f4f74fc8"
+                      color="#ffffff"
+                      name="Strategy">
+                    By defining a generalization of service.
+
+                    <g
+                        id="__gsn__189f4f777e8"
+                        color="#ffffff"
+                        name="Generalizqtion">
+                      default text
+                    </g>
+
+                    <g
+                        id="__gsn__189f4f77a3c"
+                        name="Goal">
+                      default text
+                    </g>
+                  </s>
+                </g>
+              </s>
+            </public-goal>
+
+            <g
+                id="__gsn__189f4e24025"
+                color="#ffffff"
+                name="Technical Application">
+              Technical application of the ZoneWarning service is understood
+
+              <c
+                  id="__gsn__189f4f0d1dc"
+                  color="#ffffff"
+                  name="Technical Application">
+                How the service is utilized is well understood.
+              </c>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__189f4e0f682"
+            color="#ffffff"
+            name="Conformant Design">
+          The service design supports the desired use cases.
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

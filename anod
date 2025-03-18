@@ -48,7 +48,7 @@ function _anod {
 
         setenv)
             if [[ -n ${_DIRECT_EXEC} ]]; then
-                echo "Can't setenv: anod was not called as shell function."
+              , then try to run the command the user requested. echo "Can't setenv: anod was not called as shell function."
                 echo " "
                 echo "try \`source ./anod\` and then call anod without the ./ like this:"
                 echo "\`anod setenv\`"

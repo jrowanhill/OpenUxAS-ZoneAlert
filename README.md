@@ -10,6 +10,9 @@ OpenUxAS
 
 [![Build and Test OpenUxAS C++](https://github.com/afrl-rq/OpenUxAS/actions/workflows/uxas-cpp.yaml/badge.svg?branch=develop)](https://github.com/afrl-rq/OpenUxAS/actions/workflows/uxas-cpp.yaml) [![Build and Prove OpenUxAS Ada](https://github.com/afrl-rq/OpenUxAS/actions/workflows/uxas-ada.yaml/badge.svg?branch=develop)](https://github.com/afrl-rq/OpenUxAS/actions/workflows/uxas-ada.yaml)
 
+> ***This branch is intended to facilitate in-progress efforts to integrate DAIDALUS into OpenUxAS.***
+> Most users should instead use the main development branch [here](http://github.com/afrl-rq/OpenUxAS).
+
 UxAS is a collection of modular services that interact via a common message-passing architecture.
 Similar in design to Robot Operating System (ROS), each service subscribes to messages in the system and responds to queries.
 UxAS uses the open-source library ZeroMQ to connect all services to each other.
@@ -40,6 +43,7 @@ We've organized this README into sections, to simplify navigation.
 2. [Using OpenUxAS](#using)
 3. [Developing OpenUxAS](#developing)
 4. [Building the Documentation](#docs)
+5. [Troubleshooting](#troubleshooting)
 
 Throughout the remainder of the README, we will write commands that you should enter at your Linux command line like this:
 
@@ -60,6 +64,10 @@ Use git to clone this repository:
 
     $ git clone https://github.com/afrl-rq/OpenUxAS
 
+Then, check out the DAIDALUS branch:
+
+    OpenUxAS$ git checkout daidalus_integration
+
 Then, use the provided `anod` command to fetch and build the dependencies for OpenUxAS and finally to build OpenUxAS:
 
     OpenUxAS$ ./anod build uxas
@@ -71,6 +79,12 @@ Then, use anod to build OpenAMASE, which provides simulation capabilities for Op
 Now you can run OpenUxAS examples:
 
     OpenUxAS$ ./run-example 02_Example_WaterwaySearch
+
+You can run OpenUxAS DAIDALUS-specific examples like this:
+
+    OpenUxAS$ ./run-example 09_Collision
+
+***Note:** DAIDALUS examples currently freeze after several seconds due to an issue with the ZeroMQ-TCP bridge used to connect OpenUxAS with OpenAMASE.*
 
 
 # 2. Using OpenUxAS<a name="using" />
@@ -165,7 +179,7 @@ Run it like this:
     OpenUxAS$ resources/build_documentation.sh
 
 
-# 5. Troubleshooting<a name="troubleshooting[" />
+# 5. Troubleshooting<a name="troubleshooting" />
 
 If things seem to be going wrong, all of the scripts offer increased verbosity that might help diagnose problems.
 For example, passing `-vv` to the provided `anod` command will cause each command executed by anod to be printed:

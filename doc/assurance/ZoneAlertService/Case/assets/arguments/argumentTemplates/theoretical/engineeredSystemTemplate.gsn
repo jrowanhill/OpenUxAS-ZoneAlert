@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18dadd68e5b"
+        color="#ffffff"
+        name="Acceptable {engineered system}">
+      {The system} is acceptable.
+
+      <c
+          id="__gsn__18dae52ba03"
+          color="#ffffff"
+          name="Definition: {-The problem-}">
+        {-simple definition with reference to the problem-}
+      </c>
+
+      <c
+          id="__gsn__18dae531572"
+          color="#ffffff"
+          name="Definition: {-the system-}">
+        {-definition with reference to the engineered system-}
+      </c>
+
+      <s
+          id="__gsn__18dadd70732"
+          color="#ffffff"
+          name="Strategy">
+        By showing that a well-defined problem is solved by a targeted system that is valid in practice.
+
+        <m
+            id="__gsn__18dadd7c29e"
+            color="#ffffff"
+            name="Understood Problem">
+          {The problem} is well-defined.
+        </m>
+
+        <g
+            id="__gsn__18dadea07f2"
+            color="#ffffff"
+            name="{The Problem} Solved by {The System}">
+          {The system} solves {the problem}.
+
+          <s
+              id="__gsn__18dadea481b"
+              color="#ffffff"
+              name="Strategy">
+            By the engineered system either being directly engineered to solve the problem, or having characteristics that already solve the problem.
+
+            <m
+                id="__gsn__18dadd73ca8"
+                color="#ffffff"
+                optional="true"
+                name="Engineered to Be Valid">
+              {The system} was engineered to solve {the problem}.
+            </m>
+
+            <m
+                id="__gsn__18dadea7310"
+                color="#ffffff"
+                optional="true"
+                name="Pre-Existing Solution Matches Problem">
+              {The system} is a pre-existing system that solves {the problem}.
+            </m>
+          </s>
+        </g>
+
+        <m
+            id="__gsn__18dadd73f87"
+            color="#ffffff"
+            name="Ultimately Valid">
+          {The system} has so far been demonstrated to solve {the problem} in real-world use.
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>

@@ -1,0 +1,8 @@
+pre.pvs span.comment {
+  color: grey;
+  font-style: italic;
+}
+
+pre.pvs > span.keyword {
+  color: purple;
+}

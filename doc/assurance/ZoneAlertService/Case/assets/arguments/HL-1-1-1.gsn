@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__1954843b9d7"
+        color="#ffcccc"
+        name="Satisfies HL-1-1-1">
+      The service computes and applies zones of the same geometry computed and applied by the RoutePlannerVisibilityService.
+
+      <c
+          id="__gsn__1955d4b7646"
+          color="#ccffff"
+          name="HL-1-1-1">
+      </c>
+
+      <s
+          id="__gsn__1954844e0e2"
+          color="#ffcccc"
+          name="Strategy">
+        Through careful study of the services' respective algorithms and overall representative testing.
+
+        <g
+            id="__gsn__19548451bcc"
+            color="#ffcccc"
+            name="Algorithmic Equivalence">
+          Both services apply the same algorithm and the same data
+
+          <c
+              id="__gsn__1954848e088"
+              color="#ffffff"
+              name="Same Data">
+            The same data includes the input data being presented in the same order over time
+          </c>
+
+          <s
+              id="__gsn__195484fbd2a"
+              color="#ffcccc"
+              name="Strategy">
+            algorithmic and data equivalence, along with representative testing.
+
+            <c
+                id="__gsn__19548678bfc"
+                color="#ffffff"
+                name="Algorithm">
+              Each service performs the algorithm in two steps. The first creates intermediate zones as polygons on the plane in response to received declarations of zones as Abstract Geometry objects. The second responds to messages indicating that all zones of importance have been declared in order to check, finalize, and merge zones into a final representative set of polygons.
+            </c>
+
+            <g
+                id="__gsn__195484fc235"
+                color="#ffcccc"
+                name="Equivalent Intermediate Zone Algorithm">
+              Both services compute the same intermediate zone geometry on the plane.
+
+              <c
+                  id="__gsn__19548538f36"
+                  color="#ccffff"
+                  name="SR-4">
+              </c>
+
+              <c
+                  id="__gsn__195485b1ae6"
+                  color="#ffffff"
+                  name="Zone Declarations">
+                Zone declarations sent to the services cause them to store the declared zones as polygons on a plane tangent to the earth's surface.
+              </c>
+
+              <s
+                  id="__gsn__1954860c671"
+                  color="#ffcccc"
+                  name="Strategy">
+                algorithmic and data equivalence, along with representative testing.
+
+                <g
+                    id="__gsn__19548625806"
+                    color="#ffcccc"
+                    name="Equivalent Algorithm Steps for Intermediate Zone Construction">
+                  Both services apply the same algorithm on the same input data in order to construct intermediate polygonal zones on a plane.
+
+                  <s
+                      id="__gsn__195489abbf0"
+                      color="#ffcccc"
+                      name="Strategy">
+                    Reasoning over the two steps of the algorithm and the equivalence of data processed.
+
+                    <c
+                        id="__gsn__19548a05440"
+                        color="#ffffff"
+                        name="Zone Order Dependent">
+                      The computation of planar zone geometry is dependent on the order in which declared zones are processed. Specifically, the planar conversion functions called by bFindPointsForAbstractGeometry define the plane on which all declared zones will reside based on the first lat/long converted to planer coordinates. That comes from the first processed zone received.
+                    </c>
+
+                    <c
+                        id="__gsn__19548dc33dd"
+                        color="#ffffff"
+                        name="Algorithm">
+                      Pass an array for bFindPointsForAbstractGeometry in which to store a zone's polygon boundary points. They then take that array result and along with other zone declaration data such as id and keep-in flag, creqeate a CBoundary inside a CPolygon to represent the zone. That zone is then stored in a map from zone ID to the CPolygon.
+                    </c>
+
+                    <g
+                        id="__gsn__195489ac8aa"
+                        color="#ffffff"
+                        name="Respond To Zone Declarations with Same Algorithm">
+                      Both services respond to each and every received Zone declaration by calling vFindPointsForAbstractGeomrtry with the input declared zone and storing the resulting polygonal geomrtry in an array of polygon vertices.
+
+                      <c
+                          id="__gsn__1955cef7ed3"
+                          color="#ccffff"
+                          name="SR-4-3">
+                        .
+                      </c>
+
+                      <s
+                          id="__gsn__1955ce5c61a"
+                          name="Strategy">
+                        default text
+
+                        <g
+                            id="__gsn__1955ce5cd16"
+                            color="#ffffff"
+                            name="Both Have Same Applicable Message Subscriptions">
+                          Both services subscribe to KeepInZone and KeepOutZone messages.
+
+                          <g
+                              id="__gsn__1955ce913d2"
+                              color="#ffffff"
+                              name="RoutePlannerVisibilityService Subscription">
+                            The route planner visibility service subscribes to KeepInZone and KeepOutZone messages.
+
+                            <e
+                                id="__gsn__1955cebc519"
+                                color="#ffffff"
+                                name="Code Inspection">
+                              Code Inspection of RoutePlannerVisibilityService shows that it subscribes to KeepInZone and KeepOutZone messages
+                            </e>
+
+                            <e
+                                id="__gsn__1955cec4c74"
+                                color="#cdcdcd"
+                                name="UnitTest">
+                              Unit test showing that RoutePlannerVisibilityService calls method to subscribe to KeepInZone and KeepOutZone messages.
+                            </e>
+                          </g>
+
+                          <g
+                              id="__gsn__1955ce9157a"
+                              color="#ffffff"
+                              name="ZoneAlertServices Subscriptions">
+                            The ZoneAlertService subscribes to KeepInZone and KeepOutZone messages.
+
+                            <c
+                                id="__gsn__1955ce89c4a"
+                                color="#ccffff"
+                                name="SR-4-1">
+                            </c>
+
+                            <c
+                                id="__gsn__1955ceeaded"
+                                color="#ccffff"
+                                name="SR-4-2">
+                            </c>
+
+                            <e
+                                id="__gsn__1955ced1761"
+                                color="#ffffff"
+                                name="Code Inspection">
+                              Code Inspection of ZoneAlertService shows that it subscribes to KeepInZone and KeepOutZone messages
+                            </e>
+
+                            <e
+                                id="__gsn__1955cedbc06"
+                                color="#cdcdcd"
+                                name="UnitTest">
+                              Unit test showing that ZoneAlertService calls method to subscribe to KeepInZone and KeepOutZone messages.
+                            </e>
+                          </g>
+                        </g>
+
+                        <g
+                            id="__gsn__1955ce5d033"
+                            color="#ffffff"
+                            name="Both Only Call Same Geometric Transformer">
+                          Both services respond to a received KeepInZone and KeepOutZone messages by calling RoutePlannerVisibilityService:: bFindPointsFromAbstractGeometry with the zone data as input and store the resulting output in a map by zone id mapped to a CBoundary representing the polygon by its computed vertices. If the transform fails, nothing is stored.
+
+                          <s
+                              id="__gsn__1955cf19d6c"
+                              color="#ffffff"
+                              name="Strategy">
+                            Through algorithm steps in code and call equivalence testing
+
+                            <g
+                                id="__gsn__1955cf1a34a"
+                                color="#ffffff"
+                                name="Code Structure">
+                              Both services only call the RoutePlannerVisibilityService:: bFindPointsForGeometry function and respond to success by storing the resulting polygon as a CBoundary. The Cboundary is stored in a map by zone id. If the function is not successful, no mapping is made.
+
+                              <s
+                                  id="__gsn__1955d0f266f"
+                                  color="#ffffff"
+                                  name="Strategy">
+                                comparison
+
+                                <g
+                                    id="__gsn__1955cfa6961"
+                                    color="#ffffff"
+                                    name="RoutePlannerVisibilityService Zone Declaration Handling">
+                                  RoutePlannerVisibilityService RoutePlannerVisibilityService::bProcessZone which in turn calls bFindPointsForAbstractGeometry on the zone's abstract geometry and a vector to store the polygon. If the return value of the findPOints function is successful the vector of vertives is stored in a CBoundary which is in turn stored in a map by zone id. If not succesful, nothing is stored in the map.
+
+                                  <e
+                                      id="__gsn__19548e00316"
+                                      color="#ffffff"
+                                      name="RoutePlannerVisibilityService Code Inspection">
+                                    Inspection and cursory analysis by hand shows that the RoutePlannerVisibilityService shows that it calls bFindPointsForAbstractGeomrtry on the input zone's AbstractGeometry, then creating a CBoundary and Polygon with the appropriate zone information.
+                                  </e>
+                                </g>
+
+                                <g
+                                    id="__gsn__1955cff8dca"
+                                    color="#ffffff"
+                                    name="ZoneAlertService Zone Declaration Handling">
+                                  ZoneAlertService handles each received KeepInZone and KeepOutZone by calling registerZone which ultimately results in a call to bFindPointsForAbstractGeometry on the zone's abstract geometry and a vector to store the polygon. If the return value of the findPOints function is successful the vector of vertives is stored in a CBoundary which is in turn stored in a map by zone id. If not succesful, nothing is stored in the map.
+
+                                  <s
+                                      id="__gsn__1955cffe750"
+                                      color="#ffffff"
+                                      name="Strategy">
+                                    Steps of the ZoneAlertService handler for KeepInZone and KeepOutZone handling
+
+                                    <g
+                                        id="__gsn__1955d0f95d2"
+                                        color="#ffffff"
+                                        name="ZoneAlertService AbstractZone Handler">
+                                      ZoneAlertService handles each received KeepInZone and KeepOutZone message by calling registerZone which in turn calls the service's ZoneAlertComputer::addZone method with the zone declaration as a whole structure as well as its contained keep in flag.
+
+                                      <c
+                                          id="__gsn__1955cf80480"
+                                          color="#ccffff"
+                                          name="SR-4-3-1">
+                                        .
+                                      </c>
+
+                                      <e
+                                          id="__gsn__1955d029f4e"
+                                          color="#ffffff"
+                                          name="Code Inspection">
+                                        Code inspection of ZoneAlertComputer shows that it sets up a SimpleZoneAlertComputer on initialization, and then for each received KeepInZone or KeepOutZone message, calls registerZone on its SimpleZoneAlertComputer with the zone message passed as input.
+                                      </e>
+
+                                      <e
+                                          id="__gsn__1955d013d0a"
+                                          color="#b2b2b2"
+                                          name="Unit Test">
+                                        Unit test covering all branch cases shows that each received KeepInZone or KeepOutZone message is handled by calling its registerHandler method.
+                                      </e>
+
+                                      <e
+                                          id="__gsn__1955d2c70d0"
+                                          color="#b2b2b2"
+                                          name="Unit Tests">
+                                        Unit tests covering all branch cases shows that each call to registerZone calls the service's ZoneAlertComputer's addZone method passing in the zone information.
+                                      </e>
+                                    </g>
+
+                                    <g
+                                        id="__gsn__1955cffef34"
+                                        color="#ffffff"
+                                        name="SimpleZoneAlertComputer::addZone">
+                                      ZoneAlertService's addZone function calls bFindPointsForAbstractGeometry with the passed zone and a vector to store resulting polygon vertices. On success, it stores the polygon verties in a map by zone id mapped to CBoundary constructed with the vector of polygon vertices. Otherwise it does not store anything.
+
+                                      <c
+                                          id="__gsn__1955cf0a72f"
+                                          color="#ccffff"
+                                          name="SR-4-3-2">
+                                        .
+                                      </c>
+
+                                      <c
+                                          id="__gsn__1955d18333f"
+                                          color="#ccffff"
+                                          name="SR-4-3-2-1">
+                                        .
+                                      </c>
+
+                                      <c
+                                          id="__gsn__1955d1cd330"
+                                          color="#ccffff"
+                                          name="SR-4-3-2-2">
+                                        .
+                                      </c>
+
+                                      <e
+                                          id="__gsn__1955cff8dcb"
+                                          color="#ffffff"
+                                          name="Code Inspection">
+                                        Inspection and cursory analysis by hand shows that the SimpleZoneAlertComputer addZone method calls RoutePlanerVisibilityService::bFindPointsForAbstractGeometry on the input zone's AbstractGeometry, then creating a CBoundary and Polygon with the appropriate zone information stored in a map by zone id.
+                                      </e>
+
+                                      <e
+                                          id="__gsn__1955d15aef1"
+                                          color="#b2b2b2"
+                                          name="Unit Test">
+                                        A unit test covering all branch cases shows that each received KeepInZone or KeepOutZone in a call to addZone of SimpleZoneAlertComputer calls RoutePlannerVisibilityService::bFindPointsWithAbstractGeometry with the zone's AbstractGeometry and a vector to store polygon vertices, and if the zone returns success stores the zone by id mapped to a Cboundary made from the vector of polygonal vertices, otherwise storing nothing in the map.
+                                      </e>
+                                    </g>
+                                  </s>
+                                </g>
+                              </s>
+                            </g>
+
+                            <g
+                                id="__gsn__1955cf1aaaf"
+                                color="#ffffff"
+                                name="Equivalence Testing on Inputs">
+                              Representative tests show that both RoutePlannerVisibiltiyService and ZoneAlertService both call RoutePlannerVisibilityService::bFindPointsForAbstractGeometry once for each received KeepInZone or KeepOutZone message with the zone AbstractGeometry and vector for storing polygon vertices as parameters
+
+                              <e
+                                  id="__gsn__19548de63f6"
+                                  color="#cdcdcd"
+                                  name="Example Equivalence Tests">
+                                Tests on the same declared zone inputs showing that both services call bFindPointsForAbstractGeometry once for each received KeepInZone/KeepOutZone message received with the received zone AbstractGeometry and vector for storing polygon vertices as parameters.
+                              </e>
+                            </g>
+                          </s>
+                        </g>
+                      </s>
+                    </g>
+
+                    <g
+                        id="__gsn__195489acdd3"
+                        color="#ffcccc"
+                        name="Same Zone Processing Order">
+                      Both of the services process all Zone Declarations in the same order.
+
+                      <c
+                          id="__gsn__19548cb9dcb"
+                          color="#ffffff"
+                          name="Data">
+                        The data consists of individually processed Zone Declarations, passing the by zone id, AbstractZone, and zone keep-in flag to bFindPointsForAbstractGeomrtry. Each zone is processed in this manner as its declaration event is received by each service.
+                      </c>
+
+                      <c
+                          id="__gsn__195490fec5e"
+                          color="#ffccff"
+                          name="ISSUE-22.0">
+                        .
+                      </c>
+
+                      <s
+                          id="__gsn__19548a6334d"
+                          color="#ffcccc"
+                          name="Strategy">
+                        By FIFO properties of the messaging layer and the service handlers.
+
+                        <g
+                            id="__gsn__19548a642b2"
+                            color="#ffcccc"
+                            name="FIFO (First-in, First-out) OpenUXAS Messaging">
+                          The underlying messaging system delivers messages in the order they are sent, obeying FIFO rules.
+
+                          <e
+                              id="__gsn__19548d288cb"
+                              color="#ff9999"
+                              name="COUNTER-EVIDENCE">
+                            FIFO Is not guaranteed unless very strict processing behavior is used by OpenUxAS and all traffic is reliable (e.g. on the same computer)
+
+                            <c
+                                id="__gsn__19548d41d51"
+                                color="#e6ccff"
+                                name="Potential Resolution">
+                              Check and analyze MQ system and threads for FIFO observance and restriction of use of OpenUXAS to a single local machine with no use of network.
+                            </c>
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19548a640e3"
+                            color="#cdcdcd"
+                            name="FIFO of Services' Zone Declaration Handling">
+                          Both services process Zone Declaration messages in the order of handler invocation.
+
+                          <e
+                              id="__gsn__19548d1721b"
+                              color="#cdcdcd"
+                              name="Code Analysis">
+                            Analysis of both ZoneAlertService and RoutePlanningVisibilityService shows that received Zone Declarations are directly processed when received and not stored for later processing by another thread, event, or condition.
+                          </e>
+                        </g>
+                      </s>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__19548625c3b"
+                    color="#cdcdcd"
+                    name="Representative Tests Show Functional Equivalent Results">
+                  Both services produce the same produced intermediate polygonal zones on the same plane when given the same example Zone Declarations as input in the same order.
+
+                  <e
+                      id="__gsn__19548665098"
+                      color="#cdcdcd"
+                      name="Representative Example Tests">
+                    Various example inputs of zone declaration messages in the same order to both services produces the same resulting intermediate zones on the same plane.
+                  </e>
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__195484fc445"
+                color="#ffcccc"
+                name="Equivalent Final Zones Algorithm">
+              Both services compute the same final expanded and merged zone geometry on the plane.
+
+              <c
+                  id="__gsn__1954852d77a"
+                  color="#ccffff"
+                  name="SR-6">
+              </c>
+
+              <c
+                  id="__gsn__195485bd819"
+                  color="#ffffff"
+                  name="Operating Region Declarations">
+                An operating region declarations cause the RoutePlannerVisibilityService to convert intermediate polygonal zones into a final set of padding-expanded and merged zones for that operating region.
+              </c>
+
+              <c
+                  id="__gsn__195485c900a"
+                  color="#ffffff"
+                  name="AutomationRequest">
+                An automation request causes the ZoneAlertService to convert all intermediate zones into final padding-expanded and merged zones.
+              </c>
+
+              <s
+                  id="__gsn__19548e86b18"
+                  color="#ffcccc"
+                  name="Strategy">
+                algorithmic and data equivalence, along with representative testing.
+
+                <g
+                    id="__gsn__19548e871b2"
+                    color="#ffcccc"
+                    name="Computational Equivalence">
+                  Both services perform the same algorithm in several discrete steps by calling the same functions on equivalent data.
+
+                  <c
+                      id="__gsn__1955d4e25f5"
+                      color="#ffffcc"
+                      name="NOTE">
+                    Requirement hierarchy is not followed in this argument, what is the best thing to do?
+                  </c>
+
+                  <c
+                      id="__gsn__1955d4ec0ce"
+                      color="#ccffff"
+                      name="SR-6-2">
+                  </c>
+
+                  <s
+                      id="__gsn__19548f1d417"
+                      color="#ffcccc"
+                      name="Strategy">
+                    Over the triggering of the algorithms and their data equivalence, , and then equivalent steps of he algorithm.
+
+                    <g
+                        id="__gsn__19549042a04"
+                        color="#ffcccc"
+                        name="Effectively Equivalent Triggers">
+                      The events that trigger final zone geometry calcualtions for RoutePlannerVisibilitySerice and ZoneAlert service result in equivalent input to final geometry computations
+
+                      <c
+                          id="__gsn__19549105b87"
+                          color="#ffccff"
+                          name="ISSUE-23.0">
+                        .
+                      </c>
+
+                      <s
+                          id="__gsn__1954905ff1c"
+                          color="#ffcccc"
+                          name="CONTRAINDICATED">
+                        default text
+
+                        <g
+                            id="__gsn__195490619de"
+                            color="#ffffff"
+                            name="ZoneAlertService Behavior">
+                          ZoneAlertService will always trigger on one guaranteed message just as mission starts and includes all zones in computation of merging, expansion, and checks, while ZoneAlert
+
+                          <e
+                              id="__gsn__19549064eb7"
+                              color="#ffffff"
+                              name="Source Code Examination">
+                            .
+                          </e>
+                        </g>
+
+                        <g
+                            id="__gsn__19549076110"
+                            color="#ffffff"
+                            name="RoutePlannerVisibilityService Behavior">
+                          Route planner visibility service performs checks, exapnd, and merge in response to OperatingRegion requests, resulting in an operating-region-specific set of zones being checked, expanded, and merged. This can result in different zones being checked and different zones being merged.
+
+                          <e
+                              id="__gsn__19549085d4e"
+                              color="#ffffff"
+                              name="Source Code Examination">
+                            .
+                          </e>
+                        </g>
+                      </s>
+                    </g>
+
+                    <g
+                        id="__gsn__19548f1db33"
+                        color="#ffffff"
+                        name="Same First Step">
+                      First, both services first attempt to store all keep-in and keep-out zones in a base visibility graph.
+
+                      <e
+                          id="__gsn__19549032a32"
+                          color="#ffffff"
+                          name="RoutePlannerVisibilityService Examination">
+                        Examination of source code shows that the RoutePlannerVisibilityService first calls errAddPolgon with each intermediate keep in zone of the declared operating region, followed by each keep out zone of the declared operating region.
+                      </e>
+
+                      <e
+                          id="__gsn__195490350ee"
+                          color="#ffffff"
+                          name="ZoneAlertService Examination">
+                        Examination of source code shows that the ZoneAlertService first calls errAddPolgon with each declared intermediate zone.
+                      </e>
+
+                      <e
+                          id="__gsn__19548f7d8a3"
+                          color="#cdcdcd"
+                          name="RoutePlannerVisibilityService Unit Test">
+                        A unit test on the RoutePlannerVisibilityService shows that it calls errAddPolygon for each stored intermediate zone before it does anything else with that graph.
+                      </e>
+
+                      <e
+                          id="__gsn__1954901b153"
+                          color="#cdcdcd"
+                          name="ZoneAlertService Unit Test">
+                        A unit test on the ZoneAlertService shows that it calls errAddPolygon for each stored intermediate zone before it does anything else with that graph.
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__19548f1dd72"
+                        color="#ffffff"
+                        name="Same Second Step">
+                      Second, both services call errFinalize on the base visibility graph, skipping final generation of final zones if any errors are returned, otherwise continuing to step 3.
+
+                      <e
+                          id="__gsn__195490908f3"
+                          color="#ffffff"
+                          name="Code Examination">
+                        RoutePlannerVisibilityService call of errFinalizePolygons
+                      </e>
+
+                      <e
+                          id="__gsn__19549095b68"
+                          color="#ffffff"
+                          name="Code Examination">
+                        ZoneAlertService call of errFinalizePolygons
+                      </e>
+
+                      <e
+                          id="__gsn__195490a78f4"
+                          color="#cdcdcd"
+                          name="Unit Test">
+                        On RoutePlannerVisibilityService call once of errFinalizePolygons after storage of all intermediates in base visibility graph and before graph calculation.
+                      </e>
+
+                      <e
+                          id="__gsn__1954909cba5"
+                          color="#cdcdcd"
+                          name="Unit Test">
+                        On ZoneAlertService call once of errFinalizePolygons after storage of all intermediates in base visibility graph and before extraction
+                      </e>
+                    </g>
+
+                    <g
+                        id="__gsn__19548f1dfd1"
+                        color="#ffffff"
+                        name="Third, Same Source of Final Geometric Data">
+                      The RoutePlannerVisibilityService utilizes the data of the stored visibility graph base to generate a visibility graph, while the ZoneAlertService extracts the base graph polygons for use in zone violation detection
+
+                      <e
+                          id="__gsn__195490b7687"
+                          color="#ffffff"
+                          name="Code Examination">
+                        RoutePlannerVisibilityService calculations of visibility graph after errFinalizePolygons.
+                      </e>
+
+                      <e
+                          id="__gsn__195490b9576"
+                          color="#ffffff"
+                          name="Code Examination">
+                        ZoneAlertService extraction of zone polygons after errFinalizePolygons
+                      </e>
+
+                      <e
+                          id="__gsn__195490c2279"
+                          color="#cdcdcd"
+                          name="Unit Test">
+                        On RoutePlannerVisibilityService constructs visibility graph after call to errFinalizePolygons
+                      </e>
+
+                      <e
+                          id="__gsn__195490c7197"
+                          color="#cdcdcd"
+                          name="Unit Test">
+                        On ZoneAlertService each polygon is extracted in a zone data structure after call to errFinalizePolygons
+                      </e>
+                    </g>
+                  </s>
+                </g>
+
+                <g
+                    id="__gsn__19548e87809"
+                    color="#cdcdcd"
+                    name="Representative Test Results">
+                  Representative testing shows that both services produce the same final expanded and merged polygons fro the same input polygon data.
+
+                  <e
+                      id="__gsn__19548e8fa59"
+                      color="#cdcdcd"
+                      name="Representative Testing">
+                    Representative tests that present the same input intermediate polygons and test that both services produce the same resulting final zone geometry.
+
+                    <c
+                        id="__gsn__19548e96f43"
+                        color="#ffffff"
+                        name="Must Include">
+                      Working cases where all intermediate zone polygons are acceptable.
+                    </c>
+
+                    <c
+                        id="__gsn__19548e9d18f"
+                        color="#ffffff"
+                        name="Must Include">
+                      Failure cases where intermediate polygons are irregular and/or degenerate.
+                    </c>
+
+                    <c
+                        id="__gsn__19548f72ca4"
+                        color="#ffffff"
+                        name="Compares">
+                      BaseVisibilityGraph data of the RoutePlannerVisibilityService with extracted zones for ZoneAlertService.
+                    </c>
+                  </e>
+                </g>
+              </s>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__19548451e21"
+            color="#cdcdcd"
+            name="Representative Tests Show Equivalent Results">
+          Both services show the same produced zones when given the same example input declared zone sets in the same order.
+
+          <e
+              id="__gsn__195484ce248"
+              color="#cdcdcd"
+              name="Representative Example Tests">
+            Various example inputs of zone declaration messages in the same order to both services produces the same resulting zone geometry in both services.
+          </e>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

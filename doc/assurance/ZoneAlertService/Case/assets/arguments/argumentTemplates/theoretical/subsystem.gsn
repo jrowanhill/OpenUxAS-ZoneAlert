@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<argument>
+<properties>
+  <title>Subsystem</title>
+  <author/>
+  <version/>
+  <date/>
+  <last-modified>07/03/2013</last-modified>
+  <status/>
+  <prefix/>
+  <confidence>false</confidence>
+  <note/>
+</properties>
+
+<gsn>
+  <g id="__gsn_root2" name="Subsystem Acceptable">
+    Subsystem is acceptable
+
+    <c id="__gsn__13fa4dedd81" name="Definition">
+      [acceptable] means fit for use
+    </c>
+    <c id="__gsn__13fa4dee349" name="Definition">
+      [fitness for use] means that the (sub)system: conforms to all required
+      standards; satisfies its requirements; and mitigates all credible hazards
+    </c>
+    <s id="__gsn__13fa4de5d6b" name="Fit for Use">
+      Argue over the components of fitness for use
+
+      <g id="__gsn__13fa4de5d6c" name="Standards Conformance">
+        Subsystem conforms to all required standards
+
+        <s id="__gsn__13fa4de5d6d" name="Enumerated Standards">
+          Argue conformance over enumeration of required standards
+
+          <c id="__gsn__13fa4de5d6e" name="Enumeration">
+            [required standards] are: […]
+          </c>
+          <g id="__gsn__13fa4de5d6f" name="[Standard 1]">
+            […]
+
+            <c id="__gsn__13fa4de5d70" name="Standard Reference">
+              […]
+            </c>
+          </g>
+          <g id="__gsn__13fa4de5d71" name="[Standard n]" repeat="true">
+            […]
+
+            <c id="__gsn__13fa4de5d72" name="Standard Reference">
+              [...]
+            </c>
+          </g>
+        </s>
+      </g>
+      <g id="__gsn__13fa4de5d73" name="Requirements Satisfaction">
+        Subsystem satisfies its requirements
+
+        <c id="__gsn__13fa4de5d74" name="Reference">
+          Requirements are contained in […]
+        </c>
+        <s id="__gsn__13fa4de5d75" name="Enumerated Types">
+          Argue satisfaction over enumerated types of requirements
+
+          <c id="__gsn__13fa4de5d76" name="Enumeration">
+            [types of requirements] are: functional and non-functional
+          </c>
+        </s>
+      </g>
+      <g id="__gsn__13fa4de5d77" name="Hazards">
+        All credible hazards have been adequately mitigated
+
+        <c id="__gsn__13fa4de5d78" name="Hazards">
+          List of all credible hazards
+        </c>
+        <s id="__gsn__13fa4de5d79" name="Enumerated Hazards">
+          Argue mitigation of each hazard class
+
+          <g id="__gsn__13fa4de5d7a" name="[Hazard Class 1]">
+            [Hazard class 1] is adequately mitigated
+          </g>
+          <g id="__gsn__13fa4de5d7b" name="[Hazard Class n]" repeat="true">
+            [Hazard class n] is adequately mitigated
+          </g>
+        </s>
+      </g>
+    </s>
+  </g>
+</gsn>
+</argument>

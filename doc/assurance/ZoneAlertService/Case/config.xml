@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+
+This configuration file instructs sct's build system on how to put together a
+deliverable. All of the files named will be included in the deliverable and
+placed into the assets directory according to the rules described in the sct
+documentation.
+
+-->
+<config version="3.0">
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Arguments                                                               -->
+<arguments template="argument-template.html">
+  <!-- Top-level Argument -->
+  <group category="design" title="Design Argument: Layer 1 — Top-Level Argument">
+    <argument id="system"/>
+  </group>
+
+  <!-- Subsystem Arguments -->
+  <group category="design" title="Design Argument: Layer 2 — Subsystem Arguments">
+    <argument id="subsystem"/>
+    <argument id="metadata-example"/>
+  </group>
+
+  <!-- Patterns -->
+  <group category="pattern" title="Argument Patterns">
+    <argument generate-ids="false" id="ffu-pattern"/>
+  </group>
+
+  <!-- Supporting Arguments -->
+  <group category="support" title="Supporting Arguments">
+    <argument generate-ids="false" id="modular" reference="false"/>
+    <argument generate-ids="false" id="example" reference="false"/>
+  </group>
+</arguments>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Figures                                                                 -->
+<figures>
+  <figure file="logo.png" id="logo" title="DCi Logo"/>
+
+  <figure id="sc-roles" title="The Cases and Safety Engineering" width="400.0"/>
+
+  <figure id="case-organization" title="Organization of the Safety Case" width="300.0"/>
+</figures>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Documents                                                               -->
+<documents>
+  <!-- - - - - - - - - - - - - - - - Defaults  - - - - - - - - - - - - - - - -->
+  <defaults>
+    <template path="templates">template.html</template>
+
+    <substitution name="case-title">
+      <string>Prototype Safety Case</string>
+    </substitution>
+    <substitution name="page-title">
+      <string/>
+    </substitution>
+    <substitution name="body-script-hook">
+      <string/>
+    </substitution>
+    <substitution name="layout">
+      <file path="templates">layout-section.html</file>
+    </substitution>
+    <substitution name="scripts">
+      <file path="templates">script-section.html</file>
+    </substitution>
+    <substitution name="header">
+      <file path="templates">header-section.html</file>
+    </substitution>
+    <substitution name="nav">
+      <generator name="nav-generator"/>
+    </substitution>
+    <substitution name="footer">
+      <string>
+    <footer/>
+    </string>
+    </substitution>
+    <substitution name="date">
+      <generator name="date-generator"/>
+    </substitution>
+  </defaults>
+  <!-- - - - - - - - - - - - - - - End Defaults  - - - - - - - - - - - - - - -->
+
+  <group category="document" title="Introduction">
+  
+  <!-- - - - - - - - - - - - - - - - - Case  - - - - - - - - - - - - - - - - -->
+  <document id="case" reference="false">
+    <substitution name="page-title">
+      <string>Introduction</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Introduction</string>
+    </substitution>
+
+    <!--
+      Generate the content of the document from the named .txt file, which
+      contains multimarkdown syntax
+    -->
+    <substitution name="content">
+      <generator name="text-generator">
+        <parameter name="file">documents/case.md</parameter>
+      </generator>
+    </substitution>
+
+    <!--
+      This triple of substitutions is needed to support embedded arguments
+    -->
+    <substitution inherit="true" name="scripts">
+      <string>
+      <script src="../libraries/argumentlibrary.js" type="text/javascript"/>
+      </string>
+    </substitution>
+    <substitution inherit="true" name="layout">
+      <string>
+      <link href="../layout/svg.css" rel="stylesheet" type="text/css"/>
+      </string>
+    </substitution>
+    <substitution name="body-script-hook">
+      <string>onload="setUpEmbeddedArguments()"</string>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - - - End Case  - - - - - - - - - - - - - - - -->
+
+  </group>
+
+  <group category="document" title="Indexes">
+
+  <!-- - - - - - - - - - - - - -  Argument Index - - - - - - - - - - - - - - -->
+  <document id="argument-index">
+    <substitution name="page-title">
+      <string>Argument Index</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Argument Index</string>
+    </substitution>
+
+    <substitution inherit="true" name="scripts">
+      <file path="templates">argument-index.js</file>
+    </substitution>
+
+    <substitution inherit="true" name="layout">
+      <file path="templates">argument-index.css</file>
+    </substitution>
+
+    <substitution name="body-script-hook">
+      <string>onload="setup()"</string>
+    </substitution>
+
+    <substitution name="content">
+      <generator name="index-generator"/>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - -  End Argument Index - - - - - - - - - - - - - -->
+
+  <!-- - - - - - - - - - - - - -  Arguments Table  - - - - - - - - - - - - - -->
+  <document id="arguments-table" reference="false">
+    <substitution name="page-title">
+      <string>Arguments Table</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Arguments Table</string>
+    </substitution>
+
+    <substitution name="content">
+      <generator name="arguments-table-generator"/>
+    </substitution>
+
+    <substitution inherit="true" name="layout">
+      <string>
+      <style>
+          table &gt; tbody &gt; tr:first-child td {
+            background-color: #eee;
+            font-weight: bold;
+          }
+        </style>
+      </string>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - -  End Arguments Table  - - - - - - - - - - - - -->
+
+  <!-- - - - - - - - - - - - - - Attachments Table - - - - - - - - - - - - - -->
+  <document id="attachments-table" reference="false">
+    <substitution name="page-title">
+      <string>Main Contents</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Main Contents</string>
+    </substitution>
+
+    <substitution name="content">
+      <generator name="attachments-table-generator"/>
+    </substitution>
+
+    <substitution inherit="true" name="layout">
+      <string>
+      <style>
+          table &gt; tbody &gt; tr:first-child td {
+            background-color: #eee;
+            font-weight: bold;
+          }
+        </style>
+      </string>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - End Attachments Table - - - - - - - - - - - - -->
+
+  <!-- - - - - - - - - - - - - - References Table  - - - - - - - - - - - - - -->
+  <document id="references-table" reference="false">
+    <substitution name="page-title">
+      <string>References Table</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>References Table</string>
+    </substitution>
+
+    <substitution name="content">
+      <generator name="references-table-generator"/>
+    </substitution>
+
+    <substitution inherit="true" name="layout">
+      <string>
+      <style>
+          table &gt; tbody &gt; tr:first-child td {
+            background-color: #eee;
+            font-weight: bold;
+          }
+        </style>
+      </string>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - End References Table  - - - - - - - - - - - - -->
+
+  </group>
+
+  <group category="document" title="Tables">
+
+  <!-- - - - - - - - - - - - - - - -  Hazards  - - - - - - - - - - - - - - - -->
+  <document id="hazards">
+    <substitution name="page-title">
+      <string>Hazards</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Hazard Catalog</string>
+    </substitution>
+    <substitution name="content">
+      <generator name="hazards-generator" path="generators"/>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - -  End Hazards  - - - - - - - - - - - - - - -->
+  
+  <!-- - - - - - - - - - - - - - - - - Heat  - - - - - - - - - - - - - - - - -->
+  <document id="heat">
+    <substitution name="page-title">
+      <string>Heat Report</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Heat Report</string>
+    </substitution>
+    <substitution name="content">
+      <generator name="heat-generator" path="generators"/>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - - - End Heat  - - - - - - - - - - - - - - - -->
+  </group>
+  
+  <group category="reference" title="References">
+  
+  <!-- - - - - - - - - - - - - - Example Reference - - - - - - - - - - - - - -->
+  <document id="example-reference" verbatim="references/example.pdf">
+    <substitution name="doc-title">
+      <string>Example Reference</string>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - End Example Reference - - - - - - - - - - - - -->
+
+  </group>
+
+  <group category="reference" title="Terminology">
+
+  <!-- - - - - - - - - - - - - - - - Acronyms  - - - - - - - - - - - - - - - -->
+  <document id="acronyms">
+    <substitution name="page-title">
+      <string>Acronyms</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Consolidated List of Acronyms</string>
+    </substitution>
+    <substitution name="content">
+      <generator name="acronyms-generator"/>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - - End Acronyms  - - - - - - - - - - - - - - -->
+
+  <!-- - - - - - - - - - - - - - - - Glossary  - - - - - - - - - - - - - - - -->
+  <document id="glossary">
+    <substitution name="page-title">
+      <string>Glossary</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Glossary</string>
+    </substitution>
+    <substitution name="content">
+      <generator name="glossary-generator"/>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - - End Glossary  - - - - - - - - - - - - - - -->
+  
+  </group>
+  
+  <group category="help" title="Help">
+  
+  <!-- - - - - - - - - - - - - - - Safety-Case - - - - - - - - - - - - - - - -->
+  <document id="safety-case">
+    <substitution name="page-title">
+      <string>Safety-Case Technology</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Safety-Case Technology</string>
+    </substitution>
+
+    <!--
+      Generate the content of the document from the named .md file, which
+      contains multimarkdown syntax
+    -->
+    <substitution name="content">
+      <generator name="text-generator">
+        <parameter name="file">documents/safety-case.md</parameter>
+      </generator>
+    </substitution>
+
+    <!--
+      This triple of substitutions is needed to support embedded arguments
+    -->
+    <substitution inherit="true" name="scripts">
+      <string>
+      <script src="../libraries/argumentlibrary.js" type="text/javascript"/>
+      </string>
+    </substitution>
+    <substitution inherit="true" name="layout">
+      <string>
+      <link href="../layout/svg.css" rel="stylesheet" type="text/css"/>
+      </string>
+    </substitution>
+    <substitution name="body-script-hook">
+      <string>onload="setUpEmbeddedArguments()"</string>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - End Safety Case - - - - - - - - - - - - - - -->  
+
+  <!-- - - - - - - - - - - -  Development Terminology  - - - - - - - - - - - -->
+  <document id="devel-terms">
+    <substitution name="page-title">
+      <string>Development Terminology</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Development Terminology</string>
+    </substitution>
+    <substitution name="content">
+      <generator name="devel-terms-generator"/>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - -  End Development Terminology  - - - - - - - - - - -->
+  
+  <!-- - - - - - - - - - - - - - Safety-Case Help  - - - - - - - - - - - - - -->
+  <document id="help" reference="false">
+    <substitution name="page-title">
+      <string>Safety-Case Help</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Safety-Case Help</string>
+    </substitution>
+
+    <!--
+      Generate the content of the document from the named .md file, which
+      contains multimarkdown syntax
+    -->
+    <substitution name="content">
+      <generator name="text-generator">
+        <parameter name="file">help/help.md</parameter>
+      </generator>
+    </substitution>
+  </document>  
+  <!-- - - - - - - - - - - - - End Safety-Case Help  - - - - - - - - - - - - -->
+  
+  <!-- - - - - - - - - - - - - - - Focus Options - - - - - - - - - - - - - - -->
+  <document id="focus" reference="false">
+    <substitution name="page-title">
+      <string>Argument Viewer Help — Focus Options</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>Focus Options</string>
+    </substitution>
+
+    <!--
+      Generate the content of the document from the named .md file, which
+      contains multimarkdown syntax
+    -->
+    <substitution name="content">
+      <generator name="text-generator">
+        <parameter name="file">help/focus.md</parameter>
+      </generator>
+    </substitution>
+  </document>
+  <!-- - - - - - - - - - - - - - End Focus Options - - - - - - - - - - - - - -->
+
+  <!-- - - - - - - - - - - - - - - View Options  - - - - - - - - - - - - - - -->
+  <document id="view" reference="false">
+    <substitution name="page-title">
+      <string>Argument Viewer Help — View Options</string>
+    </substitution>
+    <substitution name="doc-title">
+      <string>View Options</string>
+    </substitution>
+
+    <!--
+      Generate the content of the document from the named .md file, which
+      contains multimarkdown syntax
+    -->
+    <substitution name="content">
+      <generator name="text-generator">
+        <parameter name="file">help/view.md</parameter>
+      </generator>
+    </substitution>
+  </document> 
+  <!-- - - - - - - - - - - - - - End View Options  - - - - - - - - - - - - - -->
+  
+  </group>
+</documents>
+ <metadata>
+  <field field-name="Heat" field-type="enum" id="1">
+   <valid-node-type name="goal"/>
+   <valid-node-type name="strategy"/>
+   <valid-node-type name="evidence"/>
+   <valid-node-type name="module"/>
+   <valid-node-type name="assumption"/>
+   <valid-node-type name="context"/>
+   <valid-node-type name="contract"/>
+   <valid-node-type name="justification"/>
+   <valid-node-type name="public-goal"/>
+   <valid-node-type name="comment"/>
+   <enum-value value="Hot"/>
+   <enum-value value="Warm"/>
+   <enum-value value="Neutral"/>
+   <enum-value value="Cool"/>
+   <enum-value value="Cold"/>
+   <enum-value value="Frozen"/>
+  </field>
+ </metadata>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Scripts                                                                 -->
+<scripts>
+  <jscript id="argumentlibrary">    
+  </jscript>
+</scripts>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Library Files                                                           -->
+<libs>
+ <!--- <lib>jquery-1.8.1.min.js</lib> -->
+  <lib>jquery-3.5.1.min.js</lib>
+  <lib>argumentlibrary.js</lib>
+</libs>
+
+</config>

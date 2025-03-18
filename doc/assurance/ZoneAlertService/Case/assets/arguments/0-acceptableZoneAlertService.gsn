@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__18db882c3f2"
+        color="#ffffff"
+        name="Acceptable Zone Alert Service">
+      The Zone Alert Service solves the Impending Zone Violation Unawareness problem.
+
+      <c
+          id="__gsn__18db8c70679"
+          color="#ffffff"
+          name="Problem: Zone Violation Unawareness Problem">
+        Awareness of when and where vehicles are in existing and imminent violation of zones is a problem for use of OpenUxAS as a coordinated UAS mission execution system.
+      </c>
+
+      <c
+          id="__gsn__18db8c735de"
+          color="#ffffff"
+          name="Solution: Zone Alert Service through Vehicle Velocity Projection">
+        A service to alert OpenUxAS subscribers to alert then when an OpenUxAS vehicle's current linear trajectory would violate a zone boundary within a tactical time window, and quantify the amount of time until violation.
+      </c>
+
+      <s
+          id="__gsn__18fc0625209"
+          color="#ffffff"
+          name="Strategy">
+        By showing that those involved understand the problem to be solved, that a solution was specified that is believed to solve the problem, with a correct implementation of that specification, and the resulting implementation does indeed sufficiently solve the problem.
+
+        <j
+            id="__gsn__1915d6ce896"
+            color="#ffffff"
+            name="Justification">
+          This is the classic model of software engineering as presented by John Knight in his book.
+        </j>
+
+        <m
+            id="__gsn__18db9043dd7"
+            color="#ffffff"
+            name="Understood Problem">
+          The Imminent and Existing Zone Violation Detection Problem is sufficiently understood.
+        </m>
+
+        <m
+            id="__gsn__18fc062567b"
+            color="#ffffff"
+            name="A Likely Solution is Proposed">
+          An OpenUxAS Zone Violation Alert Service applying Vehicle Velocity Projection is likely to solve the Imminent and Existing Zone Violation Detection Problem
+        </m>
+
+        <m
+            id="__gsn__18fc06259c1"
+            color="#ffffff"
+            name="Correct Implementation of the Solution">
+          The OpenUxAS Zone Violation Alert Service is a correct implementation of the proposed Zone Alert Service solution.
+
+          <c
+              id="__gsn__1958b2ceb25"
+              color="#ffffff"
+              name="Context">
+            This argues against the functional requirements
+          </c>
+        </m>
+
+        <m
+            id="__gsn__18fc0627746"
+            color="#ffffff"
+            name="The Solution is Confirmed to Solve the Problem">
+          The OpenUxAS Zone Violation Alert Service is confirmed to solve the Imminent and Existing Zone Violation Detection Problem
+
+          <c
+              id="__gsn__1958b2cc17f"
+              color="#ffffff"
+              name="Context">
+            This one argues against the high-level requirements
+          </c>
+        </m>
+      </s>
+    </g>
+  </gsn>
+</argument>

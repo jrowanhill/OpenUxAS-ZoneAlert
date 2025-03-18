@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__189dbf3c014"
+        color="#ffffff"
+        name="Security">
+      The service performs its intended functions adequately in the presence of malicious activity and intended misuse.
+
+      <s
+          id="__gsn__189dbf4e062"
+          name="Strategy">
+        default text
+
+        <c
+            id="__gsn__189dc0b9c7d"
+            color="#ffffff"
+            name="Enumeration">
+          Integrity, Confidentiality, Availability
+        </c>
+
+        <g
+            id="__gsn__189dc0abed1"
+            color="#ffffff"
+            repeat="true"
+            name="{-X-}">
+          default text
+
+          <s
+              id="__gsn__189dc0ad948"
+              name="Strategy">
+            default text
+
+            <g
+                id="__gsn__189dbf4e4df"
+                color="#ffffff"
+                name="Actors Known">
+              default text
+
+              <s
+                  id="__gsn__189dbf56aa9"
+                  name="Strategy">
+                default text
+
+                <g
+                    id="__gsn__189dbf5723c"
+                    color="#ffffff"
+                    name="Adversaries Known">
+                  default text
+                </g>
+
+                <g
+                    id="__gsn__189dbf573f7"
+                    color="#ffffff"
+                    name="Misusers Known">
+                  default text
+                </g>
+              </s>
+            </g>
+
+            <g
+                id="__gsn__189dc0a37fe"
+                color="#ffffff"
+                name="Vulnerabilities and Misuses Known">
+              default text
+            </g>
+
+            <g
+                id="__gsn__189dc0ca482"
+                color="#ffffff"
+                name="Vulnerabilities and Misuses Mitigated">
+              default text
+            </g>
+          </s>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>
