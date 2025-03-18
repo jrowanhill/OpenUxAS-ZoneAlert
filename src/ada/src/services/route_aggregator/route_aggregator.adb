@@ -1,33 +1,14 @@
 with Ada.Text_IO; use Ada.Text_IO;
+with SPARK.Big_Integers; use SPARK.Big_Integers;
+with SPARK.Big_Intervals; use SPARK.Big_Intervals;
 
 package body Route_Aggregator with SPARK_Mode is
+
+   use Common.Count_Type_To_Big_Integer_Conversions;
+
    pragma Unevaluated_Use_Of_Old (Allow);
 
    pragma Assertion_Policy (Ignore);
-
-   --  Lemmas used to factor out reasonning about the redefined model of
-   --  Int64_Formal_Set_Maps
-
-   -------------------
-   -- Model_Include --
-   -------------------
-
-   procedure Model_Include
-     (M1, M2 : Int64_Formal_Set_Maps.Formal_Model.M.Map;
-      N1, N2 : Int_Set_Maps_M.Map)
-   --  Lemma: Inclusion of old models implies inclusion of redefined models
-   with Ghost,
-     Global => null,
-     Pre  => Same_Mappings (M1, N1) and Same_Mappings (M2, N2) and M1 <= M2,
-     Post => N1 <= N2;
-
-   procedure Model_Include
-     (M1, M2 : Int64_Formal_Set_Maps.Formal_Model.M.Map;
-      N1, N2 : Int_Set_Maps_M.Map)
-   is
-   begin
-      null;
-   end Model_Include;
 
    -----------------------------
    -- Lift_From_Keys_To_Model --
@@ -186,7 +167,7 @@ package body Route_Aggregator with SPARK_Mode is
       RequestID        : Int64;
       PlanRequests     : Int64_Formal_Set)
      with Pre => not Int_Set_Maps_M.Has_Key (Model (m_pendingRequest), RequestID)
-       and Length (m_pendingRequest) < m_pendingRequest.Capacity
+       and Length (m_pendingRequest) < Count_Type'Last
        and
          All_Pending_Requests_Seen (Model (m_pendingRequest), m_routeRequestId)
        and
@@ -442,6 +423,8 @@ package body Route_Aggregator with SPARK_Mode is
       --  Check pending automation requests
 
       while Has_Element (State.m_pendingAutoReq, i) loop
+
+         pragma Loop_Variant (Increases => Int_Set_Maps_P.Get (Positions (State.m_pendingAutoReq), i), Decreases => Length (State.m_pendingAutoReq));
          pragma Loop_Invariant (Has_Element (State.m_pendingAutoReq, i));
 
          pragma Loop_Invariant
@@ -480,10 +463,27 @@ package body Route_Aggregator with SPARK_Mode is
          pragma Loop_Invariant (All_Pending_Plans_Sent (State.m_pendingRoute, State.m_routePlanResponses));
 
          declare
-            isFulfilled : constant Boolean :=
-              (for all J of Element (State.m_pendingAutoReq, i) =>
-                   Contains (State.m_routePlanResponses, J));
+            isFulfilled : Boolean := True;
+            Formal_Set  : Int64_Formal_Set renames Element (State.m_pendingAutoReq, i);
+            C : Int64_Formal_Sets.Cursor := First (Formal_Set);
          begin
+            while Has_Element (Formal_Set, C) loop
+
+               pragma Loop_Variant (Increases => Int_Set_P.Get (Positions (Formal_Set), C));
+               pragma Loop_Invariant
+                 ((for all K in 1 .. Int_Set_P.Get (Positions (Formal_Set), C) - 1 =>
+                      Contains (State.m_routePlanResponses, Int_Set_E.Get (Elements (Formal_Set), K)))
+                  = isFulfilled);
+               if not Contains (State.m_routePlanResponses, Element (Formal_Set, C)) then
+                  isFulfilled := False;
+               end if;
+               Next (Formal_Set, C);
+            end loop;
+
+            pragma Assert
+              (isFulfilled
+               = (for all J of Element (State.m_pendingAutoReq, i) =>
+                   Contains (State.m_routePlanResponses, J)));
             if isFulfilled then
                SendMatrix (Mailbox,
                            State.m_uniqueAutomationRequests,
@@ -540,6 +540,8 @@ package body Route_Aggregator with SPARK_Mode is
    begin
       -- check pending route requests
       while Has_Element (State.m_pendingRoute, i) loop
+
+         pragma Loop_Variant (Increases => Int_Set_Maps_P.Get (Positions (State.m_pendingRoute), i), Decreases => Length (State.m_pendingRoute));
          pragma Loop_Invariant (Has_Element (State.m_pendingRoute, i));
 
          pragma Loop_Invariant
@@ -575,10 +577,27 @@ package body Route_Aggregator with SPARK_Mode is
          pragma Loop_Invariant (All_Pending_Plans_Sent (State.m_pendingRoute, State.m_routePlanResponses));
 
          declare
-            isFulfilled : constant Boolean :=
-              (for all J of Element (State.m_pendingRoute, i) =>
-                   Contains (State.m_routePlanResponses, J));
+            isFulfilled : Boolean := True;
+            Formal_Set  : Int64_Formal_Set renames Element (State.m_pendingRoute, i);
+            C : Int64_Formal_Sets.Cursor := First (Formal_Set);
          begin
+            while Has_Element (Formal_Set, C) loop
+
+               pragma Loop_Variant (Increases => Int_Set_P.Get (Positions (Formal_Set), C));
+               pragma Loop_Invariant
+                 ((for all K in 1 .. Int_Set_P.Get (Positions (Formal_Set), C) - 1 =>
+                      Contains (State.m_routePlanResponses, Int_Set_E.Get (Elements (Formal_Set), K)))
+                  = isFulfilled);
+               if not Contains (State.m_routePlanResponses, Element (Formal_Set, C)) then
+                  isFulfilled := False;
+               end if;
+               Next (Formal_Set, C);
+            end loop;
+
+            pragma Assert
+              (isFulfilled
+               = (for all J of Element (State.m_pendingRoute, i) =>
+                   Contains (State.m_routePlanResponses, J)));
             if isFulfilled then
                SendRouteResponse (Mailbox, State.m_pendingRoute, State.m_pendingAutoReq, State.m_routePlanResponses, State.m_routePlans, Key (State.m_pendingRoute, i));
 
@@ -662,10 +681,7 @@ package body Route_Aggregator with SPARK_Mode is
       Delete (m_pendingRequest, Position);
 
       --  Establish the effect on the redefined Model of maps of formal sets
-
-      Model_Include
-        (Int64_Formal_Set_Maps.Formal_Model.Model (m_pendingRequest), Old_pendingRoute_M,
-         Model (m_pendingRequest), Old_pendingRoute);
+      pragma Assert (Model (m_pendingRequest) <= Old_pendingRoute);
    end Delete_PendingRequest;
 
    --------------------
@@ -742,11 +758,11 @@ package body Route_Aggregator with SPARK_Mode is
       Response : RoutePlanResponse)
    is
    begin
-      pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
+      --  pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
       History := Add (History, (Kind => Receive_PlanResponse, Id => Response.ResponseID));
       pragma Assert (No_RouteRequest_Lost (State.m_pendingRoute));
 
-      pragma Assume (Length (State.m_routePlanResponses) < State.m_routePlanResponses.Capacity, "We have some room for a new plan response");
+      pragma Assume (Length (State.m_routePlanResponses) < Count_Type'Last, "We have some room for a new plan response");
       Insert (State.m_routePlanResponses, Response.ResponseID, Response);
       pragma Assert (Valid_Plan_Responses (State.m_pendingRoute, State.m_pendingAutoReq, State.m_routePlanResponses));
       pragma Assert
@@ -775,12 +791,13 @@ package body Route_Aggregator with SPARK_Mode is
          pragma Loop_Invariant
            (Only_Pending_Plans (State.m_routePlanResponses, State.m_routePlans));
 
-         pragma Assume (Length (State.m_routePlans) < State.m_routePlans.Capacity, "We have enough room for all route plans");
+         pragma Assume (Length (State.m_routePlans) < Count_Type'Last, "We have enough room for all route plans");
 
          declare
             ID   : constant Int64 := Get (Response.RouteResponses, p).RouteID;
             Plan : constant RoutePlan := Get (Response.RouteResponses, p);
          begin
+            pragma Assume (Length (State.m_routePlans) < Count_Type'Last, "We still have room for a response");
             Insert (State.m_routePlans, ID,
                     IdPlanPair'(Id   => Response.ResponseID,
                                 Plan => Plan,
@@ -815,10 +832,10 @@ package body Route_Aggregator with SPARK_Mode is
       PlanRequests       : Int64_Formal_Set;
    begin
       pragma Assert (No_PlanResponse_Lost (State.m_pendingRoute, State.m_routePlanResponses));
-      pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
+      --  pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
       History := Add (History, (Kind => Receive_RouteRequest, Id => Request.RequestID));
       pragma Assert
-        (for all Pos in Event_Sequences.First .. Last (History) - 1 =>
+        (for all Pos in Interval'(Event_Sequences.First, Last (History) - 1) =>
            (if Get (History, Pos).Kind = Receive_PlanResponse
             and Has_Key (Plan_To_Route (State.m_pendingRoute), Get (History, Pos).Id)
             then Contains (State.m_routePlanResponses, Get (History, Pos).Id)));
@@ -878,7 +895,7 @@ package body Route_Aggregator with SPARK_Mode is
 
          pragma Loop_Invariant (History'Loop_Entry <= History);
          pragma Loop_Invariant
-           (for all I in 1 .. Last (History) =>
+           (for all I in Interval'(1, Last (History)) =>
                 (if I >  Last (History)'Loop_Entry then
                         Get (History, I).Kind = Send_PlanRequest));
 
@@ -910,7 +927,6 @@ package body Route_Aggregator with SPARK_Mode is
 
             State.m_routeRequestId := State.m_routeRequestId + 1;
 
-            pragma Assume (Length (PlanRequests) < PlanRequests.Capacity, "We have enough room for all vehicles in planRequests");
             Insert (PlanRequests, planRequest.RequestID);
 
             if Contains (Data.m_groundVehicles, Vehicle_Id) then
@@ -927,7 +943,7 @@ package body Route_Aggregator with SPARK_Mode is
 
                   sendLimitedCastMessage
                     (Mailbox, GroundPathPlanner, planRequest);
-                  pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
+                  --  pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
                   History := Add (History, (Kind => Send_PlanRequest, Id => planRequest.RequestID));
                   pragma Assert (PlanRequest_Sent (planRequest.RequestID));
                end if;
@@ -940,7 +956,7 @@ package body Route_Aggregator with SPARK_Mode is
 
                sendLimitedCastMessage
                  (Mailbox, AircraftPathPlanner, planRequest);
-               pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
+               --  pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
                History := Add (History, (Kind => Send_PlanRequest, Id => planRequest.RequestID));
                pragma Assert (PlanRequest_Sent (planRequest.RequestID));
 
@@ -965,7 +981,7 @@ package body Route_Aggregator with SPARK_Mode is
              (for all E of Int_Set_Maps_M.Get (Model (State.m_pendingRoute), R_Id) =>
                    not Contains (PlanRequests, E)));
 
-      pragma Assume (Length (State.m_pendingRoute) < State.m_pendingRoute.Capacity, "We have enough room for a new pending route request");
+      pragma Assume (Length (State.m_pendingRoute) < Count_Type'Last, "We have enough room for a new pending route request");
       Insert_PendingRequest
         (State.m_pendingRoute, State.m_pendingAutoReq, State.m_routeRequestId, Request.RequestID, PlanRequests);
 
@@ -1038,15 +1054,10 @@ package body Route_Aggregator with SPARK_Mode is
       Old_pendingRequest_M : constant Int64_Formal_Set_Maps.Formal_Model.M.Map :=
         Int64_Formal_Set_Maps.Formal_Model.Model (m_pendingRequest) with Ghost;
    begin
+
       Insert (m_pendingRequest, RequestID, PlanRequests);
       --  Establish the effect on the redefined Model of maps of formal sets
-
-      Model_Include
-        (Old_pendingRequest_M, Int64_Formal_Set_Maps.Formal_Model.Model (m_pendingRequest),
-         Old_pendingRequest, Model (m_pendingRequest));
-
-      pragma Assert (No_Overlaps (Model (m_pendingRequest)));
-      pragma Assert (All_Pending_Requests_Seen (Model (m_pendingRequest), m_routeRequestId));
+      pragma Assert (Old_pendingRequest <= Model (m_pendingRequest));
 
    end Insert_PendingRequest;
 
@@ -1069,7 +1080,7 @@ package body Route_Aggregator with SPARK_Mode is
       begin
          for C in S loop
             pragma Loop_Variant (Increases => Int_Set_P.Get (Positions (S), C));
-            pragma Loop_Invariant (Length (Res) = Int_Set_P.Get (Positions (S), C) - 1);
+            pragma Loop_Invariant (Length (Res) = +(Int_Set_P.Get (Positions (S), C) - 1));
             pragma Loop_Invariant (for all E of Res => Contains (S, E));
             pragma Loop_Invariant
               (for all K in 1 .. Int_Set_P.Get (Positions (S), C) - 1 =>
@@ -1086,7 +1097,7 @@ package body Route_Aggregator with SPARK_Mode is
    begin
       for C in M loop
          pragma Loop_Variant (Increases => Int_Set_Maps_P.Get (Positions (M), C));
-         pragma Loop_Invariant (Int_Set_Maps_M.Length (Res) = Int_Set_Maps_P.Get (Positions (M), C) - 1);
+         pragma Loop_Invariant (Int_Set_Maps_M.Length (Res) = +(Int_Set_Maps_P.Get (Positions (M), C) - 1));
          pragma Loop_Invariant (for all I of Res => Contains (M, I));
          pragma Loop_Invariant
            (for all I of Res =>
@@ -1228,7 +1239,7 @@ package body Route_Aggregator with SPARK_Mode is
                         toc.InitialTaskOption := taskpair.prevTaskOption;
                         toc.TimeToGo := routeplan.Cost;
                         toc.VehicleID := taskpair.vehicleId;
-                        pragma Assume (Length (matrix.CostMatrix) < Count_Type'Last, "we still have room in the matrix");
+                        pragma Assume (Length (matrix.CostMatrix) < To_Big_Integer (Count_Type'Last), "we still have room in the matrix");
                         matrix.CostMatrix := Add (matrix.CostMatrix, toc);
                      end;
 
@@ -1278,7 +1289,7 @@ package body Route_Aggregator with SPARK_Mode is
 
          --  Number of elements added to response.Routes
 
-         pragma Loop_Invariant (Length (Response.Routes) < Int_Set_P.Get (Positions (PlanResponses), Cu));
+         pragma Loop_Invariant (Length (Response.Routes) < To_Big_Integer (Int_Set_P.Get (Positions (PlanResponses), Cu)));
 
          --  We have removed all elements of PlanResponses from routePlanResponses
          --  up to Cu.
@@ -1383,7 +1394,7 @@ package body Route_Aggregator with SPARK_Mode is
 
       -- send the results of the query
       sendBroadcastMessage (Mailbox, Response);
-      pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
+      --  pragma Assume (Length (History) < Count_Type'Last, "We still have room for a new event in History");
       History := Add (History, (Kind => Send_RouteResponse, Id => Response.ResponseID));
    end SendRouteResponse;
 
@@ -1425,9 +1436,11 @@ package body Route_Aggregator with SPARK_Mode is
                          Has_Key (Res, K)
                      and then Get (Res, K) = Int_Set_Maps_K.Get (Keys (pendingRoute), J)));
                pragma Loop_Invariant
-                 (for all J in Int_Set_Maps_P.Get (Positions (pendingRoute), C) + 1 .. Length (pendingRoute) =>
+                 (if Int_Set_Maps_P.Get (Positions (pendingRoute), C) < Length (pendingRoute)
+                  then
+                    (for all J in Int_Set_Maps_P.Get (Positions (pendingRoute), C) + 1 .. Length (pendingRoute) =>
                       (for all K of Int_Set_Maps_M.Get (Model (pendingRoute), Int_Set_Maps_K.Get (Keys (pendingRoute), J)) =>
-                            not Has_Key (Res, K)));
+                         not Has_Key (Res, K))));
                pragma Loop_Invariant
                  (for all J in 1 .. Int_Set_P.Get (Positions (routePlans), C2) - 1 =>
                          Has_Key (Res, Int_Set_E.Get (Elements (routePlans), J))
@@ -1436,7 +1449,6 @@ package body Route_Aggregator with SPARK_Mode is
                  (for all J in Int_Set_P.Get (Positions (routePlans), C2) .. Length (routePlans) =>
                          not Has_Key (Res, Int_Set_E.Get (Elements (routePlans), J)));
 
-               pragma Assume (Length (Res) < Count_Type'Last, "We have less than Count_Type'Last pending plan requests in total");
                Res := Add (Res, Element (routePlans, C2), Key (pendingRoute, C));
             end loop;
          end;

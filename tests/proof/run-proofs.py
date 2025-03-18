@@ -19,22 +19,35 @@ class GnatproveDriver(DiffTestDriver):
                 f_prj.write('with "xmlada";\n')
                 f_prj.write('with "zmq.gpr";\n')
                 f_prj.write('with "lmcp_generated_messages.gpr";\n')
+                f_prj.write('with "sparklib";')
                 f_prj.write('project Test is\n')
                 f_prj.write('   for Main use ("uxas_ada.adb");\n')
                 f_prj.write('   package Naming is\n')
                 f_prj.write('      for Specification ("Ctrl_C_Handler") use "ctrl_c_handler.ads";\n')
                 f_prj.write('      for Implementation ("Ctrl_C_Handler") use "ctrl_c_handler__dummy.adb";\n')
                 f_prj.write('   end Naming;\n')
+                f_prj.write('   for Excluded_Source_Files use')
+                f_prj.write('      ("ctrl_c_handler__gcov.adb");')
                 f_prj.write('  for Source_Dirs\n')
                 f_prj.write('     use ("'+self.test_env["test_dir"]+'/../../../../src/ada/src/**");\n')
                 f_prj.write('   package Compiler is\n')
-                f_prj.write('      for Default_Switches ("ada") use ("-O2", "-gnatn", "-gnatp", "-fdata-sections","-ffunction-sections");\n')
+                f_prj.write('      for Default_Switches ("ada") use ("-O2", "-gnatn", "-gnatp", "-fdata-sections","-ffunction-sections", "-gnat2022");\n')
                 f_prj.write('   end Compiler;\n')
                 f_prj.write('   package Prove is\n')
                 f_prj.write('      for Proof_Switches ("Ada") use ("--counterexamples=off", "-q", "-u", "--output=brief");\n')
                 f_prj.write('      for Proof_Dir use "../../..'+self.test_env["test_dir"]+'/../../../../src/ada/proof";\n')
                 f_prj.write('   end Prove;\n')
                 f_prj.write('end Test;\n')
+
+            with open(self.working_dir("sparklib.gpr"), "w") as f_prj:
+                f_prj.write('project SPARKlib extends "sparklib_external" is\n')
+                f_prj.write('   for Object_Dir use "sparklib_obj";\n')
+                f_prj.write("   for Source_Dirs use SPARKlib_External'Source_Dirs;\n")
+                f_prj.write(
+                    "   for Excluded_Source_Files use "
+                    + "SPARKlib_External'Excluded_Source_Files;\n"
+                )
+                f_prj.write("end SPARKlib;\n")
 
             if self.env.options.no_replay:
                 proof_switches = []
