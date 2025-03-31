@@ -106,7 +106,7 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
 }
 
 
-/** BEHAVIORREGION: addZone
+/* BEHAVIORREGION: addZone
  * 
  * Accepts all legitimate zones
  * Doesn't distinguish correctly formatted zones from zones with problem data, doesn't check
@@ -123,227 +123,6 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
  * 
  * 
 */
-
-/** 
- * Requirement: HL-1-2 CLAIMFAILED:
- * Rationale:  
- * 1 CLAIMFAILED: Both services apply the same source code on the same data in the same order
- *    1 CLAIMFAILED: SR-4: SUFFICIENT CLAIM: Both services identiically compute the zones as intermediate polygons on the same plane
- *       1CLAIM: Both services respond to each AbstractZone declaration declared by calling bFindPointsForGeometry
- *         1CLAIM: The RoutePlannerVisibiltiyService directly calls bFindPointsForABstractGeomrty
- *             1Evidence.EXAMIANTION
- *             2Evidence.UnitTest for call chain to bFindPointsForAbstractGeometry
- *         2CLAIM: The Zone Alert Service calls SimpleZoneAlertComputer that in turn calls bFindPointsForAbstractGeometry
- *             1Evidence.Examination of source code
- *             2Evidence.UnitTest for call chain to bFindPointsForAbstractGeometry
- *       2CLAIM: Both services store by zone id the resulting planar polygon for each declared zone
- *       3CONTEXT: Computation is zone order dependent, as the first encountered lat/long determines origin of the plane
- *       4 CLAIMFAILED: Both services process zones in the same order
- *               1Claim: Both services process zones in the order they are received
- *                  1Claim: Source code is message-event based  and declared zones are discrete messages
- *                     1Evidence.Examine source code that is message-receipt-based
- *                     2Evidence.Examine message type declarations
- *               2 CLAIMFAILED: Both services always receive declare zones in the same order
- *                  1 CLAIMFAILED: Each Service is single-threaded
- *                     UNSUPPORTED
- *                  2 CLAIMFAILED: Services receive in order messages at all agents if distributed arbitrarily
- *                     UNSUPPORTED
- *          2Claim: Both services compute the same plane on examples of zone input sequences
- *             1Evidence.Test: Tests for various collections of zones show same computed plane origins and relative orientations of points on plane from zone inputs
- *       3Claim: Both services compute same intermediate polygonal zones for some example input zones
- *           1Evidence.Tests: Example input sets of zones produce the same results in both algorithsm for intermediate data
- *    2 CLAIMFAILED: SR-6: Both services check and expand/merge zones using the same semantics
- *       1CLAIM: Both services wait until all relevent zones have been initially declared to do final zone check by calling 
- *          1CLAIM: Both services wait until all zone haves been declared to do final zone prep work
- *             1Claim: RoutePlannerVisibilityService waits until all zones used in a given OperatingRegion have been declared to 
- *                create final versions of those zones
- *                1Evidence.Examination: of code to process final zones for an operating region on an operating region declaration message
- *             2CLAIM: ZoneAlertService waits until all zones have been declared and the service is waiting for mission to start
- *                1Claim: The ZoneAlertService tgriggers final zone prep on the X message which is sent once when the system is ready to start mission activities
- *                   1Evidence.UnitTest: show examples that it triggers when X received, once, and not if X is not triggered
- *                   2Evidence.Examination: of the source code
- *       2 CLAIMFAILED: Both services identically check intemediate polygonal zones and expand and merge them for service use after received final event
- *         1 CLAIMFAILED: Both services call the same code on the same intermediate zones
- *            1Claim: Both services call errFinalizePolygons after their activating event
- *               1Evidence.UnitTest showing call by each after respective events
- *               2Evidence.Examination of source code flow of event handlers
- *            2 CLAIMFAILED: Both services call errFinalizePolygons with the same zones
- *               CONTRADICTED: if the declared operating zone does not use all declared zones
- *               CONTRADICTED: if more than one operating region is declared
- *         2Claim: Both services get the same results for examples check all stored intermediate zones 
- *               2Evidence.Test Unit test on Zone Alert code and RoutePlanenr for equivalent results
- *       3 CLAIMFAILED: Both services finish                                        preparing final zones for service before their servies are required in mission
- *             1 COUNTEREXAMPLE: The system waits for routes before it starts but will not wait for zone alert to prep and declare zones before
- *                   it executes
- * 2CLAIM: Both services produce the same final zones for use by their respective services for examples of zones
- *    1Evidence.Test.DataInjection into the algorithm show equivalence for the two core services
- * 
- */
-
-/*
- * Requirement: HL-1-3 CLAIMFAILED: CORRECT AND ACCURATE ZONE COMPUTATION
-    TBD
- * Rationale:
- * HL-1-3-1. Zone Geomtry applied is sufficiently correct and accurate
- * HL-1-3-2. Comkputation of immediate conflicts is corret and accurate
- * HL-1-3-3. Computation of impending conflicts is correct and accurate for linear interpolation standards
- *
- */
-
- /* 
- * HL-1-3-1: CLAIM: Computation of zone geometry is correct and accurate
- * 
- * RATIONALE:
- *
- * 1CLAIM: 
- * 
- * 
- * 
- */
-
- /* 
- * 
- * Some of the correctness gunk below might be useful 
- * 1 CLAIMFAILED: Both services apply the same algorithm and data to process zones for use in Route Planning and Zone Alerts
- *    1Context: Description of the algorithm: 1) Create a plane tangent to the earth with origin based on first lat/long found in processing declared AbstractZones
- *       with the plane oriented on lat (x) /long (x) at the plane's origin. 2) Convert all declared AbstractZones into polygons on that plane
- *       3) Check all of the zones defined as polygons on the plane to make sure they are not degenerate, are oriented properly, and are regular.
- *         If any is not, do not create any final zones for the operating region.
- *       4) Merge all keep-in zones against overlap using Visilibity all buffer expand and merge all keep-out zones for overlap using Visilibity
- *    1 CLAIMFAILED: SR-4: SUFFICIENT CLAIM: Both services identiically compute the zones as intermediate polygons on the same plane
- *       1CLAIM: Both services respond to each AbstractZone declaration declared by calling bFindPointsForGeometry
- *         1CLAIM: The RoutePlannerVisibiltiyService directly calls bFindPointsForABstractGeomrty
- *             1Evidence.EXAMIANTION
- *         2CLAIM: The Zone Alert Service calls SimpleZoneAlertComputer that in turn calls bFindPointsForAbstractGeometry
- *             1Evidence.Examination of source code
- *             2Evidence.UnitTest for call chain to bFindPointsForAbstractGeometry
- *       2CLAIM: BFindPointsForGeometry performs conversion of AbstractZones into anplaner polygon zone representation
- *       1 CLAIMFAILED: Both services identically compute the plane on which to project zones
- *         1 CLAIMFAILED: Both services use the same deterministic algorithm to compute the plane tangent to a lat/long and its coordinates
- *            1Claim: Both services take the first refered lat long of the first declared and received abstract zone and make that the origin of the plane with north pointed to north pointed on latitude axis at origin and and east pointed on longitudinal axis at origin
- *               1Claim: planar conversion in one specific function that takes lat long as input and uyses first input on execution of the system as declared origin
- *                  1Evidence: See source code of both services and note the call to X function
- *               2Claim: that function notes the first call in its execution and for that case sets the origin of the plane by the received lat long
- *                  1Evidence.Examine source code of the function and self evidence
- *                  2Evidence.Test case showing first call sets planar origin lat/long and all later call are relative to that origin
- *               3Claim: that function always converts lat and long as y and x tangents, respectively, to the lat and long at the origin on the tangent plane
- *                  1Evidence.Examine the source code as reader in the coinversion funtion
- *                  2Evidence.Test: Some example coordinate conversion cases showing they conform to expecte results for lat/long relative to the origin comp
- *            2 CLAIMFAILED: Both services process zones in the same order
- *               1Claim: Both services process zones in the order they are received
- *                  1Claim: Source code is message-event based  and declared zones are discrete messages
- *                     1Evidence.Examine source code that is message-receipt-based
- *                     2Evidence.Examine message type declarations
- *               2 CLAIMFAILED: Both services always receive declare zones in the same order
- *                  1 CLAIMFAILED: Each Service is single-threaded
- *                     UNSUPPORTED
- *                  2 CLAIMFAILED: Services receive in order messages at all agents if distributed arbitrarily
- *                     UNSUPPORTED
- *          2Claim: Both services compute the same plane on examples of zone input sequences
- *             1Evidence.Test: Tests for various collections of zones show same computed plane origins and relative orientations of points on plane from zone inputs
- *       2Claim: Both services identically compute zones as lists of polygon vertices on the defined plane
- *          1Claim: Both services use the same deterministic algorithm and data input order
- *             1Claim: Both services identically convert each received Zone AbstractGeometry into a regular polygon with a list of vertices in the defined plane
- *                SR-4-3-2-1: Both services apply bFindPointsForAbstractGeomrtry to convert abstract geometry to polygons on the plane
- *                   SR-4-3-2-1.Evidence1.Examine source code to see how both call this function on input zones as the first thing they do with a received input zone
- *                   SR-4-3-2-1.Evidence2.UnitTests show both systems call this first thing and  once on each received zone
- *                2Claim: Both services get the same results for intermediately stored polygons for same AbstractZoneInputs
- *                   1Claim: same results for CircleZone
- *                      1Evidence.Test test case for various circles
- *                   2Claim: same results for RectangleZone
- *                      1Evidence.Test test case for various rectangles  
- *                   3Claim: same results for PolygonZone
- *                      1Evidence.Test test case for various polygons
- *                   4Claim: same results for any other zone type not listed above
- *                      1Evidence.Test test case for other shape type
- *                   5Claim: Both services get same results for various examples of mixed AbatractZone inputs
- *                      1Evidence.Test test case for example collections of shape
- *                3AWAYCLAIM: Both services process zone inputs in the order
- *       3Claim: Both services compute same intermediate polygonal zones for some example input zones
- *           1Evidence.Tests: Example input sets of zones produce the same results in both algorithsm for intermediate data
- *    2CLAIM: SR-6: Both services check and expand/merge zones using the same semantics
- *       1CLAIM: Both services wait until all relevent zones have been initially declared to do final zone check by calling 
- *          1CLAIM: Both services wait until all zone haves been declared to do final zone prep work
- *             1Claim: RoutePlannerVisibilityService waits until all zones used in a given OperatingRegion have been declared to 
- *                create final versions of those zones
- *                1Evidence.Examination: of code to process final zones for an operating region on an operating region declaration message
- *             2CLAIM: ZoneAlertService waits until all zones have been declared and the service is waiting for mission to start
- *                1Claim: The ZoneAlertService tgriggers final zone prep on the X message which is sent once when the system is ready to start mission activities
- *                   1Evidence.UnitTest: show examples that it triggers when X received, once, and not if X is not triggered
- *                   2Evidence.Examination: of the source code
- *       2Claim: Both services identically check intemediate polygonal zones and expand and merge them for service use after received final event
- *         1Claim: Borht services call the same code on the same intermediate zones
- *            1Claim: Both services call errFinalizePolygons after their activating event
- *               1Evidence.UnitTest showing call by each after respective events
- *               2Evidence.Examination of source code flow of event handlers
- *            2 CLAIMFAILED: Both services call errFinalizePolygons with the same zones
- *               CONTRADICTED: if the declared operating zone does not use all declared zones
- *               CONTRADICTED: if more than one operating region is declared
- *         2Claim: Both services get the same results for examples check all stored intermediate zones 
- *               2Evidence.Test Unit test on Zone Alert code and RoutePlanenr for equivalent results
- *       3 CLAIMFAILED: Both services finish preparing final zones for service before their servies are required in mission
- *             1 COUNTEREXAMPLE: The system waits for routes before it starts but will not wait for zone alert to prep and declare zones before
- *                   it executes
-*/
-
-/** Requirement: SR-4-3-2-1
- * 
- * RATIONALE:
- * CLAIM: 1. RoutePLannerVisibiltiyService transforms geometry to the plane with a clear method, removes duplicate vertices in some
- * known order if generated polygon has any two vertices closer than 1 meter in separation, then checks for polygon simplicity of the 
- * polygon with vertices of closer than 1 meter removed, where the polygon considers two points equivalent that are 
- * less than 1*10^-8 meters apart. If any such polygon encountered is not simple, the entire operating zone of regions is rejected.
- * It then merges keep out zones and simultaneously expands them if they have positive padding distances declared with them. 
- * It then merges all keep in zones but does not perform any shrinking or expansion of them, even if a padding value is provided with a given 
- * zone declaration. It then eliminates all duplicate vertices that are within 1 meter of eachother for all resulting
- * zone polygons and stores the result to generate the visibility graph for routing.
- * 
- * EVIDENCE: 1.1. Direct readthrough of code by engineers followed by signed agreement. 
- * CLAIM: 2. Zone Alert does the same as the above
- * STRATEGY: 2: Show that ZoneAlert performs the steps above in the same order with the same functions
- * CLAIM: 2.1. The RoutePlannerVisbilityService converts a declared zone into a VisibilityGraph::CPolygon, this
- * stores the declared zone geometry into polygon vertices, along with storage of the zones type and 
- * padding.
- * EVIDENCE: 2.1.1. Review and agrement by at least one other engineer with signoff at time of this work
- * CLAIM: 2.2. The SimpleZoneAlertComputer does the equivalent work by converting the declared zone geometry to 
- * points in the x-y plane using the same computational function code, resulting in the same function.
- *   RATIONALE: 2.2
- *      CLAIM: 2.2.1. The code was copied directly
- *      ASSUMPTION: 2.2.1. RoutePlannerVisibilityService code is not changed after  claim 1
- *      CLAIM: 2.2.2. The functionality of the code is to produce polygons as specified in that function from the 
- *        abstract geometry types of circle, rectangle, and polygon, with geometry converted into the x-y plane in meter positions
- *        relative to an origin that is at the first declared lat/long coordinate for the first declared zone.
- *         STRATEGY: 2.2.2. Show for circle, rectangle, and polygon declared zone types, each
- *            CLAIM: 2.2.2.1: The functionality to produce polygons from a declared circle zone is equivalent to that
- *                     the RoutePlannerVisibilityService
- *              STRATEGY: 2.2.2.1. Show correct position and radius for being first declared zone and not for various positions and radii
- *                  JUSTIFICATION: 2.2.2.1. These are the only variables for a circle zone translation's behavior
- *                     CLAIM: 2.2.2.1.1: When a circle is the first zone, then the origin is x and radius results in inscribed 
- *                        circle of the given radius for x points starting at 0 radians, and for every x radians
- *                     CLAIM: 2.2.2.1.2: When a circle is not the first zone, its center is realtive to the origin based on their
- *                        latitudes and longitidues usiung the samne projection logic
- *                          EVIDENCE: Uses equivalent code (calls same code)
- *                     CLAIM: 2.2.2.1.3: A declared circle has the correct radius for generated points on the circle from its center and the x-y planes origin
- *                          EVIDENCE: 2.2.2.1.3.1: Test cases
-*             CLAIM: 2.2.2.2: the functionality to produce polygons from declared rectangle zones ...
-
-             
- *                              
- *                     
- *            CLAIM: 2.2.2.2: 
- * CLAIM: 2. The Route checks for degeneracy of zones and rejects all zones if one or more is degenerate
- *      EVIDENCE: READER INSPECTION
- *      EVIDENCE: SIGN OFF oF MORE THAN ONE ENGINEER
- * CLAIM  3. The Zone AlertService also rejects all zones if one or more is dengerate
- *   FAILURE: Degenerate zones are produced and stored as zones where as DEGNERATE ZONES WILL NOT BE DECLARED FOR THE USE CASES, as such zones are disregarded by the 
- *    ROUTEPLANNERVISIBILITY SERVICE BUT ALLOWED BY THE ZONE ALERTING SERVICE
- *   EVIDENCE: TEST CASE below
- * CLAIM 4. THe RoutePlannerVisibilityService checks that all zones are not irregular or dengerate with an 
- *   epsilon separtion of 1 * 10 ^-8 for vertex separation
- *    TODO: check if also true for non-same points on all line segments
- * CLAIM 5: The 
- */
-
 
 /** Class Stub to get at Protected Memebrs of SimpleZoneAlertComputer
  */
@@ -376,6 +155,7 @@ AbstractZone * makeRectangleZone(int id, bool keepIn,
     rectangle1Ptr->setWidth(width);
     rectangle1Ptr->setRotation(rotation);
 
+
     AbstractZone *zone;
 
     if (keepIn) {
@@ -391,6 +171,7 @@ AbstractZone * makeRectangleZone(int id, bool keepIn,
     zone->setMinAltitudeType(afrl::cmasi::AltitudeType::MSL);
     zone->setMaxAltitude(maxAlt);
     zone->setMaxAltitudeType(afrl::cmasi::AltitudeType::MSL);
+    zone->setPadding(padding);
 
     return zone;
 }
@@ -398,7 +179,6 @@ AbstractZone * makeRectangleZone(int id, bool keepIn,
 /** Zone testing afrl::cmasi:Exactly the same as RoutePlanner.
  */
 class BasicZoneChecks  : public testing::Test {
-    
   protected:
     
     BasicZoneChecks() {};
@@ -650,6 +430,7 @@ AbstractZone * makePolygonZone(int id, bool keepIn,
     zone->setMinAltitude(minAlt);
     zone->setMinAltitudeType(afrl::cmasi::AltitudeType::MSL);
     zone->setMaxAltitude(maxAlt);
+    zone->setPadding(padding);
 
     return zone;
 }
@@ -759,6 +540,10 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
 
 }
 
+
+
+
+
 /** Test Polygonal Zone Translation Relative to First Declared Zone Point */
 
 /** Test Polygonal Geometry Matches that of RoutePlannerVisibilityService before VisbilityGraph creation 
@@ -789,14 +574,6 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
  * NOTE: BOTH OUTPUT BIND POITNS IN PLANE WITHOUT PADDING. THAT IS APPLIED LATER IN ROUTE PLANNER
  */
 
-/** Test Mixed Geometry Scene Example Equivalence with RoutePlanner BindPoints
- * 
- * TODO: When do we think about equivalence with padding? 
- * NOTE: BOTH OUTPUT BIND POITNS IN PLANE WITHOUT PADDING. THAT IS APPLIED LATER IN ROUTE PLANNER
- * 
- */
-
-
 
 /** CLAIM: After ALL zones are declared, and before Zone Alerting is required, all zones are successfully
  * merged with overlapping zones of the same type (keep-in or keep-out). The result is a set of merged keep in zones
@@ -815,95 +592,36 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
  */
 
 
-/** CLAIM: THE ROUTE PLANNING SERVICE EMITS THE SET OF MERGED ZONES WITH NEW IDS , ETC SEE REQUIREMENTS */
-
-/** CLAIM: THE ROUTE PLANNING SERVICE REPORTS WHEN A VEHICLE IS IN CURRENT CONFLICT WITH ANY GIVEN MERGED ZONE */
-
-/** CLAIM: Requiremnt for Keep-Out existing violation is satisfied */
-
-/** CLAIM: Requiremnt for Keep-In existing violation is satisfied */
-
-/** CLAIM: Requirement about Imminetnt violation reporting */
-
-/** CLAIM: Requirement about Keep-out imminent violation reporting*/
-
-/** CLAIM: Requirement about Keep-in imminent violation reporting*/
+ /** CLAIM: addZone correctly adds proper zones to the plane
+  * 
+  * THERE ARE SEVERAK TESTS UNDER THIS
+  * 1. TEST simple zones add (1 of each shape)
+  * 2. TEST reject zone that doesn't work
+  * 3. TEST add some zones and reject others
+  * 4. TEST add of add many zones created psuedorandomly
+  */
 
 
-/** CLAIM: THE Route Planning service correctly reports existing and imminent zone alerts that match route planning zone geometry 
- * and only declares if they should occur and never when they aren't semantically occuring.
- * 
- * RATIONALE: SAME STORED GEOMETRY, AND CORRECT EXISTING AND IMMINENT CALCULATIONS WITH CORRECT REPORTING HOOKS
- * TESTS ABOVE SUPPORT. THIS LIKELY EXISTS AT ARGUMENT LEVEL
- * 
- * ALSO SCENARIOS ARE RUN AS DIRECT EVIDENCE SUPPORTING THIS FOR VARIOUS CASES AND CORNER CASES
- *   FOR EXISTING AND IMMINENT DETECTIONS RELATIVE TO ROUTES PLANNED ON SAME ANNOUNCED ZONES
- * 
- * THIS SHOULD BE A REQUIREMENT IN THE HIERARCH HIGH UP
- * THIS ARGUMENT SHOULD LIKELY BE FAR UP THE GSN AS THIS IS THE ESSENTIAL CORRECTNESS ARG.
- * 
-*/
+class SimpleComputerChecks;
 
+class TestableSimpleZoneAlertComputer : public SimpleZoneAlertComputer {
+  friend SimpleComputerChecks;
 
-
-
-class MockCPolygon :CPolygon {
-    /**
-    int& iGetID(){return(m_iID);};
-    const int& iGetID()const{return(m_iID);};    
-    **/
-    //MOCK_METHOD();
-
-
+  public:
+    TestableSimpleZoneAlertComputer(int64_t lookaheadTime) : SimpleZoneAlertComputer(lookaheadTime) {}
 };
 
 
-/** Creates a SimpleZoneAlertComputer set up with a bunch of keep in and keepout CPolygon Mocks to 
- *  test against for interaction between CPolygon zones and ZoneAlertComputer 
+/** Zone testing afrl::cmasi:Exactly the same as RoutePlanner.
  */
-class MockZonesSetup : public testing::Test {
+class SimpleComputerChecks  : public testing::Test, public TestableSimpleZoneAlertComputer {
 
-
-    protected:
-
-        MockZonesSetup() {};
-
-        void SetUp() override {
-            computerPtr = new SimpleZoneAlertComputer(1.0);
-
-            // create a set of mock keep out and keep in zones for the polygon
-
-
-
-
-
-        };
-
-        void TearDown() override {
-            delete computerPtr;
-        };
-
-
-        SimpleZoneAlertComputer *computerPtr;
-};
-
-
-/** A test harness that sets up a ZoneAlertComputer with some typical zones against
- * which to test vehicle existing and imminent zone violations
- */
-class SimpleZonesSetup  : public testing::Test {
-    
     protected:
       
-      SimpleZonesSetup() {};
+      SimpleComputerChecks() : TestableSimpleZoneAlertComputer(1000) {};
   
-  
+    
       void  SetUp() override {
-
-        // create a new zone alert computer against which to make calls
-        computerPtr = new SimpleZoneAlertComputer(1.0);
-        
-
           // setup square zone
           //arpPtr = new AccessibleRoutePlanner();
   
@@ -927,13 +645,842 @@ class SimpleZonesSetup  : public testing::Test {
           //delete rectKeepInZone2;
       };
   
-      //AccessibleRoutePlanner *arpPtr;
-  
-      KeepInZone *rectKeepInZone1;
-      KeepInZone *rectKeepInZone2;
-
-
-      SimpleZoneAlertComputer *computerPtr;
-
   
   };
+  
+
+
+  TEST_F(SimpleComputerChecks, addZoneTestOneRectangle) {
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    //--check same rectangle rorated 45 degrees clockwise
+    // and padding is ignored
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, false, // zone 2 is keep in
+                    0.0, 0.0, 5000.0, // center lat long in degrees with alt
+                    SX, SY, -45.0, // width and length and rotation in degrees clockwise
+                    20.0,              // padding
+                    8000.0, 10000.0,  // zone altitudes
+                    250.0, 26542.0,   // start and end times
+                    std::vector<int> {1, 2});
+    shared_ptr<AbstractZone> rectShared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+    
+    bool result = this->addZone(rectShared, false);
+
+    // expect the function to return that the rectangle was successfully added
+    EXPECT_TRUE(result);
+
+    // expect the rectangle to be stored as a boundary and a polygon in the computer's arrays
+    // under its id = 2 and no other stored polygon
+    EXPECT_EQ(1, this->boundaries.size());
+    shared_ptr<CBoundary> boundaryShared = this->boundaries[2];
+
+    EXPECT_EQ(2, boundaryShared->getZoneID());
+    EXPECT_EQ(false, boundaryShared->bGetKeepInZone());
+    EXPECT_EQ(20.0, boundaryShared->getPadding());
+
+    // show that addZone stored its provident geometry as a rectangle
+    AbstractGeometry *abstractGeom = this->boundaries[2]->getBoundary();
+    ASSERT_NE(nullptr, abstractGeom);
+    ASSERT_EQ(abstractGeom->getLmcpType(), afrl::cmasi::CMASIEnum::RECTANGLE);
+
+    // show that addZone correctly stored the boundary's planar geometry as 4 vertices 
+    n_FrameworkLib::V_POSITION_t pointVector = boundaryShared->vposGetBoundaryPoints_m();
+
+    //--expect basic rectangle centered at origin and not lat long given
+    EXPECT_EQ(4, pointVector.size());
+
+    //double F = 0.7071067812;
+    //double R = sqrt((X*X)+(Y*Y));
+
+    double A = 45.0 * (M_PI/180.0);
+    
+    EXPECT_NEAR((X*cos(A))-(Y*sin(A)), pointVector[0].m_east_m, acceptedError);
+    EXPECT_NEAR((X*sin(A))+(Y*cos(A)), pointVector[0].m_north_m, acceptedError);
+    EXPECT_NEAR(0, pointVector[0].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR((-X*cos(A))-(Y*sin(A)), pointVector[1].m_east_m, acceptedError);
+    EXPECT_NEAR((-X*sin(A))+(Y*cos(A)), pointVector[1].m_north_m, acceptedError);
+    EXPECT_NEAR(0, pointVector[1].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR((-X*cos(A))-(-Y*sin(A)), pointVector[2].m_east_m, acceptedError);
+    EXPECT_NEAR((-X*sin(A))+(-Y*cos(A)), pointVector[2].m_north_m, acceptedError);
+    EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
+
+    EXPECT_NEAR((X*cos(A))-(-Y*sin(A)), pointVector[3].m_east_m, acceptedError);
+    EXPECT_NEAR((X*sin(A))+(-Y*cos(A)), pointVector[3].m_north_m, acceptedError);
+    EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
+
+    // NOW SHOW ONE CPOLYGON FOR AN INTERMEDIATE ZONE WAS PROPERLY SET
+    EXPECT_EQ(1, this->polygons.size());
+
+    shared_ptr<CPolygon> polygonShared = this->polygons[2];
+    EXPECT_EQ(2, polygonShared->iGetID());
+    
+    std::vector<int> &vertices = polygonShared->viGetVerticies();    
+    EXPECT_EQ(4, vertices.size());
+    EXPECT_EQ(0, vertices[0]);
+    EXPECT_EQ(1, vertices[1]);
+    EXPECT_EQ(2, vertices[2]);
+    EXPECT_EQ(3, vertices[3]);
+
+}
+
+TEST_F(SimpleComputerChecks, addZoneTestRectangleAndPolygon) {
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.001;
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, false, // zone 2 is keep in
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX, SY, -45.0, // width and length and rotation in degrees clockwise
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rectShared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    bool result = this->addZone(rectShared, false);
+
+    EXPECT_TRUE(result);
+
+    // add polygon zone
+    AbstractZone * poly1 = (KeepInZone*) makePolygonZone(1, false, // zone is keep out
+                    verts(4, loc(deg1, 0, 1000), loc(2*deg1, -deg1, 1000), loc(1.5*deg1, -deg1/2, 1000), loc(deg1, -3*deg1, 1000)),
+                    20.0,              // padding
+                    8000.0, 10000.0,  // zone altitudes
+                    250.0, 26542.0,   // start and end times
+                    std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> poly1Shared = std::make_shared<AbstractZone>(*poly1);
+    
+    result = this->addZone(poly1Shared, true); // make poly keep in
+
+    // expect the function to return that the rectangle was successfully added
+    EXPECT_TRUE(result);
+
+    // expect two intermediate zones to be defined
+    EXPECT_EQ(2, this->boundaries.size());
+    EXPECT_EQ(2, this->polygons.size());
+
+    // NOW CHECK THAT BOTH WERE ADDED AT THE RIGHT COORDINATES, ALL RELATIVE TO CENTER OF RECTANGLE (due to add order)
+    // expect the rectangle to be stored as a boundary and a polygon in the computer's arrays
+    // under its id = 2 and no other stored polygon
+    shared_ptr<CBoundary> boundaryShared = this->boundaries[2];
+
+    EXPECT_EQ(2, boundaryShared->getZoneID());
+    EXPECT_EQ(false, boundaryShared->bGetKeepInZone());
+    EXPECT_EQ(20.0, boundaryShared->getPadding());
+
+    // show that addZone stored its provident geometry as a rectangle
+    AbstractGeometry *abstractGeom = this->boundaries[2]->getBoundary();
+    ASSERT_NE(nullptr, abstractGeom);
+    ASSERT_EQ(abstractGeom->getLmcpType(), afrl::cmasi::CMASIEnum::RECTANGLE);
+
+    // show that addZone correctly stored the boundary's planar geometry as 4 vertices 
+    n_FrameworkLib::V_POSITION_t pointVector = boundaryShared->vposGetBoundaryPoints_m();
+
+    //--expect basic rectangle centered at origin and not lat long given
+    EXPECT_EQ(4, pointVector.size());
+    // NOW SHOW ONE CPOLYGON FOR AN INTERMEDIATE ZONE WAS PROPERLY SET
+
+    shared_ptr<CPolygon> polygonShared = this->polygons[2];
+    EXPECT_EQ(2, polygonShared->iGetID());
+    
+    std::vector<int> &vertices = polygonShared->viGetVerticies();    
+    EXPECT_EQ(4, vertices.size());
+    EXPECT_EQ(0, vertices[0]);
+    EXPECT_EQ(1, vertices[1]);
+    EXPECT_EQ(2, vertices[2]);
+    EXPECT_EQ(3, vertices[3]);
+
+    // now show that the polygon appears to be stored correctly
+    boundaryShared = this->boundaries[1];
+
+    EXPECT_EQ(1, boundaryShared->getZoneID());
+    EXPECT_EQ(true, boundaryShared->bGetKeepInZone());
+    EXPECT_EQ(20.0, boundaryShared->getPadding());
+
+    // show that addZone stored its provident geometry as a rectangle
+    abstractGeom = this->boundaries[1]->getBoundary();
+    ASSERT_NE(nullptr, abstractGeom);
+    ASSERT_EQ(abstractGeom->getLmcpType(), afrl::cmasi::CMASIEnum::POLYGON);
+
+    // show that addZone correctly stored the boundary's planar geometry as 4 vertices 
+    pointVector = boundaryShared->vposGetBoundaryPoints_m();
+
+    //--expect basic rectangle centered at origin and not lat long given
+    EXPECT_EQ(4, pointVector.size());
+    // NOW SHOW ONE CPOLYGON FOR AN INTERMEDIATE ZONE WAS PROPERLY SET
+
+    polygonShared = this->polygons[1];
+    EXPECT_EQ(1, polygonShared->iGetID());
+    
+    vertices = polygonShared->viGetVerticies();    
+    EXPECT_EQ(4, vertices.size());
+    EXPECT_EQ(0, vertices[0]);
+    EXPECT_EQ(1, vertices[1]);
+    EXPECT_EQ(2, vertices[2]);
+    EXPECT_EQ(3, vertices[3]);
+}
+
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepOutSimpleMergeCheck) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.003;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, 
+        false, // zone 2 is keep out
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX, SY,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    result = this->addZone(rect2Shared, false);
+
+    ASSERT_TRUE(result);
+
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    EXPECT_EQ(1, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];
+    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_FALSE(processedZone->getKeepIn());
+
+    // expect a bevel for 8 remaining vertices
+    EXPECT_EQ(16, processedZone->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(1, keepOutZones.size());
+    EXPECT_EQ(0, keepInZones.size());    
+    // zone id 1 in keep out zones
+    EXPECT_TRUE(keepOutZones.find(1) != keepOutZones.end());
+
+    // check boundaries and polygons
+    ASSERT_EQ(1, boundaries.size());
+    auto boundary = boundaries[1];
+    ASSERT_TRUE(boundary != nullptr);
+    EXPECT_EQ(1, boundary->getZoneID());
+    EXPECT_EQ(16, boundary->vposGetBoundaryPoints_m().size());
+
+    ASSERT_EQ(1, polygons.size());
+    auto polygon = polygons[1];
+    ASSERT_TRUE(polygon != nullptr);
+    EXPECT_EQ(1, polygon->iGetID());
+    EXPECT_EQ(16, polygon->viGetVerticies().size());
+
+}
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepOutOneInsideTheOther) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.000;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, 
+        false, // zone 2 is keep out
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX/2, SY/2,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    result = this->addZone(rect2Shared, false);
+
+    ASSERT_TRUE(result);
+
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    EXPECT_EQ(1, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];
+    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_FALSE(processedZone->getKeepIn());
+
+    // expect a bevel for only the four vertices of the outer zone
+    EXPECT_EQ(8, processedZone->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(1, keepOutZones.size());
+    EXPECT_EQ(0, keepInZones.size());    
+    // zone id 1 in keep out zones
+    EXPECT_TRUE(keepOutZones.find(1) != keepOutZones.end());
+    
+    // check boundaries and polygons
+    ASSERT_EQ(1, boundaries.size());
+    auto boundary = boundaries[1];
+    ASSERT_TRUE(boundary != nullptr);
+    EXPECT_EQ(1, boundary->getZoneID());
+    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
+
+    ASSERT_EQ(1, polygons.size());
+    auto polygon = polygons[1];
+    ASSERT_TRUE(polygon != nullptr);
+    EXPECT_EQ(1, polygon->iGetID());
+    EXPECT_EQ(8, polygon->viGetVerticies().size());
+    
+}
+
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepOutDontOverlap) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, 
+        false, // zone 2 is keep out
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX, SY,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    result = this->addZone(rect2Shared, false);
+
+    ASSERT_TRUE(result);
+
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    EXPECT_EQ(2, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_FALSE(processedZone->getKeepIn());
+    EXPECT_EQ(8, processedZone->getVertices().size());
+
+    processedZone = (*mergedZones)[1];
+    EXPECT_EQ(2, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_FALSE(processedZone->getKeepIn());
+    EXPECT_EQ(8, processedZone->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(2, keepOutZones.size());
+    EXPECT_EQ(0, keepInZones.size());    
+    // zone id 1 in keep out zones
+    EXPECT_TRUE(keepOutZones.find(1) != keepOutZones.end());
+    EXPECT_TRUE(keepOutZones.find(2) != keepOutZones.end());
+
+    // check boundaries and polygons
+    ASSERT_EQ(2, boundaries.size());
+    auto boundary = boundaries[1];
+    ASSERT_TRUE(boundary != nullptr);
+    EXPECT_EQ(1, boundary->getZoneID());
+    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
+
+    boundary = boundaries[2];
+    ASSERT_TRUE(boundary != nullptr);
+    EXPECT_EQ(2, boundary->getZoneID());
+    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
+
+    ASSERT_EQ(2, polygons.size());
+    
+    auto polygon = polygons[1];
+    ASSERT_TRUE(polygon != nullptr);
+    EXPECT_EQ(1, polygon->iGetID());
+    EXPECT_EQ(8, polygon->viGetVerticies().size());
+    
+    polygon = polygons[2];
+    ASSERT_TRUE(polygon != nullptr);
+    EXPECT_EQ(2, polygon->iGetID());
+    EXPECT_EQ(8, polygon->viGetVerticies().size());
+
+}
+
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepInAndKeepOutDontMergeWithOverlap) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.001;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepInZone2 = (KeepInZone*) makeRectangleZone(2, 
+        true, // zone 2 is keep in
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX, SY,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepInZone2);
+
+    result = this->addZone(rect2Shared, true);
+
+    ASSERT_TRUE(result);
+    
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    ASSERT_EQ(2, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_TRUE(processedZone->getKeepIn());
+    // keep in zone don't shrink and don't bezel
+    EXPECT_EQ(4, processedZone->getVertices().size());
+
+    auto processedZone2 = (*mergedZones)[1];
+    EXPECT_EQ(2, processedZone2->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone2->getLmcpType());
+    EXPECT_FALSE(processedZone2->getKeepIn());
+    // keep out zones bezel when expanded
+    EXPECT_EQ(8, processedZone2->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(1, keepOutZones.size());
+    EXPECT_EQ(1, keepInZones.size());    
+    // zone ids in respective zone bins
+    EXPECT_TRUE(keepInZones.find(1) != keepInZones.end());
+    EXPECT_TRUE(keepOutZones.find(2) != keepOutZones.end());
+
+
+}
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepInSimpleMergeCheck) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.001;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, true);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, 
+        false, // zone 2 is keep out
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX, SY,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    result = this->addZone(rect2Shared, true);
+
+    ASSERT_TRUE(result);
+
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    EXPECT_EQ(1, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];
+    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_TRUE(processedZone->getKeepIn());
+
+    // expect 8 vertices and no beveling because no padding
+    EXPECT_EQ(8, processedZone->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(0, keepOutZones.size());
+    EXPECT_EQ(1, keepInZones.size());    
+    // zone id 1 in keep out zones
+    EXPECT_TRUE(keepInZones.find(1) != keepInZones.end());
+
+
+    // show that the boundaries and polygons exist for this zone id
+    ASSERT_EQ(1, this->boundaries.size());
+    auto boundary = this->boundaries[1];
+    ASSERT_TRUE(boundary != nullptr);
+}
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepInOneInsideTheOther) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.000;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, true);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, 
+        false, // zone 2 is keep out
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX/2, SY/2,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    result = this->addZone(rect2Shared, true);
+
+    ASSERT_TRUE(result);
+
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    EXPECT_EQ(1, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];
+    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_TRUE(processedZone->getKeepIn());
+
+    // expect a single rectangle with no bevel because no padding
+    EXPECT_EQ(4, processedZone->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(0, keepOutZones.size());
+    EXPECT_EQ(1, keepInZones.size());    
+    // zone id 1 in keep out zones
+    EXPECT_TRUE(keepInZones.find(1) != keepInZones.end());
+
+}
+
+
+TEST_F(SimpleComputerChecks, mergeZonesKeepInDontOverlap) {
+
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, true);
+
+    ASSERT_TRUE(result);
+
+    //--add rectangle
+    AbstractZone * rectKeepOutZone2 = (KeepInZone*) makeRectangleZone(2, 
+        false, // zone 2 is keep out
+        0.0, 0.0, 5000.0, // center lat long in degrees with alt
+        SX, SY,  // width and length 
+        0,        // no rotation
+        20.0,              // padding
+        200.0, 1000.0,  // zone altitudes
+        0, 23432542246542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect2Shared = std::make_shared<AbstractZone>(*rectKeepOutZone2);
+
+    result = this->addZone(rect2Shared, true);
+
+    ASSERT_TRUE(result);
+
+    // now merge em and see that it works
+    auto mergedZones = this->mergeZones();
+
+    // expect one merged zone
+    EXPECT_EQ(2, mergedZones->size());
+
+    // check its zone ID
+    auto processedZone = (*mergedZones)[0];    
+    EXPECT_EQ(1, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_TRUE(processedZone->getKeepIn());
+    EXPECT_EQ(4, processedZone->getVertices().size());
+
+    processedZone = (*mergedZones)[1];
+    EXPECT_EQ(2, processedZone->getZoneID());
+    EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
+    EXPECT_TRUE(processedZone->getKeepIn());
+    EXPECT_EQ(4, processedZone->getVertices().size());
+
+    // check zone storage sets
+    EXPECT_EQ(0, keepOutZones.size());
+    EXPECT_EQ(2, keepInZones.size());    
+    // zone id 1 in keep out zones
+    EXPECT_TRUE(keepInZones.find(1) != keepInZones.end());
+    EXPECT_TRUE(keepInZones.find(2) != keepInZones.end());
+
+}
+
+
+TEST_F(SimpleComputerChecks, computeZoneViolationInsideKeepOut) {
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    auto procZones = this->mergeZones();
+
+    ASSERT_TRUE(procZones != nullptr);
+
+    // show that a vehicle inside the zone causes single immediate violation report
+    std::stringstream errors;
+
+    auto vehicleState = std::make_shared<afrl::cmasi::AirVehicleState>();    
+    vehicleState->setID(1);
+    vehicleState->setGroundspeed(1.0); // moving at 1 meter per second relative to ground
+    vehicleState->setCourse(270.0); // heading east
+    vehicleState->setVerticalSpeed(110.0);
+
+    Location3D *locationPtr = new Location3D();
+    locationPtr->setAltitude(66000.0);
+    locationPtr->setLatitude(deg1);
+    locationPtr->setLongitude(deg1);
+
+    vehicleState->setLocation(locationPtr);
+
+    auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
+
+    std::cout << errors.str() << std::endl;
+
+    ASSERT_TRUE(violationsPtr != nullptr);
+
+    ASSERT_EQ(1, violationsPtr->size());
+
+
+}
+
+TEST_F(SimpleComputerChecks, computeZoneViolationsImminentWithKeepOut) {
+}
+
+TEST_F(SimpleComputerChecks, computeZoneViolationsFarFromKeepOut) {
+}
+
+TEST_F(SimpleComputerChecks, computeZoneViolationsInOneAndImminentWithAnotherKeepOut) {
+}
+
+TEST_F(SimpleComputerChecks, computeZoneViolationsImminentWithTwoKeepOuts) {
+}
+
+
+/** CLAIM: THE ROUTE PLANNING SERVICE EMITS THE SET OF MERGED ZONES WITH NEW IDS , ETC SEE REQUIREMENTS */
+
+/** CLAIM: THE ROUTE PLANNING SERVICE REPORTS WHEN A VEHICLE IS IN CURRENT CONFLICT WITH ANY GIVEN MERGED ZONE */
+
+/** CLAIM: Requiremnt for Keep-Out existing violation is satisfied */
+
+/** CLAIM: Requiremnt for Keep-In existing violation is satisfied */
+
+/** CLAIM: Requirement about Imminetnt violation reporting */
+
+/** CLAIM: Requirement about Keep-out imminent violation reporting*/
+
+/** CLAIM: Requirement about Keep-in imminent violation reporting*/
+
+
+class MockCPolygon :CPolygon {
+    /**
+    int& iGetID(){return(m_iID);};
+    const int& iGetID()const{return(m_iID);};    
+    **/
+    //MOCK_METHOD();
+
+
+};
+
+
+
+

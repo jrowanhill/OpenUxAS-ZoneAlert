@@ -50,14 +50,11 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<AbstractZone> zonePtr, bool kee
         auto boundaryPtr = make_shared<CBoundary>(
             zonePtr->getZoneID(), keepIn, boundaryPoints, *zonePtr);
 
-        // Create a Polygon
+        // Create a Polygon and update members as needed
         auto polygonPtr = make_shared<CPolygon>(zonePtr->getZoneID());
-
-        // And update its values using the inside-out approach of the legacy codebase
-        polygonPtr->plytypGetPolygonType().bGetKeepIn() = keepIn; // TODO: check. this smells
-        polygonPtr->dGetPolygonExpansionDistance() = zonePtr->getPadding();
-        
-        // polygons store indeces to  external boundary points (they are in order in the xyBoundary)
+        polygonPtr->plytypGetPolygonType().bGetKeepIn() = keepIn;
+        polygonPtr->dGetPolygonExpansionDistance() = zonePtr->getPadding();        
+        // polygons store indeces to an external array. Those are stored in the CBoundary object created above
         for (int index = 0; index < boundaryPtr->vposGetBoundaryPoints_m().size(); index++) {
             polygonPtr->viGetVerticies().push_back(index);
         }
@@ -75,7 +72,6 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<AbstractZone> zonePtr, bool kee
             polygons[polygonPtr->iGetID()] = polygonPtr;
         }
         else {
-            isSuccess = false;
             boundaries[boundaryPtr->getZoneID()] = NULL;
             polygons[polygonPtr->iGetID()] = NULL;
         }  
@@ -151,6 +147,7 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
         auto boundaryPtr = make_shared<CBoundary>(
             iter->iGetID(), iter->plytypGetPolygonType().bGetKeepIn(), boundaryPoints, 
                             blankAbstract);
+        boundaryPtr->setZoneID(iter->iGetID());
         boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
 
         //  store zones by ype in sets for faster iteration during violation checks
@@ -163,6 +160,9 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
 
         // create an announcement of the zone
         shared_ptr<ProcessedZone> procZonePtr = make_shared<ProcessedZone>();
+        procZonePtr->setZoneID(iter->iGetID());
+        procZonePtr->setKeepIn(iter->plytypGetPolygonType().bGetKeepIn());
+
         for (auto vit = boundaryPtr->vposGetBoundaryPoints_m().begin(); 
                     vit != boundaryPtr->vposGetBoundaryPoints_m().end(); vit++) {
             ZoneVertex * vertexPosPtr = new ZoneVertex();
@@ -482,88 +482,6 @@ inline int64_t SimpleZoneAlertComputer::computeTimeToPosition(CPosition startPos
 
 }
 
-/**
-bool SimpleZoneAlertComputer::bFindPointsForAbstractGeometry(AbstractGeometry* pAbstractGeometry, n_FrameworkLib::V_POSITION_t& vposBoundaryPoints) {
-    
-    bool isSuccess(true);
-    uxas::common::utilities::CUnitConversions unitConversions;
-
-    // convert uav position and waypoint positions from lat,long
-    switch (pAbstractGeometry->getLmcpType())
-    {
-        case afrl::cmasi::CMASIEnum::CIRCLE:
-        {
-            afrl::cmasi::Circle* pCircle = static_cast<afrl::cmasi::Circle*> (pAbstractGeometry);
-            double dCenterNorth_m(0.0);
-            double dCenterEast_m(0.0);
-            unitConversions.ConvertLatLong_degToNorthEast_m(
-                    pCircle->getCenterPoint()->getLatitude(),
-                    pCircle->getCenterPoint()->getLongitude(),
-                    dCenterNorth_m, dCenterEast_m);
-            double dRadius_m = pCircle->getRadius();
-            // calculate boundary points by breaking circleinto line segments
-            for (double dAngle_rad = 0.0; dAngle_rad < n_Const::c_Convert::dTwoPi(); dAngle_rad += CIRCLE_BOUNDARY_INCREMENT)
-            {
-                double dPositionNorth_m = (dRadius_m * cos(dAngle_rad)) + dCenterNorth_m;
-                double dPositionEast_m = (dRadius_m * sin(dAngle_rad)) + dCenterEast_m;
-                vposBoundaryPoints.push_back(n_FrameworkLib::CPosition(dPositionNorth_m, dPositionEast_m));
-
-            } //for(double dAngle_rad=0.0;dAngle_rad<n_Const::c_Convert::dTwoPi();dAngle_rad+=_PI_O_10)
-            
-            isSuccess = true;
-            break;
-        }
-        case afrl::cmasi::CMASIEnum::POLYGON:
-        {
-            afrl::cmasi::Polygon* pplyBoundaryPolygon = static_cast<afrl::cmasi::Polygon*> (pAbstractGeometry);
-            for (auto itPoint = pplyBoundaryPolygon->getBoundaryPoints().begin();
-                    itPoint != pplyBoundaryPolygon->getBoundaryPoints().end();
-                    itPoint++)
-            {
-                double dNorth_m(0.0);
-                double dEast_m(0.0);
-                unitConversions.ConvertLatLong_degToNorthEast_m((*itPoint)->getLatitude(), (*itPoint)->getLongitude(), dNorth_m, dEast_m);
-                vposBoundaryPoints.push_back(n_FrameworkLib::CPosition(dNorth_m, dEast_m));
-            }
-
-            isSuccess = true;
-            break;
-        }
-        case afrl::cmasi::CMASIEnum::RECTANGLE:
-        {
-            afrl::cmasi::Rectangle* pRectangle = static_cast<afrl::cmasi::Rectangle*> (pAbstractGeometry);
-            double dCenterNorth_m(0.0);
-            double dCenterEast_m(0.0);makeZoneViolation
-            wayRotated.m_north_m = pRectangle->getHeight() / 2.0;
-            wayRotated.m_east_m = pRectangle->getWidth() / 2.0;
-            wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
-            vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
-
-            //North/West Corner
-            wayRotated.m_north_m = pRectangle->getHeight() / 2.0;
-            wayRotated.m_east_m = -pRectangle->getWidth() / 2.0;
-            wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
-            vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
-
-            //South/West Corner
-            wayRotated.m_north_m = -pRectangle->getHeight() / 2.0;
-            wayRotated.m_east_m = -pRectangle->getWidth() / 2.0;
-            wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
-            vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
-
-            //South/East Corner
-            wayRotated.m_north_m = -pRectangle->getHeight() / 2.0;
-            wayRotated.m_east_m = pRectangle->getWidth() / 2.0;
-            wayRotated.RotateAboutOriginByHeading(dRotationHeading_rad);
-            vposBoundaryPoints.push_back(n_FrameworkLib::CPosition((wayRotated.m_north_m + dCenterNorth_m), (wayRotated.m_east_m + dCenterEast_m)));
-
-            isSuccess = true;
-            break;
-        }
-    }
-    return (isSuccess);
-}
-**/
 
 inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
                 int zoneID, bool isKeepInZone, 

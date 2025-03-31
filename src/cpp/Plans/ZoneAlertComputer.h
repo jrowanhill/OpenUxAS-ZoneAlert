@@ -154,7 +154,7 @@ protected:
         double ny = currentPosition.m_north_m + (futureTime * velocity[1]);
         double nz = currentPosition.m_altitude_m + (futureTime * velocity[2]);
 
-        return CPosition(nx, ny, nz);
+        return CPosition(ny, nx, nz);
     }
 
 

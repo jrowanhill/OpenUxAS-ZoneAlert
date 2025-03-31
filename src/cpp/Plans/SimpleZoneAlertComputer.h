@@ -233,7 +233,7 @@ protected:
                 double east_m, double north_m, double altitude_m,
                 int64_t timeToIntercept);
     
-private:
+protected:
 
     // ---- start with a very simple and inefficient implementation ----
 
