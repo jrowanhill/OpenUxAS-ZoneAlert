@@ -55,6 +55,12 @@ void CUnitConversions::ReInitialize(const double& dLatitudeInit_rad, const doubl
 //#error "ERROR: CUnitConversions::ReInitialize::   reiitialize is no longer allowed!!!"
 };
 
+void CUnitConversions::Reset()
+{
+    m_bInitialized = false;
+}
+
+
 ////////////////////////////////////////////////////////////////////////////
 ////// FROM LAT/LONG TO NORTH/EAST
 

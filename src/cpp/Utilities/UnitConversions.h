@@ -85,6 +85,8 @@ public:
     void Initialize(const double& dLatitudeInit_rad, const double& dLongitudeInit_rad);
     void ReInitialize(const double& dLatitudeInit_rad, const double& dLongitudeInit_rad);
 
+    static void Reset();
+
     ////////////////////////////////////////////////////////////////////////////
     ////// FROM LAT/LONG TO NORTH/EAST
 

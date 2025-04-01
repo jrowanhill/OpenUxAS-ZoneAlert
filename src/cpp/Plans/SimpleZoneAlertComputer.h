@@ -132,7 +132,7 @@ protected:
      * and position at which the vehicle will be in violation with the zone if it follows its present immediate velocity
      */
     shared_ptr<ZoneViolation> findImminentViolationWith(const int64_t zoneID,
-        const int64_t vehicleID, const CPosition &startPos, const CPosition &endPos,
+        const int64_t vehicleID,  CPosition &startPos,  CPosition &endPos,
         const int64_t startTime, const array<float, 3> &velocity,        
         std::stringstream &sstrErrorMessage);
 
@@ -191,8 +191,8 @@ protected:
      * @return the closest intersection from startPos of the vector with the polygon boundary, 
      * or NULL if no such intersection
     */
-    inline CPosition * findClosestIntersection(CPosition startPos, 
-                    CPosition endPos, shared_ptr<CPolygon> polygonPtr, 
+    inline CPosition * findClosestIntersection(const CPosition &startPos, 
+                    const CPosition &endPos, shared_ptr<CPolygon> polygonPtr, 
                     shared_ptr<CBoundary> polygonBoundaryPtr);
 
 
@@ -208,10 +208,10 @@ protected:
      * @pre the velocity is the velocity on the vector from startPos to endPos
      * 
      * @return the number of seconds in the future in which the future position 
-     * is achieved (milliseconds)
+     * is achieved (seconds)
      */
-    inline int64_t computeTimeToPosition(CPosition startPos, CPosition endPos, 
-                    array<float, 3> velocity, CPosition futurePosition);
+    inline double computeTimeToPosition( CPosition &startPos,  CPosition &endPos, 
+                    const array<float, 3> &velocity,  CPosition &futurePosition);
 
 
     /** @brief Creates an zone violation event object from information about the event.
@@ -223,7 +223,7 @@ protected:
      * @param east_m the positionn in cartesian ground plane x coordinate of violation in meters
      * @param north_m the position in cartesian ground plane y coordinate of violation in meters
      * @param altitude_m the altitude (z coordinate) of violation in meters
-     * @param timeToIntercept the time until violation occurence at the indicated position 
+     * @param timeToIntercept the time until violation occurence at the indicated position in seconds
      *
      * @return an ActiveZoneViolation if and only if the timeToIntercept is the present vehicle state report time
      */
@@ -231,7 +231,7 @@ protected:
                 int zoneID, bool isKeepInZone, 
                 int64_t vehicleID, int64_t vehicleStateReportTime,
                 double east_m, double north_m, double altitude_m,
-                int64_t timeToIntercept);
+                double timeToIntercept);
     
 protected:
 

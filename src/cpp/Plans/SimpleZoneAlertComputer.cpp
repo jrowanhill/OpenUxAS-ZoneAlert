@@ -7,6 +7,7 @@
 #include <afrl/cmasi/Polygon.h>
 #include <afrl/cmasi/Rectangle.h>
 
+#include "UnitConversions.h"
 #include "RoutePlannerVisibilityService.h"
 
 #define CIRCLE_BOUNDARY_INCREMENT (n_Const::c_Convert::dPiO10())
@@ -128,40 +129,42 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
         
         // copy construct the current polygon as a shared version
         polygons[iter->iGetID()] = make_shared<CPolygon>(*iter);
+
+        auto poly = polygons[iter->iGetID()];
         
         // recreate boundary, pulling the CPositions out of visibiity graph
         // and copying them into our boundary points vector for the polygon
         V_POSITION_t boundaryPoints;   
-        for (auto vit = iter->viGetVerticies().begin(); vit!=iter->viGetVerticies().end(); vit++) {
+        for (auto vit = poly->viGetVerticies().begin(); vit!=poly->viGetVerticies().end(); vit++) {
             boundaryPoints.push_back(visibilityGraph.vposGetVerticiesBase()[*vit]);
         }
 
-        // now fix the boundary of the polygon to point to the CBoundary
-        iter->viGetVerticies().clear();
+        // now fix the vertex indeces of the polygon to point to the right boundary points  
+        poly->viGetVerticies().clear();
         for (int i = 0; i< boundaryPoints.size(); i++) {
-            iter->viGetVerticies().push_back(i);
+            poly->viGetVerticies().push_back(i);
         }
 
         // note we do build the boundaries with blank abstract zones. That info was lost in use of visibilitygraph
         AbstractZone blankAbstract;
         auto boundaryPtr = make_shared<CBoundary>(
-            iter->iGetID(), iter->plytypGetPolygonType().bGetKeepIn(), boundaryPoints, 
+            poly->iGetID(), poly->plytypGetPolygonType().bGetKeepIn(), boundaryPoints, 
                             blankAbstract);
-        boundaryPtr->setZoneID(iter->iGetID());
+        boundaryPtr->setZoneID(poly->iGetID());
         boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
 
         //  store zones by ype in sets for faster iteration during violation checks
-        if (iter->plytypGetPolygonType().bGetKeepIn()) {
-            keepInZones.insert(iter->iGetID());
+        if (poly->plytypGetPolygonType().bGetKeepIn()) {
+            keepInZones.insert(poly->iGetID());
         }
         else {
-            keepOutZones.insert(iter->iGetID());
+            keepOutZones.insert(poly->iGetID());
         }
 
         // create an announcement of the zone
         shared_ptr<ProcessedZone> procZonePtr = make_shared<ProcessedZone>();
-        procZonePtr->setZoneID(iter->iGetID());
-        procZonePtr->setKeepIn(iter->plytypGetPolygonType().bGetKeepIn());
+        procZonePtr->setZoneID(poly->iGetID());
+        procZonePtr->setKeepIn(poly->plytypGetPolygonType().bGetKeepIn());
 
         for (auto vit = boundaryPtr->vposGetBoundaryPoints_m().begin(); 
                     vit != boundaryPtr->vposGetBoundaryPoints_m().end(); vit++) {
@@ -193,8 +196,15 @@ vector<shared_ptr<ZoneViolation>> * SimpleZoneAlertComputer::computeZoneViolatio
     // extract the current position of the vehicle as a CPosition structure
     // TODO: Confirm that MSL is being sent by vehicles
     // Note: The dummy variable assures we are calling a constructor for lat, long, and altitude
-    CPosition startPos(vehicleState->getLocation()->getLatitude(), vehicleState->getLocation()->getLongitude(),
-        vehicleState->getLocation()->getAltitude(), 0);
+    uxas::common::utilities::CUnitConversions unitConversions;
+    double mNorth = 0.0;
+    double mEast = 0.0;
+    unitConversions.ConvertLatLong_degToNorthEast_m(
+        vehicleState->getLocation()->getLatitude(), 
+        vehicleState->getLocation()->getLongitude(),
+        mNorth, mEast);
+    CPosition startPos(mNorth, mEast,
+        vehicleState->getLocation()->getAltitude());
 
     // get instantaneous linear velocity vector and use it to compute starting and ending points
     array<float, 3> velocity = worldFrameVelocity(vehicleState);
@@ -331,7 +341,9 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findExistingViolationW
         shared_ptr<CBoundary> boundaryPtr = boundaries.at(zoneID);
         shared_ptr<CPolygon> polyPtr = polygons.at(zoneID);
 
-        bool vehicleInZone = polyPtr->InPolygon(startPos.m_east_m, startPos.m_north_m, 
+
+        // For reasons I don't understandm east is Y and north is X
+        bool vehicleInZone = polyPtr->InPolygon(startPos.m_north_m, startPos.m_east_m, 
                         startPos.m_altitude_m,
                         boundaryPtr->vposGetBoundaryPoints_m(), 
                         sstrErrorMessage);
@@ -365,7 +377,7 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findExistingViolationW
 
 shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findImminentViolationWith(
         const int64_t zoneID, const int64_t vehicleID, 
-        const CPosition &startPos, const CPosition &endPos,
+         CPosition &startPos,  CPosition &endPos,
         const int64_t startTime, const array<float, 3> &velocity,
         std::stringstream &sstrErrorMessage) {
     
@@ -391,7 +403,7 @@ shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findImminentViolationWith(
                                 vehicleID, startTime,
                                 closestIntersectionPtr->m_east_m, 
                                 closestIntersectionPtr->m_north_m,
-                                closestIntersectionPtr->m_altitude_m, startTime+timeToIntercept);
+                                closestIntersectionPtr->m_altitude_m, timeToIntercept);
 
                 delete closestIntersectionPtr;
             }
@@ -427,7 +439,7 @@ shared_ptr<ZoneViolation> SimpleZoneAlertComputer::findImminentViolationWith(
  * @TODO: finding the first intersection by first finding all intersections is wasteful 
  */
 CPosition * SimpleZoneAlertComputer::findClosestIntersection(
-            CPosition startPos, CPosition endPos, shared_ptr<CPolygon> polygonPtr, 
+            const CPosition &startPos, const CPosition &endPos, shared_ptr<CPolygon> polygonPtr, 
             shared_ptr<CBoundary> polygonBoundaryPtr) {
 
     V_POSITION_t intersections;
@@ -439,14 +451,15 @@ CPosition * SimpleZoneAlertComputer::findClosestIntersection(
 
     if (intersections.size()>0) {
 
-        double farthest = std::numeric_limits<double>::max();
+        double closest = std::numeric_limits<double>::max();
 
         for (auto intersection = intersections.begin(); intersection != intersections.end(); 
             intersection++) {
 
             double dist = startPos.relativeDistance2D_m(*intersection);
-            if (dist<farthest) {
+            if (dist<closest) {
                 closestPtr = &(*intersection);
+                closest = dist;
             }
         }
     }    
@@ -455,8 +468,8 @@ CPosition * SimpleZoneAlertComputer::findClosestIntersection(
 }
 
 
-inline int64_t SimpleZoneAlertComputer::computeTimeToPosition(CPosition startPos, CPosition endPos, 
-                    array<float, 3> velocity, CPosition futurePosition) {
+inline double SimpleZoneAlertComputer::computeTimeToPosition(CPosition &startPos,  CPosition &endPos, 
+                    const array<float, 3> &velocity,  CPosition &futurePosition) {
 
     // compute relative slope to choose whether we compute using x or y for accuracy
 
@@ -487,20 +500,19 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
                 int zoneID, bool isKeepInZone, 
                 int64_t vehicleID, int64_t vehicleStateReportTime,
                 double east_m, double north_m, double altitude_m,
-                int64_t timeToIntercept)
+                double timeToIntercept)
 {  
 
     // Store the position of the violation in a 3D position vector (m)
-    Position3D* positionPtr = new Position3D();
+    Position2D* positionPtr = new Position2D();
     positionPtr->setEast(east_m);
     positionPtr->setNorth(north_m);
-    positionPtr->setAltitude(altitude_m);
 
     shared_ptr<ZoneViolation> violation;
 
     // Make an Active or Imminent ZoneViolation depending on if it is active at the vehicles position
     // at the time of its state report, or is predicted to happen in the future of that report, respectively
-    if (timeToIntercept == vehicleStateReportTime) {
+    if (timeToIntercept == 0.0) {
         violation = make_shared<ActiveZoneViolation> ();
     }
     else {

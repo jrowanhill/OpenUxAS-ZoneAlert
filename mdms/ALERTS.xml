@@ -26,10 +26,9 @@
             <Field Name="north" Type="real64" Optional="false" />
         </Struct>
         
-        <Struct Name="Position3D">
+        <Struct Name="Position2D">
             <Field Name="east" Type="real64" Optional="false" />
             <Field Name="north" Type="real64" Optional="false" />
-            <Field Name="altitude" Type="real64" Optional="false" />
         </Struct>
 
         <!-- Indicates a zone violation at a given time and position by a given vehicle -->
@@ -40,10 +39,10 @@
             <Field Name="ZoneID" Type="int64" Optional="false" />
             <!-- Type of Zone that will be violated  -->
             <Field Name="KeepIn" Type="bool" Optional="false" />
-            <!-- Time (absolute) of expected violation -->            
-            <Field Name="TimeToIntercept" Type="int64" Optional="false" />
+            <!-- Time of predicted violation (seconds) in future from vehicle state report time-->
+            <Field Name="TimeToIntercept" Type="real64" Optional="false" />
             <!-- Position (absolute) of expected violation -->
-            <Field Name="InterceptPosition" Type="Position3D" Series="ALERTS" Optional="false" />
+            <Field Name="InterceptPosition" Type="Position2D" Series="ALERTS" Optional="false" />
         </Struct>
 
         <!-- Indicates a zone violation occuring at the time of a vehicle's state report-->

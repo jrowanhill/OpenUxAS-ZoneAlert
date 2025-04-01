@@ -13,6 +13,7 @@
 #include "afrl/cmasi/Circle.h"
 #include "afrl/cmasi/Polygon.h"
 #include "afrl/cmasi/Location3D.h"
+#include "UnitConversions.h"
 
 #include <iostream>
 #include <cstdarg>
@@ -185,33 +186,11 @@ class BasicZoneChecks  : public testing::Test {
 
 
     void  SetUp() override {
-        // setup square zone
-        //arpPtr = new AccessibleRoutePlanner();
-
-
-        // the same rectangle but moves slightly
-        /*rectKeepInZone2 = (KeepInZone*) makeRectangleZone(2, true, // zone 1 is keep in
-                    100.0, 100.0, 5000.0, // center lat long in radians with alt
-                    300.0, 500.0, 0.0, // width and length
-                    20.0,              // padding
-                    8000.0, 10000.0,  // zone altitudes
-                    250.0, 26542.0,   // start and end times
-                    std::vector<int> {1, 2});
-        */
-
-
+        uxas::common::utilities::CUnitConversions::Reset();
     };
 
     void TearDown() override {
-        //delete arpPtr;
-        //delete rectKeepInZone1; 
-        //delete rectKeepInZone2;
     };
-
-    //AccessibleRoutePlanner *arpPtr;
-
-    KeepInZone *rectKeepInZone1;
-    KeepInZone *rectKeepInZone2;
 
 };
 
@@ -473,20 +452,22 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
     double X = metersPerDegreeLongitudeAtEquator*deg1;
     double Y = metersPerDegreeLatitudeAtEquator*deg1;
 
-    double roughEstimate = 0.6; // half a meter this way or that
+    double roughEstimate = 1.0; // meter accuracy
 
     EXPECT_EQ(3, pointVector.size());
 
+    // The first point will be the origin
     EXPECT_NEAR(0, pointVector[0].m_east_m, roughEstimate);
-    EXPECT_NEAR(Y, pointVector[0].m_north_m, roughEstimate);
+    EXPECT_NEAR(0, pointVector[0].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[0].m_altitude_m, acceptedError); // expect 0 altitude
 
+    // the next part is further left and down
     EXPECT_NEAR(-X, pointVector[1].m_east_m, roughEstimate);
-    EXPECT_NEAR(0, pointVector[1].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y, pointVector[1].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[1].m_altitude_m, acceptedError); // expect 0 altitude
 
     EXPECT_NEAR(X, pointVector[2].m_east_m, roughEstimate);
-    EXPECT_NEAR(0, pointVector[2].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y, pointVector[2].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
 
     delete triangleZone1;
@@ -519,23 +500,23 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
     EXPECT_EQ(5, pointVector.size());
 
     EXPECT_NEAR(X*cos(st), pointVector[0].m_east_m, roughEstimate);
-    EXPECT_NEAR(Y*sin(st), pointVector[0].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y+(Y*sin(st)), pointVector[0].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[0].m_altitude_m, acceptedError); // expect 0 altitude
 
     EXPECT_NEAR(X*cos(st+del), pointVector[1].m_east_m, roughEstimate);
-    EXPECT_NEAR(Y*sin(st+del), pointVector[1].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y+(Y*sin(st+del)), pointVector[1].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[1].m_altitude_m, acceptedError); // expect 0 altitude
 
     EXPECT_NEAR(X*cos(st+(2*del)), pointVector[2].m_east_m, roughEstimate);
-    EXPECT_NEAR(Y*sin(st+(2*del)), pointVector[2].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y+(Y*sin(st+(2*del))), pointVector[2].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
 
     EXPECT_NEAR(X*cos(st+(3*del)), pointVector[3].m_east_m, roughEstimate);
-    EXPECT_NEAR(Y*sin(st+(3*del)), pointVector[3].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y+(Y*sin(st+(3*del))), pointVector[3].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
 
     EXPECT_NEAR(X*cos(st+(4*del)), pointVector[4].m_east_m, roughEstimate);
-    EXPECT_NEAR(Y*sin(st+(4*del)), pointVector[4].m_north_m, roughEstimate);
+    EXPECT_NEAR(-Y+(Y*sin(st+(4*del))), pointVector[4].m_north_m, roughEstimate);
     EXPECT_NEAR(0, pointVector[4].m_altitude_m, acceptedError); // expect 0 altitude
 
 }
@@ -617,32 +598,15 @@ class TestableSimpleZoneAlertComputer : public SimpleZoneAlertComputer {
 class SimpleComputerChecks  : public testing::Test, public TestableSimpleZoneAlertComputer {
 
     protected:
-      
-      SimpleComputerChecks() : TestableSimpleZoneAlertComputer(1000) {};
+      // five second look-ahead simple computer
+      SimpleComputerChecks() : TestableSimpleZoneAlertComputer(5.0) {};
   
     
       void  SetUp() override {
-          // setup square zone
-          //arpPtr = new AccessibleRoutePlanner();
-  
-  
-          // the same rectangle but moves slightly
-          /*rectKeepInZone2 = (KeepInZone*) makeRectangleZone(2, true, // zone 1 is keep in
-                      100.0, 100.0, 5000.0, // center lat long in radians with alt
-                      300.0, 500.0, 0.0, // width and length
-                      20.0,              // padding
-                      8000.0, 10000.0,  // zone altitudes
-                      250.0, 26542.0,   // start and end times
-                      std::vector<int> {1, 2});
-          */
-  
-  
+        uxas::common::utilities::CUnitConversions::Reset();
       };
   
       void TearDown() override {
-          //delete arpPtr;
-          //delete rectKeepInZone1; 
-          //delete rectKeepInZone2;
       };
   
   
@@ -1386,7 +1350,7 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepInDontOverlap) {
 }
 
 
-TEST_F(SimpleComputerChecks, computeZoneViolationInsideKeepOut) {
+TEST_F(SimpleComputerChecks, computeZoneViolationActiveKeepOut) {
 
     double SX = 300;
     double SY = 500;
@@ -1420,39 +1384,453 @@ TEST_F(SimpleComputerChecks, computeZoneViolationInsideKeepOut) {
     std::stringstream errors;
 
     auto vehicleState = std::make_shared<afrl::cmasi::AirVehicleState>();    
-    vehicleState->setID(1);
+    vehicleState->setID(10);
     vehicleState->setGroundspeed(1.0); // moving at 1 meter per second relative to ground
-    vehicleState->setCourse(270.0); // heading east
+    vehicleState->setCourse(270.0); // heading west
     vehicleState->setVerticalSpeed(110.0);
 
     Location3D *locationPtr = new Location3D();
-    locationPtr->setAltitude(66000.0);
+    double mAlt = 66000.0;
+    locationPtr->setAltitude(mAlt);
     locationPtr->setLatitude(deg1);
     locationPtr->setLongitude(deg1);
+
+    //know east and west coords of vehicle for later
+    double mEast, mNorth;
+    uxas::common::utilities::CUnitConversions unitConversions;
+    unitConversions.ConvertLatLong_degToNorthEast_m(deg1, deg1, mNorth, mEast);
 
     vehicleState->setLocation(locationPtr);
 
     auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
 
-    std::cout << errors.str() << std::endl;
-
     ASSERT_TRUE(violationsPtr != nullptr);
-
     ASSERT_EQ(1, violationsPtr->size());
 
+    auto violation = (*violationsPtr)[0];
+
+    // the violation is an active zone violation against zone 1 at the present time
+    // and present vehicle position
+    ASSERT_EQ(uxas::messages::ActiveZoneViolation::TypeId, violation->getLmcpType());
+    EXPECT_EQ(1, violation->getZoneID());
+
+    EXPECT_EQ(10, violation->getVehicleID());
+    EXPECT_EQ(false, violation->getKeepIn());
+    EXPECT_EQ(0, violation->getTimeToIntercept());
+    EXPECT_EQ(mEast, violation->getInterceptPosition()->getEast());
+    EXPECT_EQ(mNorth, violation->getInterceptPosition()->getNorth());
 
 }
 
-TEST_F(SimpleComputerChecks, computeZoneViolationsImminentWithKeepOut) {
+TEST_F(SimpleComputerChecks, computeZoneViolationImminentKeepOut) {
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    auto procZones = this->mergeZones();
+    ASSERT_TRUE(procZones != nullptr);
+
+    // show that a vehicle inside the zone causes single immediate violation report
+    std::stringstream errors;
+
+    double vdeg = deg1 - 0.0029;
+
+    auto vehicleState = std::make_shared<afrl::cmasi::AirVehicleState>();    
+    vehicleState->setID(10);
+    vehicleState->setGroundspeed(100.0); // moving at 100 meter per second relative to ground
+    vehicleState->setCourse(90.0); // heading east
+    vehicleState->setVerticalSpeed(110.0);
+
+    Location3D *locationPtr = new Location3D();
+    double mAlt = 66000.0;
+    locationPtr->setAltitude(mAlt);
+    locationPtr->setLatitude(deg1);
+    locationPtr->setLongitude(vdeg);
+
+    //know east and west coords of vehicle for later
+    double mEast, mNorth;
+    uxas::common::utilities::CUnitConversions unitConversions;
+    unitConversions.ConvertLatLong_degToNorthEast_m(deg1, vdeg, mNorth, mEast);
+
+    vehicleState->setLocation(locationPtr);
+
+    auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
+
+    ASSERT_TRUE(violationsPtr != nullptr);
+    ASSERT_EQ(1, violationsPtr->size());
+
+    auto violation = (*violationsPtr)[0];
+
+    // the violation is an active zone violation against zone 1 at the present time
+    // and present vehicle position
+    ASSERT_EQ(uxas::messages::ImminentZoneViolation::TypeId, violation->getLmcpType());
+    EXPECT_EQ(1, violation->getZoneID());
+
+    // left edge of zone should be at -170 because origin is center and width is 300, 
+    // and it has 20 meters of padding as a keep out zone
+
+    double expectedLeftEdge = -170.0;
+
+    EXPECT_EQ(10, violation->getVehicleID());
+    EXPECT_EQ(false, violation->getKeepIn());
+    EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
+    EXPECT_NEAR(1.52, violation->getTimeToIntercept(),0.05);
+
 }
 
-TEST_F(SimpleComputerChecks, computeZoneViolationsFarFromKeepOut) {
+TEST_F(SimpleComputerChecks, computeZoneViolationsActiveAndImminentKeepOut) {
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+
+    double vdeg = deg1 - 0.0029; // longitude the vehicle will be at
+
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+    ASSERT_TRUE(result);
+
+    // now add a triangle that the vehicle is currently inside of but doesnt merge with rectangle
+    double triangleWedge = 0.0003/2.0;
+    AbstractZone * triangleZone1 = makePolygonZone(2, false, // zone 2 is keep out
+        verts(3, loc(deg1+triangleWedge, vdeg, 1000), 
+                 loc(deg1-triangleWedge, vdeg-triangleWedge, 1000), 
+                 loc(deg1-triangleWedge, vdeg+triangleWedge, 1000)),
+        5.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> triangle1Shared = std::make_shared<AbstractZone>(*triangleZone1);
+
+    result = this->addZone(triangle1Shared, false);
+    ASSERT_TRUE(result);
+    
+    // NOW MERGE ZONES
+    auto procZones = this->mergeZones();
+    ASSERT_TRUE(procZones != nullptr);
+    ASSERT_EQ(2, procZones->size());
+    ASSERT_EQ(2, keepOutZones.size());
+
+    /*
+    for (int index = 0; index < procZones->size(); ++index) {
+        auto zone = (*procZones)[index];
+        std::cout << "zone id: " << zone->getZoneID() << std::endl;
+        for (int v = 0; v < zone->getVertices().size(); ++v) {
+            std::cout << "\n\nvertex: " << zone->getVertices()[v]->getEast() << ", " 
+                      << zone->getVertices()[v]->getNorth() << std::endl;
+        }
+        auto poly = this->polygons[zone->getZoneID()];
+        auto bound = this->boundaries[zone->getZoneID()];
+        for (int v = 0; v < poly->m_viVerticies.size(); ++v) {
+            auto vert = poly->m_viVerticies[v];
+            auto pos = bound->vposGetBoundaryPoints_m()[vert];
+            std::cout << "\n\nvertex(" << vert << "): " 
+                << pos.m_east_m << ", "
+                << pos.m_north_m  << std::endl;    
+        }
+    }
+    */
+
+    // show that a vehicle inside the zone causes single immediate violation report
+    std::stringstream errors;
+
+
+    auto vehicleState = std::make_shared<afrl::cmasi::AirVehicleState>();    
+    vehicleState->setID(10);
+    vehicleState->setGroundspeed(100.0); // moving at 100 meter per second relative to ground
+    vehicleState->setCourse(90.0); // heading east
+    vehicleState->setVerticalSpeed(110.0);
+
+    Location3D *locationPtr = new Location3D();
+    double mAlt = 66000.0;
+    locationPtr->setAltitude(mAlt);
+    locationPtr->setLatitude(deg1);
+    locationPtr->setLongitude(vdeg);
+
+    //know east and west coords of vehicle for later
+    double mEast, mNorth;
+    uxas::common::utilities::CUnitConversions unitConversions;
+    unitConversions.ConvertLatLong_degToNorthEast_m(deg1, vdeg, mNorth, mEast);
+
+    vehicleState->setLocation(locationPtr);
+
+    // std::cout << "vehicle position: " << mEast << ", " << mNorth << std::endl;
+
+    auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
+
+    ASSERT_TRUE(violationsPtr != nullptr);
+    ASSERT_EQ(2, violationsPtr->size());
+
+    // CHECK THAT THERE IS AN IMMINENT AND THEN EXISTING
+    auto violation = (*violationsPtr)[0];
+
+    // the violation is an active zone violation against zone 1 at the present time
+    // and present vehicle position
+    ASSERT_EQ(uxas::messages::ImminentZoneViolation::TypeId, violation->getLmcpType());
+    EXPECT_EQ(1, violation->getZoneID());
+
+    // left edge of zone should be at -170 because origin is center and width is 300, 
+    // and it has 20 meters of padding as a keep out zone
+
+    double expectedLeftEdge = -170.0;
+
+    EXPECT_EQ(10, violation->getVehicleID());
+    EXPECT_EQ(false, violation->getKeepIn());
+    EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
+    EXPECT_NEAR(1.52, violation->getTimeToIntercept(),0.05);
+
+
+    violation = (*violationsPtr)[1];
+
+    // the violation is an active zone violation against zone 1 at the present time
+    // and present vehicle position
+    ASSERT_EQ(uxas::messages::ActiveZoneViolation::TypeId, violation->getLmcpType());
+    EXPECT_EQ(2, violation->getZoneID());
+
+    // exoect we are within the triangle zone which is centered on us
+    EXPECT_EQ(10, violation->getVehicleID());
+    EXPECT_EQ(false, violation->getKeepIn());
+    EXPECT_NEAR(mEast, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
+    EXPECT_NEAR(0, violation->getTimeToIntercept(),0.05);
+
+
 }
 
-TEST_F(SimpleComputerChecks, computeZoneViolationsInOneAndImminentWithAnotherKeepOut) {
+TEST_F(SimpleComputerChecks, computeZoneViolationsNoneWhenFarFromKeepOut) {
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+
+    ASSERT_TRUE(result);
+
+    auto procZones = this->mergeZones();
+    ASSERT_TRUE(procZones != nullptr);
+
+    // show that a vehicle inside the zone causes single immediate violation report
+    std::stringstream errors;
+
+    double vdeg = deg1 - 0.0029;
+
+    auto vehicleState = std::make_shared<afrl::cmasi::AirVehicleState>();    
+    vehicleState->setID(10);
+    vehicleState->setGroundspeed(1.0); // moving at 1 m/s, too slow to reach rectangle in five seconds
+    vehicleState->setCourse(90.0); // heading east
+    vehicleState->setVerticalSpeed(110.0);
+
+    Location3D *locationPtr = new Location3D();
+    double mAlt = 66000.0;
+    locationPtr->setAltitude(mAlt);
+    locationPtr->setLatitude(deg1);
+    locationPtr->setLongitude(vdeg);
+
+    //know east and west coords of vehicle for later
+    double mEast, mNorth;
+    uxas::common::utilities::CUnitConversions unitConversions;
+    unitConversions.ConvertLatLong_degToNorthEast_m(deg1, vdeg, mNorth, mEast);
+
+    vehicleState->setLocation(locationPtr);
+
+    auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
+
+    ASSERT_TRUE(violationsPtr == nullptr);
 }
+
 
 TEST_F(SimpleComputerChecks, computeZoneViolationsImminentWithTwoKeepOuts) {
+
+    double SX = 300;
+    double SY = 500;
+
+    double X = SX/2;
+    double Y = SY/2;    
+
+    double deg1 = 0.008;
+
+    double vdeg = deg1 - 0.0029; // longitude the vehicle will be at
+
+    //--add keep out rectangle
+    AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
+            false, // zone 1 is keep out
+        deg1, deg1, 66000.0, // center lat long in degrees with alt
+        SX, SY, // width and length 
+        0,          // no rotation
+        20.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> rect1Shared = std::make_shared<AbstractZone>(*rectKeepOutZone1);
+
+    bool result = this->addZone(rect1Shared, false);
+    ASSERT_TRUE(result);
+
+    // now add a triangle that the vehicle is currently inside of but doesnt merge with rectangle
+    double triangleWedge = 0.0003/2.0;
+    AbstractZone * triangleZone1 = makePolygonZone(2, false, // zone 2 is keep out
+        verts(3, loc(deg1+triangleWedge, vdeg+(2*triangleWedge), 1000), 
+                 loc(deg1-triangleWedge, vdeg+(1*triangleWedge), 1000), 
+                 loc(deg1-triangleWedge, vdeg+(3*triangleWedge), 1000)),
+        5.0,              // padding
+        8000.0, 10000.0,  // zone altitudes
+        250.0, 26542.0,   // start and end times
+        std::vector<int> {1, 2});
+
+    shared_ptr<AbstractZone> triangle1Shared = std::make_shared<AbstractZone>(*triangleZone1);
+
+    result = this->addZone(triangle1Shared, false);
+    ASSERT_TRUE(result);
+    
+    // NOW MERGE ZONES
+    auto procZones = this->mergeZones();
+    ASSERT_TRUE(procZones != nullptr);
+    ASSERT_EQ(2, procZones->size());
+    ASSERT_EQ(2, keepOutZones.size());
+
+    
+    for (int index = 0; index < procZones->size(); ++index) {
+        auto zone = (*procZones)[index];
+        std::cout << std::endl << "zone id: " << zone->getZoneID() << std::endl;
+        for (int v = 0; v < zone->getVertices().size(); ++v) {
+            std::cout << "\n\nvertex: " << zone->getVertices()[v]->getEast() << ", " 
+                      << zone->getVertices()[v]->getNorth() << std::endl;
+        }
+        auto poly = this->polygons[zone->getZoneID()];
+        auto bound = this->boundaries[zone->getZoneID()];
+        for (int v = 0; v < poly->m_viVerticies.size(); ++v) {
+            auto vert = poly->m_viVerticies[v];
+            auto pos = bound->vposGetBoundaryPoints_m()[vert];
+            std::cout << "\n\nvertex(" << vert << "): " 
+                << pos.m_east_m << ", "
+                << pos.m_north_m  << std::endl;    
+        }
+    }
+    
+
+    // show that a vehicle inside the zone causes single immediate violation report
+    std::stringstream errors;
+
+
+    auto vehicleState = std::make_shared<afrl::cmasi::AirVehicleState>();    
+    vehicleState->setID(10);
+    vehicleState->setGroundspeed(100.0); // moving at 100 meter per second relative to ground
+    vehicleState->setCourse(90.0); // heading east
+    vehicleState->setVerticalSpeed(110.0);
+
+    Location3D *locationPtr = new Location3D();
+    double mAlt = 66000.0;
+    locationPtr->setAltitude(mAlt);
+    locationPtr->setLatitude(deg1);
+    locationPtr->setLongitude(vdeg);
+
+    //know east and west coords of vehicle for later
+    double mEast, mNorth;
+    uxas::common::utilities::CUnitConversions unitConversions;
+    unitConversions.ConvertLatLong_degToNorthEast_m(deg1, vdeg, mNorth, mEast);
+
+    vehicleState->setLocation(locationPtr);
+
+    std::cout << "vehicle position: " << mEast << ", " << mNorth << std::endl;
+
+    auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
+
+    ASSERT_TRUE(violationsPtr != nullptr);
+    ASSERT_EQ(2, violationsPtr->size());
+
+    // CHECK THAT THERE IS AN IMMINENT AND THEN EXISTING
+    auto violation = (*violationsPtr)[0];
+
+    // the violation is an active zone violation against zone 1 at the present time
+    // and present vehicle position
+    ASSERT_EQ(uxas::messages::ImminentZoneViolation::TypeId, violation->getLmcpType());
+    EXPECT_EQ(1, violation->getZoneID());
+
+    // left edge of zone should be at -170 because origin is center and width is 300, 
+    // and it has 20 meters of padding as a keep out zone
+
+    double expectedLeftEdge = -170.0;
+
+    EXPECT_EQ(10, violation->getVehicleID());
+    EXPECT_EQ(false, violation->getKeepIn());
+    EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
+    EXPECT_NEAR(1.52, violation->getTimeToIntercept(),0.05);
+
+
+    violation = (*violationsPtr)[1];
+
+    // the violation is an active zone violation against zone 1 at the present time
+    // and present vehicle position
+    ASSERT_EQ(uxas::messages::ActiveZoneViolation::TypeId, violation->getLmcpType());
+    EXPECT_EQ(2, violation->getZoneID());
+
+    // exoect we are within the triangle zone which is centered on us
+    EXPECT_EQ(10, violation->getVehicleID());
+    EXPECT_EQ(false, violation->getKeepIn());
+    EXPECT_NEAR(mEast, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
+    EXPECT_NEAR(0, violation->getTimeToIntercept(),0.05);
+
+
+
 }
 
 
