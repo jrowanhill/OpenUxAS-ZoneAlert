@@ -38,7 +38,7 @@
           id="__gsn__1958b9ae822"
           color="#ffcccc"
           name="Strategy">
-        Via satisfaction of the highest level requirement and agreement with the operating solution by stakeholders.
+        Via satisfaction of the highest-level requirement and effective use oft the system in practice with stakeholder agreement.
 
         <g
             id="__gsn__1958b9b57ae"
@@ -93,7 +93,7 @@
 
                   <g
                       id="__gsn__1958bc48d4b"
-                      color="#cdcdcd"
+                      color="#ffffcc"
                       name="Same Zone Geometry">
                     The service interprets declared zones in the same manner as the RoutePlannerVisibilityService.
 
@@ -106,33 +106,33 @@
 
                     <s
                         id="__gsn__1958bd22262"
-                        color="#cdcdcd"
+                        color="#ffffcc"
                         name="Strategy">
                       Via stakeholder agreement that use cases and edge cases show consistently equivalent geometry interpretation of zones by both services.
 
                       <g
                           id="__gsn__19595865137"
-                          color="#cdcdcd"
+                          color="#ffffcc"
                           name="Equivalence Rules">
                         Stakeholders agree with the rules defining equivalence for zone geometries between the RoutePlannerVisiblityService and ZoneAlertService.
 
                         <c
                             id="__gsn__19595894e82"
-                            color="#ffffcc"
+                            color="#ffff33"
                             name="Note">
                           The need for equivalence rules appears in the validation reasoning. It would likely not emerge in defining ConOps or Use Cases, except indirectly and for some examples.
                         </c>
 
                         <e
                             id="__gsn__1959587dccf"
-                            color="#cdcdcd"
+                            color="#ffffcc"
                             name="Equivalence Rules">
                           .
                         </e>
 
                         <e
                             id="__gsn__1959587e0bd"
-                            color="#cdcdcd"
+                            color="#ffffcc"
                             name="Stakeholder Sign-off">
                           .
                         </e>
@@ -140,13 +140,13 @@
 
                       <g
                           id="__gsn__195958655c1"
-                          color="#cdcdcd"
+                          color="#ffffcc"
                           name="Equivalence">
                         The geometries computed for zone declarations are equivalent, under the defined equivalence rules, for both the RoutePlannerVisiblityService and the ZoneAlertService.
 
                         <g
                             id="__gsn__19591a38729"
-                            color="#cdcdcd"
+                            color="#ffffcc"
                             name="Use Case Equivalence">
                           Use cases of geometry have equivalent final stored semantics between the RoutePlannerVisibilityService and ZoneAlertService from the perspective of stakeholders.
 
@@ -160,7 +160,7 @@
 
                         <g
                             id="__gsn__19591a38d9f"
-                            color="#cdcdcd"
+                            color="#ffffcc"
                             name="Edge Case Equivalence">
                           Edge cases of anticipated zone geometries have equivalent semantics in final storage in RoutePlannerVisibilityService and ZoneAlertService.
 
@@ -179,7 +179,7 @@
 
                             <c
                                 id="__gsn__1958bd765e2"
-                                color="#ffffcc"
+                                color="#ffff66"
                                 name="Note">
                               It will be important to show that the edge cases include study of zones with distance geometry from chosen origin, as well as cases where the declared order of zones varies greatly, as well as cases where zones are very narrow, odd angles, etc.
                             </c>
@@ -206,7 +206,7 @@
                         id="__gsn__1958bd226a5"
                         color="#ffcccc"
                         name="Strategy">
-                      default text
+                      Via the correctness of the implementation against the specification and the acceptance of detection behaviors by the stakeholder against representative geometries.
 
                       <g
                           id="__gsn__1958bd24f7a"
@@ -224,20 +224,20 @@
 
                       <g
                           id="__gsn__1958bd24c76"
-                          color="#cdcdcd"
+                          color="#ffffcc"
                           name="Observed Behavior">
                         Observed behavior of the ZoneAlertService over representative use cases show that the intended violation reporting is in fact what the stakeholders want to see from the service.
 
                         <g
                             id="__gsn__1958be1e535"
-                            color="#ffffff"
+                            color="#ffffcc"
                             name="Demonstrations for Stakeholders">
                           Demonstrations for stakeholders confirm that the ZoneAlertService is correctly and accurately reporting zone alerts against representative declared zones and reported vehicle states in the desired manner..
 
                           <g
                               id="__gsn__1958be5557c"
-                              color="#cdcdcd"
-                              name="Existing Violation Reporting">
+                              color="#ffffcc"
+                              name="Stakeholder Acceptance for Existing Violation Reporting">
                             Violation reporting demonstrations show the expected reporting behavior for existing zone violations in representative use cases.
 
                             <c
@@ -249,20 +249,20 @@
 
                             <g
                                 id="__gsn__1958be95063"
-                                color="#cdcdcd"
+                                color="#ffffcc"
                                 name="Use Case Acceptance">
                               Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of existing zone violations against reported vehicle state messages for the desired use cases of the system.
 
                               <e
                                   id="__gsn__1959591bd7a"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Use Case Demonstrations">
                                 .
                               </e>
 
                               <e
                                   id="__gsn__19595914e54"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Stakeholder Sign-offs">
                                 .
                               </e>
@@ -270,20 +270,20 @@
 
                             <g
                                 id="__gsn__1958be953a0"
-                                color="#cdcdcd"
+                                color="#ffffcc"
                                 name="Edge Case Acceptance">
                               Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of existing zone violations against reported vehicle state messages for edge cases around the use cases of the system.
 
                               <e
                                   id="__gsn__19595926388"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Edge Case Demonstrations">
                                 .
                               </e>
 
                               <e
                                   id="__gsn__19595924113"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Stakeholder Sign-offs">
                                 .
                               </e>
@@ -292,7 +292,7 @@
 
                           <g
                               id="__gsn__1958be55809"
-                              color="#cdcdcd"
+                              color="#ffffcc"
                               name="Stakeholder Acceptance  for Imminent Violation Reporting">
                             Stakeholders agree that the reporting of imminent zone violations is as desired for both correctness and accuracy.
 
@@ -305,20 +305,20 @@
 
                             <g
                                 id="__gsn__1959593009c"
-                                color="#cdcdcd"
+                                color="#ffffcc"
                                 name="Use Case Acceptance">
                               Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of imminent zone violations against reported vehicle state messages for the desired use cases of the system.
 
                               <e
                                   id="__gsn__1959593009d"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Use Case Demonstrations">
                                 .
                               </e>
 
                               <e
                                   id="__gsn__1959593009e"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Stakeholder Sign-offs">
                                 .
                               </e>
@@ -326,20 +326,20 @@
 
                             <g
                                 id="__gsn__1959592e79f"
-                                color="#cdcdcd"
+                                color="#ffffcc"
                                 name="Edge Case Acceptance">
                               Stakeholders agree that the zone alert service is providing sufficiently correct and accurate alerting of imminent zone violations against reported vehicle state messages for edge cases around the use cases of the system.
 
                               <e
                                   id="__gsn__1959592e7a1"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Edge Case Demonstrations">
                                 .
                               </e>
 
                               <e
                                   id="__gsn__1959592e7a0"
-                                  color="#cdcdcd"
+                                  color="#ffffcc"
                                   name="Stakeholder Sign-offs">
                                 .
                               </e>
@@ -389,7 +389,7 @@
 
               <g
                   id="__gsn__1958b9e9c7f"
-                  color="#cdcdcd"
+                  color="#ffffcc"
                   name="Solution Intrinsic Validity">
                 Use of the ZoneAlertService shows that it makes OpenUxAS 'aware' of existing zone violations by vehicles to usefully avoid/recover/accept imminent and existing zone violations.
 
@@ -402,13 +402,13 @@
 
                 <g
                     id="__gsn__1958ba69722"
-                    color="#cdcdcd"
+                    color="#ffffcc"
                     name="Demos">
                   Demonstrations of existing and imminent Zone Violation awareness within OpenUxAS for coverage of expected use cases.
 
                   <e
                       id="__gsn__19590e5f65c"
-                      color="#b2b2b2"
+                      color="#ffffcc"
                       name="Demonstrated Awareness">
                     Demonstration of awareness of imminent and existing zone violations for expected use cases.
                   </e>
@@ -416,19 +416,19 @@
 
                 <g
                     id="__gsn__1958bb8ff2c"
-                    color="#cdcdcd"
+                    color="#ffffcc"
                     name="Edge Case Demonstrations">
                   Testing shows that the UxAS Zone Alert Service provides satisfactory zone alerts for existing and imminent violations at the edges of expected use conditions.
 
                   <e
                       id="__gsn__1958bbb8c68"
-                      color="#cdcdcd"
+                      color="#ffffcc"
                       name="Edge Case Tests With Sign-Off">
                     Demonstrations for sufficiently covering edge cases around the use cases of the systems, with sign-off on behavior from stakeholders.
 
                     <c
                         id="__gsn__1958bbba9b2"
-                        color="#ffffcc"
+                        color="#ffff33"
                         name="Confidence">
                       Careful confidence argument for coverage of edge cases should be constructed.
                     </c>
@@ -457,12 +457,12 @@
         <g
             id="__gsn__195906c1042"
             color="#cdcdcd"
-            name="Solution Extrinsic Validity">
-          UxAS applications with the zone violation unawareness problem solve it sufficiently through the ZoneAlertService providing its imminent and existing zone violation alerts.
+            name="Effective Solution Use">
+          UxAS applications with the zone violation unawareness problem solve it sufficiently through application of the  ZoneAlertService.
 
           <c
               id="__gsn__19591428390"
-              color="#ffffff"
+              color="#ffff33"
               name="Note">
             "I can see that this fit the bill"
           </c>
