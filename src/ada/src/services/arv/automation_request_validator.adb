@@ -1,8 +1,11 @@
+with SPARK.Big_Integers;         use SPARK.Big_Integers;
 with Ada.Containers;             use Ada.Containers;
 with AVTAS.LMCP.Types;
 with UxAS.Comms.LMCP_Net_Client; use UxAS.Comms.LMCP_Net_Client;
 
 package body Automation_Request_Validator with SPARK_Mode is
+
+   use Common.Count_Type_To_Big_Integer_Conversions;
 
    -----------------------
    -- Local Subprograms --
@@ -55,8 +58,6 @@ package body Automation_Request_Validator with SPARK_Mode is
                        Available_Line_of_Interest_Ids,
                        Available_Point_of_Interest_Ids,
                        TaskIds));
-
-   procedure Get_Unique_Request_Id (Val : out Int64);
 
    procedure Send_Next_Request
      (Mailbox          : in out Automation_Request_Validator_Mailbox;
@@ -126,7 +127,7 @@ package body Automation_Request_Validator with SPARK_Mode is
             errResponse.ResponseID := Request.RequestID;
             errResponse.Info := Add (errResponse.Info, KVP);
             Send_Response (Mailbox, Sandbox, errResponse);
-            Delete (Sandbox, Request.RequestID);
+            Sandbox := Remove (Sandbox, Request.RequestID);
          end;
       end if;
    end Check_Automation_Request_Requirements;
@@ -236,23 +237,30 @@ package body Automation_Request_Validator with SPARK_Mode is
            and then not Is_Empty (States)
          then
             declare
-               IsFoundAMatch : constant Boolean :=
-                 (for some Id1 of Configurations =>
-                    (for some Id2 of States => Id1 = Id2));
+               IsFoundAMatch : Boolean := False;
+               Id : Int64;
+               use Int64_Sets;
             begin
+               for S in Iterate (Configurations) loop
+                  pragma Loop_Invariant
+                    (IsFoundAMatch
+                     = (for some I of Configurations =>
+                            (not Contains (S, I) and then Contains (States, I))));
+                  Id := Int64_Sets.Choose (S);
+                  if Contains (States, Id) then
+                     pragma Assume (Length (EntityList) < To_Big_Integer (Count_Type'Last), "we have less than Count_Type'Last vehicles");
+                     EntityList := Add (EntityList, Id);
+                     IsFoundAMatch := True;
+                  end if;
+               end loop;
+
+               pragma Assert (IsFoundAMatch = (for some I of Configurations => Contains (States, I)));
+
                if not IsFoundAMatch then
                   Append_To_Msg (Msg  => ReasonForFailure,
                                  Tail => "- No EntityStates that match EntityConfigurations"
                                  & " are available.");
                   IsReady := False;
-               else
-                  for Id of Configurations loop
-                     if Contains (States, Id) then
-                        pragma Assume (Length (EntityList) < Count_Type'Last, "we have less than Count_Type'Last vehicles");
-                        EntityList := Add (EntityList, Id);
-                     end if;
-                     pragma Loop_Invariant (IsReady = IsReady'Loop_Entry);
-                  end loop;
                end if;
             end;
          else
@@ -435,11 +443,12 @@ package body Automation_Request_Validator with SPARK_Mode is
       isNewPendingRequest : Boolean := False;
    begin
       while areAllTasksReady and then Length (State.Requests_Waiting_For_Tasks) > 0 loop
+         pragma Loop_Variant (Decreases => Length (State.Requests_Waiting_For_Tasks));
+
          declare
             Req : constant UniqueAutomationRequest := First_Element (State.Requests_Waiting_For_Tasks);
          begin
-            areAllTasksReady :=
-              (for all TaskId of Req.TaskList => Contains (Config.Available_Initialized_Tasks, TaskId));
+            areAllTasksReady := (for all TaskId of Req.TaskList => Contains (Config.Available_Initialized_Tasks, TaskId));
             if areAllTasksReady then
                isNewPendingRequest := True;
 
@@ -453,17 +462,6 @@ package body Automation_Request_Validator with SPARK_Mode is
          Send_Next_Request (Mailbox, State.Pending_Requests);
       end if;
    end Check_Tasks_Initialized;
-
-   ---------------------------
-   -- Get_Unique_Request_Id --
-   ---------------------------
-
-   procedure Get_Unique_Request_Id (Val : out Int64) is
-      Id : AVTAS.LMCP.Types.Int64;
-   begin
-      Get_Unique_Entity_Send_Message_Id (Id);
-      Val := Int64 (Id);
-   end Get_Unique_Request_Id;
 
    -------------------------------
    -- Handle_Automation_Request --
@@ -481,8 +479,8 @@ package body Automation_Request_Validator with SPARK_Mode is
       isReady                   : Boolean;
    begin
 
-      Get_Unique_Request_Id (ReqId);
-      pragma Assume (not Contains (State.Sandbox, ReqId), "returned Id is actually unique");
+      Get_Next_Unique_Sending_Message_Id (Mailbox, ReqId);
+      pragma Assume (not Has_Key (State.Sandbox, ReqId), "returned Id is actually unique");
 
       Unique_Automation_Request.RequestID := ReqId;
       Unique_Automation_Request.EntityList := Request.EntityList;
@@ -490,8 +488,7 @@ package body Automation_Request_Validator with SPARK_Mode is
       Unique_Automation_Request.TaskList := Request.TaskList;
       Unique_Automation_Request.TaskRelationships := Request.TaskRelationships;
 
-      pragma Assume (Length (State.Sandbox) < State.Sandbox.Capacity, "we have enough space for another request");
-      Insert (State.Sandbox, ReqId, Details);
+      State.Sandbox := Add (State.Sandbox, ReqId, Details);
 
       Check_Automation_Request_Requirements
         (Config,
@@ -525,10 +522,10 @@ package body Automation_Request_Validator with SPARK_Mode is
          First : constant UniqueAutomationRequest := First_Element (State.Pending_Requests);
       begin
          if First.RequestID = Response.ResponseID
-           and then Contains (State.Sandbox, Response.ResponseID)
+           and then Has_Key (State.Sandbox, Response.ResponseID)
          then
             Send_Response (Mailbox, State.Sandbox, Response);
-            Delete (State.Sandbox, Response.ResponseID);
+            State.Sandbox := Remove (State.Sandbox, Response.ResponseID);
             Delete_First (State.Pending_Requests);
             Send_Next_Request (Mailbox, State.Pending_Requests);
          end if;
@@ -562,8 +559,7 @@ package body Automation_Request_Validator with SPARK_Mode is
 
       Details.Play_Id := Request.PlayID;
       Details.Soln_Id := Request.SolutionID;
-      pragma Assume (Length (State.Sandbox) < State.Sandbox.Capacity, "we have enough space for another request");
-      Insert (State.Sandbox, ReqId, Details);
+      State.Sandbox := Add (State.Sandbox, ReqId, Details);
 
       Check_Automation_Request_Requirements
         (Config,
@@ -606,8 +602,7 @@ package body Automation_Request_Validator with SPARK_Mode is
       Unique_Automation_Request.PlanningStates := Request.PlanningStates;
 
       Details.Task_Request_Id := ReqId;
-      pragma Assume (Length (State.Sandbox) < State.Sandbox.Capacity, "we have enough space for another request");
-      Insert (State.Sandbox, ReqId, Details);
+      State.Sandbox := Add (State.Sandbox, ReqId, Details);
 
       Check_Automation_Request_Requirements
         (Config,
@@ -660,8 +655,8 @@ package body Automation_Request_Validator with SPARK_Mode is
       Response : UniqueAutomationResponse)
    is
    begin
-      if not Contains (Sandbox, Response.ResponseID)
-        or else Element (Sandbox, Response.ResponseID).Request_Type = Automation_Request
+      if not Has_Key (Sandbox, Response.ResponseID)
+        or else Get (Sandbox, Response.ResponseID).Request_Type = Automation_Request
       then
          declare
             Result : constant AutomationResponse :=
@@ -672,23 +667,23 @@ package body Automation_Request_Validator with SPARK_Mode is
             sendBroadcastMessage (Mailbox, Result);
          end;
       elsif
-        Element (Sandbox, Response.ResponseID).Request_Type = Task_Automation_Request
+        Get (Sandbox, Response.ResponseID).Request_Type = Task_Automation_Request
       then
          declare
             Result : constant TaskAutomationResponse :=
               (Response.MissionCommandList,
                Response.VehicleCommandList,
                Response.Info,
-               Element (Sandbox, Response.ResponseID).Task_Request_Id,
+               Get (Sandbox, Response.ResponseID).Task_Request_Id,
                Response.FinalStates);
          begin
             sendBroadcastMessage (Mailbox, Result);
          end;
       elsif
-        Element (Sandbox, Response.ResponseID).Request_Type = Sandbox_Automation_Request
+        Get (Sandbox, Response.ResponseID).Request_Type = Sandbox_Automation_Request
       then
          declare
-            Details : constant Request_Details := Element (Sandbox, Response.ResponseID);
+            Details : constant Request_Details := Get (Sandbox, Response.ResponseID);
             Result  : constant ImpactAutomationResponse :=
               (Response.MissionCommandList,
                Response.VehicleCommandList,

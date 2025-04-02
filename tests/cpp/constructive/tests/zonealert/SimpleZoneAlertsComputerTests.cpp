@@ -172,7 +172,7 @@ TEST(SimpleZoneAlertComp, detectsUnacceptableLookaheadTimes) {
  *               CONTRADICTED: if more than one operating region is declared
  *         2Claim: Both services get the same results for examples check all stored intermediate zones 
  *               2Evidence.Test Unit test on Zone Alert code and RoutePlanenr for equivalent results
- *       3 CLAIMFAILED: Both services finish preparing final zones for service before their servies are required in mission
+ *       3 CLAIMFAILED: Both services finish                                        preparing final zones for service before their servies are required in mission
  *             1 COUNTEREXAMPLE: The system waits for routes before it starts but will not wait for zone alert to prep and declare zones before
  *                   it executes
  * 2CLAIM: Both services produce the same final zones for use by their respective services for examples of zones
@@ -523,8 +523,7 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZoneRectangles) 
     EXPECT_NEAR((-X*sin(A))+(-Y*cos(A)), pointVector[2].m_north_m, acceptedError);
     EXPECT_NEAR(0, pointVector[2].m_altitude_m, acceptedError); // expect 0 altitude
 
-    EXPECT_NEAR((X*cos(A))-(-Y*sin(A)), pointVector[3].m_east_m * 
-    , acceptedError);
+    EXPECT_NEAR((X*cos(A))-(-Y*sin(A)), pointVector[3].m_east_m, acceptedError);
     EXPECT_NEAR((X*sin(A))+(-Y*cos(A)), pointVector[3].m_north_m, acceptedError);
     EXPECT_NEAR(0, pointVector[3].m_altitude_m, acceptedError); // expect 0 altitude
 
@@ -844,3 +843,97 @@ TEST_F(BasicZoneChecks, bFindPointsForAbstractGeometryCorrectForZonePolygons) {
  * THIS ARGUMENT SHOULD LIKELY BE FAR UP THE GSN AS THIS IS THE ESSENTIAL CORRECTNESS ARG.
  * 
 */
+
+
+
+
+class MockCPolygon :CPolygon {
+    /**
+    int& iGetID(){return(m_iID);};
+    const int& iGetID()const{return(m_iID);};    
+    **/
+    //MOCK_METHOD();
+
+
+};
+
+
+/** Creates a SimpleZoneAlertComputer set up with a bunch of keep in and keepout CPolygon Mocks to 
+ *  test against for interaction between CPolygon zones and ZoneAlertComputer 
+ */
+class MockZonesSetup : public testing::Test {
+
+
+    protected:
+
+        MockZonesSetup() {};
+
+        void SetUp() override {
+            computerPtr = new SimpleZoneAlertComputer(1.0);
+
+            // create a set of mock keep out and keep in zones for the polygon
+
+
+
+
+
+        };
+
+        void TearDown() override {
+            delete computerPtr;
+        };
+
+
+        SimpleZoneAlertComputer *computerPtr;
+};
+
+
+/** A test harness that sets up a ZoneAlertComputer with some typical zones against
+ * which to test vehicle existing and imminent zone violations
+ */
+class SimpleZonesSetup  : public testing::Test {
+    
+    protected:
+      
+      SimpleZonesSetup() {};
+  
+  
+      void  SetUp() override {
+
+        // create a new zone alert computer against which to make calls
+        computerPtr = new SimpleZoneAlertComputer(1.0);
+        
+
+          // setup square zone
+          //arpPtr = new AccessibleRoutePlanner();
+  
+  
+          // the same rectangle but moves slightly
+          /*rectKeepInZone2 = (KeepInZone*) makeRectangleZone(2, true, // zone 1 is keep in
+                      100.0, 100.0, 5000.0, // center lat long in radians with alt
+                      300.0, 500.0, 0.0, // width and length
+                      20.0,              // padding
+                      8000.0, 10000.0,  // zone altitudes
+                      250.0, 26542.0,   // start and end times
+                      std::vector<int> {1, 2});
+          */
+  
+  
+      };
+  
+      void TearDown() override {
+          //delete arpPtr;
+          //delete rectKeepInZone1; 
+          //delete rectKeepInZone2;
+      };
+  
+      //AccessibleRoutePlanner *arpPtr;
+  
+      KeepInZone *rectKeepInZone1;
+      KeepInZone *rectKeepInZone2;
+
+
+      SimpleZoneAlertComputer *computerPtr;
+
+  
+  };
