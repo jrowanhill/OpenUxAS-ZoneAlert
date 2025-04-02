@@ -223,7 +223,7 @@ protected:
      * @param east_m the positionn in cartesian ground plane x coordinate of violation in meters
      * @param north_m the position in cartesian ground plane y coordinate of violation in meters
      * @param altitude_m the altitude (z coordinate) of violation in meters
-     * @param timeToIntercept the time until violation occurence at the indicated position in seconds
+     * @param timeToIntercept the future time until violation occurence at the indicated position in seconds
      *
      * @return an ActiveZoneViolation if and only if the timeToIntercept is the present vehicle state report time
      */

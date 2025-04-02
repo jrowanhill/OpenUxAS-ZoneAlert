@@ -135,14 +135,25 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
         // recreate boundary, pulling the CPositions out of visibiity graph
         // and copying them into our boundary points vector for the polygon
         V_POSITION_t boundaryPoints;   
+        int startIndex = INT_MAX;
         for (auto vit = poly->viGetVerticies().begin(); vit!=poly->viGetVerticies().end(); vit++) {
+            if (*vit < startIndex) {
+                startIndex = *vit;
+            }
             boundaryPoints.push_back(visibilityGraph.vposGetVerticiesBase()[*vit]);
         }
 
-        // now fix the vertex indeces of the polygon to point to the right boundary points  
+        // now fix the vertex indeces of the polygon to point to the right boundary points
         poly->viGetVerticies().clear();
         for (int i = 0; i< boundaryPoints.size(); i++) {
             poly->viGetVerticies().push_back(i);
+        }
+
+        // and now fix the edges of the polygon to have the right verteces for the localized boudnary points array
+        for (int i = 0; i< poly->veGetPolygonEdges().size(); i++) {
+            n_FrameworkLib::CEdge &edge = poly->veGetPolygonEdges()[i];
+            edge.first = edge.first - startIndex;
+            edge.second = edge.second - startIndex;
         }
 
         // note we do build the boundaries with blank abstract zones. That info was lost in use of visibilitygraph
@@ -153,7 +164,7 @@ vector<shared_ptr<ProcessedZone>> * SimpleZoneAlertComputer::mergeZones() {
         boundaryPtr->setZoneID(poly->iGetID());
         boundaries[boundaryPtr->getZoneID()] = boundaryPtr;
 
-        //  store zones by ype in sets for faster iteration during violation checks
+        //  store zones by type in sets for faster iteration during violation checks
         if (poly->plytypGetPolygonType().bGetKeepIn()) {
             keepInZones.insert(poly->iGetID());
         }
@@ -219,6 +230,7 @@ vector<shared_ptr<ZoneViolation>> * SimpleZoneAlertComputer::computeZoneViolatio
     auto initialKeepInZoneID = checkForInitialKeepInZone(vehicleState->getID(), startPos, sstrErrorMessage);    
     if (initialKeepInZoneID > 0) {
 
+        // yes, this will check even if this is first state report iteration and guaranteed inside
         auto keepInViolation = findExistingViolationWith(initialKeepInZoneID, 
                 vehicleState->getID(), startPos, vehicleState->getTime(), 
                 sstrErrorMessage);
@@ -451,15 +463,15 @@ CPosition * SimpleZoneAlertComputer::findClosestIntersection(
 
     if (intersections.size()>0) {
 
-        double closest = std::numeric_limits<double>::max();
+        double closestDist = std::numeric_limits<double>::max();
 
         for (auto intersection = intersections.begin(); intersection != intersections.end(); 
             intersection++) {
 
             double dist = startPos.relativeDistance2D_m(*intersection);
-            if (dist<closest) {
-                closestPtr = &(*intersection);
-                closest = dist;
+            if (dist<closestDist) {
+                closestPtr = new CPosition(*intersection);
+                closestDist = dist;
             }
         }
     }    
@@ -490,7 +502,7 @@ inline double SimpleZoneAlertComputer::computeTimeToPosition(CPosition &startPos
     // if line is very vertical compute from north difference
     // note conversion from double to int64 differs by compiler
     else {        
-        return (int64_t) (diffVec.m_north_m / velocity[1]);
+        return diffVec.m_north_m / velocity[1];
     }
 
 }
@@ -508,7 +520,7 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
     positionPtr->setEast(east_m);
     positionPtr->setNorth(north_m);
 
-    shared_ptr<ZoneViolation> violation;
+    shared_ptr<ZoneViolation> violation = NULL;
 
     // Make an Active or Imminent ZoneViolation depending on if it is active at the vehicles position
     // at the time of its state report, or is predicted to happen in the future of that report, respectively
@@ -524,7 +536,9 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
     violation->setKeepIn(isKeepInZone);
     violation->setVehicleID(vehicleID);
     violation->setInterceptPosition(positionPtr);
-    violation->setTimeToIntercept(timeToIntercept);
+    // time is absolute to epoch milliseconds so reports are 
+    // not relative to knowing state report time
+    violation->setTimeToIntercept(vehicleStateReportTime + (timeToIntercept*1000));
 
     return violation;
 
