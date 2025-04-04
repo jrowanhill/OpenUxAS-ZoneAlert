@@ -287,11 +287,11 @@ inline const int SimpleZoneAlertComputer::checkForInitialKeepInZone(
             const int64_t vehicleID, const CPosition &currentPos,
             std::stringstream &sstrErrorMessage) {
 
-    // if this is NOT the first state report for the vehicle, return its initial keep in zone (or 0 if none)
-    // @todo: make sure this is approximately hash-lookup fast
-    if (initialKeepInZones.count(vehicleID) > 0) {
+    // if a vehicles has a keep in zone already we are all set
+    if (initialKeepInZones.count(vehicleID) > 0 && initialKeepInZones[vehicleID] > 0) {
         return initialKeepInZones[vehicleID];
     }
+    // otherwise, gonna have to check if inside a keep in zone that will now own it
     else {
         
         // search all keep in zones for one that might contain this first state report

@@ -188,9 +188,6 @@ protected:
     bool processVehicleStateReport(std::shared_ptr<afrl::cmasi::AirVehicleState> airVehicleState);
 
 private:
-    // storage for the option entries
-    std::string m_option01 = std::string("No Option 1");
-    int32_t m_option02{0};
 
     // the lookahead time to apply for zone warnings, as passed in by config param
     double lookaheadTime;

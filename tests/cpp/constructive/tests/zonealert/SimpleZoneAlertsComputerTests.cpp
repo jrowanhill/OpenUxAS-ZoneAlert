@@ -2278,27 +2278,6 @@ TEST_F(SimpleComputerChecks, computeZoneViolationImminentKeepInViolation) {
     EXPECT_NEAR(expectedNorth, violation->getInterceptPosition()->getNorth(), 0.5);
     EXPECT_NEAR(expectedTime, violation->getTimeToIntercept(), 5);
 
-    /*
-    violationsPtr = this->computeZoneViolations(vehicleState2, errors);
-    ASSERT_TRUE(violationsPtr != nullptr);
-
-    ASSERT_EQ(1, violationsPtr->size());
-
-    auto violation = (*violationsPtr)[0];
-
-    // compute where and when we will hit the southern wall
-    auto expectedNorth = -(SY/2) - 20.0;
-    auto expectedTime = expectedNorth / vehicleState2->getGroundspeed();
-
-    // show that this is an active violation
-    ASSERT_EQ(uxas::messages::ImminentZoneViolation::TypeId, violation->getLmcpType());
-    EXPECT_EQ(1, violation->getZoneID());
-    EXPECT_EQ(10, violation->getVehicleID());
-    EXPECT_EQ(true, violation->getKeepIn());
-    EXPECT_NEAR(mEast, violation->getInterceptPosition()->getEast(), 0.5);
-    EXPECT_NEAR(expectedNorth, violation->getInterceptPosition()->getNorth(), 0.5);
-    EXPECT_NEAR(expectedTime, violation->getTimeToIntercept(), 0.05);
-    */
 }
 
 TEST_F(SimpleComputerChecks, computeZoneViolationEventualImminentInViolation) {
