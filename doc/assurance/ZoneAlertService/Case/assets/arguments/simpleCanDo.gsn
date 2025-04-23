@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<argument>
+  <properties>
+    <title>
+      <![CDATA[New Argument]]>
+    </title>
+    <author>
+      <![CDATA[]]>
+    </author>
+    <version>
+      <![CDATA[]]>
+    </version>
+    <date>
+      <![CDATA[]]>
+    </date>
+    <status>
+      <![CDATA[]]>
+    </status>
+    <prefix>
+      <![CDATA[]]>
+    </prefix>
+    <confidence>
+      <![CDATA[false]]>
+    </confidence>
+    <note>
+      <![CDATA[]]>
+    </note>
+  </properties>
+
+  <gsn>
+    <g
+        id="__gsn__19611d2a36e"
+        color="#ffffff"
+        name="Zone Alert Will Work">
+
+      <s
+          id="__gsn__19611d30420"
+          color="#ffffff"
+          name="Strategy">
+        Simple "back-of-the-envelope" algorithm argument.
+
+        <g
+            id="__gsn__19611d3087e"
+            color="#ffffff"
+            name="We Can Get The Live Info We Need">
+          From messages sent out in OpenUxAS simulations.
+
+          <s
+              id="__gsn__19611dd2863"
+              color="#ffffff"
+              name="Strategy">
+            By the message types we need
+
+            <g
+                id="__gsn__19611dd2cd2"
+                color="#ffffff"
+                name="Vehicle Info">
+              We can get vehicle state showing position, direction, velocity, etc.
+
+              <e
+                  id="__gsn__19611de396b"
+                  color="#ffffff"
+                  name="OpenUXAS Messages">
+                .
+              </e>
+            </g>
+
+            <g
+                id="__gsn__19611dd2f07"
+                color="#ffffff"
+                name="Zone Info">
+              We can get zone declarations that each declare the geometry of a keep-in and keep-out zone.
+
+              <e
+                  id="__gsn__19611de3c7c"
+                  color="#ffffff"
+                  name="OpenUXAS Messages">
+                .
+              </e>
+            </g>
+          </s>
+        </g>
+
+        <g
+            id="__gsn__19611d30b05"
+            color="#ffffff"
+            name="We Can Compute the Zone Boundaaries">
+          We can convert the declared zones into merged zones on the plane by copying or re-using the code of the RoutePlannerVisibilityService
+
+          <e
+              id="__gsn__19611df2bac"
+              color="#ffffff"
+              name="RoutePlannerVisibilityService.h and cpp">
+            .
+          </e>
+        </g>
+
+        <g
+            id="__gsn__19611dfb799"
+            color="#ffffff"
+            name="We Can Compute Alerts">
+          We can compute zone alerts as desired.
+
+          <g
+              id="__gsn__19611e00bf4"
+              color="#ffffff"
+              name="Trigger on Vehicle State Updates">
+            We can trigger zone alerts whenever a vehicle reports a state message.
+
+            <e
+                id="__gsn__19611e11877"
+                color="#ffffff"
+                name="Best Info">
+              This is the most accurate update on where a vehicle is.
+            </e>
+          </g>
+
+          <g
+              id="__gsn__19611e00da1"
+              color="#ffffff"
+              name="Zone Conflict Computation">
+            From the vehicle state message, we can compute conflicts with zones on the plane./
+
+            <g
+                id="__gsn__19611e1b5ef"
+                color="#ffffff"
+                name="Compute Active Conflict">
+              By  checking if vehicle ground-plane position is inside the horizontal boundary of each zone.
+
+              <c
+                  id="__gsn__19611e421fe"
+                  color="#ffffff"
+                  name="Active Conflict">
+                A conflict where the reported vehicle position is in conflict with a zone.
+              </c>
+
+              <g
+                  id="__gsn__19611e2c274"
+                  color="#ffffff"
+                  name="Easy to Know if Inside a Zone">
+                By  checking if vehicle ground-plane position is inside the horizontal boundary of each zone.
+
+                <e
+                    id="__gsn__19611e30509"
+                    color="#ffffff"
+                    name="Napkin">
+                  See simple drawing
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__19611e2c470"
+                  color="#ffffff"
+                  name="Keep Out Zone Active Conflict">
+                We know if a vehicle is in active conflict with a keep-out zone if the vehicle is inside or on the keep-out zone ground-plane polygon.
+
+                <e
+                    id="__gsn__19611e3d1e7"
+                    color="#ffffff"
+                    name="Napkin">
+                  See simple drawing
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__19611e3d92c"
+                  color="#ffcccc"
+                  name="Keep-In Zone Active Conflict">
+                We can detect a keep-in zone conflict as one where a vehicle was inside or on a keep-out zone polygon in the horizontal plane, and is no outside of that polygon.
+
+                <e
+                    id="__gsn__19611e512a5"
+                    color="#ffffff"
+                    name="Napkin">
+                  See simple drawing
+                </e>
+              </g>
+            </g>
+
+            <g
+                id="__gsn__19611e54884"
+                color="#ffffff"
+                name="Compute Imminent Conflict">
+              By computing whether the vehicle's linear trajectory within a look-ahead time conflicts with a zone.
+
+              <g
+                  id="__gsn__19611e1b2e1"
+                  color="#ffffff"
+                  name="Compute Linear Trajectory">
+                From vehicle's velocity against the ground plane
+
+                <e
+                    id="__gsn__19611e208fe"
+                    color="#ffffff"
+                    name="Napkin">
+                  See simple drawing
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__19611e5e9df"
+                  color="#ffffff"
+                  name="Keep-Out Zone Imminent Conflict">
+                We can compute if, when, and where a vehicle is in imminent keep-out zone conflict if its trajectory from its reported position to future position at lookahead time crosses onto or inside a keep-out zone polygon.
+
+                <e
+                    id="__gsn__19611e6d9cb"
+                    color="#ffffff"
+                    name="Napkin">
+                  See simple drawing
+                </e>
+              </g>
+
+              <g
+                  id="__gsn__19611e6e2e3"
+                  color="#ffcccc"
+                  name="Keep-In Zone Imminent Conflict">
+                We can compute if, when, and where a vehicle is in imminent keep-in zone conflict if its reported position is inside a keep-in zone and the trajectory from its reported position to future position at lookahead time crosses outside of the keep-in zone.
+
+                <e
+                    id="__gsn__19611e6e2e4"
+                    color="#ffffff"
+                    name="Napkin">
+                  See simple drawing
+                </e>
+              </g>
+            </g>
+          </g>
+        </g>
+      </s>
+    </g>
+  </gsn>
+</argument>

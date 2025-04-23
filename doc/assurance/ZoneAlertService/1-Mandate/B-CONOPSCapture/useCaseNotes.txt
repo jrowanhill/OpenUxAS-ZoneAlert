@@ -123,6 +123,25 @@ Jan 2, 2023
 -----------
 Discussion with Stakeholder
 
-Take a look at the typical mission instantiation and messsage flow presented is repo. 
+Take a look at the typical mission instantiation and messsage flow presented in 
 
 Dynamic unsubscription is not usually applied as a pattern in OpenUxAS.
+
+
+
+
+-------
+AutomationRequestValidator: If I have a request and the request has operating regions, keep-in, keep-out , are they all previously defined? Just doing a check-off. It throws out requests that are invalid because something is not defined. 
+It should also talk about the internal semantics. 
+
+Have they all been defined
+Are they complete subsets. Task A has in it operating zones 
+
+All zones the service can see are relevant to all vehicles.
+
+
+
+
+
+
+
