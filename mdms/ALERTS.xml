@@ -43,6 +43,8 @@
             <Field Name="TimeToIntercept" Type="int64" Optional="false" />
             <!-- Position (absolute) of expected violation -->
             <Field Name="InterceptPosition" Type="Position2D" Series="ALERTS" Optional="false" />
+            <!-- Position (absolute) of expected violation in latitude and longitude-->
+            <Field Name="InterceptPositionLatLong" Type="Position2D" Series="ALERTS" Optional="false" />
         </Struct>
 
         <!-- Indicates a zone violation occuring at the time of a vehicle's state report-->

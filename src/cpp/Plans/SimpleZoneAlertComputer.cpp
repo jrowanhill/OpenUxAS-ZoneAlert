@@ -520,6 +520,15 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
     positionPtr->setEast(east_m);
     positionPtr->setNorth(north_m);
 
+    Position2D* positionLatLongPtr = new Position2D();
+
+    uxas::common::utilities::CUnitConversions unitConversions; // TODO: don't create on every call
+
+    double lat_deg, long_deg;
+    unitConversions.ConvertNorthEast_mToLatLong_deg(north_m, east_m, lat_deg, long_deg);
+    positionLatLongPtr->setEast(long_deg);
+    positionLatLongPtr->setNorth(lat_deg);
+
     shared_ptr<ZoneViolation> violation = NULL;
 
     // Make an Active or Imminent ZoneViolation depending on if it is active at the vehicles position
@@ -536,6 +545,8 @@ inline shared_ptr<ZoneViolation> SimpleZoneAlertComputer::makeZoneViolation(
     violation->setKeepIn(isKeepInZone);
     violation->setVehicleID(vehicleID);
     violation->setInterceptPosition(positionPtr);
+
+    violation->setInterceptPositionLatLong(positionLatLongPtr);
     // time is absolute to epoch milliseconds so reports are 
     // not relative to knowing state report time
     violation->setTimeToIntercept(vehicleStateReportTime + (timeToIntercept*1000));
