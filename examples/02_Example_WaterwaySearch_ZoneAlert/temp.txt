@@ -1,0 +1,1 @@
+./#runAmase_WaterwaySearch.py#:9:cmd = 'java -Xmx2048m -splash:./data/amase_splash.png -classpath ./dist/*:./lib/*  avtas.app.Application --config config/amase --scenario "{0}/{1}"'.format(os.getcwd(),scenarioFile)
