@@ -26,7 +26,7 @@
 #include <iostream>     // std::cout, cerr, etc
 #include "afrl/cmasi/KeepOutZone.h"
 #include "afrl/cmasi/KeepInZone.h"
-#include "afrl/cmasi/AutomationRequest.h"
+#include "uxas/messages/task/UniqueAutomationRequest.h"
 
 #define COUT_INFO(MESSAGE) std::cout << MESSAGE << std::endl;std::cout.flush();
 
@@ -71,7 +71,7 @@ bool ZoneAlertService::configure(const pugi::xml_node& ndComponent)
     addSubscriptionAddress(afrl::cmasi::AirVehicleConfiguration::Subscription);
     addSubscriptionAddress(afrl::cmasi::AirVehicleState::Subscription);
 
-    addSubscriptionAddress(afrl::cmasi::AutomationRequest::Subscription);
+    addSubscriptionAddress(uxas::messages::task::UniqueAutomationRequest::Subscription);
 
     return (isSuccess);
 }
@@ -129,7 +129,8 @@ bool ZoneAlertService::processReceivedLmcpMessage(std::unique_ptr<uxas::communic
         return !processVehicleStateReport(airVehicleState);
     }
 
-    else if(afrl::cmasi::isAutomationRequest(receivedLmcpMessage->m_object)) {
+    else if(uxas::messages::task::isUniqueAutomationRequest(receivedLmcpMessage->m_object)) {
+      COUT_INFO("***** GOING TO MERGE SOME ZONES NOW *****");
         return !mergeZones();
     }
 
