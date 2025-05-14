@@ -44,6 +44,10 @@ bool SimpleZoneAlertComputer::addZone(shared_ptr<AbstractZone> zonePtr, bool kee
     // And call function on RoutePlannerVisibility Service to convert zone geometry to flat earch x-y-z coordinates
     V_POSITION_t boundaryPoints; //used to store the boundary points  while we convert the,   
     
+    // ovveride padding. Padding is for route oplanning, not general zone geometry
+    // Fulfills requiremnt SR-6-2-3-1
+    zonePtr->setPadding(0.0);
+
     bool isSuccess = uxas::service::RoutePlannerVisibilityService::bFindPointsForAbstractGeometry(zonePtr->getBoundary(), boundaryPoints);
     
     if (isSuccess) {

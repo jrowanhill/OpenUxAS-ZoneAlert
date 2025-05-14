@@ -645,9 +645,11 @@ class SimpleComputerChecks  : public testing::Test, public TestableSimpleZoneAle
 
     EXPECT_EQ(2, boundaryShared->getZoneID());
     EXPECT_EQ(false, boundaryShared->bGetKeepInZone());
-    EXPECT_EQ(20.0, boundaryShared->getPadding());
 
-    // show that addZone stored its provident geometry as a rectangle
+    // EXPECT IT TO BE STORED WITH NO PADDING
+    EXPECT_EQ(0.0, boundaryShared->getPadding());
+
+    // show that addZone stored its provided geometry as a rectangle
     AbstractGeometry *abstractGeom = this->boundaries[2]->getBoundary();
     ASSERT_NE(nullptr, abstractGeom);
     ASSERT_EQ(abstractGeom->getLmcpType(), afrl::cmasi::CMASIEnum::RECTANGLE);
@@ -745,7 +747,9 @@ TEST_F(SimpleComputerChecks, addZoneTestRectangleAndPolygon) {
 
     EXPECT_EQ(2, boundaryShared->getZoneID());
     EXPECT_EQ(false, boundaryShared->bGetKeepInZone());
-    EXPECT_EQ(20.0, boundaryShared->getPadding());
+
+    // EXPECT IT TO BE STORED WITH NO PADDING
+    EXPECT_EQ(0.0, boundaryShared->getPadding());
 
     // show that addZone stored its provident geometry as a rectangle
     AbstractGeometry *abstractGeom = this->boundaries[2]->getBoundary();
@@ -774,7 +778,10 @@ TEST_F(SimpleComputerChecks, addZoneTestRectangleAndPolygon) {
 
     EXPECT_EQ(1, boundaryShared->getZoneID());
     EXPECT_EQ(true, boundaryShared->bGetKeepInZone());
-    EXPECT_EQ(20.0, boundaryShared->getPadding());
+
+    
+    // Expect stored with no padding
+    EXPECT_EQ(0.0, boundaryShared->getPadding());
 
     // show that addZone stored its provident geometry as a rectangle
     abstractGeom = this->boundaries[1]->getBoundary();
@@ -809,7 +816,7 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutSimpleMergeCheck) {
     double X = SX/2;
     double Y = SY/2;    
 
-    double deg1 = 0.003;
+    double deg1 = 0.002;
     //--add keep out rectangle
     AbstractZone * rectKeepOutZone1 = (KeepInZone*) makeRectangleZone(1, 
             false, // zone 1 is keep out
@@ -857,8 +864,8 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutSimpleMergeCheck) {
     EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
     EXPECT_FALSE(processedZone->getKeepIn());
 
-    // expect a bevel for 8 remaining vertices
-    EXPECT_EQ(16, processedZone->getVertices().size());
+    // expect no bevel for 8 remaining vertices because no padding
+    EXPECT_EQ(8, processedZone->getVertices().size());
 
     // check zone storage sets
     EXPECT_EQ(1, keepOutZones.size());
@@ -871,13 +878,14 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutSimpleMergeCheck) {
     auto boundary = boundaries[1];
     ASSERT_TRUE(boundary != nullptr);
     EXPECT_EQ(1, boundary->getZoneID());
-    EXPECT_EQ(16, boundary->vposGetBoundaryPoints_m().size());
+    // should be one per polygon vertex
+    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
 
     ASSERT_EQ(1, polygons.size());
     auto polygon = polygons[1];
     ASSERT_TRUE(polygon != nullptr);
     EXPECT_EQ(1, polygon->iGetID());
-    EXPECT_EQ(16, polygon->viGetVerticies().size());
+    EXPECT_EQ(8, polygon->viGetVerticies().size());
 
 }
 
@@ -938,8 +946,9 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutOneInsideTheOther) {
     EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
     EXPECT_FALSE(processedZone->getKeepIn());
 
-    // expect a bevel for only the four vertices of the outer zone
-    EXPECT_EQ(8, processedZone->getVertices().size());
+    // expect no  bevel for only the four vertices of the outer zone
+    // because no padding
+    EXPECT_EQ(4, processedZone->getVertices().size());
 
     // check zone storage sets
     EXPECT_EQ(1, keepOutZones.size());
@@ -952,13 +961,13 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutOneInsideTheOther) {
     auto boundary = boundaries[1];
     ASSERT_TRUE(boundary != nullptr);
     EXPECT_EQ(1, boundary->getZoneID());
-    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
+    EXPECT_EQ(4, boundary->vposGetBoundaryPoints_m().size());
 
     ASSERT_EQ(1, polygons.size());
     auto polygon = polygons[1];
     ASSERT_TRUE(polygon != nullptr);
     EXPECT_EQ(1, polygon->iGetID());
-    EXPECT_EQ(8, polygon->viGetVerticies().size());
+    EXPECT_EQ(4, polygon->viGetVerticies().size());
     
 }
 
@@ -1018,13 +1027,13 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutDontOverlap) {
     EXPECT_EQ(1, processedZone->getZoneID());
     EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
     EXPECT_FALSE(processedZone->getKeepIn());
-    EXPECT_EQ(8, processedZone->getVertices().size());
+    EXPECT_EQ(4, processedZone->getVertices().size());
 
     processedZone = (*mergedZones)[1];
     EXPECT_EQ(2, processedZone->getZoneID());
     EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
     EXPECT_FALSE(processedZone->getKeepIn());
-    EXPECT_EQ(8, processedZone->getVertices().size());
+    EXPECT_EQ(4, processedZone->getVertices().size());
 
     // check zone storage sets
     EXPECT_EQ(2, keepOutZones.size());
@@ -1038,24 +1047,24 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepOutDontOverlap) {
     auto boundary = boundaries[1];
     ASSERT_TRUE(boundary != nullptr);
     EXPECT_EQ(1, boundary->getZoneID());
-    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
+    EXPECT_EQ(4, boundary->vposGetBoundaryPoints_m().size());
 
     boundary = boundaries[2];
     ASSERT_TRUE(boundary != nullptr);
     EXPECT_EQ(2, boundary->getZoneID());
-    EXPECT_EQ(8, boundary->vposGetBoundaryPoints_m().size());
+    EXPECT_EQ(4, boundary->vposGetBoundaryPoints_m().size());
 
     ASSERT_EQ(2, polygons.size());
     
     auto polygon = polygons[1];
     ASSERT_TRUE(polygon != nullptr);
     EXPECT_EQ(1, polygon->iGetID());
-    EXPECT_EQ(8, polygon->viGetVerticies().size());
+    EXPECT_EQ(4, polygon->viGetVerticies().size());
     
     polygon = polygons[2];
     ASSERT_TRUE(polygon != nullptr);
     EXPECT_EQ(2, polygon->iGetID());
-    EXPECT_EQ(8, polygon->viGetVerticies().size());
+    EXPECT_EQ(4, polygon->viGetVerticies().size());
 
 }
 
@@ -1107,7 +1116,7 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepInAndKeepOutDontMergeWithOverlap) {
     // now merge em and see that it works
     auto mergedZones = this->mergeZones();
 
-    // expect one merged zone
+    // expect two zones
     ASSERT_EQ(2, mergedZones->size());
 
     // check its zone ID
@@ -1115,15 +1124,15 @@ TEST_F(SimpleComputerChecks, mergeZonesKeepInAndKeepOutDontMergeWithOverlap) {
     EXPECT_EQ(1, processedZone->getZoneID());
     EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone->getLmcpType());
     EXPECT_TRUE(processedZone->getKeepIn());
-    // keep in zone don't shrink and don't bezel
+    // keep in zone don't shrink and don't bezel, and we disallow padding anyways
     EXPECT_EQ(4, processedZone->getVertices().size());
 
     auto processedZone2 = (*mergedZones)[1];
     EXPECT_EQ(2, processedZone2->getZoneID());
     EXPECT_EQ(uxas::messages::ProcessedZone::TypeId, processedZone2->getLmcpType());
     EXPECT_FALSE(processedZone2->getKeepIn());
-    // keep out zones bezel when expanded
-    EXPECT_EQ(8, processedZone2->getVertices().size());
+    // keep out zones bezel when expanded but we disable padding
+    EXPECT_EQ(4, processedZone2->getVertices().size());
 
     // check zone storage sets
     EXPECT_EQ(1, keepOutZones.size());
@@ -1488,15 +1497,14 @@ TEST_F(SimpleComputerChecks, computeZoneViolationImminentKeepOut) {
     EXPECT_EQ(1, violation->getZoneID());
 
     // left edge of zone should be at -170 because origin is center and width is 300, 
-    // and it has 20 meters of padding as a keep out zone
-
-    double expectedLeftEdge = -170.0;
+    // and it has no padding as we don't pad zones in zone alert computations
+    double expectedLeftEdge = -150.0;
 
     EXPECT_EQ(10, violation->getVehicleID());
     EXPECT_EQ(false, violation->getKeepIn());
     EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
     EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
-    EXPECT_NEAR(1523, violation->getTimeToIntercept(),1);
+    EXPECT_NEAR(1723, violation->getTimeToIntercept(),1);
 
 }
 
@@ -1609,15 +1617,15 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsActiveAndImminentKeepOut) {
     EXPECT_EQ(1, violation->getZoneID());
 
     // left edge of zone should be at -170 because origin is center and width is 300, 
-    // and it has 20 meters of padding as a keep out zone
+    // and it has no padding as Zone Alert does not compute zones with padding20 meters of padding
 
-    double expectedLeftEdge = -170.0;
+    double expectedLeftEdge = -150.0;
 
     EXPECT_EQ(10, violation->getVehicleID());
     EXPECT_EQ(false, violation->getKeepIn());
     EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
     EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
-    EXPECT_NEAR(1523, violation->getTimeToIntercept(),1);
+    EXPECT_NEAR(1723, violation->getTimeToIntercept(),1);
 
 
     violation = (*violationsPtr)[1];
@@ -1782,15 +1790,15 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsTwoImminentKeepOutsHorizontalT
     EXPECT_EQ(1, violation->getZoneID());
 
     // left edge of zone should be at -170 because origin is center and width is 300, 
-    // and it has 20 meters of padding as a keep out zone
+    // and it has no padding as zone alert disregards padding
 
-    double expectedLeftEdge = -170.0;
+    double expectedLeftEdge = -150.0;
 
     EXPECT_EQ(10, violation->getVehicleID());
     EXPECT_EQ(false, violation->getKeepIn());
     EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
     EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
-    EXPECT_NEAR(1523, violation->getTimeToIntercept(),1);
+    EXPECT_NEAR(1723, violation->getTimeToIntercept(),1);
 
 
     violation = (*violationsPtr)[1];
@@ -1803,9 +1811,9 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsTwoImminentKeepOutsHorizontalT
     // exoect we are within the triangle zone which is centered on us
     EXPECT_EQ(10, violation->getVehicleID());
     EXPECT_EQ(false, violation->getKeepIn());
-    EXPECT_NEAR(-304, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(-298, violation->getInterceptPosition()->getEast(), 0.5);
     EXPECT_NEAR(mNorth, violation->getInterceptPosition()->getNorth(), 0.5);
-    EXPECT_NEAR(189, violation->getTimeToIntercept(),1);
+    EXPECT_NEAR(245, violation->getTimeToIntercept(),1);
 
 }
 
@@ -1838,11 +1846,12 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsWithTwoImminentKeepOutsDiagona
     ASSERT_TRUE(result);
 
     // now add a triangle that the vehicle is currently inside of but doesnt merge with rectangle
-    double triangleWedge = 0.0003/2.0;
+//    double triangleWedge = 0.0003/2.0;
+    double triangleWedge =  0.001/2.0;
     AbstractZone * triangleZone1 = makePolygonZone(2, false, // zone 2 is keep out
-        verts(3, loc(deg1+triangleWedge, vdeg+(2*triangleWedge), 1000), 
-                 loc(deg1-triangleWedge, vdeg+(1*triangleWedge), 1000), 
-                 loc(deg1-triangleWedge, vdeg+(3*triangleWedge), 1000)),
+        verts(3, loc(deg1+triangleWedge, vdeg+(1.5*triangleWedge), 1000), 
+                 loc(deg1-triangleWedge, vdeg+(0.5*triangleWedge), 1000), 
+                 loc(deg1-triangleWedge, vdeg+(2.5*triangleWedge), 1000)),
         5.0,              // padding
         8000.0, 10000.0,  // zone altitudes
         250.0, 26542.0,   // start and end times
@@ -1860,7 +1869,7 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsWithTwoImminentKeepOutsDiagona
     ASSERT_EQ(2, keepOutZones.size());
 
     
-    /*for (int index = 0; index < procZones->size(); ++index) {
+    for (int index = 0; index < procZones->size(); ++index) {
         auto zone = (*procZones)[index];
         std::cout << std::endl << "zone id: " << zone->getZoneID() << std::endl;
         for (int v = 0; v < zone->getVertices().size(); ++v) {
@@ -1876,7 +1885,7 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsWithTwoImminentKeepOutsDiagona
                 << pos.m_east_m << ", "
                 << pos.m_north_m  << std::endl;    
         }
-    }*/
+    }
     
 
     // show that a vehicle inside the zone causes single immediate violation report
@@ -1902,7 +1911,7 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsWithTwoImminentKeepOutsDiagona
 
     vehicleState->setLocation(locationPtr);
 
-    //std::cout << "vehicle position: " << mEast << ", " << mNorth << std::endl;
+    std::cout << "vehicle position: " << mEast << ", " << mNorth << std::endl;
 
     auto violationsPtr = this->computeZoneViolations(vehicleState, errors);
 
@@ -1917,22 +1926,22 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsWithTwoImminentKeepOutsDiagona
     ASSERT_EQ(uxas::messages::ImminentZoneViolation::TypeId, violation->getLmcpType());
     EXPECT_EQ(1, violation->getZoneID());
 
-    // left edge of zone should be at -170 because origin is center and width is 300, 
-    // and it has 20 meters of padding as a keep out zone
+    // left edge of zone should be at -150 because origin is center and width is 300, 
+    // and it has no padding as Zone Alert disregards padding20 meters of padding as a keep out zone
 
-    double expectedLeftEdge = -170.0;
+    double expectedLeftEdge = -150.0;
     double expectedNorthIntercept = mNorth - (1.0 * (-mEast + expectedLeftEdge));
 
     EXPECT_EQ(10, violation->getVehicleID());
     EXPECT_EQ(false, violation->getKeepIn());
     EXPECT_NEAR(expectedLeftEdge, violation->getInterceptPosition()->getEast(), 0.5);
     EXPECT_NEAR(expectedNorthIntercept, violation->getInterceptPosition()->getNorth(), 1.0);
-    EXPECT_NEAR(2154, violation->getTimeToIntercept(),1);
+    EXPECT_NEAR(2437, violation->getTimeToIntercept(),1);
 
 
     violation = (*violationsPtr)[1];
 
-    // the violation is an active zone violation against zone 1 at the present time
+    // the violation is an active zone violation against zone 2 at the present time
     // and present vehicle position
     ASSERT_EQ(uxas::messages::ImminentZoneViolation::TypeId, violation->getLmcpType());
     EXPECT_EQ(2, violation->getZoneID());
@@ -1940,9 +1949,9 @@ TEST_F(SimpleComputerChecks, computeZoneViolationsWithTwoImminentKeepOutsDiagona
     // exoect we are within the triangle zone which is centered on us
     EXPECT_EQ(10, violation->getVehicleID());
     EXPECT_EQ(false, violation->getKeepIn());
-    EXPECT_NEAR(-310, violation->getInterceptPosition()->getEast(), 0.5);
-    EXPECT_NEAR(-13.4, violation->getInterceptPosition()->getNorth(), 0.5);
-    EXPECT_NEAR(175, violation->getTimeToIntercept(),1);
+    EXPECT_NEAR(-286.0, violation->getInterceptPosition()->getEast(), 0.5);
+    EXPECT_NEAR(-37.5, violation->getInterceptPosition()->getNorth(), 0.5);
+    EXPECT_NEAR(516, violation->getTimeToIntercept(),1);
 
 }
 
