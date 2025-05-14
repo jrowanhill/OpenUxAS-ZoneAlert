@@ -1,6 +1,6 @@
 amase:
-  revision: daidalus
-  url: https://github.com/afrl-rq/OpenAMASE.git
+  revision: ZoneAlert 
+  url: https://github.com/DocEast/OpenAMASE.git
   vcs: git
 cppzmq:
   revision: v4.2.2
