@@ -21,8 +21,11 @@
         <SubscribeToMessage MessageType="afrl.cmasi.VehicleActionCommand" />
         <SubscribeToMessage MessageType="afrl.cmasi.KeepInZone" />
         <SubscribeToMessage MessageType="afrl.cmasi.KeepOutZone" />
+	<SubscribeToMessage MessageType="uxas.messages.ImminentZoneViolation" />
+	<SubscribeToMessage MessageType="uxas.messages.ActiveZoneViolation" />
     </Bridge>
 
+    <Service Type="ZoneAlertService" Lookahead="10.0" />
     <Service Type="Test_SimulationTime"/>
     <Service Type="TaskManagerService"/>
     <Service Type="AutomationRequestValidatorService"/>
@@ -32,7 +35,6 @@
     <Service Type="AssignmentTreeBranchBoundService" NumberNodesMaximum="0" CostFunction="MINMAX" />   
     <Service Type="PlanBuilderService"/>
     <Service Type="AutomationDiagramDataService"/>
-    <Service Type="DAIDALUS_WCV_Detection"/>
 
     <Service Type="WaypointPlanManagerService" VehicleID="1000" NumberWaypointsToServe="1000" NumberWaypointsOverlap="5"
              DefaultLoiterRadius_m="250"  param.turnType="FlyOver" AddLoiterToEndOfSegments="FALSE"
@@ -65,7 +67,7 @@
         <!-- coordniation request to perform the tasks -->
         <Message MessageFileName="CoordinatedAutomationRequest.xml" SendTime_ms="5000"/>
     </Service>
-    
+
     <Service Type="MessageLoggerDataService" FilesPerSubDirectory="10000" LogFileName="testfile">
         <LogMessage MessageType="uxas" NumberMessagesToSkip="0"/>
         <LogMessage MessageType="afrl" NumberMessagesToSkip="0"/>

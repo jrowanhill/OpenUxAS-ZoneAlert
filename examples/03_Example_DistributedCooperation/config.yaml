@@ -1,4 +1,5 @@
 amase:
+  config: ZoneAlert
   scenario: Scenario_DistributedCooperation.xml
 
 uxases:
